@@ -1,4 +1,3 @@
-import React from "react";
 import { ArrowRight, Sparkles, Zap, Rocket, TrendingUp } from "lucide-react";
 
 const ImpactSection = () => {

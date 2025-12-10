@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/immutability */
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -36,7 +37,7 @@ type CampaignNodeProps = {
   top: string;
   left: string;
   color?: string;
-  icon?: string | JSX.Element;
+  icon?: string | React.ReactNode;
 };
 
 type StatCardProps = {

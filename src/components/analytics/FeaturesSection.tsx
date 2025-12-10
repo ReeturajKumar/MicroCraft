@@ -36,12 +36,12 @@ const LiveLoop = ({
 };
 
 // --- CUSTOM HOOK: Count Up ---
-const useCountUp = (end, duration = 2000, prefix = "", suffix = "") => {
+const useCountUp = (end: number, duration = 2000, prefix = "", suffix = "") => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     let startTimestamp: number | null = null;
-    const step = (timestamp) => {
+    const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
       // Ease out quartic for smooth landing
@@ -59,7 +59,6 @@ const useCountUp = (end, duration = 2000, prefix = "", suffix = "") => {
 
   return `${prefix}${formatted}${suffix}`;
 };
-
 // ==========================================
 // 1. ANALYTICS CARD (Looping Graphs)
 // ==========================================
@@ -76,7 +75,7 @@ const AnalyticsMockup = () => {
       <div className="flex gap-4">
         {/* Task Stat */}
         <div className="bg-white/80 backdrop-blur-xl p-4 rounded-2xl shadow-lg shadow-purple-500/5 border border-purple-100 flex-1 relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 to-pink-500"></div>
+          <div className="absolute top-0 left-0 w-1 h-full bg-linear-to-b from-purple-500 to-pink-500"></div>
           <div className="flex justify-between mb-2">
             <div className="p-1.5 bg-purple-50 rounded-lg text-purple-600">
               <Activity size={16} />
@@ -132,7 +131,7 @@ const AnalyticsMockup = () => {
             <div className="h-2 w-full bg-slate-50 rounded-full overflow-hidden">
               <div
                 className="h-full bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full w-0 animate-grow-bar"
-                style={{ "--target-width": "85%" }}
+                style={{ "--target-width": "85%" } as React.CSSProperties}
               ></div>
             </div>
           </div>
@@ -145,7 +144,12 @@ const AnalyticsMockup = () => {
             <div className="h-2 w-full bg-slate-50 rounded-full overflow-hidden">
               <div
                 className="h-full bg-gradient-to-r from-pink-500 to-rose-400 rounded-full w-0 animate-grow-bar"
-                style={{ "--target-width": "45%", animationDelay: "0.1s" }}
+                style={
+                  {
+                    "--target-width": "45%",
+                    animationDelay: "0.1s",
+                  } as React.CSSProperties
+                }
               ></div>
             </div>
           </div>
@@ -158,7 +162,12 @@ const AnalyticsMockup = () => {
             <div className="h-2 w-full bg-slate-50 rounded-full overflow-hidden">
               <div
                 className="h-full bg-gradient-to-r from-violet-500 to-purple-400 rounded-full w-0 animate-grow-bar"
-                style={{ "--target-width": "65%", animationDelay: "0.2s" }}
+                style={
+                  {
+                    "--target-width": "65%",
+                    animationDelay: "0.2s",
+                  } as React.CSSProperties
+                }
               ></div>
             </div>
           </div>
@@ -204,7 +213,7 @@ const WorkflowMockup = () => {
 
         {/* Node 3 */}
         <div
-          className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-xl text-sm font-bold shadow-lg shadow-purple-500/30 z-10 animate-pop-in"
+          className="bg-linear-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-xl text-sm font-bold shadow-lg shadow-purple-500/30 z-10 animate-pop-in"
           style={{ animationDelay: "1.2s" }}
         >
           Send Email
@@ -290,18 +299,18 @@ const PipelineMockup = () => {
 
 const RotatingFeatureText = () => {
   return (
-    <div className="inline-block relative h-[1.2em] w-full md:w-auto align-bottom overflow-hidden align-middle mt-1 md:mt-0">
+    <div className="inline-block relative h-[1.2em] w-full md:w-auto align-bottom overflow-hidden mt-1 md:mt-0">
       <div className="feature-scroll-inner flex flex-col text-left pl-2 md:pl-3">
-        <span className="block h-[1.2em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-400 pb-2">
+        <span className="block h-[1.2em] text-transparent bg-clip-text bg-linear-to-r from-purple-600 via-pink-500 to-purple-400 pb-2">
           Selling Easier
         </span>
-        <span className="block h-[1.2em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-400 pb-2">
+        <span className="block h-[1.2em] text-transparent bg-clip-text bg-linear-to-r from-purple-600 via-pink-500 to-purple-400 pb-2">
           Scaling Faster
         </span>
-        <span className="block h-[1.2em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-400 pb-2">
+        <span className="block h-[1.2em] text-transparent bg-clip-text bg-linear-to-r from-purple-600 via-pink-500 to-purple-400 pb-2">
           Growth Simpler
         </span>
-        <span className="block h-[1.2em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-400 pb-2">
+        <span className="block h-[1.2em] text-transparent bg-clip-text bg-linear-to-r from-purple-600 via-pink-500 to-purple-400 pb-2">
           Selling Easier
         </span>
       </div>
@@ -344,7 +353,7 @@ const FeaturesSection = () => {
               </div>
               <h3 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
                 Manage Operations with{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-600 to-pink-500">
                   Rich Analytics
                 </span>
               </h3>
@@ -357,7 +366,7 @@ const FeaturesSection = () => {
               </button>
             </div>
 
-            <div className="flex-1 w-full max-w-sm h-[320px] relative z-10">
+            <div className="flex-1 w-full max-w-sm h-80 relative z-10">
               {/* 5-second loop cycle for graphs */}
               <LiveLoop duration={5000} className="relative">
                 <AnalyticsMockup />
@@ -368,8 +377,8 @@ const FeaturesSection = () => {
           {/* --- TALL CARD (Workflow) --- */}
           <div className="md:col-span-5 lg:col-span-4 bg-slate-900 rounded-[40px] p-8 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.2)] flex flex-col items-center justify-between text-center relative overflow-hidden">
             {/* Dark Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-800 to-slate-900"></div>
-            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-50"></div>
+            <div className="absolute inset-0 bg-linear-to-b from-slate-800 to-slate-900"></div>
+            <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-purple-500 to-transparent opacity-50"></div>
 
             <div className="relative z-10 w-full mb-8">
               <h3 className="text-2xl font-bold text-white mb-3">
@@ -389,10 +398,10 @@ const FeaturesSection = () => {
           </div>
 
           {/* --- WIDE CARD (Performance/Pipeline) --- */}
-          <div className="md:col-span-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-[40px] p-8 md:p-12 shadow-[0_20px_50px_rgba(168,85,247,0.3)] flex flex-col md:flex-row items-center justify-between gap-10 text-white relative overflow-hidden">
+          <div className="md:col-span-12 bg-linear-to-br from-purple-600 to-pink-600 rounded-[40px] p-8 md:p-12 shadow-[0_20px_50px_rgba(168,85,247,0.3)] flex flex-col md:flex-row items-center justify-between gap-10 text-white relative overflow-hidden">
             {/* Abstract Rings */}
-            <div className="absolute -left-20 -bottom-40 w-80 h-80 border-[30px] border-white/10 rounded-full blur-sm"></div>
-            <div className="absolute left-20 -bottom-20 w-40 h-40 border-[15px] border-white/10 rounded-full blur-sm"></div>
+            <div className="absolute -left-20 -bottom-40 w-80 h-80 border-30 border-white/10 rounded-full blur-sm"></div>
+            <div className="absolute left-20 -bottom-20 w-40 h-40 border-15 border-white/10 rounded-full blur-sm"></div>
 
             <div className="flex-1 relative z-10 space-y-4 max-w-lg">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold border border-white/20">

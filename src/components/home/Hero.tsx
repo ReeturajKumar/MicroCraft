@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useState, useEffect } from "react";
 import {
   Play,
   Globe,
@@ -15,7 +16,11 @@ const Hero = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   // --- MOUSE TRACKING HANDLER ---
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: {
+    currentTarget: { getBoundingClientRect: () => any };
+    clientX: number;
+    clientY: number;
+  }) => {
     // Get the bounding rectangle of the container to ensure correct X/Y relative to the div
     const rect = e.currentTarget.getBoundingClientRect();
     setMousePos({
