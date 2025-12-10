@@ -17,7 +17,7 @@ type NavLink = {
 const navLinks: NavLink[] = [
   {
     name: "Products",
-    href: "#products",
+    href: "/products",
     dropdown: [
       { name: "CRM & Engagement", href: "/products/crm" },
       { name: "Digital Commerce", href: "/products/commerce" },

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import CrmEngagementHero from "../components/crm/CrmEngagementHero";
-import CreativeCustomerSection from "../components/crm/CustomerRelationsSection";
-import AdvantagesSection from "../components/crm/AdvantagesSection";
-import ComprehensiveServicesSection from "../components/crm/ComprehensiveServicesSection";
-import SuccessStoriesSection from "../components/crm/SuccessStoriesSection";
+import AnalyticsSection from "../components/analytics/AnalyticsSection";
+import FeaturesSection from "../components/analytics/FeaturesSection";
+import IntegrationsSection from "../components/analytics/IntegrationsSection";
+import Testimonial from "../components/home/Testimonial";
 
-const CrmManagement = () => {
+const Analytics = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -21,11 +20,10 @@ const CrmManagement = () => {
       className="relative w-full min-h-screen bg-slate-50 overflow-hidden"
     >
       <div className="relative z-10">
-        <CrmEngagementHero />
-        <CreativeCustomerSection />
-        <AdvantagesSection />
-        <ComprehensiveServicesSection />
-        <SuccessStoriesSection />
+        <AnalyticsSection />
+        <FeaturesSection />
+        <IntegrationsSection />
+        <Testimonial />
       </div>
       <div className="pointer-events-none absolute inset-0 z-20 overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-200/20 rounded-full blur-[120px] mix-blend-multiply" />
@@ -55,4 +53,4 @@ const CrmManagement = () => {
   );
 };
 
-export default CrmManagement;
+export default Analytics;

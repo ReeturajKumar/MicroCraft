@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import CrmEngagementHero from "../components/crm/CrmEngagementHero";
-import CreativeCustomerSection from "../components/crm/CustomerRelationsSection";
-import AdvantagesSection from "../components/crm/AdvantagesSection";
-import ComprehensiveServicesSection from "../components/crm/ComprehensiveServicesSection";
-import SuccessStoriesSection from "../components/crm/SuccessStoriesSection";
+import ImpactSection from "../components/ecommerce/ImpactSection";
+import DigitalMarketingDashboard from "../components/ecommerce/DigitalMarketingDashboard";
+import LogoMarquee from "../components/ecommerce/LogoMarquee";
+import ContentMarketingSection from "../components/ecommerce/ContentMarketingSection";
+import BusinessPlanningSection from "../components/ecommerce/BusinessPlanningSection";
+import SolutionsSection from "../components/ecommerce/SolutionsSection";
+import AchievementsSection from "../components/ecommerce/AchievementsAndFAQ";
 
-const CrmManagement = () => {
+const DigitalCommerce = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -21,13 +23,15 @@ const CrmManagement = () => {
       className="relative w-full min-h-screen bg-slate-50 overflow-hidden"
     >
       <div className="relative z-10">
-        <CrmEngagementHero />
-        <CreativeCustomerSection />
-        <AdvantagesSection />
-        <ComprehensiveServicesSection />
-        <SuccessStoriesSection />
+        <ImpactSection />
+        <DigitalMarketingDashboard />
+        <LogoMarquee />
+        <ContentMarketingSection />
+        <BusinessPlanningSection />
+        <SolutionsSection />
+        <AchievementsSection />
       </div>
-      <div className="pointer-events-none absolute inset-0 z-20 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-200/20 rounded-full blur-[120px] mix-blend-multiply" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-200/20 rounded-full blur-[120px] mix-blend-multiply" />
         <div
@@ -55,4 +59,4 @@ const CrmManagement = () => {
   );
 };
 
-export default CrmManagement;
+export default DigitalCommerce;

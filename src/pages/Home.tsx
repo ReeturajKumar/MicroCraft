@@ -1,9 +1,9 @@
-import Hero from "../components/Hero";
-import StatsSection from "../components/StatsSection";
-import ProductTrio from "../components/ProductTrio";
-import Simulator from "../components/Simulator";
-import Pricing from "../components/Pricing";
-import Testimonial from "../components/Testimonial";
+import Hero from "../components/home/Hero";
+import StatsSection from "../components/home/StatsSection";
+import ProductTrio from "../components/home/ProductTrio";
+import Simulator from "../components/home/Simulator";
+import Pricing from "../components/home/Pricing";
+import Testimonial from "../components/home/Testimonial";
 
 const Home = () => {
   return (
