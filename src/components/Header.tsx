@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, Check } from "lucide-react";
 
-// --- TYPES ---
 type DropdownItem = {
   name: string;
   href: string;
+  comingSoon?: boolean;
 };
 
 type NavLink = {
   name: string;
   href: string;
   dropdown?: DropdownItem[];
+  comingSoon?: boolean;
 };
 
-// --- DATA ---
 const navLinks: NavLink[] = [
   {
     name: "Products",
@@ -26,24 +26,26 @@ const navLinks: NavLink[] = [
   },
   {
     name: "Sectors",
-    href: "#sectors",
+    href: "#",
+    comingSoon: true,
     dropdown: [
-      { name: "Manufacturing", href: "/sectors/manufacturing" },
-      { name: "Food & Hospitality", href: "/sectors/food-hospitality" },
-      { name: "Healthcare", href: "/sectors/healthcare" },
-      { name: "Services", href: "/sectors/services" },
-      { name: "Logistics", href: "/sectors/logistics" },
-      { name: "Agriculture", href: "/sectors/agriculture" },
+      { name: "Manufacturing", href: "#", comingSoon: true },
+      { name: "Food & Hospitality", href: "#", comingSoon: true },
+      { name: "Healthcare", href: "#", comingSoon: true },
+      { name: "Services", href: "#", comingSoon: true },
+      { name: "Logistics", href: "#", comingSoon: true },
+      { name: "Agriculture", href: "#", comingSoon: true },
     ],
   },
   { name: "Case Studies", href: "/case-studies" },
   {
     name: "Resources",
-    href: "#resources",
+    href: "#",
+    comingSoon: true,
     dropdown: [
-      { name: "ONDC Guide", href: "/resources/ondc-guide" },
-      { name: "WhatsApp Templates", href: "/resources/whatsapp-templates" },
-      { name: "Migration Guide", href: "/resources/migration-guide" },
+      { name: "ONDC Guide", href: "#", comingSoon: true },
+      { name: "WhatsApp Templates", href: "#", comingSoon: true },
+      { name: "Migration Guide", href: "#", comingSoon: true },
     ],
   },
   { name: "Integrations", href: "/integrations" },
@@ -52,12 +54,8 @@ const navLinks: NavLink[] = [
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-
-  // --- ACTIVE STATE MANAGEMENT ---
-  // 1. Fixed: Initial state is null (nothing selected)
   const [activeNav, setActiveNav] = useState<string | null>(null);
   const [activeSubNav, setActiveSubNav] = useState<string | null>(null);
-
   const [scrolled, setScrolled] = useState<boolean>(false);
 
   useEffect(() => {
@@ -77,20 +75,21 @@ const Header: React.FC = () => {
     };
   }, []);
 
-  // --- CLICK HANDLER ---
-  const handleNavClick = (parentName: string, subItemName?: string) => {
-    // Set the main active tab (Products, Case Studies, etc.)
+  const handleNavClick = (
+    parentName: string,
+    subItemName?: string,
+    isComingSoon?: boolean
+  ) => {
+    if (isComingSoon) return;
+
     setActiveNav(parentName);
 
-    // If a sub-item (dropdown) was clicked, set it active.
-    // If a top-level link (Case Studies) was clicked, clear the sub-nav.
     if (subItemName) {
       setActiveSubNav(subItemName);
     } else {
       setActiveSubNav(null);
     }
 
-    // Close menus
     setMobileMenuOpen(false);
     setActiveDropdown(null);
   };
@@ -112,12 +111,11 @@ const Header: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
           <div className="shrink-0 relative group">
             <a
               href="/"
               className="flex items-center cursor-pointer"
-              onClick={() => handleNavClick("")} // Reset on logo click
+              onClick={() => handleNavClick("")}
             >
               <div className="ml-3">
                 <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-slate-800 via-slate-700 to-slate-600 bg-clip-text text-transparent">
@@ -133,7 +131,6 @@ const Header: React.FC = () => {
             </a>
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center bg-white/80 rounded-full p-1.5 border border-white/60 shadow-lg ml-12 mr-8">
             {navLinks.map((link) => (
               <div
@@ -145,26 +142,27 @@ const Header: React.FC = () => {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <a
-                  href={link.href}
-                  // 2. Fixed: Ensures clicking "Case Studies" sets activeNav to "Case Studies"
-                  onClick={() => handleNavClick(link.name)}
+                  href={link.comingSoon ? undefined : link.href}
+                  onClick={(e) => {
+                    if (link.comingSoon) e.preventDefault();
+                    handleNavClick(link.name, undefined, link.comingSoon);
+                  }}
                   className={`cursor-pointer group relative flex items-center gap-1 px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300 mx-0.5 ${
                     activeNav === link.name
                       ? "text-white shadow-md"
+                      : link.comingSoon
+                      ? "text-slate-400 cursor-default"
                       : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
-                  {/* Active state background */}
                   {activeNav === link.name && (
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full" />
                   )}
 
-                  {/* Hover state for inactive items */}
-                  {activeNav !== link.name && (
+                  {activeNav !== link.name && !link.comingSoon && (
                     <div className="absolute inset-0 bg-slate-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   )}
 
-                  {/* Text Content */}
                   <span className="relative z-10 flex items-center gap-1">
                     {link.name}
                     {link.dropdown && (
@@ -177,7 +175,6 @@ const Header: React.FC = () => {
                   </span>
                 </a>
 
-                {/* Dropdown Menu */}
                 {link.dropdown && activeDropdown === link.name && (
                   <div className="absolute left-0 top-full mt-2 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden transform transition-all duration-300 animate-in fade-in slide-in-from-top-2">
                     <div className="h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
@@ -187,24 +184,30 @@ const Header: React.FC = () => {
                         const isActiveSub = activeSubNav === item.name;
 
                         return (
-                          <a
+                          <div
                             key={item.name}
-                            href={item.href}
                             onClick={(e) => {
                               e.stopPropagation();
-                              // 3. Sets parent Active AND child Active
-                              handleNavClick(link.name, item.name);
+                              handleNavClick(
+                                link.name,
+                                item.name,
+                                item.comingSoon
+                              );
                             }}
-                            className={`cursor-pointer group relative flex items-center justify-between px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 ${
-                              isActiveSub
-                                ? "bg-purple-50 text-purple-700"
-                                : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                            className={`group relative flex items-center justify-between px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 ${
+                              item.comingSoon
+                                ? "cursor-default opacity-70"
+                                : isActiveSub
+                                ? "bg-purple-50 text-purple-700 cursor-pointer"
+                                : "text-slate-600 hover:bg-slate-50 hover:text-slate-900 cursor-pointer"
                             }`}
                           >
                             <span className="flex items-center gap-3">
                               <div
                                 className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                                  isActiveSub
+                                  item.comingSoon
+                                    ? "bg-slate-200"
+                                    : isActiveSub
                                     ? "bg-purple-600 scale-110"
                                     : "bg-slate-300 group-hover:bg-purple-400"
                                 }`}
@@ -212,10 +215,14 @@ const Header: React.FC = () => {
                               {item.name}
                             </span>
 
-                            {isActiveSub && (
+                            {item.comingSoon ? (
+                              <span className="text-[9px] font-bold uppercase tracking-wide text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">
+                                Soon
+                              </span>
+                            ) : isActiveSub ? (
                               <Check className="w-4 h-4 text-purple-600" />
-                            )}
-                          </a>
+                            ) : null}
+                          </div>
                         );
                       })}
                     </div>
@@ -225,7 +232,6 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Action Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <a
               href="https://wa.me/919876543210"
@@ -244,7 +250,6 @@ const Header: React.FC = () => {
             </button>
           </div>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="cursor-pointer lg:hidden relative p-2.5 rounded-xl text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 transition-all duration-200"
@@ -259,18 +264,21 @@ const Header: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden py-4 mt-2 mb-4 bg-white rounded-2xl border border-slate-100 shadow-xl">
             <nav className="space-y-1 px-3">
               {navLinks.map((link) => (
                 <div key={link.name}>
-                  {/* Main Link */}
                   <a
-                    href={link.href}
-                    onClick={() => handleNavClick(link.name)}
+                    href={link.comingSoon ? undefined : link.href}
+                    onClick={(e) => {
+                      if (link.comingSoon) e.preventDefault();
+                      handleNavClick(link.name, undefined, link.comingSoon);
+                    }}
                     className={`cursor-pointer group relative flex items-center justify-between px-4 py-3 text-base font-semibold rounded-xl transition-all duration-300 ${
-                      activeNav === link.name
+                      link.comingSoon
+                        ? "text-slate-400 cursor-default"
+                        : activeNav === link.name
                         ? "bg-purple-50 text-purple-700"
                         : "text-slate-700 hover:bg-slate-50"
                     }`}
@@ -287,30 +295,36 @@ const Header: React.FC = () => {
                     )}
                   </a>
 
-                  {/* Mobile Dropdown Items */}
                   {link.dropdown && (
                     <div className="pl-4 mt-1 space-y-1 border-l-2 border-slate-100 ml-4 mb-2">
                       {link.dropdown.map((item) => {
                         const isActiveSub = activeSubNav === item.name;
                         return (
-                          <a
+                          <div
                             key={item.name}
-                            href={item.href}
                             onClick={(e) => {
                               e.stopPropagation();
-                              handleNavClick(link.name, item.name);
+                              handleNavClick(
+                                link.name,
+                                item.name,
+                                item.comingSoon
+                              );
                             }}
-                            className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors ${
-                              isActiveSub
-                                ? "text-purple-700 bg-purple-50"
-                                : "text-slate-500 hover:text-slate-900 hover:bg-slate-50"
+                            className={`flex items-center justify-between px-4 py-2.5 text-sm font-medium rounded-lg transition-colors ${
+                              item.comingSoon
+                                ? "text-slate-400 cursor-default"
+                                : isActiveSub
+                                ? "text-purple-700 bg-purple-50 cursor-pointer"
+                                : "text-slate-500 hover:text-slate-900 hover:bg-slate-50 cursor-pointer"
                             }`}
                           >
-                            <div className="flex items-center justify-between">
-                              {item.name}
-                              {isActiveSub && <Check className="w-3.5 h-3.5" />}
-                            </div>
-                          </a>
+                            <span>{item.name}</span>
+                            {item.comingSoon && (
+                              <span className="text-[9px] font-bold uppercase tracking-wide text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">
+                                Soon
+                              </span>
+                            )}
+                          </div>
                         );
                       })}
                     </div>

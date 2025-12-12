@@ -345,7 +345,7 @@ const Simulator: React.FC = () => {
             ease: "easeOut",
           }}
           viewport={{ once: true, amount: 0.3 }}
-          className="relative w-full aspect-[16/10] max-h-[750px] bg-white rounded-xl shadow-2xl overflow-hidden flex border border-gray-200 font-sans text-slate-900 transform-style-3d"
+          className="relative w-full aspect-[16/10] max-h-[600px] bg-white rounded-xl shadow-2xl overflow-hidden flex border border-gray-200 font-sans text-slate-900 transform-style-3d"
         >
           {/* SIDEBAR */}
           <div className="w-64 bg-white border-r border-gray-100 flex flex-col p-4 z-20 shrink-0">

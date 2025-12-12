@@ -189,7 +189,7 @@ const Hero = () => {
                   >
                     {/* --- VISUAL 1: PHONE --- */}
                     {slide.visual === "phone" && (
-                      <div className="w-[300px] h-[560px] bg-gray-900 rounded-[2.5rem] p-3 shadow-2xl shadow-violet-500/20 ring-1 ring-black/5 animate-float">
+                      <div className="w-[300px] h-[500px] bg-gray-900 rounded-[2.5rem] p-3 shadow-2xl shadow-violet-500/20 ring-1 ring-black/5 animate-float">
                         <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden flex flex-col relative">
                           <div className="bg-violet-600 h-20 p-5 flex items-end justify-between text-white z-10">
                             <div className="flex items-center gap-3">

@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import TopStrip from "./components/TopStrip";
 import DigitalCommerce from "./pages/DigitalCommerce";
 import Analytics from "./pages/Analytics";
+import CaseStudies from "./pages/CaseStudies";
+import Integration from "./pages/Integration";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path="/products/crm" element={<CrmManagement />} />
         <Route path="/products/commerce" element={<DigitalCommerce />} />
         <Route path="/products/analytics" element={<Analytics />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/integrations" element={<Integration />} />
       </Routes>
       <Footer />
     </BrowserRouter>
