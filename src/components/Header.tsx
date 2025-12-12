@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, Check } from "lucide-react";
+// 1. IMPORT LINK FROM ROUTER
+import { Link, useLocation } from "react-router-dom";
 
 type DropdownItem = {
   name: string;
@@ -58,6 +60,10 @@ const Header: React.FC = () => {
   const [activeSubNav, setActiveSubNav] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
+  // 2. USE LOCATION HOOK FOR ACTIVE STATES
+  const location = useLocation();
+  const currentPath = location.pathname;
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -75,21 +81,35 @@ const Header: React.FC = () => {
     };
   }, []);
 
+  // Sync active state with URL
+  useEffect(() => {
+    setActiveNav(null);
+    setActiveSubNav(null);
+
+    navLinks.forEach((link) => {
+      if (link.href !== "/" && currentPath.startsWith(link.href)) {
+        setActiveNav(link.name);
+      }
+      if (link.dropdown) {
+        link.dropdown.forEach((item) => {
+          if (currentPath === item.href) {
+            setActiveNav(link.name);
+            setActiveSubNav(item.name);
+          }
+        });
+      }
+    });
+  }, [currentPath]);
+
   const handleNavClick = (
     parentName: string,
     subItemName?: string,
     isComingSoon?: boolean
   ) => {
     if (isComingSoon) return;
-
     setActiveNav(parentName);
-
-    if (subItemName) {
-      setActiveSubNav(subItemName);
-    } else {
-      setActiveSubNav(null);
-    }
-
+    if (subItemName) setActiveSubNav(subItemName);
+    else setActiveSubNav(null);
     setMobileMenuOpen(false);
     setActiveDropdown(null);
   };
@@ -112,8 +132,9 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between h-20">
           <div className="shrink-0 relative group">
-            <a
-              href="/"
+            {/* 3. REPLACED <a> with <Link> */}
+            <Link
+              to="/"
               className="flex items-center cursor-pointer"
               onClick={() => handleNavClick("")}
             >
@@ -128,7 +149,7 @@ const Header: React.FC = () => {
                   </span>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
 
           <nav className="hidden lg:flex items-center bg-white/80 rounded-full p-1.5 border border-white/60 shadow-lg ml-12 mr-8">
@@ -141,8 +162,9 @@ const Header: React.FC = () => {
                 }
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <a
-                  href={link.comingSoon ? undefined : link.href}
+                {/* 4. REPLACED <a> with <Link> */}
+                <Link
+                  to={link.comingSoon ? "#" : link.href}
                   onClick={(e) => {
                     if (link.comingSoon) e.preventDefault();
                     handleNavClick(link.name, undefined, link.comingSoon);
@@ -173,7 +195,7 @@ const Header: React.FC = () => {
                       />
                     )}
                   </span>
-                </a>
+                </Link>
 
                 {link.dropdown && activeDropdown === link.name && (
                   <div className="absolute left-0 top-full mt-2 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden transform transition-all duration-300 animate-in fade-in slide-in-from-top-2">
@@ -186,14 +208,6 @@ const Header: React.FC = () => {
                         return (
                           <div
                             key={item.name}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleNavClick(
-                                link.name,
-                                item.name,
-                                item.comingSoon
-                              );
-                            }}
                             className={`group relative flex items-center justify-between px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 ${
                               item.comingSoon
                                 ? "cursor-default opacity-70"
@@ -202,26 +216,45 @@ const Header: React.FC = () => {
                                 : "text-slate-600 hover:bg-slate-50 hover:text-slate-900 cursor-pointer"
                             }`}
                           >
-                            <span className="flex items-center gap-3">
-                              <div
-                                className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                                  item.comingSoon
-                                    ? "bg-slate-200"
-                                    : isActiveSub
-                                    ? "bg-purple-600 scale-110"
-                                    : "bg-slate-300 group-hover:bg-purple-400"
-                                }`}
-                              />
-                              {item.name}
-                            </span>
-
                             {item.comingSoon ? (
-                              <span className="text-[9px] font-bold uppercase tracking-wide text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">
-                                Soon
-                              </span>
-                            ) : isActiveSub ? (
-                              <Check className="w-4 h-4 text-purple-600" />
-                            ) : null}
+                              <div className="flex-1 flex items-center justify-between w-full">
+                                <span className="flex items-center gap-3">
+                                  <div className="w-2 h-2 rounded-full bg-slate-200" />
+                                  {item.name}
+                                </span>
+                                <span className="text-[9px] font-bold uppercase tracking-wide text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">
+                                  Soon
+                                </span>
+                              </div>
+                            ) : (
+                              /* 5. REPLACED internal dropdown divs with <Link> */
+                              <Link
+                                to={item.href}
+                                className="flex-1 flex items-center justify-between w-full"
+                                onClick={(e) => {
+                                  e.stopPropagation(); // Stop bubble so we don't trigger parent click twice
+                                  handleNavClick(
+                                    link.name,
+                                    item.name,
+                                    item.comingSoon
+                                  );
+                                }}
+                              >
+                                <span className="flex items-center gap-3">
+                                  <div
+                                    className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                                      isActiveSub
+                                        ? "bg-purple-600 scale-110"
+                                        : "bg-slate-300 group-hover:bg-purple-400"
+                                    }`}
+                                  />
+                                  {item.name}
+                                </span>
+                                {isActiveSub && (
+                                  <Check className="w-4 h-4 text-purple-600" />
+                                )}
+                              </Link>
+                            )}
                           </div>
                         );
                       })}
@@ -269,8 +302,9 @@ const Header: React.FC = () => {
             <nav className="space-y-1 px-3">
               {navLinks.map((link) => (
                 <div key={link.name}>
-                  <a
-                    href={link.comingSoon ? undefined : link.href}
+                  {/* 6. REPLACED Mobile <a> with <Link> */}
+                  <Link
+                    to={link.comingSoon ? "#" : link.href}
                     onClick={(e) => {
                       if (link.comingSoon) e.preventDefault();
                       handleNavClick(link.name, undefined, link.comingSoon);
@@ -293,7 +327,7 @@ const Header: React.FC = () => {
                         }`}
                       />
                     )}
-                  </a>
+                  </Link>
 
                   {link.dropdown && (
                     <div className="pl-4 mt-1 space-y-1 border-l-2 border-slate-100 ml-4 mb-2">
@@ -302,14 +336,6 @@ const Header: React.FC = () => {
                         return (
                           <div
                             key={item.name}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleNavClick(
-                                link.name,
-                                item.name,
-                                item.comingSoon
-                              );
-                            }}
                             className={`flex items-center justify-between px-4 py-2.5 text-sm font-medium rounded-lg transition-colors ${
                               item.comingSoon
                                 ? "text-slate-400 cursor-default"
@@ -318,11 +344,29 @@ const Header: React.FC = () => {
                                 : "text-slate-500 hover:text-slate-900 hover:bg-slate-50 cursor-pointer"
                             }`}
                           >
-                            <span>{item.name}</span>
-                            {item.comingSoon && (
-                              <span className="text-[9px] font-bold uppercase tracking-wide text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">
-                                Soon
-                              </span>
+                            {item.comingSoon ? (
+                              <>
+                                <span>{item.name}</span>
+                                <span className="text-[9px] font-bold uppercase tracking-wide text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">
+                                  Soon
+                                </span>
+                              </>
+                            ) : (
+                              /* 7. REPLACED Mobile Dropdown <div> with <Link> */
+                              <Link
+                                to={item.href}
+                                className="flex-1"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleNavClick(
+                                    link.name,
+                                    item.name,
+                                    item.comingSoon
+                                  );
+                                }}
+                              >
+                                {item.name}
+                              </Link>
                             )}
                           </div>
                         );
