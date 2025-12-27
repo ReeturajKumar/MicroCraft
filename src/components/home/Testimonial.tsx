@@ -58,28 +58,28 @@ const TESTIMONIALS: TestimonialData[] = [
 
 const Testimonial: React.FC = () => {
   return (
-    <section className="relative w-full bg-[#FAFAFA] py-32 overflow-hidden font-sans">
+    <section className="relative w-full bg-[#FAFAFA] py-5 md:py-24 overflow-hidden font-sans">
       {/* --- BACKGROUND ATMOSPHERE --- */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.04] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
-        <div className="absolute top-[10%] left-[50%] -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-r from-purple-200/40 via-pink-200/40 to-blue-200/40 blur-[100px] rounded-full mix-blend-multiply" />
+        <div className="absolute top-[10%] left-[50%] -translate-x-1/2 w-[600px] h-[400px] bg-gradient-to-r from-purple-200/30 via-pink-200/30 to-blue-200/30 blur-[80px] rounded-full mix-blend-multiply" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         {/* --- HEADER --- */}
-        <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
+        <div className="flex flex-col md:flex-row items-end justify-between mb-4 md:mb-16 gap-6">
           <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-purple-100 shadow-sm mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-purple-100 shadow-sm mb-4"
             >
               <div className="flex -space-x-2">
                 {[1, 2, 3].map((i) => (
                   <div
                     key={i}
-                    className="w-6 h-6 rounded-full bg-gray-200 border-2 border-white overflow-hidden"
+                    className="w-5 h-5 rounded-full bg-gray-200 border-2 border-white overflow-hidden"
                   >
                     <img
                       src={`https://i.pravatar.cc/100?img=${i + 10}`}
@@ -89,7 +89,7 @@ const Testimonial: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <span className="text-xs font-bold uppercase tracking-wider text-purple-900">
+              <span className="text-xs font-semibold uppercase tracking-wider text-purple-900">
                 Join 15,000+ Founders
               </span>
             </motion.div>
@@ -98,7 +98,7 @@ const Testimonial: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-5xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.1]"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-tight"
             >
               What our{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500">
@@ -107,11 +107,11 @@ const Testimonial: React.FC = () => {
             </motion.h2>
           </div>
 
-          <div className="mb-2 hidden md:block">
-            <button className="group flex items-center gap-3 px-6 py-3 bg-white border border-gray-200 rounded-full text-sm font-bold text-slate-900 shadow-sm hover:shadow-md hover:border-purple-200 transition-all cursor-pointer">
+          <div className="hidden md:block">
+            <button className="group flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-full text-sm font-semibold text-slate-900 shadow-sm hover:shadow-md hover:border-purple-200 transition-all cursor-pointer">
               <span>Read all success stories</span>
-              <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-purple-100 group-hover:text-purple-600 transition-colors">
-                <ArrowRight size={14} />
+              <div className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-purple-100 group-hover:text-purple-600 transition-colors">
+                <ArrowRight size={12} />
               </div>
             </button>
           </div>
@@ -119,8 +119,8 @@ const Testimonial: React.FC = () => {
 
         {/* --- INFINITE MARQUEE --- */}
         {/* We use a mask to fade the edges */}
-        <div className="relative w-[100vw] left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] overflow-hidden mask-linear-fade">
-          <div className="flex w-max gap-8 animate-scroll hover:pause py-10 px-8">
+        <div className="relative w-[100vw] left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] overflow-hidden mask-gradient">
+          <div className="flex w-max gap-6 scroll-track px-4 md:px-6">
             {/* Render cards twice to create seamless loop */}
             {[...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
               <TestimonialCard key={i} data={t} />
@@ -129,22 +129,7 @@ const Testimonial: React.FC = () => {
         </div>
       </div>
 
-      <style>{`
-        .mask-linear-fade {
-          mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-          -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-        }
-        .animate-scroll {
-          animation: scroll 40s linear infinite;
-        }
-        .hover\\:pause:hover {
-          animation-play-state: paused;
-        }
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-33.33%); }
-        }
-      `}</style>
+      {/* Styles moved to index.css - see: mask-gradient (for mask-linear-fade), animate-infinite-scroll (for animate-scroll) */}
     </section>
   );
 };
@@ -152,68 +137,72 @@ const Testimonial: React.FC = () => {
 // --- SINGLE CARD COMPONENT ---
 const TestimonialCard: React.FC<{ data: TestimonialData }> = ({ data }) => {
   return (
-    <div className="group relative w-[450px] bg-white rounded-[2rem] p-8 border border-gray-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(168,85,247,0.15)] transition-all duration-500 cursor-default hover:-translate-y-2 flex flex-col justify-between">
+    <div className="group relative w-[340px] md:w-[380px] bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_40px_-8px_rgba(168,85,247,0.15)] transition-all duration-500 cursor-default hover:-translate-y-1 flex flex-col justify-between">
       {/* Decorative Gradient Border on Hover */}
-      <div className="absolute inset-0 rounded-[2rem] border-2 border-transparent group-hover:border-purple-100 transition-colors duration-500 pointer-events-none"></div>
+      <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-purple-100 transition-colors duration-500 pointer-events-none"></div>
 
       {/* Background Quote Icon */}
-      <div className="absolute top-6 right-8 text-gray-100 group-hover:text-purple-50 transition-colors duration-500 transform group-hover:scale-110 group-hover:rotate-12 pointer-events-none">
-        <Quote size={80} fill="currentColor" />
+      <div className="absolute top-4 right-6 text-gray-100 group-hover:text-purple-50 transition-colors duration-500 transform group-hover:scale-105 group-hover:rotate-6 pointer-events-none">
+        <Quote size={60} fill="currentColor" />
       </div>
 
       <div>
         {/* Header: User & Growth Badge */}
-        <div className="relative z-10 flex items-start justify-between mb-8">
-          <div className="flex items-center gap-4">
+        <div className="relative z-10 flex items-start justify-between mb-6">
+          <div className="flex items-center gap-3">
             <div className="relative">
-              <div className="w-14 h-14 rounded-full p-[2px] bg-gradient-to-br from-purple-500 to-pink-500">
+              <div className="w-11 h-11 rounded-full p-[2px] bg-gradient-to-br from-purple-500 to-pink-500">
                 <img
                   src={data.image}
                   alt={data.name}
                   className="w-full h-full rounded-full object-cover border-2 border-white"
                 />
               </div>
-              <div className="absolute -bottom-1 -right-1 bg-white p-1 rounded-full shadow-sm">
+              <div className="absolute -bottom-0.5 -right-0.5 bg-white p-0.5 rounded-full shadow-sm">
                 <div className="bg-blue-500 rounded-full p-0.5">
-                  <CheckCircle2 size={10} className="text-white" />
+                  <CheckCircle2 size={8} className="text-white" />
                 </div>
               </div>
             </div>
             <div>
-              <h3 className="font-bold text-slate-900 text-lg">{data.name}</h3>
-              <p className="text-xs text-slate-500 font-medium">{data.role}</p>
+              <h3 className="font-semibold text-slate-900 text-base leading-tight">
+                {data.name}
+              </h3>
+              <p className="text-xs text-slate-500 font-medium mt-0.5">
+                {data.role}
+              </p>
             </div>
           </div>
         </div>
 
         {/* The Quote (Serif for Classic feel) */}
-        <div className="relative z-10 mb-8 min-h-[140px]">
-          <div className="flex gap-1 mb-3">
+        <div className="relative z-10 mb-6 min-h-[100px]">
+          <div className="flex gap-0.5 mb-2.5">
             {[1, 2, 3, 4, 5].map((s) => (
               <Star
                 key={s}
-                size={14}
+                size={12}
                 className="text-yellow-400 fill-yellow-400"
               />
             ))}
           </div>
-          <p className="text-xl text-slate-700 font-serif leading-relaxed line-clamp-4 group-hover:text-slate-900 transition-colors">
+          <p className="text-base text-slate-700 font-serif leading-relaxed line-clamp-4 group-hover:text-slate-900 transition-colors">
             "{data.quote}"
           </p>
         </div>
       </div>
 
       {/* Footer: Growth Metric & CTA */}
-      <div className="relative z-10 pt-6 border-t border-gray-100 flex items-center justify-between mt-auto">
-        <div className="bg-green-50 px-3 py-1.5 rounded-lg border border-green-100 inline-flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-          <span className="text-xs font-bold text-green-700">
+      <div className="relative z-10 pt-5 border-t border-gray-100 flex items-center justify-between mt-auto">
+        <div className="bg-green-50 px-2.5 py-1 rounded-lg border border-green-100 inline-flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+          <span className="text-xs font-semibold text-green-700">
             {data.growth}
           </span>
         </div>
 
-        <button className="flex items-center gap-2 text-sm font-bold text-purple-600 group-hover:gap-3 transition-all cursor-pointer">
-          Start Selling <ArrowRight size={16} />
+        <button className="flex items-center gap-1.5 text-xs font-semibold text-purple-600 group-hover:gap-2 transition-all cursor-pointer">
+          Start Selling <ArrowRight size={14} />
         </button>
       </div>
     </div>

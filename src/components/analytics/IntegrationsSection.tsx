@@ -20,31 +20,48 @@ const INTEGRATIONS = [
 ];
 
 const RotatingText = () => {
-  const words = ["Workflow", "Stack", "Team", "Data"];
-  const [index, setIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const words = [
+    "Business Operations",
+    "Data Analytics",
+    "Team Collaboration",
+    "Workflow Automation",
+  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setIndex((prev) => (prev + 1) % words.length);
-        setIsAnimating(false);
-      }, 250);
-    }, 2500);
+      setCurrentIndex((prev) => (prev + 1) % words.length);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <span className="inline-grid h-[1.1em] overflow-hidden align-bottom min-w-[160px]">
-      <span
-        className={`col-start-1 row-start-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-500 ${
-          isAnimating
-            ? "opacity-0 -translate-y-12"
-            : "opacity-100 translate-y-0"
-        }`}
-      >
-        {words[index]}
+    <span
+      className="inline-block relative overflow-hidden align-bottom text-2xl md:text-3xl lg:text-4xl"
+      style={{ height: "1.2em" }}
+    >
+      {words.map((word, index) => (
+        <span
+          key={word}
+          className="absolute left-0 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 whitespace-nowrap font-bold"
+          style={{
+            transform:
+              index === currentIndex
+                ? "translateY(0%)"
+                : index === (currentIndex - 1 + words.length) % words.length
+                ? "translateY(-100%)"
+                : "translateY(100%)",
+            opacity: index === currentIndex ? 1 : 0,
+            transition:
+              "transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
+          }}
+        >
+          {word}
+        </span>
+      ))}
+      {/* Invisible span to set container width */}
+      <span className="invisible whitespace-nowrap font-bold">
+        {words[currentIndex]}
       </span>
     </span>
   );
@@ -137,7 +154,7 @@ const Logo4 = () => (
   </svg>
 );
 
-export default function MicroCraftLanding() {
+export default function IntegrationsSection() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -145,24 +162,29 @@ export default function MicroCraftLanding() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans flex items-center justify-center overflow-hidden relative selection:bg-blue-100 selection:text-blue-900">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-3xl -z-10 opacity-70" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-50 rounded-full blur-3xl -z-10 opacity-70" />
+    <section className="relative w-full bg-gradient-to-b from-slate-50 to-white py-6 overflow-hidden font-sans">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 right-10 w-96 h-96 bg-purple-200/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-pink-200/10 rounded-full blur-3xl" />
+      </div>
 
-      <main className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full py-12">
-        <div className="relative h-[450px] sm:h-[500px] flex items-center justify-center order-2 lg:order-1">
-          <div
-            className={`relative z-20 w-32 h-32 bg-white rounded-[2rem] shadow-2xl shadow-slate-200 flex items-center justify-center p-2 transition-all duration-700 ${
-              mounted ? "scale-100 opacity-100" : "scale-0 opacity-0"
-            }`}
-          >
-            <div className="w-full h-full bg-gradient-to-br from-blue-600 to-purple-600 rounded-[1.5rem] flex items-center justify-center text-white shadow-inner relative overflow-hidden">
-              <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
-              <span className="text-4xl font-black relative z-10 tracking-tighter">
-                MC
-              </span>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* --- LEFT: Visual Integration Hub --- */}
+          <div className="relative h-[400px] lg:h-[480px] flex items-center justify-center">
+            <div
+              className={`relative z-20 w-28 h-28 bg-white rounded-3xl shadow-2xl shadow-purple-500/20 border border-purple-100 flex items-center justify-center p-2.5 transition-all duration-700 ${
+                mounted ? "scale-100 opacity-100" : "scale-0 opacity-0"
+              }`}
+            >
+              <div className="w-full h-full bg-gradient-to-br from-purple-600 via-pink-500 to-purple-600 rounded-2xl flex items-center justify-center text-white shadow-inner relative overflow-hidden">
+                <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+                <span className="text-3xl font-black relative z-10 tracking-tighter">
+                  MC
+                </span>
+              </div>
             </div>
-          </div>
 
           {/* Dotted Connection Lines */}
           <svg
@@ -196,76 +218,92 @@ export default function MicroCraftLanding() {
             })}
           </svg>
 
-          {/* Satellite Icons */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            {INTEGRATIONS.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={i}
-                  className={`absolute w-14 h-14 bg-white rounded-2xl shadow-lg border border-gray-100 flex items-center justify-center z-10 transition-all duration-700 hover:scale-110 cursor-pointer pointer-events-auto ${
-                    mounted ? "scale-100 opacity-100" : "scale-0 opacity-0"
-                  }`}
-                  style={{
-                    transform: mounted
-                      ? `translate(${item.x}px, ${item.y}px) scale(1)`
-                      : `translate(${item.x}px, ${item.y}px) scale(0)`,
-                    transitionDelay: `${item.delay + 0.3}s`,
-                  }}
-                >
-                  <Icon size={26} strokeWidth={2} color={item.colorHex} />
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        <div className="space-y-8 order-1 lg:order-2 text-center lg:text-left">
-          <div
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-bold border border-slate-200 transition-all duration-500 ${
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            }`}
-          >
-            <Layers size={16} className="text-blue-600" />
-            Introducing MicroCraft v2
+            {/* Satellite Integration Icons */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              {INTEGRATIONS.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={i}
+                    className={`absolute w-16 h-16 bg-white rounded-2xl shadow-xl border-2 border-slate-200/50 flex items-center justify-center z-10 transition-all duration-700 hover:scale-110 hover:shadow-2xl hover:border-purple-200 cursor-pointer pointer-events-auto ${
+                      mounted ? "scale-100 opacity-100" : "scale-0 opacity-0"
+                    }`}
+                    style={{
+                      transform: mounted
+                        ? `translate(${item.x}px, ${item.y}px) scale(1)`
+                        : `translate(${item.x}px, ${item.y}px) scale(0)`,
+                      transitionDelay: `${item.delay + 0.3}s`,
+                    }}
+                  >
+                    <Icon size={28} strokeWidth={2} color={item.colorHex} />
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
-          <h1 className="text-5xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
-            Connect your <RotatingText />
-          </h1>
+          {/* --- RIGHT: Content Section --- */}
+          <div className="space-y-6 text-center lg:text-left">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight flex flex-wrap items-center justify-center lg:justify-start gap-2">
+              <span>Unified Platform for</span>
+              <RotatingText />
+            </h2>
 
-          <p className="text-xl text-slate-500 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-            Stop switching tabs.{" "}
-            <span className="font-semibold text-slate-900">MicroCraft</span>{" "}
-            unifies your community tools and business data into a single source
-            of truth.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button className="px-8 py-4 bg-slate-900 text-white font-bold rounded-2xl shadow-xl shadow-slate-200 flex items-center justify-center gap-2 transition-transform hover:scale-105 active:scale-95">
-              Start for free <ArrowRight size={20} />
-            </button>
-
-            <button className="px-8 py-4 bg-white text-slate-900 font-bold rounded-2xl border-2 border-slate-100 hover:border-slate-300 hover:bg-slate-50 transition-all">
-              Book a demo
-            </button>
-          </div>
-
-          {/* --- NEW LOGOS SECTION --- */}
-          <div className="pt-8 border-t border-gray-100 mt-8">
-            <p className="text-sm text-gray-400 font-medium mb-4">
-              TRUSTED BY INNOVATIVE TEAMS
+            <p className="text-base text-slate-600 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+              Seamlessly connect and integrate all your business tools and data sources into one powerful platform. Streamline operations, enhance collaboration, and gain comprehensive insights.
             </p>
-            <div className="flex flex-wrap justify-center lg:justify-start gap-8 opacity-40 hover:opacity-100 transition-all duration-500">
-              {/* These replaced the gray boxes */}
-              <Logo1 />
-              <Logo2 />
-              <Logo3 />
-              <Logo4 />
+
+            {/* Key Benefits Grid */}
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              <div className="bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md hover:border-purple-200 transition-all">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-sm">
+                    <Layers size={14} className="text-white" />
+                  </div>
+                  <div>
+                    <p className="text-lg font-bold text-slate-900">50+</p>
+                    <p className="text-[10px] text-slate-600">Integrations</p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-4 border border-slate-200 shadow-sm hover:shadow-md hover:border-purple-200 transition-all">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center shadow-sm">
+                    <Database size={14} className="text-white" />
+                  </div>
+                  <div>
+                    <p className="text-lg font-bold text-slate-900">Real-Time</p>
+                    <p className="text-[10px] text-slate-600">Data Sync</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-2">
+              <button className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-semibold shadow-lg shadow-purple-500/25 flex items-center justify-center gap-2 transition-all hover:from-purple-700 hover:to-pink-700 hover:shadow-xl">
+                Get Started <ArrowRight size={16} />
+              </button>
+
+              <button className="px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-xl font-semibold hover:border-purple-300 hover:bg-purple-50 transition-colors shadow-sm">
+                Learn More
+              </button>
+            </div>
+
+            {/* Trusted By Section */}
+            <div className="pt-4 border-t border-slate-200">
+              <p className="text-xs text-slate-500 font-medium mb-3">
+                TRUSTED BY LEADING COMPANIES
+              </p>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-6 opacity-60 hover:opacity-100 transition-all duration-500">
+                <Logo1 />
+                <Logo2 />
+                <Logo3 />
+                <Logo4 />
+              </div>
             </div>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </section>
   );
 }

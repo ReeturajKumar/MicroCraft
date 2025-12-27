@@ -1,223 +1,219 @@
-import { ArrowRight, Sparkles, Zap, Rocket, TrendingUp } from "lucide-react";
+import { Play, MoreVertical } from "lucide-react";
 
 const ImpactSection = () => {
   return (
-    <section className="relative w-full bg-white py-16 lg:py-24 overflow-hidden font-sans flex items-center justify-center">
-      {/* --- CSS ANIMATIONS --- */}
-      <style>{`
-        /* 1. Fade Up Entry */
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(40px) scale(0.95); }
-          to { opacity: 1; transform: translateY(0) scale(1); }
-        }
+    <section className="relative w-full bg-white py-16 md:py-20 lg:py-14 overflow-hidden font-sans">
+      {/* Styles moved to index.css - see: scrolling-text-container-ecommerce, scrolling-text-inner */}
 
-        /* 2. Text Reveal (Slide Up Mask) */
-        @keyframes textRevealUp {
-            0% { transform: translateY(100%); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-
-        /* 3. Floating Icons */
-        @keyframes float-icon {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-        }
-
-        /* 4. Scrolling Text */
-        @keyframes textSlide {
-          0%, 20% { transform: translateY(0%); }
-          25%, 45% { transform: translateY(-25%); }
-          50%, 70% { transform: translateY(-50%); }
-          75%, 95% { transform: translateY(-75%); }
-          100% { transform: translateY(-75%); }
-        }
-
-        /* 5. Shimmer */
-        @keyframes shimmer {
-          0% { background-position: 200% 0; }
-          100% { background-position: -200% 0; }
-        }
-
-        /* Utility Classes */
-        .animate-fade-up {
-          animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-          opacity: 0; /* Start hidden */
-        }
-        
-        .animate-float-icon {
-          animation: float-icon 5s ease-in-out infinite;
-        }
-        
-        .animate-shimmer {
-          background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
-          background-size: 200% 100%;
-          animation: shimmer 3s infinite linear;
-        }
-
-        /* REVEAL LOGIC FIX */
-        .reveal-text-wrapper {
-            overflow: hidden; /* This masks the text */
-            display: block;
-            line-height: 1.5;
-        }
-        
-        .reveal-text-inner {
-            display: block;
-            /* Animation applied here */
-            animation: textRevealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            
-            /* Initial State: Pushed down and invisible */
-            transform: translateY(100%); 
-            opacity: 0; 
-        }
-
-        .scrolling-text-container {
-          height: 1em;
-          overflow: hidden;
-          display: inline-block;
-          vertical-align: bottom;
-          margin-left: 0.2em;
-        }
-        
-        .scrolling-text-inner {
-          animation: textSlide 6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-        }
-
-        /* Delays */
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-500 { animation-delay: 0.5s; }
-      `}</style>
-
-      {/* Background Decor */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-purple-200/40 via-pink-100/40 to-blue-100/40 rounded-full blur-[120px] -z-10 pointer-events-none" />
-
-      {/* Grid Pattern */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
-      />
-
-      <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10 text-center">
-        {/* === ROW 1: ONE [GLASS PILL] CLICK === */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mb-2 animate-fade-up">
-          <span className="text-6xl md:text-8xl lg:text-9xl font-black text-slate-900 tracking-tighter">
-            ONE
-          </span>
-
-          {/* GLASS PILL */}
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-            <div className="relative flex items-center gap-4 bg-white/80 backdrop-blur-md px-6 py-4 rounded-full border border-white shadow-xl overflow-hidden">
-              <div className="absolute inset-0 animate-shimmer pointer-events-none opacity-30"></div>
-
-              {/* Icon 1: Speed */}
-              <div
-                className="w-14 h-14 bg-purple-50 rounded-full flex items-center justify-center text-purple-600 animate-float-icon border border-purple-100 shadow-sm"
-                style={{ animationDelay: "0s" }}
-              >
-                <Zap
-                  size={26}
-                  strokeWidth={2.5}
-                  className="fill-purple-600/20"
-                />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+        {/* === MAIN CONTENT: SPLIT LAYOUT === */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-6">
+          {/* LEFT SECTION: Marketing Copy */}
+          <div className="flex flex-col">
+            {/* Headline */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+              Streamline Sales,{" "}
+              <div className="scrolling-text-container-ecommerce inline-block mb-4">
+                <div className="scrolling-text-inner flex flex-col text-left mb-4">
+                  <span className="block h-[1.1em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
+                    Maximize Growth
+                  </span>
+                  <span className="block h-[1.1em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
+                    Boost Revenue
+                  </span>
+                  <span className="block h-[1.1em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
+                    Scale Operations
+                  </span>
+                  <span className="block h-[1.2em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
+                    Maximize Growth
+                  </span>
+                </div>
               </div>
+            </h1>
 
-              {/* Icon 2: Launch */}
-              <div
-                className="w-14 h-14 bg-pink-50 rounded-full flex items-center justify-center text-pink-500 animate-float-icon border border-pink-100 shadow-sm"
-                style={{ animationDelay: "0.2s" }}
-              >
-                <Rocket
-                  size={26}
-                  strokeWidth={2.5}
-                  className="fill-pink-500/20"
-                />
-              </div>
+            {/* Description */}
+            <p className="text-lg text-slate-600 leading-relaxed mb-8 max-w-lg">
+              Take control of your operations with our intuitive dashboard.
+              Track, analyze, and optimize every aspect of your business
+              effortlessly.
+            </p>
 
-              {/* Icon 3: Growth */}
-              <div
-                className="w-14 h-14 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600 animate-float-icon border border-indigo-100 shadow-sm"
-                style={{ animationDelay: "0.4s" }}
-              >
-                <TrendingUp size={26} strokeWidth={2.5} />
-              </div>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-start gap-4">
+              <button className="px-6 py-3  text-white rounded-lg font-semibold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:shadow-lg transition-all">
+                Request a Demo
+              </button>
+              <button className="px-6 py-3 bg-white text-slate-900 border border-slate-200 rounded-lg font-semibold hover:bg-slate-50 transition-colors flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center">
+                  <Play size={14} className="text-white ml-0.5" fill="white" />
+                </div>
+                Watch Demo
+              </button>
             </div>
           </div>
 
-          <span className="text-6xl md:text-8xl lg:text-9xl font-black text-slate-900 tracking-tighter">
-            CLICK
-          </span>
-        </div>
+          {/* RIGHT SECTION: Dashboard Visualization */}
+          <div className="relative">
+            {/* Main Dashboard Container */}
+            <div className="relative bg-white rounded-2xl border border-slate-200 shadow-xl p-6">
+              {/* Country/Product Cards */}
+              <div className="absolute -top-4 left-4 z-20 space-y-2">
+                <div className="bg-white rounded-lg border border-slate-200 shadow-md p-3 flex items-center gap-2">
+                  <div className="w-6 h-6 rounded bg-gradient-to-br from-yellow-400 to-red-500"></div>
+                  <div>
+                    <div className="text-sm font-semibold text-slate-900">
+                      Spain
+                    </div>
+                    <div className="text-xs text-slate-500">1.2k products</div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg border border-slate-200 shadow-md p-3 flex items-center gap-2">
+                  <div className="w-6 h-6 rounded bg-gradient-to-br from-blue-500 to-red-500"></div>
+                  <div>
+                    <div className="text-sm font-semibold text-slate-900">
+                      France
+                    </div>
+                    <div className="text-xs text-slate-500">3.6k products</div>
+                  </div>
+                </div>
+              </div>
 
-        {/* === ROW 2: MAXIMIZING [SCROLLING TEXT] === */}
-        <div className="animate-fade-up delay-100 flex flex-col md:flex-row justify-center items-center">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 tracking-tighter leading-none flex flex-wrap justify-center gap-x-4">
-            <span>MAXIMIZING</span>
-            <div className="scrolling-text-container">
-              <div className="scrolling-text-inner flex flex-col text-left">
-                <span className="block h-[1.1em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
-                  IMPACT
-                </span>
-                <span className="block h-[1.1em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
-                  REVENUE
-                </span>
-                <span className="block h-[1.1em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
-                  GROWTH
-                </span>
-                <span className="block h-[1.1em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
-                  IMPACT
-                </span>
+              {/* Store Management Card */}
+              <div className="absolute top-4 right-4 z-20 bg-white rounded-lg border border-slate-200 shadow-md p-4 w-48">
+                <h3 className="text-sm font-semibold text-slate-900 mb-3">
+                  Handle multiple store
+                </h3>
+                <div className="space-y-2">
+                  <div className="text-sm text-slate-600">Fashion Hive</div>
+                  <div className="text-sm text-slate-900 bg-slate-100 px-2 py-1 rounded">
+                    HealthMart
+                  </div>
+                  <div className="text-sm text-slate-600">TechNest</div>
+                </div>
+              </div>
+
+              {/* Sales Performance Chart */}
+              <div className="mt-20 mb-16">
+                <div className="flex items-end gap-4 h-48">
+                  {/* Y-axis labels */}
+                  <div className="flex flex-col justify-between h-full text-xs text-slate-400 pr-2 shrink-0">
+                    <span>$25k</span>
+                    <span>$20k</span>
+                    <span>$15k</span>
+                    <span>$10k</span>
+                    <span>$5k</span>
+                    <span>$0</span>
+                  </div>
+
+                  {/* Chart Bars */}
+                  <div className="flex-1 flex items-end justify-between gap-3 h-full">
+                    {[
+                      { month: "Month 1", sales: 14, selected: false },
+                      { month: "Month 2", sales: 6, selected: false },
+                      { month: "Month 3", sales: 13, selected: true },
+                      { month: "Month 4", sales: 10, selected: false },
+                    ].map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="flex-1 flex flex-col items-center h-full"
+                      >
+                        <div className="relative w-full h-full flex flex-col justify-end">
+                          {/* Background bar (potential - full height) */}
+                          <div className="absolute inset-0 bg-purple-100 rounded-t"></div>
+                          {/* Actual sales bar */}
+                          <div
+                            className="relative w-full bg-purple-600 rounded-t transition-all"
+                            style={{ height: `${(item.sales / 25) * 100}%` }}
+                          >
+                            {item.selected && (
+                              <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-blue-500 rounded-full border-2 border-white shadow-sm z-10"></div>
+                            )}
+                          </div>
+                        </div>
+                        <div className="mt-2 text-xs text-slate-600 font-medium">
+                          {item.month}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Profile Pictures */}
+              <div className="absolute bottom-6 left-6 z-20">
+                <div className="relative">
+                  <img
+                    src="https://i.pravatar.cc/150?img=12"
+                    alt="User"
+                    className="w-12 h-12 rounded-full border-2 border-white shadow-md"
+                  />
+                  <div className="absolute -top-1 -right-1 w-5 h-5 bg-blue-500 rounded flex items-center justify-center">
+                    <MoreVertical size={10} className="text-white" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute top-20 right-8 z-20">
+                <div className="relative">
+                  <img
+                    src="https://i.pravatar.cc/150?img=47"
+                    alt="Store Manager"
+                    className="w-12 h-12 rounded-full border-2 border-white shadow-md"
+                  />
+                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-red-500 text-white text-[10px] font-semibold px-2 py-0.5 rounded-full whitespace-nowrap">
+                    Store Manager
+                  </div>
+                </div>
               </div>
             </div>
-          </h1>
+          </div>
         </div>
 
-        {/* === SUBHEADLINE WITH FIXED ANIMATION === */}
-        <div className="mt-12 mb-12 flex flex-col items-center justify-center">
-          {/* Line 1 */}
-          <span className="reveal-text-wrapper">
-            {/* FIXED: 'delay-300' is now here on the INNER element */}
-            <span className="reveal-text-inner delay-300 text-xl md:text-2xl text-slate-500 font-medium">
-              Unlock a world of possibilities for your brand.
-            </span>
-          </span>
-
-          {/* Line 2 */}
-          <span className="reveal-text-wrapper">
-            {/* FIXED: 'delay-500' is now here on the INNER element */}
-            <span className="reveal-text-inner delay-500 text-xl md:text-2xl text-slate-500 font-medium">
-              Our streamlined approach ensures effortless{" "}
-              <span className="text-purple-600 font-semibold">scaling</span> and{" "}
-              <span className="text-pink-500 font-semibold">engagement</span>.
-            </span>
-          </span>
-        </div>
-
-        {/* === BUTTONS === */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-5 animate-fade-up delay-500">
-          <button className="relative px-10 py-5 bg-slate-900 text-white rounded-full font-bold text-lg hover:translate-y-[-2px] transition-transform shadow-2xl shadow-purple-900/30 flex items-center gap-3 group overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <span className="relative z-10 flex items-center gap-2">
-              Get Started Now{" "}
-              <ArrowRight
-                size={20}
-                className="group-hover:translate-x-1 transition-transform"
-              />
-            </span>
-          </button>
-
-          <button className="px-10 py-5 bg-white text-slate-900 border-2 border-slate-100 rounded-full font-bold text-lg hover:border-purple-200 hover:bg-purple-50 transition-colors flex items-center gap-2 group">
-            <Sparkles
-              size={20}
-              className="text-purple-400 group-hover:text-purple-600 transition-colors"
-            />
-            Learn More
-          </button>
+        {/* === BOTTOM SECTION: Trust Badges === */}
+        <div className="text-center">
+          {/* Brand Logos - Infinite Scroll */}
+          <div className="logo-scroll-container">
+            <div className="logo-scroll-track">
+              {/* First set of logos */}
+              <div className="logo-scroll-item text-2xl font-bold text-slate-700 whitespace-nowrap">
+                ORVIS
+              </div>
+              <div className="logo-scroll-item text-xl font-bold text-slate-700 whitespace-nowrap">
+                LANDS' END
+              </div>
+              <div className="logo-scroll-item text-lg font-bold text-slate-700 whitespace-nowrap">
+                Office DEPOT
+              </div>
+              <div className="logo-scroll-item text-xl font-bold text-slate-700 whitespace-nowrap">
+                PETSMART
+              </div>
+              <div className="logo-scroll-item text-lg font-bold text-slate-700 whitespace-nowrap">
+                COSTCO WHOLESALE
+              </div>
+              <div className="logo-scroll-item text-xl font-bold text-slate-700 whitespace-nowrap">
+                Walmart
+              </div>
+              {/* Duplicate set for seamless infinite scroll */}
+              <div className="logo-scroll-item text-2xl font-bold text-slate-700 whitespace-nowrap">
+                ORVIS
+              </div>
+              <div className="logo-scroll-item text-xl font-bold text-slate-700 whitespace-nowrap">
+                LANDS' END
+              </div>
+              <div className="logo-scroll-item text-lg font-bold text-slate-700 whitespace-nowrap">
+                Office DEPOT
+              </div>
+              <div className="logo-scroll-item text-xl font-bold text-slate-700 whitespace-nowrap">
+                PETSMART
+              </div>
+              <div className="logo-scroll-item text-lg font-bold text-slate-700 whitespace-nowrap">
+                COSTCO WHOLESALE
+              </div>
+              <div className="logo-scroll-item text-xl font-bold text-blue-600 whitespace-nowrap">
+                Walmart
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

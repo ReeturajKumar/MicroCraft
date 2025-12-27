@@ -64,22 +64,7 @@ const LogoMarquee = () => {
         </div>
       </div>
 
-      {/* --- INLINE CSS FOR ANIMATION (No Config Needed) --- */}
-      <style>{`
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        
-        .scroll-track {
-          animation: scroll 40s linear infinite;
-        }
-
-        /* Pause animation on hover */
-        .group:hover .scroll-track {
-          animation-play-state: paused;
-        }
-      `}</style>
+      {/* Styles moved to index.css - see: scroll-track, scroll-marquee */}
     </div>
   );
 };

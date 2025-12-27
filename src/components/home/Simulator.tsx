@@ -274,7 +274,7 @@ const Simulator: React.FC = () => {
     // Outer container tracks mouse and holds background effects
     <section
       onMouseMove={handleSpotlightMove}
-      className="relative w-full min-h-screen bg-white overflow-hidden flex flex-col items-center justify-center py-20 font-sans"
+      className="relative w-full min-h-screen bg-white overflow-hidden flex flex-col items-center justify-center font-sans py-8"
     >
       {/* ========================================================
           BACKGROUND LAYERS
@@ -308,15 +308,15 @@ const Simulator: React.FC = () => {
         }}
       />
 
-      <div className="relative z-10 text-center mb-8 max-w-7xl mx-auto px-4 mt-10">
-        <h2 className="text-4xl md:text-4xl font-extrabold text-gray-900 mb-6 tracking-tight leading-tight">
+      <div className="relative z-10 text-center mb-6 max-w-6xl mx-auto px-4">
+        <h2 className="simulator-heading mb-3">
           Your Entire Business{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
             One Command Center
           </span>
         </h2>
 
-        <p className="text-lg text-gray-500 leading-relaxed max-w-2xl">
+        <p className="simulator-subheading max-w-2xl mx-auto">
           Stop switching between 10 different tabs. Manage leads, campaigns, and
           support in a single, unified interface designed for speed.
         </p>
@@ -326,7 +326,7 @@ const Simulator: React.FC = () => {
           DASHBOARD SIMULATOR CONTENT
       ======================================================== */}
 
-      <div className="w-full max-w-7xl mx-auto flex justify-center items-center perspective-[2000px] z-10 px-4">
+      <div className="w-full max-w-6xl mx-auto flex justify-center items-center perspective-[2000px] z-10 px-4 flex-1">
         <motion.div
           initial={{
             opacity: 0,
@@ -345,12 +345,12 @@ const Simulator: React.FC = () => {
             ease: "easeOut",
           }}
           viewport={{ once: true, amount: 0.3 }}
-          className="relative w-full aspect-[16/10] max-h-[600px] bg-white rounded-xl shadow-2xl overflow-hidden flex border border-gray-200 font-sans text-slate-900 transform-style-3d"
+          className="relative w-full aspect-[16/10] max-h-[580px] bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] overflow-hidden flex border border-gray-200 font-sans text-slate-900 transform-style-3d"
         >
           {/* SIDEBAR */}
-          <div className="w-64 bg-white border-r border-gray-100 flex flex-col p-4 z-20 shrink-0">
+          <div className="w-64 bg-white border-r border-gray-100 flex flex-col p-5 z-20 shrink-0">
             <div className="mb-8 pl-2">
-              <h1 className="text-xl font-bold tracking-tight flex items-center gap-2">
+              <h1 className="simulator-brand-name flex items-center gap-2">
                 MICROCRAFT{" "}
                 <span className="w-2 h-2 rounded-full bg-purple-600" />
               </h1>
@@ -382,9 +382,7 @@ const Simulator: React.FC = () => {
                 active={activeTab}
               />
 
-              <div className="pt-4 pb-2 text-[10px] font-bold text-gray-400 uppercase tracking-wider pl-3">
-                Outbound
-              </div>
+              <div className="simulator-sidebar-section-label">Outbound</div>
 
               <div className="flex justify-between items-center pr-2">
                 <SidebarItem
@@ -393,9 +391,7 @@ const Simulator: React.FC = () => {
                   id="inbox"
                   active={activeTab}
                 />
-                <span className="text-xs text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">
-                  120
-                </span>
+                <span className="simulator-badge-gray">120</span>
               </div>
 
               <SidebarItem
@@ -412,9 +408,7 @@ const Simulator: React.FC = () => {
                   id="pending"
                   active={activeTab}
                 />
-                <span className="text-xs text-white bg-purple-500 px-1.5 py-0.5 rounded">
-                  129
-                </span>
+                <span className="simulator-badge-purple">129</span>
               </div>
 
               <SidebarItem
@@ -432,12 +426,18 @@ const Simulator: React.FC = () => {
             </div>
 
             <div className="mt-auto flex items-center gap-3 pt-4 border-t border-gray-100">
-              <img src={USER_IMG} className="w-8 h-8 rounded-full" alt="user" />
-              <div className="text-xs">
-                <div className="font-bold text-gray-800">Dennis Jackson</div>
-                <div className="text-gray-400">Pro Plan</div>
+              <img
+                src={USER_IMG}
+                className="w-9 h-9 rounded-full ring-2 ring-gray-100"
+                alt="user"
+              />
+              <div className="text-xs flex-1">
+                <div className="font-semibold text-gray-900">
+                  Dennis Jackson
+                </div>
+                <div className="text-gray-500 text-[11px]">Pro Plan</div>
               </div>
-              <Settings className="w-4 h-4 text-gray-400 ml-auto" />
+              <Settings className="w-4 h-4 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer" />
             </div>
           </div>
 
@@ -446,7 +446,7 @@ const Simulator: React.FC = () => {
             {/* Header */}
             <div className="h-16 bg-white border-b border-gray-100 flex items-center justify-between px-6 shrink-0">
               <div className="flex items-center gap-4 text-gray-500 text-sm">
-                <span className="text-gray-900 font-bold capitalize text-lg">
+                <span className="simulator-tab-title capitalize">
                   {activeTab}
                 </span>
                 {activeTab === "mailboxes" && (
@@ -462,10 +462,10 @@ const Simulator: React.FC = () => {
               </div>
 
               <div className="flex items-center gap-3">
-                <button className="p-2 bg-white border border-gray-200 rounded-lg text-gray-500">
+                <button className="simulator-header-button">
                   <Settings size={14} />
                 </button>
-                <button className="flex items-center gap-2 px-3 py-1.5 bg-gray-900 text-white rounded-lg text-xs font-medium shadow-sm hover:bg-gray-800">
+                <button className="simulator-add-button">
                   <Plus size={14} /> Add New
                 </button>
               </div>
@@ -589,41 +589,43 @@ const Simulator: React.FC = () => {
                   >
                     {/* Top metrics */}
                     <div className="grid grid-cols-4 gap-4 mb-2">
-                      <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
-                        <div className="text-xs text-gray-500">Total Leads</div>
-                        <div className="text-xl font-bold">10,240</div>
-                        <div className="h-1 w-full bg-gray-100 mt-2 rounded-full overflow-hidden">
-                          <div className="h-full bg-purple-500 w-[70%]" />
+                      <div className="simulator-metric-card">
+                        <div className="simulator-metric-label">
+                          Total Leads
+                        </div>
+                        <div className="simulator-metric-value">10,240</div>
+                        <div className="simulator-metric-bar">
+                          <div className="simulator-metric-bar-fill bg-purple-500 w-[70%]" />
                         </div>
                       </div>
-                      <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
-                        <div className="text-xs text-gray-500">Qualified</div>
-                        <div className="text-xl font-bold">4,120</div>
-                        <div className="h-1 w-full bg-gray-100 mt-2 rounded-full overflow-hidden">
-                          <div className="h-full bg-green-500 w-[40%]" />
+                      <div className="simulator-metric-card">
+                        <div className="simulator-metric-label">Qualified</div>
+                        <div className="simulator-metric-value">4,120</div>
+                        <div className="simulator-metric-bar">
+                          <div className="simulator-metric-bar-fill bg-green-500 w-[40%]" />
                         </div>
                       </div>
-                      <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
-                        <div className="text-xs text-gray-500">Bounced</div>
-                        <div className="text-xl font-bold">120</div>
-                        <div className="h-1 w-full bg-gray-100 mt-2 rounded-full overflow-hidden">
-                          <div className="h-full bg-red-500 w-[10%]" />
+                      <div className="simulator-metric-card">
+                        <div className="simulator-metric-label">Bounced</div>
+                        <div className="simulator-metric-value">120</div>
+                        <div className="simulator-metric-bar">
+                          <div className="simulator-metric-bar-fill bg-red-500 w-[10%]" />
                         </div>
                       </div>
-                      <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
-                        <div className="text-xs text-gray-500">
+                      <div className="simulator-metric-card">
+                        <div className="simulator-metric-label">
                           Response Rate
                         </div>
-                        <div className="text-xl font-bold">18.4%</div>
-                        <div className="h-1 w-full bg-gray-100 mt-2 rounded-full overflow-hidden">
-                          <div className="h-full bg-blue-500 w-[60%]" />
+                        <div className="simulator-metric-value">18.4%</div>
+                        <div className="simulator-metric-bar">
+                          <div className="simulator-metric-bar-fill bg-blue-500 w-[60%]" />
                         </div>
                       </div>
                     </div>
 
                     {/* Leads table */}
-                    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm flex-1 flex flex-col">
-                      <div className="grid grid-cols-12 px-4 py-3 border-b border-gray-100 bg-gray-50 text-[10px] font-bold text-gray-500 uppercase tracking-wider">
+                    <div className="simulator-table-container">
+                      <div className="simulator-table-header">
                         <div className="col-span-3">Name / Company</div>
                         <div className="col-span-2">Role</div>
                         <div className="col-span-3">Lead Score</div>
@@ -631,12 +633,14 @@ const Simulator: React.FC = () => {
                         <div className="col-span-2 text-right">Status</div>
                       </div>
 
-                      <div className="overflow-y-auto no-scrollbar flex-1">
+                      <div className="simulator-table-body">
                         {leads.map((lead, i) => (
                           <div
                             key={i}
-                            className={`relative grid grid-cols-12 px-4 py-2.5 border-b border-gray-50 items-center hover:bg-purple-50/50 transition-colors ${
-                              i === 1 && leadHovered ? "bg-purple-50" : ""
+                            className={`simulator-table-row ${
+                              i === 1 && leadHovered
+                                ? "simulator-table-row-active"
+                                : ""
                             }`}
                           >
                             <div className="col-span-3 flex items-center gap-3">
@@ -790,8 +794,8 @@ const Simulator: React.FC = () => {
                       />
                     </div>
 
-                    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden flex-1 flex flex-col shadow-sm">
-                      <div className="px-6 py-3 border-b border-gray-100 font-bold text-gray-500 text-[10px] uppercase grid grid-cols-12 gap-4">
+                    <div className="simulator-table-container">
+                      <div className="simulator-table-header">
                         <div className="col-span-4">Account</div>
                         <div className="col-span-2">Sent Today</div>
                         <div className="col-span-3">Capacity Load</div>
@@ -799,12 +803,9 @@ const Simulator: React.FC = () => {
                         <div className="col-span-1 text-right">Action</div>
                       </div>
 
-                      <div className="overflow-y-auto no-scrollbar flex-1">
+                      <div className="simulator-table-body">
                         {mailboxes.map((box, i) => (
-                          <div
-                            key={i}
-                            className="grid grid-cols-12 gap-4 px-6 py-3 border-b border-gray-50 items-center hover:bg-gray-50/50"
-                          >
+                          <div key={i} className="simulator-table-row">
                             <div className="col-span-4 flex items-center gap-3">
                               <div
                                 className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white bg-blue-500`}
@@ -944,10 +945,10 @@ const Simulator: React.FC = () => {
                           Autosaved 2m ago
                         </div>
                         <div className="flex gap-3">
-                          <button className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-xs text-gray-600 font-medium hover:bg-gray-50">
+                          <button className="simulator-button-secondary">
                             Discard
                           </button>
-                          <button className="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg text-xs font-medium shadow-md hover:shadow-lg">
+                          <button className="simulator-button-primary">
                             Smart Schedule
                           </button>
                         </div>
@@ -1050,10 +1051,10 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   active,
 }) => (
   <div
-    className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+    className={`simulator-sidebar-item ${
       active === id
-        ? "bg-purple-50 text-purple-700"
-        : "text-gray-500 hover:bg-gray-100"
+        ? "simulator-sidebar-item-active"
+        : "simulator-sidebar-item-inactive"
     }`}
   >
     <Icon size={18} />
@@ -1080,15 +1081,13 @@ const CampaignNode: React.FC<CampaignNodeProps> = ({
 );
 
 const StatCard: React.FC<StatCardProps> = ({ label, value, sub, icon }) => (
-  <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex items-start justify-between">
+  <div className="simulator-stat-card">
     <div>
-      <span className="text-xs text-gray-400 font-bold uppercase tracking-wider">
-        {label}
-      </span>
-      <div className="text-2xl font-bold text-gray-900 mt-1">{value}</div>
-      <div className="text-xs text-green-500 font-medium mt-1">{sub}</div>
+      <span className="simulator-stat-label">{label}</span>
+      <div className="simulator-stat-value">{value}</div>
+      <div className="simulator-stat-sub">{sub}</div>
     </div>
-    <div className="p-2 bg-gray-50 rounded-lg">{icon}</div>
+    <div className="simulator-stat-icon">{icon}</div>
   </div>
 );
 

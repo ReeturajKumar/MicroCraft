@@ -14,17 +14,6 @@ import {
   Clock,
 } from "lucide-react";
 
-// --- REUSABLE COMPONENTS ---
-const SourceTag = ({ id }: { id: string }) => (
-  <span
-    className="inline-flex items-center gap-1 ml-2 px-1.5 py-0.5 rounded bg-purple-50 border border-purple-100 text-[10px] font-mono font-medium text-purple-400 cursor-help hover:text-pink-600 hover:border-pink-200 transition-colors align-middle translate-y-[-1px]"
-    title={`Source Reference: ${id}`}
-  >
-    <FileText size={8} />
-    Ref.{id}
-  </span>
-);
-
 // --- RICH DATA CONFIGURATION ---
 const sectors = [
   {
@@ -154,71 +143,74 @@ const SectorWorkflows: React.FC = () => {
   const activeData = sectors[activeTab];
 
   return (
-    <section className="relative py-24 bg-slate-50 overflow-hidden font-sans selection:bg-pink-100">
-      {/* Decorative Background */}
-      <div className="absolute top-0 left-0 w-full h-[500px] bg-white rounded-b-[3rem] shadow-sm z-0"></div>
-
+    <section className="relative py-10 md:py-20 bg-gradient-to-b from-white to-slate-50/50 overflow-hidden font-sans selection:bg-pink-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* --- SECTION HEADER --- */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Workflows that solve your chaos.
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-4">
+          {/* Left: Heading and Subheading */}
+          <div className="lg:flex-1">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight mb-2">
+              Tailored{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600">
+                Workflows
+              </span>{" "}
+              for Every Industry
             </h2>
-            <p className="text-lg text-slate-500">
-              We replace fragmented tools (Excel, Paper, Personal WhatsApp) with
-              a single, connected flow.
-              <SourceTag id="34" />
+            <p className="text-sm md:text-base text-slate-600 leading-relaxed max-w-xl">
+              Streamlined processes designed specifically for your sector.
+              Transform complex operations into simple, connected workflows.
             </p>
           </div>
 
-          {/* Custom Tabs Navigation */}
-          <div className="flex bg-slate-100 p-1 rounded-xl overflow-x-auto">
-            {sectors.map((sector, idx) => (
-              <button
-                key={sector.id}
-                onClick={() => setActiveTab(idx)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all whitespace-nowrap ${
-                  activeTab === idx
-                    ? "bg-white text-slate-900 shadow-sm ring-1 ring-slate-200"
-                    : "text-slate-500 hover:text-slate-700 hover:bg-slate-200/50"
-                }`}
-              >
-                <sector.icon
-                  size={16}
-                  className={activeTab === idx ? sector.color : ""}
-                />
-                {sector.label}
-              </button>
-            ))}
+          {/* Right: Custom Tabs Navigation */}
+          <div className="flex justify-end">
+            <div className="flex bg-slate-100 p-1 rounded-xl overflow-x-auto">
+              {sectors.map((sector, idx) => (
+                <button
+                  key={sector.id}
+                  onClick={() => setActiveTab(idx)}
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all whitespace-nowrap ${
+                    activeTab === idx
+                      ? "bg-white text-slate-900 shadow-sm ring-1 ring-slate-200"
+                      : "text-slate-500 hover:text-slate-700 hover:bg-slate-200/50"
+                  }`}
+                >
+                  <sector.icon
+                    size={16}
+                    className={activeTab === idx ? sector.color : ""}
+                  />
+                  {sector.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* --- MAIN CONTENT CARD --- */}
-        <div className="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden flex flex-col lg:flex-row min-h-[600px]">
+        <div className="bg-white rounded-2xl border border-slate-200/50 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col lg:flex-row">
           {/* === LEFT COLUMN: THE NARRATIVE (40%) === */}
-          <div className="lg:w-2/5 p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-slate-100 bg-slate-50/50">
+          <div className="lg:w-2/5 p-6 md:p-8 border-b lg:border-b-0 lg:border-r border-slate-200/50 bg-gradient-to-br from-slate-50 to-white flex flex-col">
             {/* Header */}
-            <div className="flex items-start justify-between mb-8">
+            <div className="flex items-start justify-between mb-5">
               <div>
                 <div
                   className={`text-xs font-bold uppercase tracking-wider mb-2 ${activeData.color}`}
                 >
                   {activeData.subLabel}
                 </div>
-                <h3 className="text-3xl font-bold text-slate-900">
+                <h3 className="text-2xl md:text-3xl font-bold text-slate-900">
                   {activeData.label}
                 </h3>
               </div>
               <div
-                className={`w-12 h-12 rounded-xl flex items-center justify-center bg-white shadow-sm border border-slate-100 ${activeData.color}`}
+                className={`w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br ${activeData.bg} shadow-sm border border-slate-200 ${activeData.color}`}
               >
-                <activeData.icon size={24} />
+                <activeData.icon size={22} />
               </div>
             </div>
 
             {/* Pain Point Block */}
-            <div className="mb-8 bg-red-50/50 border border-red-100 rounded-xl p-5">
+            <div className="mb-5 bg-red-50/60 border border-red-200/50 rounded-lg p-4">
               <div className="flex items-center gap-2 text-red-600 font-bold text-sm mb-2">
                 <XCircle size={16} />
                 The Problem
@@ -229,27 +221,29 @@ const SectorWorkflows: React.FC = () => {
             </div>
 
             {/* Solution Block */}
-            <div className="mb-8">
+            <div className="mb-5">
               <div className="flex items-center gap-2 text-green-600 font-bold text-sm mb-2">
                 <CheckCircle2 size={16} />
-                The Microkraft Solution <SourceTag id={activeData.refId} />
+                The Solution
               </div>
-              <p className="text-slate-800 text-lg font-medium leading-relaxed">
+              <p className="text-slate-800 text-base font-semibold leading-relaxed">
                 {activeData.solution}
               </p>
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-4 mt-auto">
+            <div className="grid grid-cols-2 gap-3 mt-auto">
               {activeData.stats.map((stat, i) => (
                 <div
                   key={i}
-                  className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm"
+                  className="bg-white p-4 rounded-lg border border-slate-200/50 shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div className={`text-2xl font-bold ${activeData.color}`}>
+                  <div
+                    className={`text-xl font-extrabold bg-gradient-to-r ${activeData.gradient} text-transparent bg-clip-text`}
+                  >
                     {stat.value}
                   </div>
-                  <div className="text-xs text-slate-400 font-semibold uppercase tracking-wide">
+                  <div className="text-xs text-slate-500 font-semibold uppercase tracking-wide mt-1">
                     {stat.label}
                   </div>
                 </div>
@@ -258,19 +252,19 @@ const SectorWorkflows: React.FC = () => {
           </div>
 
           {/* === RIGHT COLUMN: THE VISUAL WORKFLOW (60%) === */}
-          <div className="lg:w-3/5 p-8 md:p-12 relative overflow-hidden bg-white">
+          <div className="lg:w-3/5 p-6 md:p-8 relative overflow-hidden bg-white">
             {/* Dynamic Background Blob */}
             <div
-              className={`absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br ${activeData.gradient} opacity-5 rounded-bl-full pointer-events-none`}
+              className={`absolute top-0 right-0 w-[350px] h-[350px] bg-gradient-to-br ${activeData.gradient} opacity-5 rounded-bl-full pointer-events-none`}
             ></div>
 
-            <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-8 flex items-center gap-2">
+            <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
               <Clock size={16} />
               Process Timeline
             </h4>
 
             {/* Workflow Steps Line */}
-            <div className="relative pl-8 border-l-2 border-slate-100 space-y-12">
+            <div className="relative pl-8 border-l-2 border-slate-200/50 space-y-8">
               {activeData.steps.map((step, i) => (
                 <div
                   key={i}
@@ -279,27 +273,24 @@ const SectorWorkflows: React.FC = () => {
                 >
                   {/* Timeline Dot */}
                   <div
-                    className={`absolute -left-[41px] top-0 w-5 h-5 rounded-full border-4 border-white shadow-sm ${activeData.bg} flex items-center justify-center`}
+                    className={`absolute -left-[41px] top-0 w-5 h-5 rounded-full border-4 border-white shadow-md ${activeData.bg} flex items-center justify-center`}
                   >
                     <div
-                      className={`w-2 h-2 rounded-full ${activeData.bg.replace(
-                        "bg-",
-                        "bg-"
-                      )}-500 bg-current`}
+                      className={`w-2 h-2 rounded-full bg-gradient-to-r ${activeData.gradient}`}
                     ></div>
                   </div>
 
-                  <div className="flex items-start gap-5">
+                  <div className="flex items-start gap-4">
                     <div
-                      className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 transition-colors duration-300 ${activeData.bg} ${activeData.color}`}
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-colors duration-300 bg-gradient-to-br ${activeData.bg} shadow-sm border border-slate-200/50 ${activeData.color}`}
                     >
-                      <step.icon size={24} />
+                      <step.icon size={20} />
                     </div>
                     <div>
-                      <h5 className="text-lg font-bold text-slate-900">
+                      <h5 className="text-base font-bold text-slate-900">
                         {step.title}
                       </h5>
-                      <p className="text-slate-500 text-sm mt-1 leading-relaxed max-w-sm">
+                      <p className="text-slate-600 text-sm mt-1 leading-relaxed max-w-sm">
                         {step.desc}
                       </p>
                     </div>
@@ -309,7 +300,7 @@ const SectorWorkflows: React.FC = () => {
             </div>
 
             {/* --- FLOATING MOCK UI ELEMENT (The "Eye-Catching" Part) --- */}
-            <div className="absolute bottom-8 right-8 md:right-12 w-72 animate-[float-slow_4s_ease-in-out_infinite]">
+            <div className="absolute bottom-6 right-6 md:right-8 w-72 animate-[float-slow_4s_ease-in-out_infinite]">
               {/* Mock WhatsApp Bubble */}
               {activeData.mockUI.type === "whatsapp" && (
                 <div className="bg-[#DCF8C6] p-4 rounded-t-2xl rounded-bl-2xl shadow-lg border border-slate-100">

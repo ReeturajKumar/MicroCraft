@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ImpactSection from "../components/ecommerce/ImpactSection";
 import DigitalMarketingDashboard from "../components/ecommerce/DigitalMarketingDashboard";
-import LogoMarquee from "../components/ecommerce/LogoMarquee";
 import ContentMarketingSection from "../components/ecommerce/ContentMarketingSection";
 import BusinessPlanningSection from "../components/ecommerce/BusinessPlanningSection";
 import SolutionsSection from "../components/ecommerce/SolutionsSection";
@@ -25,7 +24,7 @@ const DigitalCommerce = () => {
       <div className="relative z-10">
         <ImpactSection />
         <DigitalMarketingDashboard />
-        <LogoMarquee />
+        {/* <LogoMarquee /> */}
         <ContentMarketingSection />
         <BusinessPlanningSection />
         <SolutionsSection />

@@ -3,71 +3,22 @@ import { Quote, ArrowRight, Smile, BarChart3 } from "lucide-react";
 
 const SuccessStoriesSection: React.FC = () => {
   return (
-    <section className="relative w-full bg-white py-12 lg:py-20 overflow-hidden font-sans">
-      {/* --- CSS ANIMATIONS --- */}
-      <style>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        /* Vertical Text Slide Animation */
-        @keyframes textSlide {
-          0%, 20% { transform: translateY(0%); }
-          25%, 45% { transform: translateY(-25%); }
-          50%, 70% { transform: translateY(-50%); }
-          75%, 95% { transform: translateY(-75%); }
-          100% { transform: translateY(-75%); }
-        }
-
-        .animate-fade-up {
-          animation: fadeInUp 0.8s ease-out forwards;
-          opacity: 0;
-        }
-        .animate-float {
-          animation: float 4s ease-in-out infinite;
-        }
-        .animate-spin-slow {
-          animation: spin-slow 12s linear infinite;
-        }
-        
-        /* Scrolling Text Classes */
-        .scrolling-text-container {
-          height: 1.2em;
-          overflow: hidden;
-          display: inline-block;
-          vertical-align: bottom;
-          position: relative;
-        }
-        .scrolling-text-inner {
-          animation: textSlide 6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-        }
-
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-      `}</style>
+    <section className="relative w-full bg-white py-12 md:py-16 lg:py-20 overflow-hidden font-sans">
+      {/* Styles moved to index.css - see: animate-fade-up, animate-float-crm, animate-spin-slow, scrolling-text-container-h2-alt, scrolling-text-inner, delay-* */}
 
       {/* Background Decor */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-50 rounded-full blur-3xl -z-10 mix-blend-multiply opacity-60" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-pink-50 rounded-full blur-3xl -z-10 mix-blend-multiply opacity-60" />
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-purple-50 rounded-full blur-3xl -z-10 mix-blend-multiply opacity-40" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-pink-50 rounded-full blur-3xl -z-10 mix-blend-multiply opacity-40" />
 
-      <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* === TOP SECTION: Header & Hero Image (Compact) === */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-15 items-center mb-10 lg:mb-15">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-8 lg:mb-12">
           {/* LEFT: Header with Animation */}
           <div className="animate-fade-up relative z-10">
-            <h2 className="text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-4">
               Success Stories <br />
               {/* ANIMATED TEXT CONTAINER */}
-              <div className="scrolling-text-container">
+              <div className="scrolling-text-container-h2-alt">
                 <div className="scrolling-text-inner flex flex-col text-left">
                   {/* Apply gradient classes directly to EACH span */}
                   <span className="block h-[1.2em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
@@ -86,42 +37,42 @@ const SuccessStoriesSection: React.FC = () => {
               </div>
             </h2>
 
-            <p className="text-sm lg:text-base text-slate-500 leading-relaxed max-w-md">
+            <p className="text-sm md:text-base text-slate-500 leading-relaxed max-w-md">
               Join satisfied clients scaling effortlessly with our tools.
               Experience the transformation firsthand.
             </p>
           </div>
 
           {/* RIGHT: Compact Hero Image */}
-          <div className="relative animate-fade-up delay-100 flex justify-center lg:justify-end h-[300px] lg:h-[330px]">
+          <div className="relative animate-fade-up delay-100 flex justify-center lg:justify-end h-[280px] lg:h-[300px]">
             <div className="relative z-10 w-full max-w-sm h-full">
               <img
                 src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600"
                 alt="Happy Client"
-                className="w-full h-full object-cover rounded-[1.5rem] shadow-xl z-10 relative"
+                className="w-full h-full object-cover rounded-2xl shadow-lg z-10 relative"
               />
 
               {/* Floating Card: Client Satisfaction */}
-              <div className="absolute top-6 -left-6 bg-white p-2 pr-4 rounded-xl shadow-lg border border-slate-100 animate-float flex items-center gap-2 z-20">
-                <div className="flex -space-x-2">
+              <div className="absolute top-4 -left-4 bg-white p-1.5 pr-3 rounded-lg shadow-md border border-slate-100 animate-float flex items-center gap-1.5 z-20">
+                <div className="flex -space-x-1.5">
                   <img
                     src="https://i.pravatar.cc/150?img=11"
-                    className="w-6 h-6 rounded-full border border-white"
+                    className="w-5 h-5 rounded-full border border-white"
                     alt=""
                   />
                   <img
                     src="https://i.pravatar.cc/150?img=12"
-                    className="w-6 h-6 rounded-full border border-white"
+                    className="w-5 h-5 rounded-full border border-white"
                     alt=""
                   />
                 </div>
                 <div>
-                  <div className="text-[9px] text-slate-400 font-bold uppercase">
+                  <div className="text-[8px] text-slate-400 font-semibold uppercase">
                     Satisfaction
                   </div>
-                  <div className="text-xs font-bold text-slate-900 flex items-center gap-1">
+                  <div className="text-[10px] font-semibold text-slate-900 flex items-center gap-0.5">
                     14.9/15k{" "}
-                    <span className="text-green-500 bg-green-50 px-1 rounded text-[9px]">
+                    <span className="text-green-500 bg-green-50 px-1 rounded text-[8px]">
                       +25%
                     </span>
                   </div>
@@ -130,28 +81,28 @@ const SuccessStoriesSection: React.FC = () => {
 
               {/* Floating Card: Insight */}
               <div
-                className="absolute bottom-8 -right-4 bg-white p-3 rounded-xl shadow-lg border border-slate-100 animate-float z-20 max-w-[140px]"
+                className="absolute bottom-6 -right-3 bg-white p-2.5 rounded-lg shadow-md border border-slate-100 animate-float z-20 max-w-[130px]"
                 style={{ animationDelay: "2s" }}
               >
-                <div className="flex items-center gap-2 mb-1">
+                <div className="flex items-center gap-1.5 mb-1">
                   <div className="bg-purple-100 p-1 rounded-md text-purple-600">
-                    <BarChart3 size={12} />
+                    <BarChart3 size={10} />
                   </div>
-                  <span className="font-bold text-slate-900 text-xs">
+                  <span className="font-semibold text-slate-900 text-[10px]">
                     Analysis
                   </span>
                 </div>
-                <p className="text-[9px] text-slate-400 leading-tight">
+                <p className="text-[8px] text-slate-400 leading-tight">
                   Effectively modular risk management.
                 </p>
               </div>
 
               <div
-                className="absolute top-1/2 -right-6 text-green-400 animate-float"
+                className="absolute top-1/2 -right-5 text-green-400 animate-float"
                 style={{ animationDelay: "0.5s" }}
               >
                 <Smile
-                  size={32}
+                  size={24}
                   fill="currentColor"
                   className="drop-shadow-md"
                 />
@@ -161,16 +112,16 @@ const SuccessStoriesSection: React.FC = () => {
         </div>
 
         {/* === BOTTOM SECTION: Compact Testimonials Grid === */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 items-end">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5 items-end">
           {/* Card 1: Standard (Compact) */}
-          <div className="bg-slate-50 p-5 rounded-[1.5rem] relative group hover:bg-white hover:shadow-lg transition-all duration-300 animate-fade-up delay-200">
+          <div className="bg-slate-50 p-4 rounded-2xl relative group hover:bg-white hover:shadow-md transition-all duration-300 animate-fade-up delay-200">
             <Quote
-              size={28}
-              className="text-purple-200 mb-20 group-hover:text-purple-500 transition-colors"
+              size={24}
+              className="text-purple-200 mb-16 group-hover:text-purple-500 transition-colors"
             />
 
             {/* Small Image Overlay */}
-            <div className="absolute top-5 right-5 w-16 h-16 rounded-xl overflow-hidden shadow-sm">
+            <div className="absolute top-4 right-4 w-12 h-12 rounded-lg overflow-hidden shadow-sm">
               <img
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200"
                 className="w-full h-full object-cover"
@@ -178,11 +129,11 @@ const SuccessStoriesSection: React.FC = () => {
               />
             </div>
 
-            <div className="relative z-10 mt-2">
-              <h4 className="font-bold text-slate-900 text-sm">
+            <div className="relative z-10 mt-1">
+              <h4 className="font-semibold text-slate-900 text-sm">
                 Illumi Parker
               </h4>
-              <p className="text-[10px] text-slate-500 mb-2">
+              <p className="text-[9px] text-slate-500 mb-1.5">
                 Marketing Manager, TecId.
               </p>
               <p className="text-xs text-slate-600 leading-relaxed font-medium">
@@ -193,7 +144,7 @@ const SuccessStoriesSection: React.FC = () => {
           </div>
 
           {/* Card 2: FEATURED (Active State - Compact) */}
-          <div className="bg-gradient-to-br from-purple-600 to-pink-500 p-1 rounded-[1.5rem] shadow-xl shadow-purple-200/50 transform md:-translate-y-4 animate-fade-up delay-300 relative overflow-hidden group h-[280px]">
+          <div className="bg-gradient-to-br from-purple-600 to-pink-500 p-1 rounded-2xl shadow-lg shadow-purple-200/50 transform md:-translate-y-3 animate-fade-up delay-300 relative overflow-hidden group h-[260px]">
             <div className="absolute inset-1 rounded-[1.3rem] overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400"
@@ -203,18 +154,18 @@ const SuccessStoriesSection: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-900/40 to-transparent mix-blend-multiply" />
             </div>
 
-            <div className="relative h-full p-5 flex flex-col justify-between text-white">
-              <Quote size={28} className="text-white/40" />
+            <div className="relative h-full p-4 flex flex-col justify-between text-white">
+              <Quote size={24} className="text-white/40" />
 
               {/* Button */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-white/30 backdrop-blur-sm flex items-center justify-center cursor-pointer group-hover:scale-110 transition-transform">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full border border-white/30 backdrop-blur-sm flex items-center justify-center cursor-pointer group-hover:scale-110 transition-transform">
                 <div className="absolute inset-0 rounded-full border border-white/50 border-dashed animate-spin-slow"></div>
-                <ArrowRight className="text-white" size={18} />
+                <ArrowRight className="text-white" size={16} />
               </div>
 
               <div>
-                <h4 className="font-bold text-base mb-0.5">Nami Anderson</h4>
-                <p className="text-[10px] text-white/80 mb-2">
+                <h4 className="font-semibold text-sm mb-0.5">Nami Anderson</h4>
+                <p className="text-[9px] text-white/80 mb-1.5">
                   Director Ops, Retail
                 </p>
                 <p className="text-xs font-medium leading-relaxed opacity-90">
@@ -225,13 +176,13 @@ const SuccessStoriesSection: React.FC = () => {
           </div>
 
           {/* Card 3: Standard (Compact) */}
-          <div className="bg-slate-50 p-5 rounded-[1.5rem] relative group hover:bg-white hover:shadow-lg transition-all duration-300 animate-fade-up delay-200">
+          <div className="bg-slate-50 p-4 rounded-2xl relative group hover:bg-white hover:shadow-md transition-all duration-300 animate-fade-up delay-200">
             <Quote
-              size={28}
-              className="text-purple-200 mb-20 group-hover:text-purple-500 transition-colors"
+              size={24}
+              className="text-purple-200 mb-16 group-hover:text-purple-500 transition-colors"
             />
 
-            <div className="absolute top-5 right-5 w-16 h-16 rounded-xl overflow-hidden shadow-sm">
+            <div className="absolute top-4 right-4 w-12 h-12 rounded-lg overflow-hidden shadow-sm">
               <img
                 src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200"
                 className="w-full h-full object-cover"
@@ -239,11 +190,11 @@ const SuccessStoriesSection: React.FC = () => {
               />
             </div>
 
-            <div className="relative z-10 mt-2">
-              <h4 className="font-bold text-slate-900 text-sm">
+            <div className="relative z-10 mt-1">
+              <h4 className="font-semibold text-slate-900 text-sm">
                 Sarah Zoldyck
               </h4>
-              <p className="text-[10px] text-slate-500 mb-2">
+              <p className="text-[9px] text-slate-500 mb-1.5">
                 CEO, TechSolutions.
               </p>
               <p className="text-xs text-slate-600 leading-relaxed font-medium">

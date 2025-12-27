@@ -4,28 +4,14 @@ import {
   Package,
   Zap,
   ArrowRight,
-  FileText,
   BarChart3,
   RefreshCcw,
   AlertTriangle,
 } from "lucide-react";
 
-// --- REUSABLE COMPONENTS ---
-
-// 1. Citation Tag
-const SourceTag = ({ id }: { id: string }) => (
-  <span
-    className="inline-flex items-center gap-1 ml-2 px-1.5 py-0.5 rounded bg-purple-50 border border-purple-100 text-[10px] font-mono font-medium text-purple-400 cursor-help hover:text-pink-600 hover:border-pink-200 transition-colors align-middle"
-    title={`Source Reference: ${id}`}
-  >
-    <FileText size={8} />
-    Ref.{id}
-  </span>
-);
-
 const DetailedCaseStudies: React.FC = () => {
   return (
-    <section className="relative py-24 bg-gradient-to-b from-white to-purple-50/30 font-sans selection:bg-pink-100 overflow-hidden">
+    <section className="relative py-10 md:py-10 bg-gradient-to-b from-white to-slate-50/50 font-sans selection:bg-pink-100 overflow-hidden">
       {/* Decorative Grid Background */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.02]"
@@ -37,63 +23,53 @@ const DetailedCaseStudies: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* --- SECTION HEADER --- */}
-        <div className="mb-20 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-purple-100 shadow-sm mb-4">
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-            <span className="text-xs font-bold text-purple-900 tracking-wide uppercase">
-              Verified Outcomes
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-6">
-            We don't just promise growth.
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600">
-              We engineer it.
+        <div className="text-center mb-2">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-4 max-w-4xl mx-auto">
+            Real Results from{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600">
+              Real Businesses
             </span>
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
-            See the exact mechanics behind the numbers. From automated WhatsApp
-            nudges to smart inventory alerts, here is how Indian MSMEs are
-            winning.
-            <SourceTag id="7" />
+          <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            Discover detailed case studies showcasing measurable outcomes and
+            the strategies that drove success
           </p>
         </div>
 
         {/* --- THE DETAILED CARDS --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* === CARD 1: REPEAT ORDERS === */}
-          <div className="group relative bg-white rounded-3xl p-1 border border-purple-100 shadow-xl shadow-purple-900/5 hover:shadow-2xl hover:shadow-purple-900/10 transition-all duration-500 hover:-translate-y-1">
-            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-green-400 to-green-600 rounded-t-3xl"></div>
+          <div className="group relative bg-white rounded-2xl border border-slate-200/50 shadow-lg hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-green-400 to-green-600 rounded-t-2xl"></div>
 
-            <div className="p-7 h-full flex flex-col">
+            <div className="p-6 h-full flex flex-col">
               {/* Header */}
-              <div className="flex justify-between items-start mb-6">
-                <div className="w-12 h-12 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 group-hover:scale-110 transition-transform">
-                  <RefreshCcw size={24} />
+              <div className="flex justify-between items-start mb-5">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl flex items-center justify-center text-green-600 group-hover:scale-110 transition-transform shadow-sm">
+                  <RefreshCcw size={20} />
                 </div>
-                <span className="px-3 py-1 bg-slate-50 rounded-full text-xs font-semibold text-slate-500 border border-slate-100">
+                <span className="px-3 py-1 bg-slate-50 rounded-lg text-xs font-semibold text-slate-600 border border-slate-200">
                   Retail & Lifestyle
                 </span>
               </div>
 
               {/* The Metric */}
-              <div className="mb-6">
+              <div className="mb-5">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-5xl font-extrabold text-slate-900 tracking-tight">
+                  <span className="text-4xl font-extrabold bg-gradient-to-r from-green-600 to-emerald-600 text-transparent bg-clip-text tracking-tight">
                     +22%
                   </span>
-                  <SourceTag id="52" />
                 </div>
-                <p className="text-lg font-medium text-green-700 mt-2">
+                <p className="text-base font-semibold text-slate-900 mt-2">
                   Repeat Orders
                 </p>
                 <p className="text-sm text-slate-500 mt-1">
-                  Achieved in just 60 days.
+                  Achieved in just 60 days
                 </p>
               </div>
 
               {/* Visual Micro-Chart (Line Graph) */}
-              <div className="h-24 w-full bg-green-50/50 rounded-xl mb-6 relative overflow-hidden flex items-end px-2 pb-2 border border-green-100">
+              <div className="h-20 w-full bg-gradient-to-br from-green-50/80 to-emerald-50/50 rounded-lg mb-5 relative overflow-hidden flex items-end px-2 pb-2 border border-green-100/50">
                 <svg
                   className="w-full h-full overflow-visible"
                   preserveAspectRatio="none"
@@ -131,21 +107,20 @@ const DetailedCaseStudies: React.FC = () => {
               </div>
 
               {/* The "Mechanism" (How it works) */}
-              <div className="mt-auto pt-6 border-t border-slate-100">
+              <div className="mt-auto pt-5 border-t border-slate-100">
                 <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
-                  The Mechanism
+                  How It Works
                 </p>
                 <div className="flex items-start gap-3">
-                  <div className="mt-1 min-w-[16px]">
+                  <div className="mt-0.5 min-w-[16px]">
                     <TrendingUp size={16} className="text-green-500" />
                   </div>
-                  <p className="text-sm text-slate-600 leading-snug">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     <span className="font-semibold text-slate-900">
                       Auto-Nudges:
                     </span>{" "}
-                    System detects dormancy and sends a "Buy Again" WhatsApp
-                    offer automatically.
-                    <SourceTag id="36" />
+                    System detects dormancy and sends automated "Buy Again"
+                    WhatsApp offers to re-engage customers.
                   </p>
                 </div>
               </div>
@@ -153,38 +128,37 @@ const DetailedCaseStudies: React.FC = () => {
           </div>
 
           {/* === CARD 2: STOCKOUTS === */}
-          <div className="group relative bg-white rounded-3xl p-1 border border-purple-100 shadow-xl shadow-purple-900/5 hover:shadow-2xl hover:shadow-purple-900/10 transition-all duration-500 hover:-translate-y-1">
-            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-pink-500 to-rose-600 rounded-t-3xl"></div>
+          <div className="group relative bg-white rounded-2xl border border-slate-200/50 shadow-lg hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-pink-500 to-rose-600 rounded-t-2xl"></div>
 
-            <div className="p-7 h-full flex flex-col">
+            <div className="p-6 h-full flex flex-col">
               {/* Header */}
-              <div className="flex justify-between items-start mb-6">
-                <div className="w-12 h-12 bg-pink-50 rounded-2xl flex items-center justify-center text-pink-600 group-hover:scale-110 transition-transform">
-                  <Package size={24} />
+              <div className="flex justify-between items-start mb-5">
+                <div className="w-12 h-12 bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl flex items-center justify-center text-pink-600 group-hover:scale-110 transition-transform shadow-sm">
+                  <Package size={20} />
                 </div>
-                <span className="px-3 py-1 bg-slate-50 rounded-full text-xs font-semibold text-slate-500 border border-slate-100">
+                <span className="px-3 py-1 bg-slate-50 rounded-lg text-xs font-semibold text-slate-600 border border-slate-200">
                   Pharma & Grocery
                 </span>
               </div>
 
               {/* The Metric */}
-              <div className="mb-6">
+              <div className="mb-5">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-5xl font-extrabold text-slate-900 tracking-tight">
+                  <span className="text-4xl font-extrabold bg-gradient-to-r from-pink-600 to-rose-600 text-transparent bg-clip-text tracking-tight">
                     -18%
                   </span>
-                  <SourceTag id="52" />
                 </div>
-                <p className="text-lg font-medium text-pink-600 mt-2">
+                <p className="text-base font-semibold text-slate-900 mt-2">
                   Stockouts Reduced
                 </p>
                 <p className="text-sm text-slate-500 mt-1">
-                  Saved revenue during peak demand.
+                  Saved revenue during peak demand
                 </p>
               </div>
 
               {/* Visual Micro-Chart (Bar Graph) */}
-              <div className="h-24 w-full bg-pink-50/50 rounded-xl mb-6 relative flex items-end justify-between px-6 pb-2 border border-pink-100">
+              <div className="h-20 w-full bg-gradient-to-br from-pink-50/80 to-rose-50/50 rounded-lg mb-5 relative flex items-end justify-between px-4 pb-2 border border-pink-100/50">
                 {/* Before Bars */}
                 <div className="w-4 bg-slate-300 rounded-t-md h-[80%] opacity-50"></div>
                 <div className="w-4 bg-slate-300 rounded-t-md h-[90%] opacity-50"></div>
@@ -198,21 +172,20 @@ const DetailedCaseStudies: React.FC = () => {
               </div>
 
               {/* The "Mechanism" */}
-              <div className="mt-auto pt-6 border-t border-slate-100">
+              <div className="mt-auto pt-5 border-t border-slate-100">
                 <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
-                  The Mechanism
+                  How It Works
                 </p>
                 <div className="flex items-start gap-3">
-                  <div className="mt-1 min-w-[16px]">
+                  <div className="mt-0.5 min-w-[16px]">
                     <AlertTriangle size={16} className="text-pink-500" />
                   </div>
-                  <p className="text-sm text-slate-600 leading-snug">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     <span className="font-semibold text-slate-900">
                       Smart Alerts:
                     </span>{" "}
                     Proactive notifications for low-stock and expiry dates
-                    prevent empty shelves.
-                    <SourceTag id="25" />
+                    prevent empty shelves and revenue loss.
                   </p>
                 </div>
               </div>
@@ -220,38 +193,37 @@ const DetailedCaseStudies: React.FC = () => {
           </div>
 
           {/* === CARD 3: COLLECTIONS === */}
-          <div className="group relative bg-white rounded-3xl p-1 border border-purple-100 shadow-xl shadow-purple-900/5 hover:shadow-2xl hover:shadow-purple-900/10 transition-all duration-500 hover:-translate-y-1">
-            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-t-3xl"></div>
+          <div className="group relative bg-white rounded-2xl border border-slate-200/50 shadow-lg hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-t-2xl"></div>
 
-            <div className="p-7 h-full flex flex-col">
+            <div className="p-6 h-full flex flex-col">
               {/* Header */}
-              <div className="flex justify-between items-start mb-6">
-                <div className="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 group-hover:scale-110 transition-transform">
-                  <Zap size={24} />
+              <div className="flex justify-between items-start mb-5">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl flex items-center justify-center text-purple-600 group-hover:scale-110 transition-transform shadow-sm">
+                  <Zap size={20} />
                 </div>
-                <span className="px-3 py-1 bg-slate-50 rounded-full text-xs font-semibold text-slate-500 border border-slate-100">
+                <span className="px-3 py-1 bg-slate-50 rounded-lg text-xs font-semibold text-slate-600 border border-slate-200">
                   Wholesale & B2B
                 </span>
               </div>
 
               {/* The Metric */}
-              <div className="mb-6">
+              <div className="mb-5">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-5xl font-extrabold text-slate-900 tracking-tight">
+                  <span className="text-4xl font-extrabold bg-gradient-to-r from-purple-600 to-indigo-600 text-transparent bg-clip-text tracking-tight">
                     2x
                   </span>
-                  <SourceTag id="52" />
                 </div>
-                <p className="text-lg font-medium text-purple-700 mt-2">
+                <p className="text-base font-semibold text-slate-900 mt-2">
                   Faster Collections
                 </p>
                 <p className="text-sm text-slate-500 mt-1">
-                  Drastic drop in Days Sales Outstanding.
+                  Drastic drop in Days Sales Outstanding
                 </p>
               </div>
 
               {/* Visual Micro-Chart (Speedometer / Timeline) */}
-              <div className="h-24 w-full bg-purple-50/50 rounded-xl mb-6 relative flex flex-col justify-center px-4 border border-purple-100">
+              <div className="h-20 w-full bg-gradient-to-br from-purple-50/80 to-indigo-50/50 rounded-lg mb-5 relative flex flex-col justify-center px-4 border border-purple-100/50">
                 {/* Timeline Track */}
                 <div className="w-full h-1 bg-slate-200 rounded-full relative">
                   {/* Old Speed */}
@@ -266,20 +238,20 @@ const DetailedCaseStudies: React.FC = () => {
               </div>
 
               {/* The "Mechanism" */}
-              <div className="mt-auto pt-6 border-t border-slate-100">
+              <div className="mt-auto pt-5 border-t border-slate-100">
                 <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
-                  The Mechanism
+                  How It Works
                 </p>
                 <div className="flex items-start gap-3">
-                  <div className="mt-1 min-w-[16px]">
+                  <div className="mt-0.5 min-w-[16px]">
                     <BarChart3 size={16} className="text-purple-600" />
                   </div>
-                  <p className="text-sm text-slate-600 leading-snug">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     <span className="font-semibold text-slate-900">
                       WhatsApp + UPI:
                     </span>{" "}
-                    Automated payment reminders with one-click payment links.
-                    <SourceTag id="250" />
+                    Automated payment reminders with one-click payment links
+                    accelerate collections.
                   </p>
                 </div>
               </div>

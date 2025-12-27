@@ -42,8 +42,8 @@ const Footer: React.FC = () => {
          ========================================= */}
 
       {/* Ambient Orbs (Static Glows) */}
-      <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-purple-100/50 rounded-full blur-[120px] pointer-events-none mix-blend-multiply" />
-      <div className="absolute top-0 left-[-20%] w-[600px] h-[600px] bg-blue-50/50 rounded-full blur-[120px] pointer-events-none mix-blend-multiply" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-100/40 rounded-full blur-[80px] pointer-events-none mix-blend-multiply" />
+      <div className="absolute top-0 left-[-20%] w-[400px] h-[400px] bg-blue-50/40 rounded-full blur-[80px] pointer-events-none mix-blend-multiply" />
 
       {/* The Grid with Mouse Mask (The Spotlight) */}
       <div
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
 
       {/* Glowing Cursor Follower (The Moving Ball) */}
       <div
-        className="absolute pointer-events-none h-[300px] w-[300px] rounded-full bg-purple-400/10 blur-[80px] transition-transform duration-75 ease-out z-0"
+        className="absolute pointer-events-none h-[200px] w-[200px] rounded-full bg-purple-400/8 blur-[60px] transition-transform duration-75 ease-out z-0"
         style={{
           left: mousePos.x,
           top: mousePos.y,
@@ -74,30 +74,24 @@ const Footer: React.FC = () => {
       {/* =========================================
           CONTENT LAYERS
          ========================================= */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-4">
         {/* SECTION 1: THE "EDITORIAL" CTA */}
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-12 mb-24 pb-20 border-b border-slate-100 relative">
-          <div className="max-w-7xl relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 mb-6">
-              <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></span>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700">
-                Start for free
-              </span>
-            </div>
-            <h2 className="text-6xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-[0.95] mb-8">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-8 mb-5 md:mb-20 pb-4 md:pb-6 border-b border-slate-100 relative">
+          <div className="max-w-2xl relative z-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight mb-6">
               Ready to{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
                 Scale Up?
               </span>
             </h2>
-            <div className="flex flex-col sm:flex-row gap-6 items-center">
-              <button className="group relative px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg shadow-xl shadow-purple-900/10 hover:shadow-2xl hover:shadow-purple-900/20 transition-all hover:-translate-y-1 overflow-hidden">
+            <div className="flex flex-col sm:flex-row gap-4 items-center">
+              <button className="group relative px-6 py-3 bg-slate-900 text-white rounded-lg font-semibold text-base shadow-lg shadow-purple-900/10 hover:shadow-xl hover:shadow-purple-900/20 transition-all hover:-translate-y-0.5 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative flex items-center gap-2 z-10">
                   Start Free Trial{" "}
                   <ArrowUpRight
-                    size={20}
-                    className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                    size={16}
+                    className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
                   />
                 </span>
               </button>
@@ -110,18 +104,18 @@ const Footer: React.FC = () => {
         </div>
 
         {/* SECTION 2: CLEAN NAVIGATION GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-10 mb-24">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-10 mb-5 md:mb-20">
           {/* Brand Column */}
-          <div className="col-span-2 lg:col-span-2 space-y-6">
+          <div className="col-span-2 lg:col-span-2 space-y-4">
             <div className="shrink-0 relative group">
               <a href="/" className="flex items-center cursor-pointer">
-                <div className="ml-3">
-                  <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-slate-800 via-slate-700 to-slate-600 bg-clip-text text-transparent">
+                <div>
+                  <span className="text-xl md:text-2xl font-black tracking-tight bg-gradient-to-r from-slate-800 via-slate-700 to-slate-600 bg-clip-text text-transparent">
                     Microkraft
                   </span>
                   <div className="flex items-center gap-1.5 -mt-0.5">
                     <div className="h-[2px] w-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full" />
-                    <span className="text-[9px] font-bold text-slate-500 tracking-[0.2em] uppercase">
+                    <span className="text-[9px] font-semibold text-slate-500 tracking-[0.2em] uppercase">
                       Growth OS
                     </span>
                   </div>
@@ -132,7 +126,7 @@ const Footer: React.FC = () => {
               The Operating System for Modern Commerce. Empowering India's MSMEs
               with enterprise-grade tools.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-2.5">
               <SocialIcon icon={Twitter} />
               <SocialIcon icon={Linkedin} />
               <SocialIcon icon={Instagram} />
@@ -141,8 +135,10 @@ const Footer: React.FC = () => {
 
           {/* Links Column 1 */}
           <div>
-            <h3 className="font-bold text-slate-900 mb-6">Product</h3>
-            <ul className="space-y-4">
+            <h3 className="font-semibold text-slate-900 mb-4 text-sm">
+              Product
+            </h3>
+            <ul className="space-y-3">
               <FooterLink text="CRM" badge="New" />
               <FooterLink text="Commerce" />
               <FooterLink text="Analytics" />
@@ -152,8 +148,10 @@ const Footer: React.FC = () => {
 
           {/* Links Column 2 */}
           <div>
-            <h3 className="font-bold text-slate-900 mb-6">Company</h3>
-            <ul className="space-y-4">
+            <h3 className="font-semibold text-slate-900 mb-4 text-sm">
+              Company
+            </h3>
+            <ul className="space-y-3">
               <FooterLink text="About Us" />
               <FooterLink text="Careers" />
               <FooterLink text="Blog" />
@@ -162,31 +160,33 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Contact Card */}
-          <div className="col-span-2 bg-slate-50/50 backdrop-blur-sm p-6 rounded-2xl border border-slate-100 hover:border-purple-100 transition-colors">
-            <h3 className="font-bold text-slate-900 mb-4">Contact Us</h3>
-            <ul className="space-y-4 text-sm text-slate-600 font-medium">
-              <li className="flex items-center gap-3 hover:text-purple-600 transition-colors cursor-pointer group">
+          <div className="col-span-2 bg-slate-50/50 backdrop-blur-sm p-5 rounded-xl border border-slate-100 hover:border-purple-100 transition-colors">
+            <h3 className="font-semibold text-slate-900 mb-3.5 text-sm">
+              Contact Us
+            </h3>
+            <ul className="space-y-3 text-sm text-slate-600 font-medium">
+              <li className="flex items-center gap-2.5 hover:text-purple-600 transition-colors cursor-pointer group">
                 <div className="p-1.5 bg-white rounded-md border border-slate-100 group-hover:border-purple-100 transition-colors">
-                  <Phone size={14} />
+                  <Phone size={12} />
                 </div>
                 +91 98765 43210
               </li>
-              <li className="flex items-center gap-3 hover:text-purple-600 transition-colors cursor-pointer group">
+              <li className="flex items-center gap-2.5 hover:text-purple-600 transition-colors cursor-pointer group">
                 <div className="p-1.5 bg-white rounded-md border border-slate-100 group-hover:border-purple-100 transition-colors">
-                  <Mail size={14} />
+                  <Mail size={12} />
                 </div>
                 hello@microkraft.in
               </li>
-              <li className="flex items-center gap-3 group">
+              <li className="flex items-center gap-2.5 group">
                 <div className="p-1.5 bg-white rounded-md border border-slate-100">
-                  <MapPin size={14} />
+                  <MapPin size={12} />
                 </div>
                 Nagpur, Maharashtra
               </li>
             </ul>
-            <div className="mt-6 pt-6 border-t border-slate-200 flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+            <div className="mt-5 pt-4 border-t border-slate-200 flex items-center gap-2 text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
               <Heart
-                size={12}
+                size={10}
                 className="text-red-500 fill-red-500 animate-pulse"
               />{" "}
               Made in India
@@ -195,12 +195,12 @@ const Footer: React.FC = () => {
         </div>
 
         {/* SECTION 3: MINIMAL BOTTOM BAR */}
-        <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-sm text-slate-400 font-medium">
+        <div className="pb-6 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-xs md:text-sm text-slate-400 font-medium">
             © {new Date().getFullYear()} Microkraft Inc. All rights reserved.
           </div>
 
-          <div className="flex gap-8 text-sm font-medium text-slate-500">
+          <div className="flex gap-6 md:gap-8 text-xs md:text-sm font-medium text-slate-500">
             <a href="#" className="hover:text-purple-600 transition-colors">
               Privacy Policy
             </a>
@@ -235,9 +235,9 @@ const FooterLink: React.FC<FooterLinkProps> = ({ text, badge }) => (
 const SocialIcon: React.FC<SocialIconProps> = ({ icon: Icon }) => (
   <a
     href="#"
-    className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-400 hover:bg-purple-600 hover:text-white hover:border-purple-600 transition-all duration-300 hover:-translate-y-1 shadow-sm"
+    className="w-9 h-9 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-400 hover:bg-purple-600 hover:text-white hover:border-purple-600 transition-all duration-300 hover:-translate-y-0.5 shadow-sm"
   >
-    <Icon size={16} />
+    <Icon size={14} />
   </a>
 );
 

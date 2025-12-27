@@ -10,67 +10,12 @@ import {
 
 const CreativeCustomerSection: React.FC = () => {
   return (
-    <section className="relative w-full py-24 lg:py-32 overflow-hidden bg-slate-50 font-sans">
-      {/* --- ANIMATIONS & STYLES --- */}
-      <style>{`
-        /* Background Drift */
-        @keyframes drift {
-          0% { transform: translate(0, 0); }
-          50% { transform: translate(-20px, 40px); }
-          100% { transform: translate(0, 0); }
-        }
-        /* Card Float */
-        @keyframes float-card {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-12px); }
-        }
-        /* Fade In Up */
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        /* Text Slide Animation */
-        @keyframes textSlide {
-          0%, 20% { transform: translateY(0%); }
-          25%, 45% { transform: translateY(-25%); }
-          50%, 70% { transform: translateY(-50%); }
-          75%, 95% { transform: translateY(-75%); }
-          100% { transform: translateY(-75%); }
-        }
-
-        .animate-drift {
-          animation: drift 10s ease-in-out infinite;
-        }
-        .animate-float-card {
-          animation: float-card 6s ease-in-out infinite;
-        }
-        .animate-fade-up {
-          opacity: 0;
-          animation: fadeInUp 0.8s ease-out forwards;
-        }
-        
-        /* Scrolling Text Classes */
-        .scrolling-text-container {
-          height: 1.15em; /* Matches H2 Line Height */
-          overflow: hidden;
-          display: inline-block;
-          vertical-align: bottom;
-          position: relative;
-          padding-bottom: 2px; /* Visual tweak for descenders */
-        }
-        .scrolling-text-inner {
-          animation: textSlide 6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-        }
-
-        /* Delays */
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-      `}</style>
+    <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden bg-slate-50 font-sans">
+      {/* Styles moved to index.css - see: animate-drift, animate-float-card, animate-fade-up, scrolling-text-container-h2, scrolling-text-inner, delay-* */}
 
       {/* 1. SHARED BACKGROUND */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        className="absolute inset-0 pointer-events-none opacity-[0.02]"
         style={{
           backgroundImage: `linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)`,
           backgroundSize: "40px 40px",
@@ -78,21 +23,21 @@ const CreativeCustomerSection: React.FC = () => {
       />
 
       {/* 2. GLOWING BACKGROUND ORBS */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-200/40 rounded-full blur-3xl -z-10 animate-drift" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-200/25 rounded-full blur-3xl -z-10 animate-drift" />
       <div
-        className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-200/40 rounded-full blur-3xl -z-10 animate-drift"
+        className="absolute bottom-0 left-0 w-[450px] h-[450px] bg-purple-200/25 rounded-full blur-3xl -z-10 animate-drift"
         style={{ animationDelay: "-5s" }}
       />
 
-      <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* === LEFT COLUMN: Content === */}
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-6">
             <div>
-              <h2 className="animate-fade-up text-4xl lg:text-6xl font-extrabold text-slate-900 leading-[1.15] mb-6">
+              <h2 className="animate-fade-up text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-4">
                 Simple Management, <br />
                 {/* ANIMATED TEXT CONTAINER */}
-                <div className="scrolling-text-container">
+                <div className="scrolling-text-container-h2">
                   <div className="scrolling-text-inner flex flex-col text-left">
                     {/* Word 1 */}
                     <span className="block h-[1.15em] text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
@@ -116,7 +61,7 @@ const CreativeCustomerSection: React.FC = () => {
                 Customer Relations
               </h2>
 
-              <p className="animate-fade-up delay-100 text-lg text-slate-600 leading-relaxed max-w-lg">
+              <p className="animate-fade-up delay-100 text-base md:text-lg text-slate-600 leading-relaxed max-w-lg">
                 Empower your business growth through revolutionary customer
                 relations. Manage everything from a single, intuitive dashboard
                 designed for scale.
@@ -125,25 +70,25 @@ const CreativeCustomerSection: React.FC = () => {
 
             {/* LOGO STRIP with Hover Glow */}
             <div className="animate-fade-up delay-200 relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg -z-10" />
+              <div className="absolute -inset-3 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg -z-10" />
 
-              <div className="flex flex-wrap items-center gap-x-8 gap-y-6 opacity-60 grayscale group-hover:grayscale-0 transition-all duration-500">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-4 opacity-60 grayscale group-hover:grayscale-0 transition-all duration-500">
                 {/* Logo 1 */}
-                <div className="flex items-center gap-2 font-bold text-lg text-slate-800 group-hover:scale-105 transition-transform">
-                  <Globe size={20} className="text-blue-600" />
+                <div className="flex items-center gap-2 font-semibold text-base text-slate-800 group-hover:scale-105 transition-transform">
+                  <Globe size={18} className="text-blue-600" />
                   <span>GlobalCorp</span>
                 </div>
                 {/* Logo 2 */}
-                <div className="font-bold text-xl text-slate-800 tracking-tight group-hover:scale-105 transition-transform">
+                <div className="font-semibold text-lg text-slate-800 tracking-tight group-hover:scale-105 transition-transform">
                   Acme Inc.
                 </div>
                 {/* Logo 3 */}
-                <div className="flex items-center gap-1 font-bold text-lg text-slate-800 group-hover:scale-105 transition-transform">
-                  <LayoutGrid size={20} className="text-indigo-600" />
+                <div className="flex items-center gap-1 font-semibold text-base text-slate-800 group-hover:scale-105 transition-transform">
+                  <LayoutGrid size={18} className="text-indigo-600" />
                   <span>Nexus</span>
                 </div>
                 {/* Logo 4 */}
-                <div className="flex items-center gap-2 font-bold text-lg text-slate-800 group-hover:scale-105 transition-transform">
+                <div className="flex items-center gap-2 font-semibold text-base text-slate-800 group-hover:scale-105 transition-transform">
                   <div className="flex gap-0.5">
                     <div className="w-1.5 h-1.5 bg-slate-800 rounded-full"></div>
                     <div className="w-1.5 h-1.5 bg-slate-800 rounded-full"></div>
@@ -158,10 +103,10 @@ const CreativeCustomerSection: React.FC = () => {
             <div className="animate-fade-up delay-300">
               <a
                 href="#"
-                className="inline-flex items-center gap-2 text-blue-600 font-bold hover:gap-4 transition-all duration-300 group"
+                className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all duration-300 group text-sm md:text-base"
               >
                 Explore Integration{" "}
-                <ArrowRight size={20} className="group-hover:translate-x-1" />
+                <ArrowRight size={16} className="group-hover:translate-x-0.5" />
               </a>
             </div>
           </div>
@@ -169,17 +114,17 @@ const CreativeCustomerSection: React.FC = () => {
           {/* === RIGHT COLUMN: Creative "Glass" Card Interface === */}
           <div className="relative perspective-1000 group animate-fade-up delay-200">
             {/* BACKGROUND GLOW (Activates on Hover) */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-[3rem] blur-2xl transform scale-90 opacity-0 group-hover:opacity-100 transition-all duration-700 -z-10" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/15 to-purple-500/15 rounded-3xl blur-2xl transform scale-90 opacity-0 group-hover:opacity-100 transition-all duration-700 -z-10" />
 
             {/* MAIN CARD */}
-            <div className="relative bg-white/60 backdrop-blur-xl border border-white/50 p-8 lg:p-12 rounded-[2.5rem] shadow-2xl transition-transform duration-500 group-hover:-translate-y-2">
+            <div className="relative bg-white/60 backdrop-blur-xl border border-white/50 p-6 lg:p-8 rounded-3xl shadow-xl transition-transform duration-500 group-hover:-translate-y-1">
               {/* Header: Team Avatars */}
-              <div className="flex justify-between items-start mb-8">
-                <div className="flex -space-x-4">
+              <div className="flex justify-between items-start mb-6">
+                <div className="flex -space-x-3">
                   {[1, 2, 3].map((i) => (
                     <div
                       key={i}
-                      className="w-14 h-14 rounded-full border-[3px] border-white shadow-sm overflow-hidden transition-transform hover:scale-110 hover:z-10 cursor-pointer"
+                      className="w-11 h-11 rounded-full border-2 border-white shadow-sm overflow-hidden transition-transform hover:scale-110 hover:z-10 cursor-pointer"
                     >
                       <img
                         src={`https://i.pravatar.cc/150?img=${i + 30}`}
@@ -188,33 +133,33 @@ const CreativeCustomerSection: React.FC = () => {
                       />
                     </div>
                   ))}
-                  <button className="w-14 h-14 rounded-full bg-slate-900 text-white flex items-center justify-center border-[3px] border-white hover:bg-blue-600 transition-colors shadow-sm">
-                    <Plus size={24} />
+                  <button className="w-11 h-11 rounded-full bg-slate-900 text-white flex items-center justify-center border-2 border-white hover:bg-blue-600 transition-colors shadow-sm">
+                    <Plus size={20} />
                   </button>
                 </div>
               </div>
 
               {/* Body Text */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-slate-900">
+              <div className="space-y-4">
+                <h3 className="text-xl md:text-2xl font-semibold text-slate-900">
                   Driving Growth for <br /> Your Business.
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed">
                   We're revolutionizing customer relations with our empowering
                   CRM platform.
                 </p>
               </div>
 
               {/* INNER CARD: Stats (Bottom) */}
-              <div className="mt-8 bg-white rounded-2xl p-6 shadow-lg border border-slate-100 flex items-center gap-5 transform transition-transform group-hover:scale-[1.02]">
-                <div className="bg-blue-600 text-white p-3 rounded-xl shadow-blue-200 shadow-md">
-                  <RefreshCcw size={24} />
+              <div className="mt-6 bg-white rounded-xl p-4 shadow-md border border-slate-100 flex items-center gap-4 transform transition-transform group-hover:scale-[1.02]">
+                <div className="bg-blue-600 text-white p-2.5 rounded-lg shadow-blue-200 shadow-sm">
+                  <RefreshCcw size={20} />
                 </div>
                 <div>
-                  <div className="text-3xl font-extrabold text-slate-900 animate-pulse">
+                  <div className="text-2xl font-bold text-slate-900">
                     14.7k+
                   </div>
-                  <div className="text-sm font-medium text-slate-500">
+                  <div className="text-xs font-medium text-slate-500">
                     Repeat Customers
                   </div>
                 </div>
@@ -222,27 +167,27 @@ const CreativeCustomerSection: React.FC = () => {
             </div>
 
             {/* FLOATING CARD: Client Satisfaction (Top Right) */}
-            <div className="absolute -top-6 -right-2 lg:-right-8 w-56 bg-white p-5 rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-slate-100 z-20 animate-float-card">
-              <div className="flex items-center justify-between mb-3">
+            <div className="absolute -top-4 -right-2 lg:-right-6 w-48 bg-white p-4 rounded-xl shadow-lg border border-slate-100 z-20 animate-float-card">
+              <div className="flex items-center justify-between mb-2.5">
                 <div className="flex -space-x-2">
-                  <div className="w-8 h-8 rounded-full border-2 border-white bg-green-100 overflow-hidden">
+                  <div className="w-7 h-7 rounded-full border-2 border-white bg-green-100 overflow-hidden">
                     <img src="https://i.pravatar.cc/150?img=12" alt="Client" />
                   </div>
-                  <div className="w-8 h-8 rounded-full border-2 border-white bg-blue-100 overflow-hidden">
+                  <div className="w-7 h-7 rounded-full border-2 border-white bg-blue-100 overflow-hidden">
                     <img src="https://i.pravatar.cc/150?img=11" alt="Client" />
                   </div>
                 </div>
-                <div className="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1">
-                  25% <TrendingUp size={10} />
+                <div className="bg-green-100 text-green-700 text-[9px] font-semibold px-1.5 py-0.5 rounded-full flex items-center gap-0.5">
+                  25% <TrendingUp size={9} />
                 </div>
               </div>
 
-              <p className="text-xs font-bold text-slate-400 uppercase tracking-wide">
+              <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">
                 Satisfaction
               </p>
-              <div className="flex items-end gap-1 mt-1">
-                <span className="text-2xl font-bold text-slate-900">14.9</span>
-                <span className="text-sm font-medium text-slate-400 mb-1">
+              <div className="flex items-end gap-1 mt-0.5">
+                <span className="text-xl font-semibold text-slate-900">14.9</span>
+                <span className="text-xs font-medium text-slate-400 mb-0.5">
                   / 15k
                 </span>
               </div>

@@ -1,201 +1,237 @@
-import React, { useState, useEffect } from "react";
-import {
-  ArrowRight,
-  MessageCircle,
-  CheckCircle2,
-  Rocket,
-  Users,
-  Zap,
-} from "lucide-react";
+import React from "react";
+import { Zap, BarChart3, Clock, Shield, TrendingUp } from "lucide-react";
 
 const FinalLaunchpad: React.FC = () => {
-  const [slideIndex, setSlideIndex] = useState(0);
-
-  // MORE INFORMATIVE: Specific actions the software performs
-  const rotatingWords = [
-    "Sync Inventory",
-    "Automate Sales",
-    "Track Payments",
-    "Engage Leads",
-  ];
-
-  // 1. Text Animation Loop
-  useEffect(() => {
-    const textInterval = setInterval(() => {
-      setSlideIndex((prev) => (prev + 1) % rotatingWords.length);
-    }, 2500);
-    return () => clearInterval(textInterval);
-  }, [rotatingWords.length]);
-
   return (
     <>
       {/* --- MAIN LAUNCHPAD SECTION --- */}
-      <section className="relative py-24 bg-white overflow-hidden font-sans selection:bg-pink-100">
+      <section className="relative py-12 bg-gradient-to-b from-slate-50 to-white overflow-hidden font-sans selection:bg-pink-100">
         {/* --- 1. CLEAN BACKGROUND --- */}
         <div className="absolute inset-0 pointer-events-none">
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage:
-                "linear-gradient(#475569 1px, transparent 1px), linear-gradient(90deg, #475569 1px, transparent 1px)",
-              backgroundSize: "40px 40px",
-            }}
-          ></div>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-purple-50/60 rounded-full blur-[100px]"></div>
-          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-pink-50/60 rounded-full blur-[100px]"></div>
+          <div className="absolute top-20 right-10 w-96 h-96 bg-purple-200/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-10 w-96 h-96 bg-pink-200/10 rounded-full blur-3xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-12 gap-16 items-center">
+          {/* --- CENTERED HEADER --- */}
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight mb-3">
+              Launch Your Business{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600">
+                in 48 Hours
+              </span>
+            </h2>
+            <p className="text-base text-slate-600 max-w-2xl mx-auto">
+              Unified platform to manage inventory, sales, payments, and
+              customer engagement.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* --- 2. LEFT: THE OFFER (7 Cols) --- */}
             <div className="lg:col-span-7">
-              {/* Context Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-purple-700 text-xs font-bold uppercase tracking-wider mb-8 hover:scale-105 transition-transform cursor-default">
-                <Rocket size={14} />
-                Ready to scale?
-              </div>
-
-              {/* --- IMPROVED HEADING STRUCTURE --- */}
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 mb-8 leading-[1.1] tracking-tight">
-                One dashboard to <br />
-                {/* ANIMATED ACTION TEXT */}
-                <span className="relative inline-flex h-[1.1em] overflow-hidden align-bottom w-full md:w-auto">
-                  {rotatingWords.map((word, i) => (
-                    <span
-                      key={i}
-                      className={`absolute left-0 top-0 block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 whitespace-nowrap transition-all duration-700 ease-in-out`}
-                      style={{
-                        transform:
-                          i === slideIndex
-                            ? "translateY(0)"
-                            : i < slideIndex
-                            ? "translateY(-100%)"
-                            : "translateY(100%)",
-                        opacity: i === slideIndex ? 1 : 0,
-                      }}
-                    >
-                      {word}
-                    </span>
-                  ))}
-                  {/* Invisible spacer to hold width */}
-                  <span className="invisible">{rotatingWords[0]}</span>
-                </span>
-                <br />
-                across every channel.
-              </h2>
-
-              <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
-                Replace your fragmented tools with a single Growth OS. Get your
-                Store, WhatsApp, and Payments working in perfect harmony.
-              </p>
-
-              {/* Dual CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="px-10 py-4 bg-purple-900 text-white text-lg font-bold rounded-2xl hover:bg-purple-800 transition-all transform hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-900/20 flex items-center justify-center gap-3 group">
-                  Start Free Setup
-                  <ArrowRight
-                    size={20}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </button>
-                <button className="px-10 py-4 bg-white border-2 border-slate-200 text-slate-700 text-lg font-bold rounded-2xl hover:border-green-500 hover:text-green-600 hover:bg-green-50 transition-all flex items-center justify-center gap-3 group">
-                  <MessageCircle size={20} />
-                  Talk on WhatsApp
-                </button>
-              </div>
-
-              {/* Trust Signals */}
-              <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm font-medium text-slate-500">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 size={18} className="text-green-500" /> No
-                  credit card required
+              {/* Key Benefits Grid */}
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="bg-white border-2 border-slate-200/50 rounded-xl p-5 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 group-hover:rotate-3 transition-transform shadow-sm">
+                    <BarChart3 size={24} className="text-purple-600" />
+                  </div>
+                  <h4 className="font-bold text-slate-900 text-base mb-1.5">
+                    Real-Time Analytics
+                  </h4>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    Track sales, inventory, and customer insights in real-time
+                  </p>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Users size={18} className="text-blue-500" /> 15k+ Active
-                  Users
+
+                <div className="bg-white border-2 border-slate-200/50 rounded-xl p-5 hover:border-green-300 hover:shadow-xl hover:shadow-green-500/10 transition-all duration-300 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-emerald-100 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 group-hover:rotate-3 transition-transform shadow-sm">
+                    <Clock size={24} className="text-green-600" />
+                  </div>
+                  <h4 className="font-bold text-slate-900 text-base mb-1.5">
+                    48-Hour Setup
+                  </h4>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    Go from signup to live orders in just 2 days
+                  </p>
+                </div>
+
+                <div className="bg-white border-2 border-slate-200/50 rounded-xl p-5 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 group-hover:rotate-3 transition-transform shadow-sm">
+                    <Shield size={24} className="text-blue-600" />
+                  </div>
+                  <h4 className="font-bold text-slate-900 text-base mb-1.5">
+                    Enterprise Security
+                  </h4>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    Bank-grade encryption and data protection
+                  </p>
+                </div>
+
+                <div className="bg-white border-2 border-slate-200/50 rounded-xl p-5 hover:border-orange-300 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-pink-100 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 group-hover:rotate-3 transition-transform shadow-sm">
+                    <TrendingUp size={24} className="text-orange-600" />
+                  </div>
+                  <h4 className="font-bold text-slate-900 text-base mb-1.5">
+                    Unlimited Scale
+                  </h4>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    Grow from startup to enterprise without limits
+                  </p>
+                </div>
+              </div>
+
+              {/* Stats Row */}
+              <div className="flex items-center gap-8 p-5 bg-gradient-to-r from-purple-50 via-pink-50 to-purple-50 rounded-2xl border-2 border-purple-200/50 shadow-lg">
+                <div className="text-center">
+                  <div className="text-3xl font-extrabold bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text mb-1">
+                    15K+
+                  </div>
+                  <div className="text-xs text-slate-600 font-semibold uppercase tracking-wide">
+                    Active Businesses
+                  </div>
+                </div>
+                <div className="w-px h-12 bg-gradient-to-b from-transparent via-purple-300 to-transparent"></div>
+                <div className="text-center">
+                  <div className="text-3xl font-extrabold bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text mb-1">
+                    245%
+                  </div>
+                  <div className="text-xs text-slate-600 font-semibold uppercase tracking-wide">
+                    Avg. ROI Increase
+                  </div>
+                </div>
+                <div className="w-px h-12 bg-gradient-to-b from-transparent via-purple-300 to-transparent"></div>
+                <div className="text-center">
+                  <div className="text-3xl font-extrabold bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text mb-1">
+                    4.9/5
+                  </div>
+                  <div className="text-xs text-slate-600 font-semibold uppercase tracking-wide">
+                    Customer Rating
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* --- 3. RIGHT: THE "PATH TO LIVE" CARD (5 Cols) --- */}
-            <div className="lg:col-span-5 relative">
+            <div className="lg:col-span-5 relative h-full">
               {/* Premium White Card */}
-              <div className="bg-white border border-slate-200 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-[2.5rem] p-8 md:p-10 relative overflow-hidden z-10 group hover:border-purple-200 transition-colors duration-500">
+              <div className="bg-white border-2 border-purple-200/50 shadow-2xl shadow-purple-500/20 hover:shadow-purple-500/30 rounded-3xl p-6 relative overflow-hidden z-10 group hover:border-purple-300 transition-all duration-500 h-full flex flex-col">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      backgroundImage:
+                        "radial-gradient(circle at 2px 2px, purple 1px, transparent 0)",
+                      backgroundSize: "40px 40px",
+                    }}
+                  ></div>
+                </div>
+
                 {/* Card Header */}
-                <div className="flex items-center justify-between mb-10">
-                  <h3 className="text-slate-900 font-bold text-xl flex items-center gap-2">
-                    <Zap size={24} className="text-pink-500 fill-pink-50" />
-                    Go live in 48 hours
+                <div className="flex items-center justify-between mb-6 relative z-10 flex-shrink-0">
+                  <h3 className="text-slate-900 font-bold text-lg flex items-center gap-2">
+                    <div className="w-10 h-10 bg-gradient-to-br from-pink-100 to-purple-100 rounded-xl flex items-center justify-center">
+                      <Zap size={20} className="text-pink-600" />
+                    </div>
+                    <span>Go live in 48 hours</span>
                   </h3>
-                  <span className="text-[10px] font-bold text-slate-400 border border-slate-200 px-2 py-1 rounded uppercase tracking-widest bg-slate-50">
+                  <span className="text-[10px] font-bold text-purple-700 border-2 border-purple-200 px-3 py-1 rounded-full uppercase tracking-widest bg-gradient-to-r from-purple-50 to-pink-50 shadow-sm">
                     Free Setup
                   </span>
                 </div>
 
                 {/* Timeline */}
-                <div className="space-y-8 relative">
+                <div className="relative z-10 flex-1 flex flex-col justify-between py-2">
                   {/* Vertical Connecting Line */}
-                  <div className="absolute left-[19px] top-4 bottom-4 w-0.5 bg-slate-100"></div>
+                  <div className="absolute left-[18px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-200 via-pink-200 via-blue-200 via-orange-200 to-green-200"></div>
 
                   {/* Step 1 */}
-                  <div className="relative flex items-start gap-6 group/step">
-                    <div className="w-10 h-10 rounded-full bg-purple-50 border-4 border-white shadow-sm flex items-center justify-center shrink-0 z-10 group-hover/step:scale-110 transition-transform">
-                      <span className="text-sm font-bold text-purple-600">
+                  <div className="relative flex items-start gap-4 group/step">
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-purple-100 to-purple-200 border-2 border-white shadow-md flex items-center justify-center shrink-0 z-10 group-hover/step:scale-110 transition-transform">
+                      <span className="text-xs font-bold text-purple-600">
                         1
                       </span>
                     </div>
                     <div>
-                      <h4 className="text-slate-900 font-bold text-lg">
+                      <h4 className="text-slate-900 font-bold text-base mb-1">
                         Book a Slot
                       </h4>
-                      <p className="text-slate-500 text-sm mt-1">
+                      <p className="text-slate-600 text-sm">
                         Pick a time. No sales pressure.
                       </p>
                     </div>
                   </div>
 
                   {/* Step 2 */}
-                  <div className="relative flex items-start gap-6 group/step">
-                    <div className="w-10 h-10 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center shrink-0 z-10 group-hover/step:border-pink-500 group-hover/step:bg-pink-50 transition-colors duration-300">
-                      <span className="text-sm font-bold text-slate-400 group-hover/step:text-pink-600">
+                  <div className="relative flex items-start gap-4 group/step">
+                    <div className="w-9 h-9 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center shrink-0 z-10 group-hover/step:border-pink-400 group-hover/step:bg-gradient-to-br group-hover/step:from-pink-50 group-hover/step:to-pink-100 transition-all duration-300 shadow-sm">
+                      <span className="text-xs font-bold text-slate-400 group-hover/step:text-pink-600">
                         2
                       </span>
                     </div>
                     <div>
-                      <h4 className="text-slate-900 font-bold text-lg group-hover/step:text-pink-600 transition-colors">
+                      <h4 className="text-slate-900 font-bold text-base mb-1 group-hover/step:text-pink-600 transition-colors">
                         Data Migration
                       </h4>
-                      <p className="text-slate-500 text-sm mt-1">
+                      <p className="text-slate-600 text-sm">
                         We clean your Excel & map your catalog.
                       </p>
                     </div>
                   </div>
 
                   {/* Step 3 */}
-                  <div className="relative flex items-start gap-6 group/step">
-                    <div className="w-10 h-10 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center shrink-0 z-10 group-hover/step:border-green-500 group-hover/step:bg-green-50 transition-colors duration-300">
-                      <span className="text-sm font-bold text-slate-400 group-hover/step:text-green-600">
+                  <div className="relative flex items-start gap-4 group/step">
+                    <div className="w-9 h-9 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center shrink-0 z-10 group-hover/step:border-blue-400 group-hover/step:bg-gradient-to-br group-hover/step:from-blue-50 group-hover/step:to-blue-100 transition-all duration-300 shadow-sm">
+                      <span className="text-xs font-bold text-slate-400 group-hover/step:text-blue-600">
                         3
                       </span>
                     </div>
                     <div>
-                      <h4 className="text-slate-900 font-bold text-lg group-hover/step:text-green-600 transition-colors">
+                      <h4 className="text-slate-900 font-bold text-base mb-1 group-hover/step:text-blue-600 transition-colors">
+                        Integration Setup
+                      </h4>
+                      <p className="text-slate-600 text-sm">
+                        Connect WhatsApp, payments & storefront.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Step 4 */}
+                  <div className="relative flex items-start gap-4 group/step">
+                    <div className="w-9 h-9 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center shrink-0 z-10 group-hover/step:border-orange-400 group-hover/step:bg-gradient-to-br group-hover/step:from-orange-50 group-hover/step:to-orange-100 transition-all duration-300 shadow-sm">
+                      <span className="text-xs font-bold text-slate-400 group-hover/step:text-orange-600">
+                        4
+                      </span>
+                    </div>
+                    <div>
+                      <h4 className="text-slate-900 font-bold text-base mb-1 group-hover/step:text-orange-600 transition-colors">
+                        Testing & Review
+                      </h4>
+                      <p className="text-slate-600 text-sm">
+                        Verify everything works perfectly.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Step 5 */}
+                  <div className="relative flex items-start gap-4 group/step">
+                    <div className="w-9 h-9 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center shrink-0 z-10 group-hover/step:border-green-400 group-hover/step:bg-gradient-to-br group-hover/step:from-green-50 group-hover/step:to-green-100 transition-all duration-300 shadow-sm">
+                      <span className="text-xs font-bold text-slate-400 group-hover/step:text-green-600">
+                        5
+                      </span>
+                    </div>
+                    <div>
+                      <h4 className="text-slate-900 font-bold text-base mb-1 group-hover/step:text-green-600 transition-colors">
                         Launch
                       </h4>
-                      <p className="text-slate-500 text-sm mt-1">
+                      <p className="text-slate-600 text-sm">
                         Start taking orders immediately.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-
-              {/* Soft Background Glows */}
-              <div className="absolute top-10 -right-10 w-40 h-40 bg-purple-200 rounded-full blur-3xl opacity-50 -z-10 animate-pulse"></div>
-              <div
-                className="absolute -bottom-4 -left-4 w-40 h-40 bg-pink-200 rounded-full blur-3xl opacity-50 -z-10 animate-pulse"
-                style={{ animationDelay: "1s" }}
-              ></div>
             </div>
           </div>
         </div>
