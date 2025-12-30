@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
               <button className="group relative px-6 py-3 bg-slate-900 text-white rounded-lg font-semibold text-base shadow-lg shadow-purple-900/10 hover:shadow-xl hover:shadow-purple-900/20 transition-all hover:-translate-y-0.5 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative flex items-center gap-2 z-10">
-                  Start Free Trial{" "}
+                  Get Started{" "}
                   <ArrowUpRight
                     size={16}
                     className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
@@ -108,7 +108,12 @@ const Footer: React.FC = () => {
           {/* Brand Column */}
           <div className="col-span-2 lg:col-span-2 space-y-4">
             <div className="shrink-0 relative group">
-              <a href="/" className="flex items-center cursor-pointer">
+              <a href="/" className="flex items-center cursor-pointer gap-3">
+                <img
+                  src="/logo.png"
+                  alt="Microkraft Logo"
+                  className="h-8 md:h-10 w-auto object-contain"
+                />
                 <div>
                   <span className="text-xl md:text-2xl font-black tracking-tight bg-gradient-to-r from-slate-800 via-slate-700 to-slate-600 bg-clip-text text-transparent">
                     Microkraft

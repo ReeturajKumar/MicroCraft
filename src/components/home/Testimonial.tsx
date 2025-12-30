@@ -58,7 +58,7 @@ const TESTIMONIALS: TestimonialData[] = [
 
 const Testimonial: React.FC = () => {
   return (
-    <section className="relative w-full bg-[#FAFAFA] py-5 md:py-24 overflow-hidden font-sans">
+    <section className="relative w-full bg-[#FAFAFA] py-8 md:py-16 overflow-hidden font-sans">
       {/* --- BACKGROUND ATMOSPHERE --- */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.04] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
@@ -67,7 +67,7 @@ const Testimonial: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         {/* --- HEADER --- */}
-        <div className="flex flex-col md:flex-row items-end justify-between mb-4 md:mb-16 gap-6">
+        <div className="flex flex-col md:flex-row items-end justify-between mb-6 md:mb-10 gap-6">
           <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -137,21 +137,21 @@ const Testimonial: React.FC = () => {
 // --- SINGLE CARD COMPONENT ---
 const TestimonialCard: React.FC<{ data: TestimonialData }> = ({ data }) => {
   return (
-    <div className="group relative w-[340px] md:w-[380px] bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_40px_-8px_rgba(168,85,247,0.15)] transition-all duration-500 cursor-default hover:-translate-y-1 flex flex-col justify-between">
+    <div className="group relative w-[320px] md:w-[360px] bg-white rounded-xl p-4 md:p-5 border border-gray-100 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_24px_-8px_rgba(168,85,247,0.2)] transition-all duration-300 cursor-default hover:-translate-y-0.5 flex flex-col justify-between">
       {/* Decorative Gradient Border on Hover */}
-      <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-purple-100 transition-colors duration-500 pointer-events-none"></div>
+      <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-purple-100 transition-colors duration-300 pointer-events-none"></div>
 
       {/* Background Quote Icon */}
-      <div className="absolute top-4 right-6 text-gray-100 group-hover:text-purple-50 transition-colors duration-500 transform group-hover:scale-105 group-hover:rotate-6 pointer-events-none">
-        <Quote size={60} fill="currentColor" />
+      <div className="absolute top-3 right-4 text-gray-100 group-hover:text-purple-50 transition-colors duration-300 transform group-hover:scale-105 pointer-events-none">
+        <Quote size={48} fill="currentColor" />
       </div>
 
       <div>
         {/* Header: User & Growth Badge */}
-        <div className="relative z-10 flex items-start justify-between mb-6">
-          <div className="flex items-center gap-3">
+        <div className="relative z-10 flex items-start justify-between mb-4">
+          <div className="flex items-center gap-2.5">
             <div className="relative">
-              <div className="w-11 h-11 rounded-full p-[2px] bg-gradient-to-br from-purple-500 to-pink-500">
+              <div className="w-9 h-9 rounded-full p-[1.5px] bg-gradient-to-br from-purple-500 to-pink-500">
                 <img
                   src={data.image}
                   alt={data.name}
@@ -160,49 +160,49 @@ const TestimonialCard: React.FC<{ data: TestimonialData }> = ({ data }) => {
               </div>
               <div className="absolute -bottom-0.5 -right-0.5 bg-white p-0.5 rounded-full shadow-sm">
                 <div className="bg-blue-500 rounded-full p-0.5">
-                  <CheckCircle2 size={8} className="text-white" />
+                  <CheckCircle2 size={7} className="text-white" />
                 </div>
               </div>
             </div>
             <div>
-              <h3 className="font-semibold text-slate-900 text-base leading-tight">
+              <h3 className="font-semibold text-slate-900 text-sm md:text-base leading-tight">
                 {data.name}
               </h3>
-              <p className="text-xs text-slate-500 font-medium mt-0.5">
+              <p className="text-[10px] md:text-xs text-slate-500 font-medium mt-0.5">
                 {data.role}
               </p>
             </div>
           </div>
         </div>
 
-        {/* The Quote (Serif for Classic feel) */}
-        <div className="relative z-10 mb-6 min-h-[100px]">
-          <div className="flex gap-0.5 mb-2.5">
+        {/* The Quote */}
+        <div className="relative z-10 mb-4 min-h-[80px]">
+          <div className="flex gap-0.5 mb-2">
             {[1, 2, 3, 4, 5].map((s) => (
               <Star
                 key={s}
-                size={12}
+                size={10}
                 className="text-yellow-400 fill-yellow-400"
               />
             ))}
           </div>
-          <p className="text-base text-slate-700 font-serif leading-relaxed line-clamp-4 group-hover:text-slate-900 transition-colors">
+          <p className="text-sm md:text-base text-slate-700 leading-relaxed line-clamp-3 group-hover:text-slate-900 transition-colors">
             "{data.quote}"
           </p>
         </div>
       </div>
 
       {/* Footer: Growth Metric & CTA */}
-      <div className="relative z-10 pt-5 border-t border-gray-100 flex items-center justify-between mt-auto">
-        <div className="bg-green-50 px-2.5 py-1 rounded-lg border border-green-100 inline-flex items-center gap-1.5">
+      <div className="relative z-10 pt-3.5 border-t border-gray-100 flex items-center justify-between mt-auto">
+        <div className="bg-green-50 px-2 py-1 rounded-lg border border-green-100 inline-flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-          <span className="text-xs font-semibold text-green-700">
+          <span className="text-[10px] md:text-xs font-semibold text-green-700">
             {data.growth}
           </span>
         </div>
 
-        <button className="flex items-center gap-1.5 text-xs font-semibold text-purple-600 group-hover:gap-2 transition-all cursor-pointer">
-          Start Selling <ArrowRight size={14} />
+        <button className="flex items-center gap-1 text-[10px] md:text-xs font-semibold text-purple-600 group-hover:gap-1.5 transition-all cursor-pointer">
+          Start Selling <ArrowRight size={12} />
         </button>
       </div>
     </div>

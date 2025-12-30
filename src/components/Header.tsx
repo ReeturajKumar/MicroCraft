@@ -21,23 +21,13 @@ const navLinks: NavLink[] = [
     name: "Products",
     href: "/products",
     dropdown: [
-      { name: "CRM & Engagement", href: "/products/crm" },
-      { name: "Digital Commerce", href: "/products/commerce" },
-      { name: "Analytics & AI", href: "/products/analytics" },
+      { name: "Enterprise CRM", href: "/products/crm" },
+      { name: "Enterprise AI Automation", href: "/products/ai-automation" },
     ],
   },
   {
     name: "Sectors",
-    href: "#",
-    comingSoon: true,
-    dropdown: [
-      { name: "Manufacturing", href: "#", comingSoon: true },
-      { name: "Food & Hospitality", href: "#", comingSoon: true },
-      { name: "Healthcare", href: "#", comingSoon: true },
-      { name: "Services", href: "#", comingSoon: true },
-      { name: "Logistics", href: "#", comingSoon: true },
-      { name: "Agriculture", href: "#", comingSoon: true },
-    ],
+    href: "/sectors",
   },
   { name: "Case Studies", href: "/case-studies" },
   {
@@ -135,10 +125,15 @@ const Header: React.FC = () => {
             {/* 3. REPLACED <a> with <Link> */}
             <Link
               to="/"
-              className="flex items-center cursor-pointer"
+              className="flex items-center cursor-pointer gap-3"
               onClick={() => handleNavClick("")}
             >
-              <div className="ml-3">
+              <img
+                src="/logo.png"
+                alt="Microkraft Logo"
+                className="h-15 md:h-15 w-auto object-contain"
+              />
+              <div className="">
                 <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-slate-800 via-slate-700 to-slate-600 bg-clip-text text-transparent">
                   Microkraft
                 </span>
@@ -278,7 +273,7 @@ const Header: React.FC = () => {
             <button className="cursor-pointer group relative px-6 py-2.5 text-sm font-semibold text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 active:scale-95">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 transition-all duration-300 group-hover:scale-110" />
               <span className="relative flex items-center gap-2">
-                Book Demo
+                Schedule a Call
               </span>
             </button>
           </div>
@@ -385,7 +380,7 @@ const Header: React.FC = () => {
                 WhatsApp
               </a>
               <button className="cursor-pointer block w-full px-5 py-3 text-center text-sm font-semibold text-white rounded-xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:shadow-lg transition-all">
-                Book Demo
+                Schedule a Call
               </button>
             </div>
           </div>

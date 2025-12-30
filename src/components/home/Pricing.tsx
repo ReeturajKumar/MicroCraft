@@ -45,7 +45,7 @@ const Pricing: React.FC = () => {
               </span>
             </h2>
             <p className="text-base text-slate-600 max-w-xl">
-              Transparent pricing with no hidden fees. Start free and upgrade as
+              Transparent pricing with no hidden fees. Start today and upgrade as
               you grow.
             </p>
           </div>
@@ -119,9 +119,9 @@ const Pricing: React.FC = () => {
           {/* 1. STARTER */}
           <PricingCard
             title="Starter"
-            price="Free"
+            price="Basic"
             sub=""
-            btnText="Start Free"
+            btnText="Get Started"
             icon={<Star className="w-5 h-5 text-slate-400" />}
           >
             <ul className="pricing-features-list">

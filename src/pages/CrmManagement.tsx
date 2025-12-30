@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CrmEngagementHero from "../components/crm/CrmEngagementHero";
+import CrmImageSection from "../components/crm/CrmImageSection";
 import CreativeCustomerSection from "../components/crm/CustomerRelationsSection";
 import AdvantagesSection from "../components/crm/AdvantagesSection";
 import ComprehensiveServicesSection from "../components/crm/ComprehensiveServicesSection";
@@ -22,6 +23,7 @@ const CrmManagement = () => {
     >
       <div className="relative z-10">
         <CrmEngagementHero />
+        <CrmImageSection />
         <CreativeCustomerSection />
         <AdvantagesSection />
         <ComprehensiveServicesSection />

@@ -254,6 +254,20 @@ body {
   animation-play-state: paused;
 }
 
+/* Logo Marquee Animation */
+@keyframes scroll-logo {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.33%);
+  }
+}
+
+.scroll-track.logo-track {
+  animation: scroll-logo 30s linear infinite;
+}
+
 /* ===== CRM COMPONENTS ===== */
 
 /* Fade In Up Animation (used across multiple CRM components) */
@@ -546,6 +560,21 @@ body {
 }
 .animate-float-fast {
   animation: float-fast 7s ease-in-out infinite;
+}
+
+/* Sectors Page - Shimmer Effect */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Sectors Page - Progress Bar Animation */
+@keyframes progressFill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 
 /* Analytics Section - Bounce Slow (analytics variant) */

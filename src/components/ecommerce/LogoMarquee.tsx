@@ -1,71 +1,109 @@
-import {
-  Hexagon,
-  Triangle,
-  Circle,
-  Square,
-  CloudLightning,
-  Globe,
-  ShieldCheck,
-  Gem,
-} from "lucide-react";
+import { motion } from "framer-motion";
 
 const LogoMarquee = () => {
-  const partners = [
-    { name: "Acme Corp", icon: Hexagon, color: "text-blue-600" },
-    { name: "Quantum", icon: Triangle, color: "text-purple-600" },
-    { name: "Echo", icon: Circle, color: "text-cyan-600" },
-    { name: "SquareSpace", icon: Square, color: "text-pink-600" },
-    { name: "Bolt", icon: CloudLightning, color: "text-yellow-500" },
-    { name: "Global", icon: Globe, color: "text-green-600" },
-    { name: "SecureIT", icon: ShieldCheck, color: "text-indigo-600" },
-    { name: "Ruby", icon: Gem, color: "text-red-500" },
+  // Platform logos from public folder
+  const platforms = [
+    {
+      name: "Adobe",
+      logo: "/Adobe.png",
+      alt: "Adobe",
+    },
+    {
+      name: "IBM",
+      logo: "/IBM.png",
+      alt: "IBM",
+    },
+    {
+      name: "MongoDB",
+      logo: "/MongoDB.png",
+      alt: "MongoDB",
+    },
+    {
+      name: "Salesforce",
+      logo: "/Salesforce.png",
+      alt: "Salesforce",
+    },
+    {
+      name: "SAP",
+      logo: "/Sap.png",
+      alt: "SAP",
+    },
+    {
+      name: "Shopify",
+      logo: "/Shopify.png",
+      alt: "Shopify",
+    },
+    {
+      name: "Workday",
+      logo: "/Workday.png",
+      alt: "Workday",
+    },
+    {
+      name: "Zendesk",
+      logo: "/Zendesk.png",
+      alt: "Zendesk",
+    },
   ];
 
   return (
-    <div className="w-full py-8 bg-white border-t border-gray-100 overflow-hidden">
-      {/* --- HEADER --- */}
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <h3 className="text-3xl font-bold text-gray-900">
-          Powering{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
-            1,500+
-          </span>{" "}
-          Modern Brands
-        </h3>
-      </div>
+    <section className="relative w-full pb-8  overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-10 lg:mb-12 max-w-7xl mx-auto"
+        >
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+            Trusted by the{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600">
+              industry leading brands
+            </span>
+          </h2>
+          <p className="text-base text-slate-600 max-w-2xl mx-auto">
+            Join thousands of companies that trust our platform to power their
+            business operations
+          </p>
+        </motion.div>
 
-      {/* --- MARQUEE --- */}
-      <div className="relative w-full group pt-10">
-        {/* Left White Fade (Hides the entrance) */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        {/* Logo Marquee */}
+        <div className="relative overflow-hidden">
+          {/* Left Fade */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white via-white to-transparent z-10 pointer-events-none" />
 
-        {/* Right White Fade (Hides the exit) */}
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          {/* Right Fade */}
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white via-white to-transparent z-10 pointer-events-none" />
 
-        {/* Scrolling Track */}
-        <div className="flex w-max scroll-track group-hover:paused">
-          {/* Render list 3 times for seamless loop */}
-          {[...partners, ...partners, ...partners].map((partner, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center mx-12 min-w-[140px] opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer hover:scale-105"
-            >
-              <div className="flex items-center gap-3">
-                <partner.icon
-                  className={`w-8 h-8 ${partner.color}`}
-                  strokeWidth={2}
-                />
-                <span className="text-xl font-bold text-gray-800">
-                  {partner.name}
-                </span>
-              </div>
-            </div>
-          ))}
+          {/* Scrolling Track */}
+          <div className="flex w-max scroll-track logo-track group-hover:paused">
+            {/* Render logos multiple times for seamless infinite loop */}
+            {[...platforms, ...platforms, ...platforms].map(
+              (platform, index) => (
+                <motion.div
+                  key={`${platform.name}-${index}`}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3 }}
+                  className="flex items-center justify-center mx-6 lg:mx-8 min-w-[140px] h-10 opacity-70 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer group/item"
+                >
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <img
+                      src={platform.logo}
+                      alt={platform.alt}
+                      className="max-h-8 w-auto object-contain filter grayscale group-hover/item:grayscale-0 transition-all duration-300 group-hover/item:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                </motion.div>
+              )
+            )}
+          </div>
         </div>
       </div>
-
-      {/* Styles moved to index.css - see: scroll-track, scroll-marquee */}
-    </div>
+    </section>
   );
 };
 

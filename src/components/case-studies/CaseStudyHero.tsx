@@ -129,7 +129,7 @@ const CaseStudiesHero: React.FC = () => {
                 <ArrowRight size={18} />
               </button>
               <button className="px-8 py-4 bg-white text-slate-700 border-2 border-slate-300 rounded-xl font-bold hover:border-purple-400 hover:bg-purple-50 transition-colors shadow-sm">
-                Get Started Free
+                Get Started
               </button>
             </div>
           </div>

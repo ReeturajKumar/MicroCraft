@@ -137,7 +137,7 @@ const FinalLaunchpad: React.FC = () => {
                     <span>Go live in 48 hours</span>
                   </h3>
                   <span className="text-[10px] font-bold text-purple-700 border-2 border-purple-200 px-3 py-1 rounded-full uppercase tracking-widest bg-gradient-to-r from-purple-50 to-pink-50 shadow-sm">
-                    Free Setup
+                    Expert Setup
                   </span>
                 </div>
 

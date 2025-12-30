@@ -8,14 +8,15 @@ import {
 } from "framer-motion";
 import {
   MessageCircle,
-  ShoppingBag,
-  BarChart2,
   ArrowRight,
   Sparkles,
   User,
   Globe,
   TrendingUp,
   Zap,
+  Bot,
+  Workflow,
+  Phone,
 } from "lucide-react";
 
 // --- TYPES ---
@@ -146,42 +147,31 @@ const ProductTrio: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
             className="product-trio-subheading"
           >
-            Unify CRM, Commerce, and Analytics in one powerful dashboard.
+            Enterprise-ready AI automation and CRM that integrate seamlessly into your day-to-day business operations.
           </motion.p>
         </div>
 
         {/* --- CARDS GRID --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* CARD 1: CRM */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* CARD 1: Enterprise CRM */}
           <SpotlightCard delay={0}>
             <CRMDemo />
             <CardContent
-              title="Unified CRM"
-              desc="Turn conversations into revenue. AI drafts emails, scores leads, and closes deals while you sleep."
-              tags={["Auto-Draft", "Lead Scoring"]}
+              title="Enterprise CRM"
+              desc="A central intelligence system for sales, customers, and growth. Manage customers, streamline sales operations, automate follow-ups, and gain deep business insights."
+              tags={["Custom Pipelines", "AI-Integrated"]}
               icon={<MessageCircle className="w-4 h-4 text-purple-600" />}
             />
           </SpotlightCard>
 
-          {/* CARD 2: COMMERCE */}
+          {/* CARD 2: Enterprise AI Automation */}
           <SpotlightCard delay={0.15}>
-            <CommerceDemo />
+            <AIAutomationDemo />
             <CardContent
-              title="Digital Commerce"
-              desc="Launch storefronts in seconds. Sync inventory across ONDC, Amazon, and your website instantly."
-              tags={["Multi-Channel", "Real-time Sync"]}
-              icon={<ShoppingBag className="w-4 h-4 text-pink-600" />}
-            />
-          </SpotlightCard>
-
-          {/* CARD 3: ANALYTICS */}
-          <SpotlightCard delay={0.3}>
-            <AnalyticsDemo />
-            <CardContent
-              title="Predictive AI"
-              desc="Stop guessing. Our forecasting engine predicts stockouts and identifies your next bestseller."
-              tags={["Forecasting", "Trend Analysis"]}
-              icon={<BarChart2 className="w-4 h-4 text-indigo-500" />}
+              title="Enterprise AI Automation"
+              desc="Intelligent AI agents powering modern enterprises end-to-end. From customer interactions to backend workflows, execute, analyze, and optimize business processes at scale."
+              tags={["AI Agents", "Workflow Integration"]}
+              icon={<Zap className="w-4 h-4 text-pink-600" />}
             />
           </SpotlightCard>
         </div>
@@ -358,139 +348,69 @@ const CRMDemo = () => {
   );
 };
 
-const CommerceDemo = () => {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const rotateX = useSpring(useTransform(y, [-100, 100], [10, -10]), {
-    stiffness: 150,
-    damping: 20,
-  });
-  const rotateY = useSpring(useTransform(x, [-100, 100], [-10, 10]), {
-    stiffness: 150,
-    damping: 20,
-  });
-
-  function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
-    const rect = event.currentTarget.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    x.set(event.clientX - centerX);
-    y.set(event.clientY - centerY);
-  }
-
-  function handleMouseLeave() {
-    x.set(0);
-    y.set(0);
-  }
-
+const AIAutomationDemo = () => {
   return (
-    <div
-      className="relative flex-1 bg-gray-50 p-4 flex items-center justify-center overflow-hidden"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(236,72,153,0.05),transparent_70%)]"></div>
-      <motion.div
-        style={{ rotateX, rotateY, z: 100 }}
-        className="relative w-44 bg-white rounded-xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] border border-gray-200 p-2.5 perspective-[1000px] cursor-pointer"
-      >
-        <div className="absolute top-2 left-2 z-20">
-          <span className="bg-black/80 backdrop-blur-md text-white text-[8px] font-bold px-1.5 py-0.5 rounded border border-white/20">
-            New Arrival
-          </span>
-        </div>
-        <div className="h-full w-full bg-gradient-to-b from-gray-100 to-gray-50 rounded-lg mb-2 flex items-center justify-center relative overflow-hidden group/item">
-          <img
-            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-            alt="Product"
-            className="h-full w-full object-cover rounded-lg shadow-md z-10"
-          />
-          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/60 to-transparent w-[200%] h-full -translate-x-full group-hover/item:animate-shimmer"></div>
-        </div>
-        <div className="space-y-1.5">
-          <div className="flex justify-between items-start">
-            <div className="h-2.5 bg-gray-800 rounded w-1/2"></div>
-            <div className="h-2.5 bg-pink-100 rounded w-7"></div>
-          </div>
-          <div className="h-2 bg-gray-100 rounded w-3/4"></div>
-          <div className="pt-1.5 flex justify-between items-center">
-            <div className="flex -space-x-1">
-              <div className="w-3.5 h-3.5 rounded-full bg-blue-400 border border-white"></div>
-              <div className="w-3.5 h-3.5 rounded-full bg-purple-400 border border-white"></div>
-            </div>
-            <div className="px-1.5 py-0.5 bg-green-50 text-green-700 text-[8px] font-bold rounded-full border border-green-100">
-              Stock: 12
-            </div>
-          </div>
-        </div>
+    <div className="relative flex-1 bg-gradient-to-b from-slate-900 via-purple-900/20 to-slate-900 p-4 flex flex-col justify-center overflow-hidden">
+      <div className="absolute top-0 right-0 w-40 h-40 bg-pink-500/20 rounded-full blur-3xl opacity-60"></div>
+      <div className="absolute bottom-8 left-0 w-28 h-28 bg-blue-500/20 rounded-full blur-3xl opacity-60"></div>
+      
+      <div className="w-full max-w-[240px] mx-auto space-y-3 relative z-10">
+        {/* AI Agent Card */}
         <motion.div
-          animate={{ y: [0, -4, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -right-5 bottom-6 bg-white border border-gray-100 p-1.5 rounded-lg shadow-lg flex items-center gap-1.5"
+          initial={{ opacity: 0, y: -20, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 0.2, duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
+          className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3 shadow-lg"
         >
-          <div className="bg-blue-50 p-1 rounded-md">
-            <Globe size={10} className="text-blue-600" />
+          <div className="flex items-center gap-2 mb-2">
+            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+              <Bot size={12} className="text-white" />
+            </div>
+            <div className="flex-1">
+              <div className="text-[10px] font-bold text-white">AI Agent</div>
+              <div className="text-[8px] text-gray-400">Processing...</div>
+            </div>
+            <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
           </div>
-          <div>
-            <div className="text-[8px] font-bold text-gray-800">Synced</div>
-            <div className="text-[7px] text-gray-400">Amazon + ONDC</div>
+          <div className="text-[10px] text-gray-300">
+            Automating workflow tasks
           </div>
         </motion.div>
-      </motion.div>
-    </div>
-  );
-};
 
-const AnalyticsDemo = () => {
-  return (
-    <div className="relative flex-1 bg-[#1E1B24] p-4 flex items-center justify-center overflow-hidden group">
-      <div className="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:16px_16px]"></div>
-      <div className="absolute top-[-50%] left-[-50%] w-full h-full bg-purple-500/20 blur-[80px]"></div>
-      <div className="w-full max-w-[220px] relative z-10">
-        <div className="flex justify-between items-end mb-4">
-          <div>
-            <div className="text-[9px] text-gray-400 uppercase tracking-wider font-semibold mb-1">
-              Projected Revenue
-            </div>
-            <div className="text-2xl font-bold text-white flex items-center gap-1.5">
-              $124.5k
-              <span className="flex items-center text-[10px] font-bold text-emerald-400 bg-emerald-400/10 px-1 py-0.5 rounded border border-emerald-400/20">
-                <TrendingUp size={10} className="mr-0.5" /> +14%
-              </span>
-            </div>
-          </div>
-          <Zap
-            size={14}
-            className="text-yellow-400 fill-yellow-400 animate-pulse"
-          />
-        </div>
-        <div className="h-24 flex items-end justify-between gap-1.5">
-          {[35, 55, 45, 70, 60, 85, 100].map((h, i) => (
-            <div
+        {/* Automation Steps */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 1, 1, 0] }}
+          transition={{
+            duration: 3,
+            times: [0, 0.3, 0.7, 1],
+            repeat: Infinity,
+            repeatDelay: 2,
+          }}
+          className="space-y-2"
+        >
+          {[
+            { icon: Phone, text: "Call handling", color: "text-blue-400" },
+            { icon: Workflow, text: "Process automation", color: "text-purple-400" },
+            { icon: Sparkles, text: "Lead qualification", color: "text-pink-400" },
+          ].map((item, i) => (
+            <motion.div
               key={i}
-              className="relative w-full h-full flex items-end group/bar"
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: i * 0.2 }}
+              className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-2"
             >
+              <item.icon size={12} className={item.color} />
+              <span className="text-[9px] text-gray-300">{item.text}</span>
               <motion.div
-                initial={{ height: 0 }}
-                whileInView={{ height: `${h}%` }}
-                transition={{ duration: 0.8, delay: i * 0.1, ease: "circOut" }}
-                className={`w-full rounded-t-sm relative ${
-                  i === 6
-                    ? "bg-gradient-to-t from-purple-600 to-pink-500"
-                    : "bg-gray-700 group-hover/bar:bg-gray-600 transition-colors"
-                }`}
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.3 }}
+                className="ml-auto w-1.5 h-1.5 rounded-full bg-green-400"
               />
-            </div>
+            </motion.div>
           ))}
-        </div>
-        <div className="flex justify-between mt-1.5 px-1">
-          {["M", "T", "W", "T", "F", "S", "S"].map((day, i) => (
-            <span key={i} className="text-[9px] text-gray-500 font-medium">
-              {day}
-            </span>
-          ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

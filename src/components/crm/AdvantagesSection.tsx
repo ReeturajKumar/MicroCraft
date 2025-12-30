@@ -1,169 +1,130 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const AdvantagesSection: React.FC = () => {
   return (
-    <section className="relative w-full text-black py-12 md:py-16 lg:py-10 overflow-hidden font-sans">
+    <section className="relative w-full text-black py-6 md:py-16 lg:py-6 overflow-hidden font-sans">
       {/* Styles moved to index.css - see: scrolling-text-container-h2-alt, scrolling-text-inner */}
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Heading */}
-        <div className="mb-4 lg:mb-3 text-center lg:text-left">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-            Explore <span className="text-purple-500">the advantages</span> of{" "}
-            <br className="hidden lg:block" />
-            partnering with
-            {/* === ANIMATED TEXT CONTAINER === */}
-            <div className="scrolling-text-container-h2-alt">
-              <div className="scrolling-text-inner flex flex-col text-left">
-                {/* Word 1 */}
-                <span className="block h-[1.2em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
-                  MicroCraft
-                </span>
-                {/* Word 2 */}
-                <span className="block h-[1.2em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
-                  Growth
-                </span>
-                {/* Word 3 */}
-                <span className="block h-[1.2em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
-                  Success
-                </span>
-                {/* Word 4 (Loop) */}
-                <span className="block h-[1.2em] text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
-                  MicroCraft
-                </span>
-              </div>
-            </div>
+        <div className="mb-6 lg:mb-6 text-center lg:text-left">
+          <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-4">
+            Why Choose{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
+              MicroKraft.ai CRM
+            </span>
           </h2>
+          <p className="text-base md:text-lg text-slate-600 max-w-3xl">
+            A central intelligence system that transforms how you manage
+            customers, streamline sales operations, and drive business growth.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Column: Image and Floating Cards */}
-          <div className="relative z-10">
-            <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-purple-500/15 rounded-full blur-3xl -z-10"></div>
-            <div className="absolute top-8 left-0 w-full h-full bg-gradient-to-br from-purple-400/8 to-transparent rounded-2xl -z-10"></div>
-
-            {/* Main Person Image */}
-            <img
-              src="https://ik.imagekit.io/yf8fxnkvu/Whatsapp%20page%20/WhatsApp%20Chatbot..png?updatedAt=1727955590835" // Placeholder for the woman in orange shirt
-              alt="Happy Partner"
-              className="w-full h-full object-cover rounded-2xl z-10 relative"
-            />
-
-            {/* Floating "Business Growth" Card */}
-            <div className="absolute top-6 right-6 bg-white p-3 rounded-xl shadow-md z-20 flex flex-col gap-1.5 w-40">
-              <div className="bg-purple-100 p-1.5 rounded-lg w-fit">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-5 h-5 text-purple-600"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M2.25 13.5a8.25 8.25 0 018.25-8.25.75.75 0 01.75.75v6.75H18a.75.75 0 01.75.75 8.25 8.25 0 01-16.5 0zm1.5 1.5H9v6.75a.75.75 0 01-.75.75 8.25 8.25 0 01-6.75-6.75z"
-                    clipRule="evenodd"
-                  />
-                  <path d="M11.25 5.25v5.25H16.5v-.75a8.25 8.25 0 00-5.25-5.25zm-3 1.5v2.25H5.25a8.25 8.25 0 013-3zm3 10.5v-2.25H18a8.25 8.25 0 01-3 3zm3-4.5h2.25a8.25 8.25 0 01-2.25 3v-3zm-3-1.5V9H9v2.25h2.25z" />
-                </svg>
-              </div>
-              <div className="text-xs text-gray-500 font-medium">
-                Business Growth
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="text-base font-semibold text-gray-900">
-                  $14,720
-                </span>
-                <span className="text-[10px] font-semibold text-purple-500 bg-purple-50 px-1.5 py-0.5 rounded-full">
-                  25% ↑
-                </span>
-              </div>
+          {/* Left Column: Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+          >
+            <div className="relative w-full max-w-[600px] mx-auto lg:mx-0">
+              <img
+                src="/Advantages.png"
+                alt="CRM Advantages - Centralized Intelligence System"
+                className="w-full h-auto object-contain rounded-2xl"
+                loading="lazy"
+                onError={(e) => {
+                  // Fallback: Show placeholder if image doesn't exist
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = "none";
+                  const parent = target.parentElement;
+                  if (parent) {
+                    const placeholder = document.createElement("div");
+                    placeholder.className =
+                      "w-full aspect-video bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl border-2 border-purple-200 flex items-center justify-center";
+                    placeholder.innerHTML =
+                      '<div class="text-purple-400 text-sm">Advantages.png</div>';
+                    parent.appendChild(placeholder);
+                  }
+                }}
+              />
             </div>
+          </motion.div>
 
-            {/* Floating "Happy Client!" Button */}
-            <div className="absolute bottom-8 left-6 bg-purple-500 text-white px-5 py-2.5 rounded-full shadow-md z-20 flex items-center gap-2 font-medium cursor-pointer hover:bg-purple-600 transition-colors text-sm">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"
-                />
-              </svg>
-              Happy Client!
-            </div>
-
-            {/* Another Small Floating Smiley Button */}
-            <div className="absolute bottom-3 right-6 bg-purple-500 text-white p-2.5 rounded-full shadow-md z-20 cursor-pointer hover:bg-purple-600 transition-colors">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"
-                />
-              </svg>
-            </div>
-          </div>
-
-          {/* Right Column: List of Advantages */}
-          <div className="flex flex-col gap-6">
+          {/* Right Column: Enhanced Advantages List */}
+          <div className="flex flex-col gap-3">
             {/* Item 1 */}
-            <div className="flex items-start gap-4 border-b border-gray-200 pb-5">
-              <div className="bg-blue-800 text-white w-10 h-10 rounded-lg flex items-center justify-center font-semibold text-lg shrink-0">
-                1
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-1.5">
-                  Efficiency Boost:
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-                  Our CRM is designed to optimize your daily operations and
-                  workflows, reducing redundancy and inefficiencies.
-                </p>
+            <div className="group relative bg-white rounded-lg p-3 border border-slate-200 hover:border-purple-300 hover:shadow-md transition-all duration-300">
+              <div className="flex items-start">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm font-bold text-slate-900 mb-1 group-hover:text-purple-600 transition-colors">
+                    Centralized Intelligence System
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed mb-1.5">
+                    One unified platform connecting sales, marketing, support, and operations with real-time data synchronization.
+                  </p>
+                  <ul className="space-y-0.5 text-xs text-slate-500">
+                    <li className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-purple-500 flex-shrink-0"></span>
+                      <span>Single source of truth for all customer data</span>
+                    </li>
+                    <li className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-purple-500 flex-shrink-0"></span>
+                      <span>Cross-department visibility and collaboration</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
 
             {/* Item 2 */}
-            <div className="flex items-start gap-4 border-b border-gray-200 pb-5">
-              <div className="bg-blue-800 text-white w-10 h-10 rounded-lg flex items-center justify-center font-semibold text-lg shrink-0">
-                2
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-1.5">
-                  Scalable Solutions:
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-                  Regardless of the size of your business, MicroCraft's CRM
-                  solutions can adapt to your needs.
-                </p>
+            <div className="group relative bg-white rounded-lg p-3 border border-slate-200 hover:border-purple-300 hover:shadow-md transition-all duration-300">
+              <div className="flex items-start">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">
+                    AI-Powered Automation & Insights
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed mb-1.5">
+                    Intelligent automation handles lead qualification, follow-ups, and delivers actionable insights for better decisions.
+                  </p>
+                  <ul className="space-y-0.5 text-xs text-slate-500">
+                    <li className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"></span>
+                      <span>Automated lead scoring and qualification</span>
+                    </li>
+                    <li className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"></span>
+                      <span>Predictive analytics and forecasting</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
 
             {/* Item 3 */}
-            <div className="flex items-start gap-4 border-b border-gray-200 pb-5">
-              <div className="bg-blue-800 text-white w-10 h-10 rounded-lg flex items-center justify-center font-semibold text-lg shrink-0">
-                3
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-1.5">
-                  Dedicated Support:
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-                  Rest easy knowing that our dedicated support team is available
-                  to assist you.
-                </p>
+            <div className="group relative bg-white rounded-lg p-3 border border-slate-200 hover:border-purple-300 hover:shadow-md transition-all duration-300">
+              <div className="flex items-start">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm font-bold text-slate-900 mb-1 group-hover:text-pink-600 transition-colors">
+                    Enterprise Security & Scalability
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed mb-1.5">
+                    Enterprise-level security with role-based access control and unlimited scalability that grows with your business.
+                  </p>
+                  <ul className="space-y-0.5 text-xs text-slate-500">
+                    <li className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-pink-500 flex-shrink-0"></span>
+                      <span>Role-based access control and permissions</span>
+                    </li>
+                    <li className="flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-pink-500 flex-shrink-0"></span>
+                      <span>Scales from startup to enterprise seamlessly</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

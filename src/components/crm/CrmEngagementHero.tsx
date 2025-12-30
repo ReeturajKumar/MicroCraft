@@ -77,12 +77,7 @@ const CrmEngagementHero: React.FC = () => {
 
             {/* Paragraph */}
             <p className="animate-fade-up delay-200 text-base md:text-lg text-slate-600 max-w-xl leading-relaxed">
-              The only CRM that{" "}
-              <span className="font-medium text-slate-900">
-                automates lead scoring
-              </span>
-              , drafts personalized emails, and closes deals while you focus on
-              what matters most—growing your business.
+              A central intelligence system for sales, customers, and growth. Manage customers, streamline sales operations, automate follow-ups, and gain deep business insights—across teams, departments, and regions.
             </p>
 
             {/* Key Metrics */}
@@ -131,7 +126,7 @@ const CrmEngagementHero: React.FC = () => {
             {/* CTA Buttons */}
             <div className="animate-fade-up delay-400 flex flex-col sm:flex-row items-start gap-3 pt-1">
               <button className="group relative bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg hover:shadow-xl hover:shadow-purple-500/20 flex items-center gap-2 text-sm md:text-base hover:-translate-y-0.5">
-                <span>Start Free Trial</span>
+                <span>Get Started</span>
                 <ArrowUpRight
                   size={16}
                   className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"

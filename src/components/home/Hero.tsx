@@ -47,30 +47,21 @@ const Hero = () => {
   const slides = [
     {
       id: 0,
-      leftWord: "Sales",
+      leftWord: "Enterprise CRM",
       leftColor: bikayiColors.primary,
-      bgWord: "CONVERT",
+      bgWord: "CRM",
       visual: "phone",
       caption:
-        "Turn conversations into revenue. AI drafts emails, scores leads, and closes deals while you sleep.",
+        "A central intelligence system for sales, customers, and growth. Manage customers, streamline sales operations, automate follow-ups, and gain deep business insights.",
     },
     {
       id: 1,
-      leftWord: "Commerce",
+      leftWord: "AI Automation",
       leftColor: bikayiColors.primaryLight,
-      bgWord: "ORDERS",
+      bgWord: "AUTOMATE",
       visual: "laptop",
       caption:
-        "Launch storefronts in seconds. Sync inventory across ONDC, Amazon, and your website instantly.",
-    },
-    {
-      id: 2,
-      leftWord: "Analytics",
-      leftColor: bikayiColors.primary,
-      bgWord: "CAPTURE",
-      visual: "graph",
-      caption:
-        "Make data-driven decisions. Track performance across all channels and optimize for growth.",
+        "Intelligent AI agents powering modern enterprises end-to-end. From customer interactions to backend workflows, execute, analyze, and optimize business processes at scale.",
     },
   ];
 
@@ -108,11 +99,7 @@ const Hero = () => {
           <div className="col-span-1 lg:col-span-6 flex flex-col justify-start lg:justify-center order-1 lg:order-1">
             {/* Main Headline - Bikayi Style: Work Sans, 54px, Bold */}
             <h1 className="text-4xl sm:text-5xl lg:text-[48px] font-bold leading-[64px] tracking-tight mb-4 lg:mb-6 hero-heading-bikayi">
-              Transform Your Business with One Unified{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600">
-                Platform{" "}
-              </span>
-              for {/* DYNAMIC WIDTH CONTAINER */}
+              Transform Your Business with{" "}
               <span className="relative inline-flex flex-col h-[1.1em] overflow-hidden align-top transition-all duration-500 ease-in-out">
                 {/* Invisible Ghost Word to set Width */}
                 <span className="opacity-0 invisible whitespace-nowrap pointer-events-none">
@@ -139,8 +126,7 @@ const Hero = () => {
                     {slide.leftWord}
                   </span>
                 ))}
-              </span>{" "}
-              Excellence
+              </span>
             </h1>
 
             {/* Description - Bikayi Style: Inter, 16px, Secondary Text */}
@@ -152,14 +138,14 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center mb-8">
               {/* Primary Button - Bikayi Style */}
               <button className="group relative px-3 py-2 rounded font-semibold text-white transition-all hover:-translate-y-0.5 flex items-center gap-2 overflow-hidden border  bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 transition-all duration-300 group-hover:scale-110">
-                <span className="relative z-10">BOOK A DEMO</span>
+                <span className="relative z-10">SCHEDULE A CALL</span>
                 <ArrowUpRight className="w-4 h-4 relative z-10 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </button>
 
               {/* Secondary Button - Bikayi Style */}
               <button className="px-3 py-2 bg-white rounded font-semibold text-base transition-all flex items-center justify-center gap-2 border btn-bikayi-secondary">
                 <Play className="w-4 h-4 fill-current" />
-                <span>START A FREE TRIAL</span>
+                <span>GET STARTED</span>
               </button>
             </div>
 
