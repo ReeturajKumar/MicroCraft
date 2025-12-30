@@ -32,7 +32,7 @@ const Sectors = () => {
     >
       <div className="relative z-10">
         {/* Hero Section */}
-        <section className="relative w-full bg-gradient-to-br from-slate-50 via-white to-purple-50/20 overflow-hidden py-10 md:py-16 lg:py-8">
+        <section className="relative w-full bg-gradient-to-br from-slate-50 via-white to-purple-50/20 overflow-hidden py-8 sm:py-12 md:py-16 lg:py-8">
           {/* Background Elements */}
           <div className="absolute inset-0 pointer-events-none">
             {/* Grid Pattern */}
@@ -44,16 +44,16 @@ const Sectors = () => {
               }}
             />
             {/* Gradient Orbs */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-200/15 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-pink-200/15 rounded-full blur-3xl"></div>
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] bg-purple-200/15 rounded-full blur-2xl sm:blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] bg-pink-200/15 rounded-full blur-2xl sm:blur-3xl"></div>
           </div>
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-8 max-w-7xl relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
               {/* === LEFT COLUMN: Text Content === */}
-              <div className="flex flex-col gap-6 text-left">
+              <div className="flex flex-col gap-4 sm:gap-5 md:gap-6 text-left">
                 {/* Heading with Rotating Text */}
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
                   Enterprise Solutions for{" "}
                   <div className="scrolling-text-container relative inline-block">
                     <div className="scrolling-text-inner flex flex-col text-left">
@@ -72,7 +72,7 @@ const Sectors = () => {
                     </div>
                     {/* Underline Decoration */}
                     <svg
-                      className="absolute w-full h-2.5 -bottom-1 left-0 text-purple-200 -z-10"
+                      className="absolute w-full h-1.5 sm:h-2 md:h-2.5 -bottom-1 left-0 text-purple-200 -z-10"
                       viewBox="0 0 100 10"
                       preserveAspectRatio="none"
                     >
@@ -87,7 +87,7 @@ const Sectors = () => {
                 </h1>
 
                 {/* Description */}
-                <p className="text-base md:text-lg text-slate-600 max-w-xl leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-xl leading-relaxed">
                   Tailored workflows and intelligent automation solutions
                   designed specifically for your sector. Transform complex
                   operations into streamlined, connected processes that drive
@@ -95,42 +95,51 @@ const Sectors = () => {
                 </p>
 
                 {/* Key Metrics */}
-                <div className="flex flex-wrap items-center gap-4 pt-1">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
-                      <TrendingUp size={18} className="text-green-600" />
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1">
+                  <div className="flex items-center gap-2 sm:gap-2.5">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
+                      <TrendingUp
+                        size={14}
+                        className="sm:w-[16px] sm:h-[16px] md:w-[18px] md:h-[18px] text-green-600"
+                      />
                     </div>
                     <div>
-                      <div className="text-xl font-semibold text-slate-900">
+                      <div className="text-lg sm:text-xl font-semibold text-slate-900">
                         6+
                       </div>
-                      <div className="text-xs text-slate-500 font-normal">
+                      <div className="text-[10px] sm:text-xs text-slate-500 font-normal">
                         Industry Sectors
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
-                      <Building2 size={18} className="text-purple-600" />
+                  <div className="flex items-center gap-2 sm:gap-2.5">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
+                      <Building2
+                        size={14}
+                        className="sm:w-[16px] sm:h-[16px] md:w-[18px] md:h-[18px] text-purple-600"
+                      />
                     </div>
                     <div>
-                      <div className="text-xl font-semibold text-slate-900">
+                      <div className="text-lg sm:text-xl font-semibold text-slate-900">
                         500+
                       </div>
-                      <div className="text-xs text-slate-500 font-normal">
+                      <div className="text-[10px] sm:text-xs text-slate-500 font-normal">
                         Enterprises Served
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-10 h-10 rounded-lg bg-indigo-100 flex items-center justify-center">
-                      <Users size={18} className="text-indigo-600" />
+                  <div className="flex items-center gap-2 sm:gap-2.5">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg bg-indigo-100 flex items-center justify-center flex-shrink-0">
+                      <Users
+                        size={14}
+                        className="sm:w-[16px] sm:h-[16px] md:w-[18px] md:h-[18px] text-indigo-600"
+                      />
                     </div>
                     <div>
-                      <div className="text-xl font-semibold text-slate-900">
+                      <div className="text-lg sm:text-xl font-semibold text-slate-900">
                         98%
                       </div>
-                      <div className="text-xs text-slate-500 font-normal">
+                      <div className="text-[10px] sm:text-xs text-slate-500 font-normal">
                         Client Satisfaction
                       </div>
                     </div>
@@ -138,43 +147,43 @@ const Sectors = () => {
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row items-start gap-3 pt-1">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-2.5 sm:gap-3 pt-1">
                   <Link
                     to="/case-studies"
-                    className="group relative bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-pink-700 hover:via-purple-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl hover:shadow-purple-500/20 flex items-center gap-2 text-sm md:text-base hover:-translate-y-0.5"
+                    className="group relative bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:from-pink-700 hover:via-purple-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl hover:shadow-purple-500/20 flex items-center justify-center sm:justify-start gap-2 text-xs sm:text-sm md:text-base hover:-translate-y-0.5 w-full sm:w-auto"
                   >
                     <span>View Case Studies</span>
                     <ArrowRight
-                      size={16}
-                      className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                      size={14}
+                      className="sm:w-4 sm:h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
                     />
                     <div className="absolute inset-0 rounded-lg bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </Link>
                   <a
                     href="#sectors"
-                    className="px-6 py-3 rounded-lg font-medium text-slate-700 hover:text-slate-900 border border-slate-200 hover:border-slate-300 transition-all flex items-center gap-2 text-sm md:text-base"
+                    className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium text-slate-700 hover:text-slate-900 border border-slate-200 hover:border-slate-300 transition-all flex items-center justify-center sm:justify-start gap-2 text-xs sm:text-sm md:text-base w-full sm:w-auto"
                   >
                     Explore Sectors
                   </a>
                 </div>
 
                 {/* Trust Indicators */}
-                <div className="flex flex-wrap items-center gap-4 pt-3">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="text-green-600" size={16} />
-                    <span className="text-sm text-slate-600 font-medium">
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2 sm:pt-3">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <CheckCircle2 className="text-green-600" size={14} />
+                    <span className="text-xs sm:text-sm text-slate-600 font-medium">
                       Enterprise-Grade Security
                     </span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="text-green-600" size={16} />
-                    <span className="text-sm text-slate-600 font-medium">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <CheckCircle2 className="text-green-600" size={14} />
+                    <span className="text-xs sm:text-sm text-slate-600 font-medium">
                       24/7 Support
                     </span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="text-green-600" size={16} />
-                    <span className="text-sm text-slate-600 font-medium">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <CheckCircle2 className="text-green-600" size={14} />
+                    <span className="text-xs sm:text-sm text-slate-600 font-medium">
                       Custom Implementation
                     </span>
                   </div>
@@ -182,33 +191,33 @@ const Sectors = () => {
               </div>
 
               {/* === RIGHT COLUMN: Visual Dashboard === */}
-              <div className="relative h-[400px] md:h-[480px] lg:h-[520px] w-full flex items-center justify-center lg:justify-end">
+              <div className="relative h-[320px] sm:h-[380px] md:h-[450px] lg:h-[520px] w-full flex items-center justify-center lg:justify-end mt-6 sm:mt-8 lg:mt-0">
                 {/* Main Visual Container */}
                 <div className="relative z-10 w-full max-w-lg">
                   {/* Background Blob */}
-                  <div className="absolute top-8 left-0 w-full h-full bg-gradient-to-br from-purple-200/40 via-pink-200/40 to-indigo-200/40 rounded-full blur-3xl -z-10"></div>
+                  <div className="absolute top-8 left-0 w-full h-full bg-gradient-to-br from-purple-200/40 via-pink-200/40 to-indigo-200/40 rounded-full blur-2xl sm:blur-3xl -z-10"></div>
 
                   {/* Dashboard Card */}
-                  <div className="relative bg-white rounded-2xl shadow-2xl border-2 border-slate-100 overflow-hidden">
+                  <div className="relative bg-white rounded-xl sm:rounded-2xl shadow-2xl border-2 border-slate-100 overflow-hidden">
                     {/* Dashboard Header */}
-                    <div className="bg-gradient-to-r from-slate-900 to-slate-800 px-6 py-4 border-b border-slate-700">
+                    <div className="bg-gradient-to-r from-slate-900 to-slate-800 px-4 sm:px-5 md:px-6 py-3 sm:py-4 border-b border-slate-700">
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                          <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                          <span className="ml-4 text-sm font-semibold text-white">
+                        <div className="flex items-center gap-2 sm:gap-3">
+                          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full bg-red-500"></div>
+                          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
+                          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full bg-green-500"></div>
+                          <span className="ml-2 sm:ml-3 md:ml-4 text-xs sm:text-sm font-semibold text-white">
                             Industry Dashboard
                           </span>
                         </div>
-                        <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-400 animate-pulse"></div>
                       </div>
                     </div>
 
                     {/* Dashboard Content */}
-                    <div className="p-4 bg-slate-50">
+                    <div className="p-3 sm:p-4 bg-slate-50">
                       {/* Sector Performance Charts - Grid Layout */}
-                      <div className="grid grid-cols-2 gap-3 mb-4">
+                      <div className="grid grid-cols-2 gap-2 sm:gap-2.5 md:gap-3 mb-3 sm:mb-4">
                         {[
                           {
                             name: "Manufacturing",
@@ -255,17 +264,17 @@ const Sectors = () => {
                         ].map((sector, idx) => (
                           <div
                             key={idx}
-                            className={`${sector.bgColor} rounded-lg p-2.5 border border-slate-200/50 hover:shadow-md transition-all duration-300`}
+                            className={`${sector.bgColor} rounded-lg p-2 sm:p-2.5 border border-slate-200/50 hover:shadow-md transition-all duration-300`}
                           >
-                            <div className="flex items-center justify-between mb-1.5">
-                              <span className="text-[10px] font-semibold text-slate-700 leading-tight">
+                            <div className="flex items-center justify-between mb-1 sm:mb-1.5">
+                              <span className="text-[9px] sm:text-[10px] font-semibold text-slate-700 leading-tight">
                                 {sector.shortName}
                               </span>
-                              <span className="text-xs font-bold text-slate-900">
+                              <span className="text-[10px] sm:text-xs font-bold text-slate-900">
                                 {sector.value}%
                               </span>
                             </div>
-                            <div className="relative h-1.5 bg-white/60 rounded-full overflow-hidden">
+                            <div className="relative h-1 sm:h-1.5 bg-white/60 rounded-full overflow-hidden">
                               <div
                                 className={`h-full bg-gradient-to-r ${sector.color} rounded-full`}
                                 style={{
@@ -285,17 +294,20 @@ const Sectors = () => {
                       </div>
 
                       {/* Overall Stats */}
-                      <div className="bg-white rounded-lg p-3 border border-slate-200">
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-[10px] font-semibold text-slate-700">
+                      <div className="bg-white rounded-lg p-2.5 sm:p-3 border border-slate-200">
+                        <div className="flex items-center justify-between mb-1.5 sm:mb-2">
+                          <span className="text-[9px] sm:text-[10px] font-semibold text-slate-700">
                             Overall Performance
                           </span>
-                          <span className="text-xs font-bold text-green-600 flex items-center gap-1">
-                            <TrendingUp size={11} />
+                          <span className="text-[10px] sm:text-xs font-bold text-green-600 flex items-center gap-0.5 sm:gap-1">
+                            <TrendingUp
+                              size={10}
+                              className="sm:w-[11px] sm:h-[11px]"
+                            />
                             +42%
                           </span>
                         </div>
-                        <div className="h-2 bg-slate-100 rounded-full overflow-hidden relative">
+                        <div className="h-1.5 sm:h-2 bg-slate-100 rounded-full overflow-hidden relative">
                           <div
                             className="h-full bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 rounded-full"
                             style={{
@@ -309,9 +321,9 @@ const Sectors = () => {
                           {/* Animated shimmer effect */}
                           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer pointer-events-none"></div>
                         </div>
-                        <div className="flex justify-between mt-2 text-[9px] text-slate-500">
-                          <span className="flex items-center gap-1">
-                            <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+                        <div className="flex justify-between mt-1.5 sm:mt-2 text-[8px] sm:text-[9px] text-slate-500">
+                          <span className="flex items-center gap-0.5 sm:gap-1">
+                            <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                             6 Sectors Active
                           </span>
                           <span>500+ Clients</span>
@@ -321,15 +333,18 @@ const Sectors = () => {
                   </div>
 
                   {/* Floating Card 1: Growth Metric */}
-                  <div className="absolute -top-4 -right-4 bg-white/95 backdrop-blur-md p-3 rounded-xl shadow-lg border border-slate-200 flex items-center gap-3 z-20 animate-float">
-                    <div className="bg-gradient-to-br from-green-400 to-emerald-500 p-2 rounded-lg text-white shadow-md">
-                      <TrendingUp size={16} />
+                  <div className="absolute -top-2 sm:-top-3 md:-top-4 -right-2 sm:-right-3 md:-right-4 bg-white/95 backdrop-blur-md p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl shadow-lg border border-slate-200 flex items-center gap-2 sm:gap-2.5 md:gap-3 z-20 animate-float">
+                    <div className="bg-gradient-to-br from-green-400 to-emerald-500 p-1.5 sm:p-2 rounded-lg text-white shadow-md flex-shrink-0">
+                      <TrendingUp
+                        size={12}
+                        className="sm:w-4 sm:h-4 md:w-4 md:h-4"
+                      />
                     </div>
-                    <div>
-                      <div className="text-[10px] text-slate-500 font-normal">
+                    <div className="min-w-0">
+                      <div className="text-[9px] sm:text-[10px] text-slate-500 font-normal">
                         Growth Rate
                       </div>
-                      <div className="text-lg font-semibold text-slate-900">
+                      <div className="text-base sm:text-lg font-semibold text-slate-900">
                         +140%
                       </div>
                     </div>
@@ -337,43 +352,49 @@ const Sectors = () => {
 
                   {/* Floating Card 2: Active Sectors */}
                   <div
-                    className="absolute top-1/2 -left-4 bg-white/95 backdrop-blur-md p-3 rounded-xl shadow-lg border border-slate-200 z-20 w-36 animate-float"
+                    className="absolute top-1/2 -left-2 sm:-left-3 md:-left-4 bg-white/95 backdrop-blur-md p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl shadow-lg border border-slate-200 z-20 w-28 sm:w-32 md:w-36 animate-float"
                     style={{ animationDelay: "1s" }}
                   >
-                    <div className="flex items-center gap-2.5 mb-1.5">
-                      <div className="bg-gradient-to-br from-purple-500 to-pink-500 p-1.5 rounded-lg text-white shadow-md">
-                        <Building2 size={14} />
+                    <div className="flex items-center gap-2 sm:gap-2.5 mb-1 sm:mb-1.5">
+                      <div className="bg-gradient-to-br from-purple-500 to-pink-500 p-1 sm:p-1.5 rounded-lg text-white shadow-md flex-shrink-0">
+                        <Building2 size={12} className="sm:w-3.5 sm:h-3.5" />
                       </div>
-                      <div>
-                        <div className="text-[10px] text-slate-500 font-normal">
+                      <div className="min-w-0">
+                        <div className="text-[9px] sm:text-[10px] text-slate-500 font-normal">
                           Active Sectors
                         </div>
-                        <div className="text-xl font-semibold text-slate-900">
+                        <div className="text-lg sm:text-xl font-semibold text-slate-900">
                           6
                         </div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-1 text-[10px] text-emerald-600 font-medium">
-                      <TrendingUp size={10} />
+                    <div className="flex items-center gap-0.5 sm:gap-1 text-[9px] sm:text-[10px] text-emerald-600 font-medium">
+                      <TrendingUp
+                        size={9}
+                        className="sm:w-[10px] sm:h-[10px]"
+                      />
                       <span>All operational</span>
                     </div>
                   </div>
 
                   {/* Floating Card 3: Automation Status */}
                   <div
-                    className="absolute -bottom-4 -right-4 bg-white/95 backdrop-blur-md p-3 rounded-xl shadow-lg border border-slate-200 z-20 w-44 animate-float"
+                    className="absolute -bottom-2 sm:-bottom-3 md:-bottom-4 -right-2 sm:-right-3 md:-right-4 bg-white/95 backdrop-blur-md p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl shadow-lg border border-slate-200 z-20 w-36 sm:w-40 md:w-44 animate-float"
                     style={{ animationDelay: "0.5s" }}
                   >
-                    <div className="flex justify-between items-start mb-1.5">
-                      <div className="bg-gradient-to-br from-indigo-600 to-purple-600 p-2 rounded-lg text-white shadow-md">
-                        <CheckCircle2 size={14} />
+                    <div className="flex justify-between items-start mb-1 sm:mb-1.5">
+                      <div className="bg-gradient-to-br from-indigo-600 to-purple-600 p-1.5 sm:p-2 rounded-lg text-white shadow-md flex-shrink-0">
+                        <CheckCircle2 size={12} className="sm:w-3.5 sm:h-3.5" />
                       </div>
-                      <CheckCircle2 size={14} className="text-emerald-500" />
+                      <CheckCircle2
+                        size={12}
+                        className="sm:w-3.5 sm:h-3.5 text-emerald-500 flex-shrink-0"
+                      />
                     </div>
-                    <h4 className="font-semibold text-slate-900 text-xs mb-0.5">
+                    <h4 className="font-semibold text-slate-900 text-[10px] sm:text-xs mb-0.5">
                       Automation Active
                     </h4>
-                    <p className="text-[10px] text-slate-600 leading-relaxed">
+                    <p className="text-[9px] sm:text-[10px] text-slate-600 leading-relaxed">
                       98% processes automated
                     </p>
                   </div>
@@ -398,57 +419,69 @@ const Sectors = () => {
         {/* <SectorWorkflows /> */}
 
         {/* CTA Section */}
-        <section className="relative py-10 md:py-12 bg-gradient-to-br from-purple-600 via-pink-600 to-indigo-600 overflow-hidden">
+        <section className="relative py-8 sm:py-10 md:py-12 lg:py-14 bg-gradient-to-br from-purple-600 via-pink-600 to-indigo-600 overflow-hidden">
           {/* Background Decorative Elements */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-0 left-0 w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 bg-white/10 rounded-full blur-2xl sm:blur-3xl"></div>
+            <div className="absolute bottom-0 right-0 w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 bg-white/10 rounded-full blur-2xl sm:blur-3xl"></div>
           </div>
 
-          <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2.5 leading-tight">
-              Ready to Transform Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-white">Business</span>?
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-8 text-center relative z-10">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-2.5 leading-tight">
+              Ready to Transform Your{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-white">
+                Business
+              </span>
+              ?
             </h2>
-            <p className="text-sm md:text-base text-white/90 mb-6 max-w-2xl mx-auto leading-relaxed">
-              Get started with industry-specific solutions tailored to your needs. Join 500+ enterprises already transforming their operations.
+            <p className="text-xs sm:text-sm md:text-base text-white/90 mb-4 sm:mb-5 md:mb-6 max-w-2xl mx-auto leading-relaxed">
+              Get started with industry-specific solutions tailored to your
+              needs. Join 500+ enterprises already transforming their
+              operations.
             </p>
-            <div className="flex flex-wrap justify-center gap-3 mb-6">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-2.5 sm:gap-3 mb-4 sm:mb-5 md:mb-6">
               <Link
                 to="/products/crm"
-                className="group relative px-6 py-2.5 bg-white text-purple-600 rounded-lg font-semibold hover:shadow-xl hover:shadow-white/20 transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2 overflow-hidden text-sm md:text-base"
+                className="group relative px-5 sm:px-6 py-2 sm:py-2.5 bg-white text-purple-600 rounded-lg font-semibold hover:shadow-xl hover:shadow-white/20 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2 overflow-hidden text-xs sm:text-sm md:text-base w-full sm:w-auto"
               >
                 <span className="relative z-10">Explore Products</span>
                 <ArrowRight
-                  size={16}
-                  className="relative z-10 group-hover:translate-x-1 transition-transform"
+                  size={14}
+                  className="sm:w-4 sm:h-4 relative z-10 group-hover:translate-x-1 transition-transform"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </Link>
               <Link
                 to="/case-studies"
-                className="group relative px-6 py-2.5 bg-transparent border-2 border-white/80 text-white rounded-lg font-semibold hover:bg-white/10 hover:border-white transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2 backdrop-blur-sm text-sm md:text-base"
+                className="group relative px-5 sm:px-6 py-2 sm:py-2.5 bg-transparent border-2 border-white/80 text-white rounded-lg font-semibold hover:bg-white/10 hover:border-white transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2 backdrop-blur-sm text-xs sm:text-sm md:text-base w-full sm:w-auto"
               >
                 <span>View Case Studies</span>
                 <ArrowRight
-                  size={16}
-                  className="group-hover:translate-x-1 transition-transform"
+                  size={14}
+                  className="sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform"
                 />
               </Link>
             </div>
 
             {/* Trust Badges */}
-            <div className="flex flex-wrap justify-center items-center gap-4 pt-5 border-t border-white/20">
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="text-white" size={14} />
-                <span className="text-xs md:text-sm text-white/90 font-medium">No Credit Card Required</span>
+            <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 pt-4 sm:pt-5 border-t border-white/20">
+              <div className="flex items-center gap-1 sm:gap-1.5">
+                <CheckCircle2 className="text-white" size={12} />
+                <span className="text-[10px] sm:text-xs md:text-sm text-white/90 font-medium">
+                  No Credit Card Required
+                </span>
               </div>
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="text-white" size={14} />
-                <span className="text-xs md:text-sm text-white/90 font-medium">Expert Consultation</span>
+              <div className="flex items-center gap-1 sm:gap-1.5">
+                <CheckCircle2 className="text-white" size={12} />
+                <span className="text-[10px] sm:text-xs md:text-sm text-white/90 font-medium">
+                  Expert Consultation
+                </span>
               </div>
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="text-white" size={14} />
-                <span className="text-xs md:text-sm text-white/90 font-medium">24/7 Support</span>
+              <div className="flex items-center gap-1 sm:gap-1.5">
+                <CheckCircle2 className="text-white" size={12} />
+                <span className="text-[10px] sm:text-xs md:text-sm text-white/90 font-medium">
+                  24/7 Support
+                </span>
               </div>
             </div>
           </div>

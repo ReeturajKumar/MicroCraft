@@ -274,7 +274,7 @@ const Simulator: React.FC = () => {
     // Outer container tracks mouse and holds background effects
     <section
       onMouseMove={handleSpotlightMove}
-      className="relative w-full min-h-screen bg-white overflow-hidden flex flex-col items-center justify-center font-sans py-8"
+      className="hidden md:flex relative w-full min-h-screen bg-white overflow-hidden flex-col items-center justify-center font-sans py-8"
     >
       {/* ========================================================
           BACKGROUND LAYERS

@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const LoadingIndicator = () => {
   const location = useLocation();
@@ -14,11 +14,16 @@ const LoadingIndicator = () => {
       const target = e.target as HTMLElement;
       // Check if click is on a link (React Router Link renders as <a>)
       const link = target.closest("a[href]");
-      
+
       if (link) {
         const href = link.getAttribute("href");
         // Check if it's an internal navigation link
-        if (href && href.startsWith("/") && !href.startsWith("//") && href !== location.pathname) {
+        if (
+          href &&
+          href.startsWith("/") &&
+          !href.startsWith("//") &&
+          href !== location.pathname
+        ) {
           setIsLoading(true);
         }
       }
@@ -73,7 +78,7 @@ const LoadingIndicator = () => {
       </div>
     </StyledWrapper>
   );
-}
+};
 
 const StyledWrapper = styled.div`
   /* 3D tower loader with theme colors */
@@ -219,6 +224,7 @@ const StyledWrapper = styled.div`
       translate: 0px 30px;
       opacity: 0;
     }
-  }`;
+  }
+`;
 
 export default LoadingIndicator;

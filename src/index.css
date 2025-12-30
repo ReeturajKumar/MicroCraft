@@ -1382,60 +1382,203 @@ body {
 /* ProductTrio Main Heading (H2) */
 .product-trio-heading {
   font-family: 'Work Sans', sans-serif;
-  font-size: 36px;
-  line-height: 44px;
+  font-size: 24px;
+  line-height: 32px;
   font-weight: 700;
   color: #212529;
+}
+
+@media (min-width: 640px) {
+  .product-trio-heading {
+    font-size: 30px;
+    line-height: 38px;
+  }
+}
+
+@media (min-width: 768px) {
+  .product-trio-heading {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-trio-heading {
+    font-size: 42px;
+    line-height: 50px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .product-trio-heading {
+    font-size: 48px;
+    line-height: 56px;
+  }
 }
 
 /* ProductTrio Subheading (Body Text) */
 .product-trio-subheading {
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 22px;
   font-weight: 400;
   color: #616161;
+}
+
+@media (min-width: 640px) {
+  .product-trio-subheading {
+    font-size: 15px;
+    line-height: 23px;
+  }
+}
+
+@media (min-width: 768px) {
+  .product-trio-subheading {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-trio-subheading {
+    font-size: 17px;
+    line-height: 25px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .product-trio-subheading {
+    font-size: 18px;
+    line-height: 26px;
+  }
 }
 
 /* ProductTrio Card Title (H3) */
 .product-trio-card-title {
   font-family: 'Work Sans', sans-serif;
-  font-size: 28px;
-  line-height: 36px;
+  font-size: 22px;
+  line-height: 30px;
   font-weight: 600;
   color: #212529;
+}
+
+@media (min-width: 640px) {
+  .product-trio-card-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .product-trio-card-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-trio-card-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .product-trio-card-title {
+    font-size: 36px;
+    line-height: 44px;
+  }
 }
 
 /* ProductTrio Card Description (Body Text) */
 .product-trio-card-description {
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 22px;
   font-weight: 400;
   color: #616161;
 }
 
+@media (min-width: 640px) {
+  .product-trio-card-description {
+    font-size: 15px;
+    line-height: 23px;
+  }
+}
+
+@media (min-width: 768px) {
+  .product-trio-card-description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-trio-card-description {
+    font-size: 17px;
+    line-height: 25px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .product-trio-card-description {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
 /* ProductTrio Card Content Container */
 .product-trio-card-content {
-  padding: 20px 24px;
+  padding: 16px 18px;
   margin-top: auto;
   background-color: #FFFFFF;
   border-top: 1px solid #F4F4F4;
   position: relative;
 }
 
+@media (min-width: 640px) {
+  .product-trio-card-content {
+    padding: 18px 21px;
+  }
+}
+
+@media (min-width: 768px) {
+  .product-trio-card-content {
+    padding: 20px 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-trio-card-content {
+    padding: 24px 28px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .product-trio-card-content {
+    padding: 28px 32px;
+  }
+}
+
 /* ProductTrio Card Tag */
 .product-trio-card-tag {
-  padding: 6px 12px;
+  padding: 5px 10px;
   border-radius: 6px;
   background-color: #F9F9F9;
   border: 1px solid #F4F4F4;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #616161;
   transition: all 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .product-trio-card-tag {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
 }
 
 .product-trio-card-tag:hover {
@@ -1446,10 +1589,16 @@ body {
 
 /* ProductTrio Card Icon Container */
 .product-trio-card-icon {
-  padding: 8px;
+  padding: 6px;
   border-radius: 50%;
   background-color: #F9F9F9;
   transition: all 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .product-trio-card-icon {
+    padding: 8px;
+  }
 }
 
 .product-trio-card-icon:hover {
@@ -1460,11 +1609,17 @@ body {
 
 /* ProductTrio Card Link */
 .product-trio-card-link {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: #495057;
   transition: color 0.3s ease;
   cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .product-trio-card-link {
+    font-size: 14px;
+  }
 }
 
 .product-trio-card-link:hover {

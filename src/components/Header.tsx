@@ -30,16 +30,16 @@ const navLinks: NavLink[] = [
     href: "/sectors",
   },
   { name: "Case Studies", href: "/case-studies" },
-  {
-    name: "Resources",
-    href: "#",
-    comingSoon: true,
-    dropdown: [
-      { name: "ONDC Guide", href: "#", comingSoon: true },
-      { name: "WhatsApp Templates", href: "#", comingSoon: true },
-      { name: "Migration Guide", href: "#", comingSoon: true },
-    ],
-  },
+  // {
+  //   name: "Resources",
+  //   href: "#",
+  //   comingSoon: true,
+  //   dropdown: [
+  //     { name: "ONDC Guide", href: "#", comingSoon: true },
+  //     { name: "WhatsApp Templates", href: "#", comingSoon: true },
+  //     { name: "Migration Guide", href: "#", comingSoon: true },
+  //   ],
+  // },
   { name: "Integrations", href: "/integrations" },
 ];
 
@@ -292,98 +292,138 @@ const Header: React.FC = () => {
           </button>
         </div>
 
+        {/* Mobile Menu Overlay */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 mt-2 mb-4 bg-white rounded-2xl border border-slate-100 shadow-xl">
-            <nav className="space-y-1 px-3">
-              {navLinks.map((link) => (
-                <div key={link.name}>
-                  {/* 6. REPLACED Mobile <a> with <Link> */}
-                  <Link
-                    to={link.comingSoon ? "#" : link.href}
-                    onClick={(e) => {
-                      if (link.comingSoon) e.preventDefault();
-                      handleNavClick(link.name, undefined, link.comingSoon);
-                    }}
-                    className={`cursor-pointer group relative flex items-center justify-between px-4 py-3 text-base font-semibold rounded-xl transition-all duration-300 ${
-                      link.comingSoon
-                        ? "text-slate-400 cursor-default"
-                        : activeNav === link.name
-                        ? "bg-purple-50 text-purple-700"
-                        : "text-slate-700 hover:bg-slate-50"
-                    }`}
-                  >
-                    {link.name}
-                    {link.dropdown && (
-                      <ChevronDown
-                        className={`w-4 h-4 ${
-                          activeNav === link.name
-                            ? "text-purple-600"
-                            : "text-slate-400"
-                        }`}
-                      />
-                    )}
-                  </Link>
+          <>
+            {/* Backdrop */}
+            <div
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
+              onClick={() => setMobileMenuOpen(false)}
+            />
 
-                  {link.dropdown && (
-                    <div className="pl-4 mt-1 space-y-1 border-l-2 border-slate-100 ml-4 mb-2">
-                      {link.dropdown.map((item) => {
-                        const isActiveSub = activeSubNav === item.name;
-                        return (
-                          <div
-                            key={item.name}
-                            className={`flex items-center justify-between px-4 py-2.5 text-sm font-medium rounded-lg transition-colors ${
-                              item.comingSoon
-                                ? "text-slate-400 cursor-default"
-                                : isActiveSub
-                                ? "text-purple-700 bg-purple-50 cursor-pointer"
-                                : "text-slate-500 hover:text-slate-900 hover:bg-slate-50 cursor-pointer"
+            {/* Mobile Menu */}
+            <div className="fixed top-20 left-0 right-0 bottom-0 w-full h-[calc(100vh-5rem)] lg:hidden z-50 bg-white overflow-y-auto">
+              <div className="w-full min-h-full py-6 px-4 sm:px-6">
+                <nav className="space-y-1">
+                  {navLinks.map((link) => (
+                    <div key={link.name}>
+                      {/* 6. Mobile Menu Link with Dropdown Toggle */}
+                      {link.dropdown ? (
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setActiveNav(
+                              activeNav === link.name ? null : link.name
+                            );
+                          }}
+                          className={`cursor-pointer group relative flex items-center justify-between w-full px-4 py-3.5 text-base font-semibold rounded-xl transition-all duration-300 ${
+                            link.comingSoon
+                              ? "text-slate-400 cursor-default"
+                              : activeNav === link.name
+                              ? "bg-purple-50 text-purple-700"
+                              : "text-slate-700 hover:bg-slate-50"
+                          }`}
+                        >
+                          {link.name}
+                          <ChevronDown
+                            className={`w-5 h-5 transition-transform duration-300 ${
+                              activeNav === link.name
+                                ? "text-purple-600 rotate-180"
+                                : "text-slate-400"
                             }`}
-                          >
-                            {item.comingSoon ? (
-                              <>
-                                <span>{item.name}</span>
-                                <span className="text-[9px] font-bold uppercase tracking-wide text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">
-                                  Soon
-                                </span>
-                              </>
-                            ) : (
-                              /* 7. REPLACED Mobile Dropdown <div> with <Link> */
-                              <Link
-                                to={item.href}
-                                className="flex-1"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  handleNavClick(
-                                    link.name,
-                                    item.name,
-                                    item.comingSoon
-                                  );
-                                }}
-                              >
-                                {item.name}
-                              </Link>
-                            )}
-                          </div>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </nav>
+                          />
+                        </button>
+                      ) : (
+                        <Link
+                          to={link.comingSoon ? "#" : link.href}
+                          onClick={(e) => {
+                            if (link.comingSoon) e.preventDefault();
+                            handleNavClick(
+                              link.name,
+                              undefined,
+                              link.comingSoon
+                            );
+                          }}
+                          className={`cursor-pointer group relative flex items-center justify-between px-4 py-3.5 text-base font-semibold rounded-xl transition-all duration-300 ${
+                            link.comingSoon
+                              ? "text-slate-400 cursor-default"
+                              : activeNav === link.name
+                              ? "bg-purple-50 text-purple-700"
+                              : "text-slate-700 hover:bg-slate-50"
+                          }`}
+                        >
+                          {link.name}
+                        </Link>
+                      )}
 
-            <div className="mt-4 pt-4 border-t border-slate-100 px-4 space-y-3">
-              <a
-                href="https://wa.me/919876543210"
-                className="cursor-pointer block w-full px-5 py-3 text-center text-sm font-semibold text-slate-700 rounded-xl bg-slate-50 border border-slate-200 hover:bg-slate-100 transition-all"
-              >
-                WhatsApp
-              </a>
-              <button className="cursor-pointer block w-full px-5 py-3 text-center text-sm font-semibold text-white rounded-xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:shadow-lg transition-all">
-                Schedule a Call
-              </button>
+                      {link.dropdown && activeNav === link.name && (
+                        <div className="pl-4 mt-1 space-y-1 border-l-2 border-purple-100 ml-4 mb-2 animate-in slide-in-from-left-2">
+                          {link.dropdown.map((item) => {
+                            const isActiveSub = activeSubNav === item.name;
+                            return (
+                              <div
+                                key={item.name}
+                                className={`flex items-center justify-between px-4 py-2.5 text-sm font-medium rounded-lg transition-colors ${
+                                  item.comingSoon
+                                    ? "text-slate-400 cursor-default"
+                                    : isActiveSub
+                                    ? "text-purple-700 bg-purple-50 cursor-pointer"
+                                    : "text-slate-500 hover:text-slate-900 hover:bg-slate-50 cursor-pointer"
+                                }`}
+                              >
+                                {item.comingSoon ? (
+                                  <>
+                                    <span>{item.name}</span>
+                                    <span className="text-[9px] font-bold uppercase tracking-wide text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">
+                                      Soon
+                                    </span>
+                                  </>
+                                ) : (
+                                  /* 7. REPLACED Mobile Dropdown <div> with <Link> */
+                                  <Link
+                                    to={item.href}
+                                    className="flex-1"
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      handleNavClick(
+                                        link.name,
+                                        item.name,
+                                        item.comingSoon
+                                      );
+                                    }}
+                                  >
+                                    {item.name}
+                                  </Link>
+                                )}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </nav>
+
+                <div className="mt-6 pt-6 border-t border-slate-100 space-y-3">
+                  <a
+                    href="https://wa.me/919876543210"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer block w-full px-5 py-3.5 text-center text-sm font-semibold text-slate-700 rounded-xl bg-slate-50 border border-slate-200 hover:bg-slate-100 transition-all"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    WhatsApp
+                  </a>
+                  <button
+                    className="cursor-pointer block w-full px-5 py-3.5 text-center text-sm font-semibold text-white rounded-xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:shadow-lg transition-all"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Schedule a Call
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </header>

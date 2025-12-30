@@ -26,8 +26,8 @@ const CaseStudies = () => {
         <Testimonial />
       </div>
       <div className="pointer-events-none absolute inset-0 z-20 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-200/20 rounded-full blur-[120px] mix-blend-multiply" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-200/20 rounded-full blur-[120px] mix-blend-multiply" />
+        <div className="absolute top-0 right-0 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] lg:w-[800px] lg:h-[800px] bg-purple-200/20 rounded-full blur-[80px] sm:blur-[100px] md:blur-[120px] mix-blend-multiply" />
+        <div className="absolute bottom-0 left-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px] bg-blue-200/20 rounded-full blur-[80px] sm:blur-[100px] md:blur-[120px] mix-blend-multiply" />
         <div
           className="absolute inset-0"
           style={{
