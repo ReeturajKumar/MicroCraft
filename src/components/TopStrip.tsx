@@ -40,7 +40,7 @@ const TopStrip: React.FC = () => {
       `}</style>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-12">
+        <div className="flex items-center justify-between h-8">
           {/* LEFT SIDE */}
           <div className="flex items-center gap-3 min-w-0">
             <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 animate-pulse" />

@@ -120,7 +120,7 @@ const Header: React.FC = () => {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-15">
           <div className="shrink-0 relative group">
             {/* 3. REPLACED <a> with <Link> */}
             <Link
@@ -135,14 +135,8 @@ const Header: React.FC = () => {
               />
               <div className="">
                 <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-slate-800 via-slate-700 to-slate-600 bg-clip-text text-transparent">
-                  Microkraft
+                  Microkraft.AI
                 </span>
-                <div className="flex items-center gap-1.5 -mt-0.5">
-                  <div className="h-[2px] w-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full" />
-                  <span className="text-[9px] font-bold text-slate-500 tracking-[0.2em] uppercase">
-                    Growth OS
-                  </span>
-                </div>
               </div>
             </Link>
           </div>
@@ -193,7 +187,11 @@ const Header: React.FC = () => {
                 </Link>
 
                 {link.dropdown && activeDropdown === link.name && (
-                  <div className="absolute left-0 top-full mt-2 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden transform transition-all duration-300 animate-in fade-in slide-in-from-top-2">
+                  <div
+                    className="absolute left-0 top-full mt-1 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden transform transition-all duration-300 animate-in fade-in slide-in-from-top-2 z-50"
+                    onMouseEnter={() => setActiveDropdown(link.name)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
                     <div className="h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
 
                     <div className="p-2 space-y-1">
@@ -233,6 +231,7 @@ const Header: React.FC = () => {
                                     item.name,
                                     item.comingSoon
                                   );
+                                  setActiveDropdown(null); // Close dropdown after click
                                 }}
                               >
                                 <span className="flex items-center gap-3">

@@ -108,7 +108,10 @@ const Footer: React.FC = () => {
           {/* Brand Column */}
           <div className="col-span-1 sm:col-span-2 lg:col-span-2 space-y-3 sm:space-y-4">
             <div className="shrink-0 relative group">
-              <a href="/" className="flex items-center cursor-pointer gap-2 sm:gap-3">
+              <a
+                href="/"
+                className="flex items-center cursor-pointer gap-2 sm:gap-3"
+              >
                 <img
                   src="/logo.png"
                   alt="Microkraft Logo"
@@ -116,14 +119,8 @@ const Footer: React.FC = () => {
                 />
                 <div>
                   <span className="text-lg sm:text-xl md:text-2xl font-black tracking-tight bg-gradient-to-r from-slate-800 via-slate-700 to-slate-600 bg-clip-text text-transparent">
-                    Microkraft
+                    Microkraft.AI
                   </span>
-                  <div className="flex items-center gap-1.5 -mt-0.5">
-                    <div className="h-[2px] w-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full" />
-                    <span className="text-[8px] sm:text-[9px] font-semibold text-slate-500 tracking-[0.2em] uppercase">
-                      Growth OS
-                    </span>
-                  </div>
                 </div>
               </a>
             </div>
@@ -165,7 +162,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Contact Card */}
-          <div className="col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-2 bg-slate-50/50 backdrop-blur-sm p-4 sm:p-5 rounded-xl border border-slate-100 hover:border-purple-100 transition-colors">
+          <div className="col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-2  p-4 sm:p-5 rounded-xl ">
             <h3 className="font-semibold text-slate-900 mb-3 sm:mb-3.5 text-xs sm:text-sm">
               Contact Us
             </h3>
@@ -206,13 +203,22 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 text-[10px] sm:text-xs md:text-sm font-medium text-slate-500">
-            <a href="#" className="hover:text-purple-600 transition-colors whitespace-nowrap">
+            <a
+              href="#"
+              className="hover:text-purple-600 transition-colors whitespace-nowrap"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-purple-600 transition-colors whitespace-nowrap">
+            <a
+              href="#"
+              className="hover:text-purple-600 transition-colors whitespace-nowrap"
+            >
               Terms of Service
             </a>
-            <a href="#" className="hover:text-purple-600 transition-colors whitespace-nowrap">
+            <a
+              href="#"
+              className="hover:text-purple-600 transition-colors whitespace-nowrap"
+            >
               Sitemap
             </a>
           </div>
