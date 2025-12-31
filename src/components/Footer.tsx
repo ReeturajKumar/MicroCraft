@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
   Mail,
@@ -85,7 +86,7 @@ const Footer: React.FC = () => {
               </span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center">
-              <button className="group relative px-5 sm:px-6 py-2.5 sm:py-3 bg-slate-900 text-white rounded-lg font-semibold text-sm sm:text-base shadow-lg shadow-purple-900/10 hover:shadow-xl hover:shadow-purple-900/20 transition-all hover:-translate-y-0.5 overflow-hidden w-full sm:w-auto">
+              <Link to="/products/crm" className="group relative px-5 sm:px-6 py-2.5 sm:py-3 bg-slate-900 text-white rounded-lg font-semibold text-sm sm:text-base shadow-lg shadow-purple-900/10 hover:shadow-xl hover:shadow-purple-900/20 transition-all hover:-translate-y-0.5 overflow-hidden w-full sm:w-auto">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative flex items-center justify-center gap-2 z-10">
                   Get Started{" "}
@@ -94,7 +95,7 @@ const Footer: React.FC = () => {
                     className="sm:w-4 sm:h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
                   />
                 </span>
-              </button>
+              </Link>
               <p className="text-slate-500 text-xs sm:text-sm max-w-xs font-medium">
                 Join 15,000+ fast-growing Indian brands today. No credit card
                 required.
@@ -108,8 +109,8 @@ const Footer: React.FC = () => {
           {/* Brand Column */}
           <div className="col-span-1 sm:col-span-2 lg:col-span-2 space-y-3 sm:space-y-4">
             <div className="shrink-0 relative group">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="flex items-center cursor-pointer gap-2 sm:gap-3"
               >
                 <img
@@ -122,7 +123,7 @@ const Footer: React.FC = () => {
                     Microkraft.AI
                   </span>
                 </div>
-              </a>
+              </Link>
             </div>
             <p className="text-slate-500 text-xs sm:text-sm leading-relaxed max-w-xs font-medium">
               The Operating System for Modern Commerce. Empowering India's MSMEs
@@ -230,18 +231,39 @@ const Footer: React.FC = () => {
 
 // --- SUB-COMPONENTS ---
 
-const FooterLink: React.FC<FooterLinkProps> = ({ text, badge }) => (
-  <li className="group flex items-center gap-1.5 sm:gap-2 cursor-pointer">
-    <span className="text-xs sm:text-sm text-slate-500 font-medium group-hover:text-purple-600 group-hover:translate-x-1 transition-all duration-300">
-      {text}
-    </span>
-    {badge && (
-      <span className="px-1 sm:px-1.5 py-0.5 rounded bg-purple-50 border border-purple-100 text-purple-600 text-[8px] sm:text-[9px] font-bold uppercase tracking-wider">
-        {badge}
-      </span>
-    )}
-  </li>
-);
+const FooterLink: React.FC<FooterLinkProps> = ({ text, badge }) => {
+  // Map footer links to routes
+  const linkMap: Record<string, string> = {
+    "CRM": "/products/crm",
+    "Commerce": "/products/commerce",
+    "Analytics": "/products/analytics",
+    "WhatsApp": "/products/ai-automation",
+  };
+
+  const href = linkMap[text] || "#";
+
+  return (
+    <li className="group flex items-center gap-1.5 sm:gap-2 cursor-pointer">
+      {href !== "#" ? (
+        <Link
+          to={href}
+          className="text-xs sm:text-sm text-slate-500 font-medium group-hover:text-purple-600 group-hover:translate-x-1 transition-all duration-300"
+        >
+          {text}
+        </Link>
+      ) : (
+        <span className="text-xs sm:text-sm text-slate-500 font-medium group-hover:text-purple-600 group-hover:translate-x-1 transition-all duration-300">
+          {text}
+        </span>
+      )}
+      {badge && (
+        <span className="px-1 sm:px-1.5 py-0.5 rounded bg-purple-50 border border-purple-100 text-purple-600 text-[8px] sm:text-[9px] font-bold uppercase tracking-wider">
+          {badge}
+        </span>
+      )}
+    </li>
+  );
+};
 
 const SocialIcon: React.FC<SocialIconProps> = ({ icon: Icon }) => (
   <a

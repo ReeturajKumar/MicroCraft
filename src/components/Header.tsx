@@ -269,12 +269,12 @@ const Header: React.FC = () => {
               <span className="relative">WhatsApp</span>
             </a>
 
-            <button className="cursor-pointer group relative px-6 py-2.5 text-sm font-semibold text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 active:scale-95">
+            <Link to="/products/crm" className="cursor-pointer group relative px-6 py-2.5 text-sm font-semibold text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 active:scale-95">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 transition-all duration-300 group-hover:scale-110" />
               <span className="relative flex items-center gap-2">
                 Schedule a Call
               </span>
-            </button>
+            </Link>
           </div>
 
           <button
@@ -413,12 +413,13 @@ const Header: React.FC = () => {
                   >
                     WhatsApp
                   </a>
-                  <button
+                  <Link
+                    to="/products/crm"
                     className="cursor-pointer block w-full px-5 py-3.5 text-center text-sm font-semibold text-white rounded-xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:shadow-lg transition-all"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Schedule a Call
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

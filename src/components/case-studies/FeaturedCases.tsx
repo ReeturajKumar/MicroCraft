@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   TrendingUp,
   Package,
@@ -261,13 +262,16 @@ const DetailedCaseStudies: React.FC = () => {
 
         {/* --- BOTTOM CTA --- */}
         <div className="mt-10 sm:mt-12 md:mt-14 lg:mt-16 text-center">
-          <button className="group inline-flex items-center gap-1.5 sm:gap-2 text-purple-900 font-semibold border-b border-purple-200 hover:border-pink-500 pb-0.5 transition-all text-sm sm:text-base">
+          <Link
+            to="/sectors"
+            className="group inline-flex items-center gap-1.5 sm:gap-2 text-purple-900 font-semibold border-b border-purple-200 hover:border-pink-500 pb-0.5 transition-all text-sm sm:text-base"
+          >
             See sector-specific breakdowns
             <ArrowRight
               size={14}
               className="sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform text-pink-500"
             />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

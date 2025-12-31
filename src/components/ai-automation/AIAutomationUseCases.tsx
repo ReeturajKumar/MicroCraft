@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, Zap, Clock, Users } from "lucide-react";
 
@@ -212,16 +213,20 @@ const AIAutomationUseCases: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.9 }}
               className="pt-3 sm:pt-4"
             >
-              <motion.button
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative inline-flex items-center gap-1.5 sm:gap-2 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm md:text-base font-semibold rounded-full bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto justify-center"
               >
-                <span className="text-xs sm:text-sm md:text-base font-semibold text-white">
-                  Get Started
-                </span>
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </motion.button>
+                <Link
+                  to="/products/ai-automation"
+                  className="group relative inline-flex items-center gap-1.5 sm:gap-2 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm md:text-base font-semibold rounded-full bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto justify-center"
+                >
+                  <span className="text-xs sm:text-sm md:text-base font-semibold text-white">
+                    Get Started
+                  </span>
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </Link>
+              </motion.div>
             </motion.div>
           </motion.div>
 

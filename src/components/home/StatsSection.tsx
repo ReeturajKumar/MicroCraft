@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Play } from "lucide-react";
 
 // --- Stats Data (Following Image Design) ---
@@ -49,11 +50,11 @@ const StatsSection = () => {
 
           {/* Right: Buttons */}
           <div className="flex items-center gap-3 stats-buttons-container">
-            <button className="stats-demo-button">
+            <Link to="/products/crm" className="stats-demo-button">
               <Play className="w-4 h-4" />
               <span>Demo</span>
-            </button>
-            <button className="stats-get-started-button">Get Started</button>
+            </Link>
+            <Link to="/products/crm" className="stats-get-started-button">Get Started</Link>
           </div>
         </div>
 

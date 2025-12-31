@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight, Zap, RefreshCw, Database, Play } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const RotatingText = () => {
   const words = [
@@ -132,7 +133,9 @@ const IntegrationsHero: React.FC = () => {
               <div className="text-xl sm:text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-cyan-600 text-transparent bg-clip-text mb-0.5 sm:mb-1">
                 100%
               </div>
-              <div className="text-xs sm:text-sm font-semibold text-slate-700">Secure</div>
+              <div className="text-xs sm:text-sm font-semibold text-slate-700">
+                Secure
+              </div>
               <div className="text-[10px] sm:text-xs text-slate-500 mt-0.5">
                 Enterprise-grade
               </div>
@@ -140,14 +143,23 @@ const IntegrationsHero: React.FC = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-6 sm:mb-7 md:mb-8 px-2 sm:px-0">
-            <button className="w-full sm:w-auto px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg sm:rounded-xl font-bold text-sm sm:text-base shadow-lg shadow-purple-500/30 hover:from-purple-700 hover:to-pink-700 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+            <Link
+              to="/integrations"
+              className="w-full sm:w-auto px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg sm:rounded-xl font-bold text-sm sm:text-base shadow-lg shadow-purple-500/30 hover:from-purple-700 hover:to-pink-700 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
+            >
               Explore Integrations
               <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px]" />
-            </button>
-            <button className="w-full sm:w-auto px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 bg-white text-slate-700 border-2 border-slate-300 rounded-lg sm:rounded-xl font-bold text-sm sm:text-base hover:border-purple-400 hover:bg-purple-50 transition-colors shadow-sm flex items-center justify-center gap-2">
-              <Play size={16} className="sm:w-[18px] sm:h-[18px] text-purple-600" />
+            </Link>
+            <Link
+              to="/products/crm"
+              className="w-full sm:w-auto px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 bg-white text-slate-700 border-2 border-slate-300 rounded-lg sm:rounded-xl font-bold text-sm sm:text-base hover:border-purple-400 hover:bg-purple-50 transition-colors shadow-sm flex items-center justify-center gap-2"
+            >
+              <Play
+                size={16}
+                className="sm:w-[18px] sm:h-[18px] text-purple-600"
+              />
               Watch Demo
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -287,7 +299,9 @@ const IntegrationsHero: React.FC = () => {
               <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center text-white shadow-md">
                 <RefreshCw
                   size={14}
-                  className={`sm:w-4 sm:h-4 md:w-[18px] md:h-[18px] ${activeNode === 1 ? "animate-spin" : ""}`}
+                  className={`sm:w-4 sm:h-4 md:w-[18px] md:h-[18px] ${
+                    activeNode === 1 ? "animate-spin" : ""
+                  }`}
                 />
               </div>
               <div className="text-[8px] sm:text-[9px] font-bold text-slate-700 mt-0.5 sm:mt-1">

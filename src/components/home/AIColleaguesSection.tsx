@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Phone,
@@ -70,13 +71,13 @@ const AIColleaguesSection = () => {
               backend workflows, execute, analyze, and optimize business
               processes at scale.
             </p>
-            <a
-              href="#"
+            <Link
+              to="/products/ai-automation"
               className="group inline-flex items-center gap-2 text-purple-600 font-semibold text-lg hover:text-pink-600 transition-colors duration-300"
             >
               <span>Learn more</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </motion.div>
 
           {/* Right: Image */}
@@ -268,13 +269,13 @@ const AIColleaguesSection = () => {
               the enterprise. Built for CIOs and CTOs with full governance,
               compliance, security, and auditability.
             </p>
-            <a
-              href="#"
+            <Link
+              to="/products/ai-automation"
               className="group inline-flex items-center gap-2 text-purple-600 font-semibold text-lg hover:text-pink-600 transition-colors duration-300"
             >
               <span>Learn more</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>

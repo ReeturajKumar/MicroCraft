@@ -104,7 +104,10 @@ const TopStrip: React.FC = () => {
               </div>
             </div>
 
-            <button className="hidden md:flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors duration-200">
+            <a
+              href="tel:+919876543210"
+              className="hidden md:flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors duration-200"
+            >
               <svg
                 className="w-3.5 h-3.5"
                 fill="none"
@@ -119,7 +122,7 @@ const TopStrip: React.FC = () => {
                 />
               </svg>
               <span>+91 98765 43210</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>

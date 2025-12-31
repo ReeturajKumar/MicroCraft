@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 const TrustAndIntegrationsSection = () => {
@@ -112,13 +113,13 @@ const TrustAndIntegrationsSection = () => {
               seamless connectivity with your existing tools and platforms. Get
               up and running in hours, not weeks.
             </p>
-            <a
-              href="/integrations"
+            <Link
+              to="/integrations"
               className="group inline-flex items-center gap-2 text-purple-600 font-semibold text-lg hover:text-pink-600 transition-colors duration-300"
             >
               <span>See all integrations</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>

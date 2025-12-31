@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Globe, LayoutGrid, ArrowRight } from "lucide-react";
 
@@ -97,13 +98,13 @@ const CreativeCustomerSection: React.FC = () => {
 
             {/* Link */}
             <div className="animate-fade-up delay-300">
-              <a
-                href="#"
+              <Link
+                to="/integrations"
                 className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all duration-300 group text-sm md:text-base"
               >
                 Explore Integration{" "}
                 <ArrowRight size={16} className="group-hover:translate-x-0.5" />
-              </a>
+              </Link>
             </div>
           </div>
 

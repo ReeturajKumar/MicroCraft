@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   TrendingUp,
@@ -124,13 +125,13 @@ const CaseStudiesHero: React.FC = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-              <button className="px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg sm:rounded-xl font-bold hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg shadow-purple-500/30 flex items-center justify-center gap-2 text-sm sm:text-base w-full sm:w-auto">
+              <Link to="/case-studies" className="px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg sm:rounded-xl font-bold hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg shadow-purple-500/30 flex items-center justify-center gap-2 text-sm sm:text-base w-full sm:w-auto">
                 View Success Stories
                 <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px]" />
-              </button>
-              <button className="px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 bg-white text-slate-700 border-2 border-slate-300 rounded-lg sm:rounded-xl font-bold hover:border-purple-400 hover:bg-purple-50 transition-colors shadow-sm w-full sm:w-auto">
+              </Link>
+              <Link to="/products/crm" className="px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 bg-white text-slate-700 border-2 border-slate-300 rounded-lg sm:rounded-xl font-bold hover:border-purple-400 hover:bg-purple-50 transition-colors shadow-sm w-full sm:w-auto">
                 Get Started
-              </button>
+              </Link>
             </div>
           </div>
 

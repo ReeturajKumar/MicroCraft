@@ -232,9 +232,9 @@ const SectorsList: React.FC = () => {
             {sectors.map((sector) => {
               const Icon = sector.icon;
               return (
-                <a
+                <Link
                   key={sector.id}
-                  href={sector.href}
+                  to={sector.href}
                   className="group relative bg-white rounded-lg border-2 border-slate-200 p-2 sm:p-2.5 md:p-3 hover:border-purple-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 >
                   {/* Card Background Gradient on Hover */}
@@ -286,7 +286,7 @@ const SectorsList: React.FC = () => {
                       />
                     </div>
                   </div>
-                </a>
+                </Link>
               );
             })}
           </div>

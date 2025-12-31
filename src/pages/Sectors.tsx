@@ -32,7 +32,7 @@ const Sectors = () => {
     >
       <div className="relative z-10">
         {/* Hero Section */}
-        <section className="relative w-full bg-gradient-to-br from-slate-50 via-white to-purple-50/20 overflow-hidden py-8 sm:py-12 md:py-16 lg:py-8">
+        <section className="relative w-full bg-gradient-to-br from-slate-50 via-white to-purple-50/20 overflow-hidden py-8 sm:py-12 md:py-16 lg:py-4">
           {/* Background Elements */}
           <div className="absolute inset-0 pointer-events-none">
             {/* Grid Pattern */}
@@ -159,12 +159,12 @@ const Sectors = () => {
                     />
                     <div className="absolute inset-0 rounded-lg bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </Link>
-                  <a
-                    href="#sectors"
+                  <Link
+                    to="/sectors"
                     className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium text-slate-700 hover:text-slate-900 border border-slate-200 hover:border-slate-300 transition-all flex items-center justify-center sm:justify-start gap-2 text-xs sm:text-sm md:text-base w-full sm:w-auto"
                   >
                     Explore Sectors
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Trust Indicators */}

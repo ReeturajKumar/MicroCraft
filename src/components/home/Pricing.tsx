@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion, LayoutGroup } from "framer-motion";
 import { Check, Star, Zap, Shield } from "lucide-react";
 
@@ -228,7 +229,8 @@ const PricingCard: React.FC<PricingCardProps> = ({
     {children}
 
     {/* Button */}
-    <button
+    <Link
+      to="/products/crm"
       className={`pricing-card-button ${
         featured
           ? "pricing-card-button-featured"
@@ -236,7 +238,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
       }`}
     >
       {btnText}
-    </button>
+    </Link>
   </motion.div>
 );
 

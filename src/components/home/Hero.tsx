@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   Play,
   Globe,
@@ -138,16 +139,22 @@ const Hero = () => {
             {/* CTA Buttons - Bikayi Design System */}
             <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 items-stretch sm:items-center mb-6 sm:mb-8">
               {/* Primary Button - Bikayi Style */}
-              <button className="group relative px-4 sm:px-5 py-2.5 sm:py-3 rounded font-semibold text-sm sm:text-base text-white transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 overflow-hidden border bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 transition-all duration-300 group-hover:scale-110">
+              <Link
+                to="/products/crm"
+                className="group relative px-4 sm:px-5 py-2.5 sm:py-3 rounded font-semibold text-sm sm:text-base text-white transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 overflow-hidden border bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 transition-all duration-300 group-hover:scale-110"
+              >
                 <span className="relative z-10">SCHEDULE A CALL</span>
                 <ArrowUpRight className="w-4 h-4 relative z-10 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </button>
+              </Link>
 
               {/* Secondary Button - Bikayi Style */}
-              <button className="px-4 sm:px-5 py-2.5 sm:py-3 bg-white rounded font-semibold text-sm sm:text-base transition-all flex items-center justify-center gap-2 border btn-bikayi-secondary">
+              <Link
+                to="/products/crm"
+                className="px-4 sm:px-5 py-2.5 sm:py-3 bg-white rounded font-semibold text-sm sm:text-base transition-all flex items-center justify-center gap-2 border btn-bikayi-secondary"
+              >
                 <Play className="w-4 h-4 fill-current" />
                 <span>GET STARTED</span>
-              </button>
+              </Link>
             </div>
 
             {/* Social Proof Stats - Bikayi Style */}
@@ -252,7 +259,10 @@ const Hero = () => {
                                 </div>
                               </div>
                             </div>
-                            <Menu size={14} className="sm:w-4 sm:h-4 text-white/80" />
+                            <Menu
+                              size={14}
+                              className="sm:w-4 sm:h-4 text-white/80"
+                            />
                           </div>
                           <div className="flex-1 bg-slate-50 p-2.5 sm:p-3 md:p-4 space-y-2.5 sm:space-y-3 md:space-y-4 pt-3 sm:pt-4 md:pt-6 overflow-hidden flex flex-col">
                             {/* User Chat */}
@@ -319,13 +329,22 @@ const Hero = () => {
                           <div className="flex-1 flex overflow-hidden">
                             <div className="w-10 sm:w-12 bg-white border-r border-gray-200 flex flex-col items-center py-2 sm:py-3 gap-2 sm:gap-3">
                               <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center text-white bg-gradient-to-br from-purple-600 to-pink-500">
-                                <Globe size={12} className="sm:w-3.5 sm:h-3.5" />
+                                <Globe
+                                  size={12}
+                                  className="sm:w-3.5 sm:h-3.5"
+                                />
                               </div>
                               <div className="w-6 h-6 sm:w-7 sm:h-7 hover:bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">
-                                <ShoppingBag size={12} className="sm:w-3.5 sm:h-3.5" />
+                                <ShoppingBag
+                                  size={12}
+                                  className="sm:w-3.5 sm:h-3.5"
+                                />
                               </div>
                               <div className="w-6 h-6 sm:w-7 sm:h-7 hover:bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">
-                                <TrendingUp size={12} className="sm:w-3.5 sm:h-3.5" />
+                                <TrendingUp
+                                  size={12}
+                                  className="sm:w-3.5 sm:h-3.5"
+                                />
                               </div>
                             </div>
                             <div className="flex-1 p-2 sm:p-3 md:p-4 overflow-hidden">
@@ -335,7 +354,10 @@ const Hero = () => {
                                 </h3>
                                 <div className="flex gap-1.5 sm:gap-2">
                                   <span className="p-0.5 sm:p-1 bg-white border rounded text-gray-400">
-                                    <Search size={10} className="sm:w-3 sm:h-3" />
+                                    <Search
+                                      size={10}
+                                      className="sm:w-3 sm:h-3"
+                                    />
                                   </span>
                                   <span className="p-0.5 sm:p-1 bg-white border rounded text-gray-400">
                                     <Bell size={10} className="sm:w-3 sm:h-3" />
@@ -486,7 +508,9 @@ const Hero = () => {
                             <div className="text-[8px] sm:text-[9px] text-gray-400 font-bold uppercase">
                               Traffic
                             </div>
-                            <div className="text-xs sm:text-sm font-bold">+12.5%</div>
+                            <div className="text-xs sm:text-sm font-bold">
+                              +12.5%
+                            </div>
                           </div>
                         </div>
                       </div>

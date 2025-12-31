@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
   Star,
@@ -12,7 +13,7 @@ import {
 
 const CrmEngagementHero: React.FC = () => {
   return (
-    <section className="relative w-full bg-gradient-to-br from-slate-50 via-white to-purple-50/20 overflow-hidden flex items-center justify-center py-8 sm:py-12 md:py-16 lg:py-20">
+    <section className="relative w-full bg-gradient-to-br from-slate-50 via-white to-purple-50/20 overflow-hidden flex items-center justify-center py-8 sm:py-12 md:py-16 lg:py-2">
       {/* Styles moved to index.css - see: animate-fade-up, animate-float-crm, scrolling-text-container, scrolling-text-inner, delay-* */}
 
       {/* Background Elements */}
@@ -78,14 +79,20 @@ const CrmEngagementHero: React.FC = () => {
 
             {/* Paragraph */}
             <p className="animate-fade-up delay-200 text-sm sm:text-base md:text-lg text-slate-600 max-w-xl leading-relaxed">
-              A central intelligence system for sales, customers, and growth. Manage customers, streamline sales operations, automate follow-ups, and gain deep business insights—across teams, departments, and regions.
+              A central intelligence system for sales, customers, and growth.
+              Manage customers, streamline sales operations, automate
+              follow-ups, and gain deep business insights—across teams,
+              departments, and regions.
             </p>
 
             {/* Key Metrics */}
             <div className="animate-fade-up delay-300 flex flex-wrap items-center gap-3 sm:gap-4 pt-1">
               <div className="flex items-center gap-2 sm:gap-2.5">
                 <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
-                  <TrendingUp size={14} className="sm:w-4 sm:h-4 text-green-600" />
+                  <TrendingUp
+                    size={14}
+                    className="sm:w-4 sm:h-4 text-green-600"
+                  />
                 </div>
                 <div>
                   <div className="text-lg sm:text-xl font-semibold text-slate-900">
@@ -98,7 +105,10 @@ const CrmEngagementHero: React.FC = () => {
               </div>
               <div className="flex items-center gap-2 sm:gap-2.5">
                 <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
-                  <MessageCircle size={14} className="sm:w-4 sm:h-4 text-purple-600" />
+                  <MessageCircle
+                    size={14}
+                    className="sm:w-4 sm:h-4 text-purple-600"
+                  />
                 </div>
                 <div>
                   <div className="text-lg sm:text-xl font-semibold text-slate-900">
@@ -111,7 +121,10 @@ const CrmEngagementHero: React.FC = () => {
               </div>
               <div className="flex items-center gap-2 sm:gap-2.5">
                 <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                  <BarChart3 size={14} className="sm:w-4 sm:h-4 text-indigo-600" />
+                  <BarChart3
+                    size={14}
+                    className="sm:w-4 sm:h-4 text-indigo-600"
+                  />
                 </div>
                 <div>
                   <div className="text-lg sm:text-xl font-semibold text-slate-900">
@@ -126,17 +139,17 @@ const CrmEngagementHero: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="animate-fade-up delay-400 flex flex-col sm:flex-row items-stretch sm:items-start gap-2.5 sm:gap-3 pt-1">
-              <button className="group relative bg-gradient-to-r from-purple-600 to-pink-600 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg hover:shadow-xl hover:shadow-purple-500/20 flex items-center justify-center gap-2 text-sm sm:text-base hover:-translate-y-0.5 w-full sm:w-auto">
+              <Link to="/products/crm" className="group relative bg-gradient-to-r from-purple-600 to-pink-600 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg hover:shadow-xl hover:shadow-purple-500/20 flex items-center justify-center gap-2 text-sm sm:text-base hover:-translate-y-0.5 w-full sm:w-auto">
                 <span>Get Started</span>
                 <ArrowUpRight
                   size={14}
                   className="sm:w-4 sm:h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
                 />
                 <div className="absolute inset-0 rounded-lg bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </button>
-              <button className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium text-slate-700 hover:text-slate-900 border border-slate-200 hover:border-slate-300 transition-all flex items-center justify-center gap-2 text-sm sm:text-base w-full sm:w-auto">
+              </Link>
+              <Link to="/products/crm" className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium text-slate-700 hover:text-slate-900 border border-slate-200 hover:border-slate-300 transition-all flex items-center justify-center gap-2 text-sm sm:text-base w-full sm:w-auto">
                 Watch Demo
-              </button>
+              </Link>
             </div>
 
             {/* Social Proof */}
@@ -158,11 +171,26 @@ const CrmEngagementHero: React.FC = () => {
               <div className="flex flex-col">
                 <div className="flex items-center gap-0.5 sm:gap-1">
                   <div className="flex text-yellow-500">
-                    <Star size={12} className="sm:w-3.5 sm:h-3.5 fill-current" />
-                    <Star size={12} className="sm:w-3.5 sm:h-3.5 fill-current" />
-                    <Star size={12} className="sm:w-3.5 sm:h-3.5 fill-current" />
-                    <Star size={12} className="sm:w-3.5 sm:h-3.5 fill-current" />
-                    <Star size={12} className="sm:w-3.5 sm:h-3.5 fill-current" />
+                    <Star
+                      size={12}
+                      className="sm:w-3.5 sm:h-3.5 fill-current"
+                    />
+                    <Star
+                      size={12}
+                      className="sm:w-3.5 sm:h-3.5 fill-current"
+                    />
+                    <Star
+                      size={12}
+                      className="sm:w-3.5 sm:h-3.5 fill-current"
+                    />
+                    <Star
+                      size={12}
+                      className="sm:w-3.5 sm:h-3.5 fill-current"
+                    />
+                    <Star
+                      size={12}
+                      className="sm:w-3.5 sm:h-3.5 fill-current"
+                    />
                   </div>
                   <span className="text-[10px] sm:text-xs font-semibold text-slate-900 ml-0.5 sm:ml-1">
                     4.9/5
@@ -241,7 +269,10 @@ const CrmEngagementHero: React.FC = () => {
                 <div className="bg-gradient-to-br from-indigo-600 to-purple-600 p-1.5 sm:p-2 rounded-lg text-white shadow-md flex-shrink-0">
                   <Zap size={12} className="sm:w-4 sm:h-4" />
                 </div>
-                <CheckCircle2 size={12} className="sm:w-3.5 sm:h-3.5 text-emerald-500 flex-shrink-0" />
+                <CheckCircle2
+                  size={12}
+                  className="sm:w-3.5 sm:h-3.5 text-emerald-500 flex-shrink-0"
+                />
               </div>
               <h4 className="font-semibold text-slate-900 text-[10px] sm:text-xs mb-0.5">
                 AI Auto-Response

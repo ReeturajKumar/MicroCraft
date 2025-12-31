@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import {
   MessageCircle,
@@ -254,13 +255,16 @@ const CardContent: React.FC<CardContentProps> = ({
     </h3>
     <p className="product-trio-card-description mb-3 sm:mb-4">{desc}</p>
 
-    <div className="flex items-center product-trio-card-link group-hover:text-purple-600 w-fit">
+    <Link
+      to={title === "Enterprise CRM" ? "/products/crm" : "/products/ai-automation"}
+      className="flex items-center product-trio-card-link group-hover:text-purple-600 w-fit"
+    >
       <span className="relative">
         Explore Module
         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"></span>
       </span>
       <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1.5 sm:ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-    </div>
+    </Link>
   </div>
 );
 

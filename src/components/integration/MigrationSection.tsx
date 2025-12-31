@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   FileSpreadsheet,
   ArrowRight,
@@ -275,9 +276,9 @@ const MigrationSection: React.FC = () => {
                     3,405 Products Synced
                   </p>
 
-                  <button className="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-[10px] sm:text-xs font-bold rounded-lg sm:rounded-xl shadow-lg shadow-purple-500/30 hover:from-purple-700 hover:to-pink-700 hover:scale-105 transition-all flex items-center gap-1.5 sm:gap-2">
+                  <Link to="/products/crm" className="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-[10px] sm:text-xs font-bold rounded-lg sm:rounded-xl shadow-lg shadow-purple-500/30 hover:from-purple-700 hover:to-pink-700 hover:scale-105 transition-all flex items-center gap-1.5 sm:gap-2">
                     Launch Dashboard <ArrowRight size={12} className="sm:w-3.5 sm:h-3.5" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
