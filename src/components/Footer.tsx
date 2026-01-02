@@ -127,7 +127,7 @@ const Footer: React.FC = () => {
             </div>
             <p className="text-slate-500 text-xs sm:text-sm leading-relaxed max-w-xs font-medium">
               The Operating System for Modern Commerce. Empowering India's MSMEs
-              with enterprise-grade tools.
+              with business-grade tools.
             </p>
             <div className="flex gap-2 sm:gap-2.5">
               <SocialIcon icon={Twitter} />
@@ -238,6 +238,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ text, badge }) => {
     "Commerce": "/products/commerce",
     "Analytics": "/products/analytics",
     "WhatsApp": "/products/ai-automation",
+    "Contact": "/consultation",
   };
 
   const href = linkMap[text] || "#";

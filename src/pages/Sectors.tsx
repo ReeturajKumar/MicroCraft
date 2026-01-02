@@ -54,20 +54,20 @@ const Sectors = () => {
               <div className="flex flex-col gap-4 sm:gap-5 md:gap-6 text-left">
                 {/* Heading with Rotating Text */}
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
-                  Enterprise Solutions for{" "}
+                  Every Industry Has{" "}
                   <div className="scrolling-text-container relative inline-block">
                     <div className="scrolling-text-inner flex flex-col text-left">
                       <span className="block h-[1.1em] bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 text-transparent bg-clip-text">
-                        Every Industry
+                        Unique Challenges
                       </span>
                       <span className="block h-[1.1em] bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 text-transparent bg-clip-text">
-                        Your Sector
+                        Specific Problems
                       </span>
                       <span className="block h-[1.1em] bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 text-transparent bg-clip-text">
-                        All Industries
+                        Different Needs
                       </span>
                       <span className="block h-[1.1em] bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 text-transparent bg-clip-text">
-                        Every Industry
+                        Unique Challenges
                       </span>
                     </div>
                     {/* Underline Decoration */}
@@ -88,10 +88,7 @@ const Sectors = () => {
 
                 {/* Description */}
                 <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-xl leading-relaxed">
-                  Tailored workflows and intelligent automation solutions
-                  designed specifically for your sector. Transform complex
-                  operations into streamlined, connected processes that drive
-                  growth.
+                  We don't force businesses into predefined workflows. We understand your sector's specific problems and adapt our systems to how you actually operate. Here's what businesses like yours struggle with—and how we help.
                 </p>
 
                 {/* Key Metrics */}
@@ -124,7 +121,7 @@ const Sectors = () => {
                         500+
                       </div>
                       <div className="text-[10px] sm:text-xs text-slate-500 font-normal">
-                        Enterprises Served
+                        Businesses Served
                       </div>
                     </div>
                   </div>
@@ -172,7 +169,7 @@ const Sectors = () => {
                   <div className="flex items-center gap-1.5 sm:gap-2">
                     <CheckCircle2 className="text-green-600" size={14} />
                     <span className="text-xs sm:text-sm text-slate-600 font-medium">
-                      Enterprise-Grade Security
+                      Business-Grade Security
                     </span>
                   </div>
                   <div className="flex items-center gap-1.5 sm:gap-2">
@@ -404,6 +401,51 @@ const Sectors = () => {
           </div>
         </section>
 
+        {/* Problem-Focused Intro Section */}
+        <section className="relative w-full bg-white py-8 sm:py-10 md:py-12 overflow-hidden">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-8 max-w-7xl">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">
+                Every Industry Has Unique Challenges
+              </h2>
+              <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-6 sm:mb-8 leading-relaxed">
+                We don't force businesses into predefined workflows. We understand your sector's specific problems and adapt our systems to how you actually operate. Each industry faces different pain points—from manufacturing's supply chain complexity to healthcare's patient management challenges.
+              </p>
+              <div className="bg-slate-50 rounded-lg sm:rounded-xl p-4 sm:p-6 border border-slate-200">
+                <p className="text-sm sm:text-base text-slate-700 font-medium mb-3 sm:mb-4">
+                  Here's what we understand about sector-specific challenges:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-left">
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-xs sm:text-sm text-slate-600">
+                      Each sector has unique operational workflows that generic solutions can't address
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-xs sm:text-sm text-slate-600">
+                      Industry-specific compliance and regulations require tailored approaches
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-xs sm:text-sm text-slate-600">
+                      Pain points vary significantly—what works for retail won't work for healthcare
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-xs sm:text-sm text-slate-600">
+                      Your business needs solutions that fit how you actually operate, not the other way around
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Sectors List Section */}
         <SectorsList />
 
@@ -436,7 +478,7 @@ const Sectors = () => {
             </h2>
             <p className="text-xs sm:text-sm md:text-base text-white/90 mb-4 sm:mb-5 md:mb-6 max-w-2xl mx-auto leading-relaxed">
               Get started with industry-specific solutions tailored to your
-              needs. Join 500+ enterprises already transforming their
+              needs. Join 500+ businesses already transforming their
               operations.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-2.5 sm:gap-3 mb-4 sm:mb-5 md:mb-6">

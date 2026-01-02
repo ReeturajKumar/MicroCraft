@@ -37,52 +37,21 @@ const CrmEngagementHero: React.FC = () => {
           <div className="flex flex-col gap-4 sm:gap-5 md:gap-6 text-left">
             {/* Heading */}
             <h1 className="animate-fade-up delay-100 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight sm:leading-tight">
-              Turn Every {/* ANIMATED TEXT CONTAINER */}
-              <div className="scrolling-text-container relative inline-block">
-                <div className="scrolling-text-inner flex flex-col text-left">
-                  {/* Word 1 */}
-                  <span className="block h-[1.15em] sm:h-[1.1em] bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-400 text-transparent bg-clip-text">
-                    Conversation
-                  </span>
-                  {/* Word 2 */}
-                  <span className="block h-[1.15em] sm:h-[1.1em] bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-400 text-transparent bg-clip-text">
-                    Interaction
-                  </span>
-                  {/* Word 3 */}
-                  <span className="block h-[1.15em] sm:h-[1.1em] bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-400 text-transparent bg-clip-text">
-                    Opportunity
-                  </span>
-                  {/* Word 4 (Duplicate of 1 for loop) */}
-                  <span className="block h-[1.15em] sm:h-[1.1em] bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-400 text-transparent bg-clip-text">
-                    Conversation
-                  </span>
-                </div>
-
-                {/* Underline Decoration (Attached to container) */}
-                <svg
-                  className="absolute w-full h-2 sm:h-2.5 -bottom-0.5 sm:-bottom-1 left-0 text-purple-200 -z-10"
-                  viewBox="0 0 100 10"
-                  preserveAspectRatio="none"
-                >
-                  <path
-                    d="M0 5 Q 50 10 100 5"
-                    stroke="currentColor"
-                    strokeWidth="5"
-                    className="sm:stroke-[6]"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-              <br />
-              Into Revenue
+              Never Miss a Lead{" "}
+              <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-400 text-transparent bg-clip-text">
+                Again
+              </span>
             </h1>
 
-            {/* Paragraph */}
-            <p className="animate-fade-up delay-200 text-sm sm:text-base md:text-lg text-slate-600 max-w-xl leading-relaxed">
-              A central intelligence system for sales, customers, and growth.
-              Manage customers, streamline sales operations, automate
-              follow-ups, and gain deep business insights—across teams,
-              departments, and regions.
+            {/* Paragraph - Problem-First Approach */}
+            <p className="animate-fade-up delay-200 text-sm sm:text-base md:text-lg text-slate-600 max-w-xl leading-relaxed mb-4">
+              Your leads come in from multiple places—website, phone, WhatsApp, 
+              email. But follow-ups don't happen consistently. Sales depend on 
+              one person remembering. Sound familiar?
+            </p>
+            <p className="animate-fade-up delay-300 text-sm sm:text-base md:text-lg text-slate-800 max-w-xl leading-relaxed font-semibold">
+              We fix this. Automatic follow-ups, clear pipeline visibility, and 
+              never miss an opportunity—without manual tracking.
             </p>
 
             {/* Key Metrics */}

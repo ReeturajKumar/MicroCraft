@@ -1,4 +1,5 @@
 import Hero from "../components/home/Hero";
+import ProblemsSection from "../components/home/ProblemsSection";
 import ProductTrio from "../components/home/ProductTrio";
 import TrustAndIntegrationsSection from "../components/home/TrustAndIntegrationsSection";
 import AIColleaguesSection from "../components/home/AIColleaguesSection";
@@ -10,6 +11,7 @@ const Home = () => {
   return (
     <>
       <Hero />
+      <ProblemsSection />
       <LogoMarquee />
       <AIColleaguesSection />
       <ProductTrio />

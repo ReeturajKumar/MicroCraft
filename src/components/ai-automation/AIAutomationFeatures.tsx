@@ -80,9 +80,9 @@ const AIAutomationFeatures: React.FC = () => {
             >
               {[
                 {
-                  title: "Unified Customer Intelligence",
+                  title: "See Every Customer Interaction in One Place",
                   description:
-                    "Centralize all customer interactions in minutes - support calls, chat conversations, sales interactions, in one intelligent platform.",
+                    "Never lose track of a conversation. All customer interactions—calls, chats, sales—are organized automatically so you always know the full story.",
                   icon: CheckCircle2,
                 },
                 {
@@ -94,7 +94,7 @@ const AIAutomationFeatures: React.FC = () => {
                 {
                   title: "Advanced Analytics & Insights",
                   description:
-                    "Customer interactions across all sources are analyzed and categorized with intelligent automation, sentiment understanding, and predictive analytics.",
+                    "Understand your customers better. Every interaction is analyzed automatically, so you know what customers feel and what they need—without manual review.",
                   icon: CheckCircle2,
                 },
               ].map((feature, index) => (

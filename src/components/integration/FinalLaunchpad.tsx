@@ -22,8 +22,7 @@ const FinalLaunchpad: React.FC = () => {
               </span>
             </h2>
             <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto px-2 sm:px-0">
-              Unified platform to manage inventory, sales, payments, and
-              customer engagement.
+              Everything in one place. Manage inventory, track sales, handle payments, and engage customers—without switching between multiple tools.
             </p>
           </div>
 
@@ -61,7 +60,7 @@ const FinalLaunchpad: React.FC = () => {
                     <Shield size={20} className="sm:w-5 sm:h-5 md:w-6 md:h-6 text-blue-600" />
                   </div>
                   <h4 className="font-bold text-slate-900 text-sm sm:text-base mb-1 sm:mb-1.5">
-                    Enterprise Security
+                    Business Security
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     Bank-grade encryption and data protection
@@ -76,7 +75,7 @@ const FinalLaunchpad: React.FC = () => {
                     Unlimited Scale
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    Grow from startup to enterprise without limits
+                    Grow from startup to large business without limits
                   </p>
                 </div>
               </div>

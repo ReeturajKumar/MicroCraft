@@ -68,7 +68,7 @@ const AIAutomationBenefits: React.FC = () => {
                 </span>
               </h3>
               <p className="text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed">
-                Enterprise AI automation delivers measurable results that
+                Business AI automation delivers measurable results that
                 directly impact your bottom line. From revenue growth to
                 operational efficiency, see how intelligent automation drives
                 real business value.

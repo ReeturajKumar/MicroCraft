@@ -18,29 +18,31 @@ type NavLink = {
 
 const navLinks: NavLink[] = [
   {
-    name: "Products",
+    name: "Solutions",
     href: "/products",
     dropdown: [
-      { name: "Enterprise CRM", href: "/products/crm" },
-      { name: "Enterprise AI Automation", href: "/products/ai-automation" },
+      { name: "Sales & Lead Management", href: "/products/crm" },
+      { name: "Customer Support Automation", href: "/products/ai-automation" },
+      // { name: "Operations Automation", href: "/products/commerce" },
+      // { name: "Business Insights", href: "/products/analytics" },
     ],
   },
   {
-    name: "Sectors",
+    name: "Industries",
     href: "/sectors",
   },
   { name: "Case Studies", href: "/case-studies" },
-  // {
-  //   name: "Resources",
-  //   href: "#",
-  //   comingSoon: true,
-  //   dropdown: [
-  //     { name: "ONDC Guide", href: "#", comingSoon: true },
-  //     { name: "WhatsApp Templates", href: "#", comingSoon: true },
-  //     { name: "Migration Guide", href: "#", comingSoon: true },
-  //   ],
-  // },
-  { name: "Integrations", href: "/integrations" },
+  {
+    name: "Resources",
+    href: "#",
+    comingSoon: true,
+    dropdown: [
+      { name: "Business Guides", href: "#", comingSoon: true },
+      { name: "Best Practices", href: "#", comingSoon: true },
+      { name: "Industry Reports", href: "#", comingSoon: true },
+    ],
+  },
+  { name: "Consultation", href: "/consultation" },
 ];
 
 const Header: React.FC = () => {
@@ -134,8 +136,8 @@ const Header: React.FC = () => {
                 className="h-15 md:h-15 w-auto object-contain"
               />
               <div className="">
-                <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-slate-800 via-slate-700 to-slate-600 bg-clip-text text-transparent">
-                  Microkraft.AI
+                <span className="text-2xl font-bold font-black tracking-tight bg-gradient-to-r from-slate-800 via-slate-700 to-slate-600 bg-clip-text text-transparent">
+                  MicroKraft.AI
                 </span>
               </div>
             </Link>
@@ -269,10 +271,13 @@ const Header: React.FC = () => {
               <span className="relative">WhatsApp</span>
             </a>
 
-            <Link to="/products/crm" className="cursor-pointer group relative px-6 py-2.5 text-sm font-semibold text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 active:scale-95">
+            <Link
+              to="/consultation"
+              className="cursor-pointer group relative px-6 py-2.5 text-sm font-semibold text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 active:scale-95"
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 transition-all duration-300 group-hover:scale-110" />
               <span className="relative flex items-center gap-2">
-                Schedule a Call
+                Consultation
               </span>
             </Link>
           </div>
@@ -414,11 +419,11 @@ const Header: React.FC = () => {
                     WhatsApp
                   </a>
                   <Link
-                    to="/products/crm"
+                    to="/consultation"
                     className="cursor-pointer block w-full px-5 py-3.5 text-center text-sm font-semibold text-white rounded-xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:shadow-lg transition-all"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Schedule a Call
+                    Consultation
                   </Link>
                 </div>
               </div>

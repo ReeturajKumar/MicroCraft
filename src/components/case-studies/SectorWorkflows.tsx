@@ -28,7 +28,7 @@ const sectors = [
     border: "border-orange-100",
     pain: "Chaos during peak hours. Missed KOTs lead to angry guests. No customer data for retargeting.",
     solution:
-      "A unified flow from aggregator order to kitchen display to automated feedback collection.",
+      "Orders flow automatically from aggregator to kitchen to customer feedback—no manual steps, no missed orders.",
     stats: [
       { label: "Table Turn Time", value: "-15%" },
       { label: "Repeat Visits", value: "+22%" },

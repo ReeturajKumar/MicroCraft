@@ -109,7 +109,8 @@ const benefits = [
   {
     icon: Target,
     title: "Industry-Specific",
-    description: "Tailored solutions designed for your sector's unique challenges",
+    description:
+      "Tailored solutions designed for your sector's unique challenges",
     color: "from-purple-500 to-pink-500",
   },
   {
@@ -120,14 +121,14 @@ const benefits = [
   },
   {
     icon: Shield,
-    title: "Enterprise Security",
+    title: "Business Security",
     description: "Bank-level security and compliance for all industries",
     color: "from-green-500 to-emerald-500",
   },
 ];
 
 const stats = [
-  { value: "500+", label: "Enterprises Served", icon: Users },
+  { value: "500+", label: "Businesses Served", icon: Users },
   { value: "98%", label: "Client Satisfaction", icon: CheckCircle2 },
   { value: "6", label: "Industry Sectors", icon: Target },
   { value: "24/7", label: "Support Available", icon: Clock },
@@ -152,8 +153,8 @@ const SectorsList: React.FC = () => {
             Transform Your{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600">
               Industry
-            </span>
-            {" "}with{" "}
+            </span>{" "}
+            with{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600">
               Smart Solutions
             </span>
@@ -210,7 +211,10 @@ const SectorsList: React.FC = () => {
                   >
                     <div className="flex items-start gap-1 sm:gap-1.5 lg:gap-2.5">
                       <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform flex-shrink-0 mt-0.5">
-                        <Icon size={10} className="sm:w-[11px] sm:h-[11px] lg:w-5 lg:h-5" />
+                        <Icon
+                          size={10}
+                          className="sm:w-[11px] sm:h-[11px] lg:w-5 lg:h-5"
+                        />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-sm sm:text-base lg:text-xl font-bold text-slate-900 mb-0.5 lg:mb-1">
@@ -289,26 +293,6 @@ const SectorsList: React.FC = () => {
                 </Link>
               );
             })}
-          </div>
-        </div>
-
-        {/* CTA Card - Full Width */}
-        <div className="mt-4 sm:mt-5 md:mt-6 lg:mt-8">
-          <div className="bg-gradient-to-br from-purple-600 via-pink-600 to-indigo-600 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-5 lg:p-6 text-white shadow-xl">
-            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-2.5">
-              Ready to Transform Your Industry?
-            </h3>
-            <p className="text-xs sm:text-sm md:text-base text-white/90 mb-3 sm:mb-4 leading-relaxed max-w-3xl">
-              Get started with a custom solution designed specifically for
-              your sector. Our experts are ready to help.
-            </p>
-            <Link
-              to="/case-studies"
-              className="flex items-center justify-center gap-2 sm:gap-2.5 px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 bg-white text-purple-600 rounded-lg font-semibold hover:bg-slate-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm sm:text-base md:text-lg w-full"
-            >
-              <span>View Case Studies</span>
-              <ArrowRight size={16} className="sm:w-5 sm:h-5" />
-            </Link>
           </div>
         </div>
       </div>

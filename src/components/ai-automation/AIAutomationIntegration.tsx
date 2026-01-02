@@ -20,7 +20,7 @@ const AIAutomationIntegration: React.FC = () => {
     {
       title: "Security & Compliance",
       description:
-        "Full governance, compliance checks, and audit logging aligned with enterprise automation frameworks.",
+        "Full governance, compliance checks, and audit logging aligned with business automation frameworks.",
       icon: Shield,
     },
   ];
@@ -37,15 +37,13 @@ const AIAutomationIntegration: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-2 sm:mb-3 md:mb-4 leading-tight">
-              Enterprise{" "}
+              Everything Works{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-purple-500 to-pink-600">
-                Workflow Integration
+                Together Seamlessly
               </span>
             </h2>
             <p className="text-xs sm:text-sm md:text-base text-slate-600 mb-3 sm:mb-4 md:mb-6 leading-relaxed">
-              AI agents integrate deeply with enterprise systems and workflows.
-              Backend actions are performed automatically, ensuring seamless
-              connectivity.
+              Your systems talk to each other automatically. No manual data entry, no switching between tools. Everything updates in real-time, so you always have the full picture.
             </p>
 
             {/* Integration Points */}
@@ -86,7 +84,7 @@ const AIAutomationIntegration: React.FC = () => {
           >
             <img
               src="/system.png"
-              alt="Enterprise Workflow Integration"
+              alt="Seamless System Integration"
               className="w-full h-auto object-contain rounded-lg sm:rounded-xl"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;

@@ -1,69 +1,10 @@
 import React from "react";
 import {
   Factory,
-  FileText,
-  MessageSquare,
-  Truck,
   CheckCircle2,
-  TrendingUp,
-  ArrowDown,
 } from "lucide-react";
 
 const Manufacturing: React.FC = () => {
-  const features = [
-    {
-      icon: MessageSquare,
-      title: "Inquiry to Quote",
-      description: "Convert WhatsApp text inquiry into a PDF Quote instantly",
-      gradient: "from-purple-500 to-purple-600",
-    },
-    {
-      icon: FileText,
-      title: "PO Generation",
-      description:
-        "Client approves on WhatsApp. System generates Purchase Order automatically",
-      gradient: "from-blue-500 to-blue-600",
-    },
-    {
-      icon: Truck,
-      title: "Dispatch & Tracking",
-      description: "Generate e-Way bill and send live tracking link to client",
-      gradient: "from-green-500 to-green-600",
-    },
-  ];
-
-  const stats = [
-    { value: "2x", label: "Faster Processing", icon: TrendingUp },
-    { value: "0%", label: "Lost Leads", icon: CheckCircle2 },
-  ];
-
-  // Workflow steps for visualization
-  const workflowSteps = [
-    {
-      icon: MessageSquare,
-      title: "Inquiry",
-      color: "from-purple-500 to-purple-600",
-      delay: "0s",
-    },
-    {
-      icon: FileText,
-      title: "Quote",
-      color: "from-blue-500 to-blue-600",
-      delay: "0.3s",
-    },
-    {
-      icon: CheckCircle2,
-      title: "Approval",
-      color: "from-yellow-500 to-orange-500",
-      delay: "0.6s",
-    },
-    {
-      icon: Truck,
-      title: "Dispatch",
-      color: "from-green-500 to-green-600",
-      delay: "0.9s",
-    },
-  ];
 
   return (
     <section
@@ -77,224 +18,79 @@ const Manufacturing: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-8 max-w-7xl relative z-10">
-        {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 md:gap-6 lg:gap-8 items-start">
-          {/* === LEFT COLUMN: Content === */}
-          <div className="space-y-3 sm:space-y-4">
-            {/* Header */}
-            <div className="mb-3 sm:mb-4">
-              <div className="flex items-start gap-2 sm:gap-2.5 mb-2">
-                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white shadow-lg flex-shrink-0">
-                  <Factory size={16} className="sm:w-[18px] sm:h-[18px]" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-purple-600 mb-0.5">
-                    B2B & Industrial
-                  </div>
-                  <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900">
-                    Manufacturing
-                  </h2>
-                </div>
+        {/* Single Column Layout - 7xl Width */}
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="mb-4 sm:mb-5 md:mb-6">
+            <div className="flex items-start gap-2 sm:gap-2.5 mb-2">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white shadow-lg flex-shrink-0">
+                <Factory size={16} className="sm:w-[18px] sm:h-[18px]" />
               </div>
-              <p className="text-xs sm:text-sm md:text-base text-slate-600 leading-relaxed">
-                Streamline production, inventory, and order management with
-                automated workflows. Convert inquiries into orders seamlessly.
+              <div className="flex-1 min-w-0">
+                <div className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-purple-600 mb-0.5">
+                  B2B & Industrial
+                </div>
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900">
+                  Manufacturing
+                </h2>
+              </div>
+            </div>
+            <p className="text-xs sm:text-sm md:text-base text-slate-600 leading-relaxed">
+              Manufacturing businesses face unique operational challenges. Here's what businesses like yours struggle with—and how we help.
+            </p>
+          </div>
+
+          {/* Cards Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+            {/* Common Problems Section */}
+            <div className="bg-red-50 border-2 border-red-200 rounded-lg p-4 sm:p-5 md:p-6">
+              <h3 className="text-sm sm:text-base font-bold text-red-900 mb-2 sm:mb-3 flex items-center gap-2">
+                <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-red-500 flex items-center justify-center text-white text-xs font-bold">!</span>
+                Common Problems:
+              </h3>
+              <ul className="space-y-1.5 sm:space-y-2">
+                <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                  <span className="text-red-600 font-bold mt-0.5">•</span>
+                  <span>Inquiries get lost in WhatsApp chats and emails</span>
+                </li>
+                <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                  <span className="text-red-600 font-bold mt-0.5">•</span>
+                  <span>Delays in generating purchase orders after client approval</span>
+                </li>
+                <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                  <span className="text-red-600 font-bold mt-0.5">•</span>
+                  <span>No tracking system for dispatch and delivery</span>
+                </li>
+                <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                  <span className="text-red-600 font-bold mt-0.5">•</span>
+                  <span>Manual processes slow down operations and cause errors</span>
+                </li>
+                <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                  <span className="text-red-600 font-bold mt-0.5">•</span>
+                  <span>Can't convert inquiries to orders fast enough</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* How We Fix It Section */}
+            <div className="bg-green-50 border-2 border-green-200 rounded-lg p-4 sm:p-5 md:p-6">
+              <h3 className="text-sm sm:text-base font-bold text-green-900 mb-2 sm:mb-3 flex items-center gap-2">
+                <CheckCircle2 size={16} className="sm:w-5 sm:h-5 text-green-600" />
+                How We Fix It:
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                We set up a system that converts WhatsApp inquiries into PDF quotes instantly. When clients approve on WhatsApp, the system generates purchase orders automatically. We also generate e-way bills and send live tracking links to clients—so you never lose an inquiry or delay a delivery.
               </p>
             </div>
 
-            {/* Problem & Solution Cards */}
-            <div className="grid grid-cols-1 gap-2 sm:gap-2.5">
-              {/* Problem Card */}
-              <div className="bg-red-50 border-2 border-red-200 rounded-lg p-2 sm:p-2.5">
-                <div className="flex items-start gap-1.5 sm:gap-2">
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-red-500 flex items-center justify-center text-white flex-shrink-0 mt-0.5">
-                    <span className="text-[9px] sm:text-[10px] font-bold">!</span>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-[11px] sm:text-xs font-bold text-red-900 mb-0.5">
-                      The Problem
-                    </h3>
-                    <p className="text-[9px] sm:text-[10px] text-slate-700 leading-relaxed">
-                      Lost inquiries in WhatsApp chats. Delay in generating POs.
-                      No dispatch tracking. Manual processes slow down
-                      operations.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Solution Card */}
-              <div className="bg-green-50 border-2 border-green-200 rounded-lg p-2 sm:p-2.5">
-                <div className="flex items-start gap-1.5 sm:gap-2">
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-green-500 flex items-center justify-center text-white flex-shrink-0 mt-0.5">
-                    <CheckCircle2 size={10} className="sm:w-[11px] sm:h-[11px] text-white" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-[11px] sm:text-xs font-bold text-green-900 mb-0.5">
-                      The Solution
-                    </h3>
-                    <p className="text-[9px] sm:text-[10px] text-slate-700 leading-relaxed">
-                      Convert WhatsApp chats into official Quotes and Invoices
-                      in one click. Automated order processing and real-time
-                      dispatch tracking.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Key Features */}
-            <div>
-              <h3 className="text-xs sm:text-sm md:text-base font-bold text-slate-900 mb-2">
-                Key Features
+            {/* Real Example Section */}
+            <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 sm:p-5 md:p-6">
+              <h3 className="text-sm sm:text-base font-bold text-blue-900 mb-2 sm:mb-3">
+                Real Example:
               </h3>
-              <div className="space-y-1.5 sm:space-y-2">
-                {features.map((feature, idx) => {
-                  const Icon = feature.icon;
-                  return (
-                    <div
-                      key={idx}
-                      className="bg-white border-2 border-slate-200 rounded-lg p-2 sm:p-2.5 hover:border-purple-300 hover:shadow-md transition-all duration-300 group"
-                    >
-                      <div className="flex items-start gap-1.5 sm:gap-2">
-                        <div
-                          className={`w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-gradient-to-br ${feature.gradient} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform flex-shrink-0 mt-0.5`}
-                        >
-                          <Icon size={10} className="sm:w-3 sm:h-3" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h4 className="text-[11px] sm:text-xs font-bold text-slate-900 mb-0.5">
-                            {feature.title}
-                          </h4>
-                          <p className="text-[9px] sm:text-[10px] text-slate-600 leading-relaxed">
-                            {feature.description}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-2">
-              {stats.map((stat, idx) => {
-                const Icon = stat.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="bg-gradient-to-br from-purple-50 to-indigo-50 border-2 border-purple-100 rounded-lg p-1.5 sm:p-2"
-                  >
-                    <div className="flex items-start gap-1.5 sm:gap-2">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white shadow-md flex-shrink-0 mt-0.5">
-                        <Icon size={10} className="sm:w-3 sm:h-3" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="text-sm sm:text-base font-bold text-purple-600 mb-0.5">
-                          {stat.value}
-                        </div>
-                        <div className="text-[9px] sm:text-[10px] text-slate-600 font-medium leading-tight">
-                          {stat.label}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* === RIGHT COLUMN: Visual Workflow === */}
-          <div className="relative mt-4 sm:mt-6 lg:mt-0">
-            <div className="bg-white rounded-lg sm:rounded-xl border-2 border-slate-200 p-3 sm:p-4 md:p-5 lg:p-5 shadow-lg sticky top-4">
-              <h3 className="text-xs sm:text-sm md:text-base font-bold text-slate-900 mb-3 sm:mb-4 text-center">
-                Manufacturing Workflow
-              </h3>
-
-              {/* Workflow Visualization */}
-              <div className="space-y-2 sm:space-y-2.5">
-                {workflowSteps.map((step, idx) => {
-                  const Icon = step.icon;
-                  const isLast = idx === workflowSteps.length - 1;
-                  return (
-                    <div key={idx}>
-                      {/* Step Card */}
-                      <div
-                        className={`bg-gradient-to-br ${step.color} rounded-lg p-2.5 sm:p-3 text-white shadow-md group hover:scale-105 transition-transform duration-300`}
-                        style={{
-                          animation: `fadeInUp 0.6s ease-out ${step.delay} forwards`,
-                          opacity: 0,
-                        }}
-                      >
-                        <div className="flex items-center gap-2 sm:gap-2.5">
-                          <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm flex-shrink-0">
-                            <Icon size={14} className="sm:w-4 sm:h-4 md:w-4 md:h-4 text-white" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <div className="text-[9px] sm:text-[10px] font-semibold opacity-90 mb-0.5">
-                              Step {idx + 1}
-                            </div>
-                            <div className="text-[11px] sm:text-xs font-bold">
-                              {step.title}
-                            </div>
-                          </div>
-                          {!isLast && (
-                            <ArrowDown
-                              size={12}
-                              className="sm:w-[14px] sm:h-[14px] text-white/70 animate-bounce flex-shrink-0"
-                            />
-                          )}
-                        </div>
-                      </div>
-
-                      {/* Connecting Arrow (except last) */}
-                      {!isLast && (
-                        <div className="flex justify-center py-0.5 sm:py-1">
-                          <div className="w-0.5 h-2 sm:h-3 bg-gradient-to-b from-purple-300 to-blue-300"></div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Progress Indicator */}
-              <div className="mt-4 sm:mt-5 pt-3 sm:pt-4 border-t border-slate-200">
-                <div className="flex items-center justify-between mb-1.5 sm:mb-2">
-                  <span className="text-[9px] sm:text-[10px] font-semibold text-slate-700">
-                    Process Efficiency
-                  </span>
-                  <span className="text-[9px] sm:text-[10px] font-bold text-green-600">
-                    92%
-                  </span>
-                </div>
-                <div className="h-1 sm:h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-to-r from-purple-600 via-blue-600 to-green-600 rounded-full transition-all duration-1000"
-                    style={{
-                      width: "92%",
-                      transform: "scaleX(0)",
-                      transformOrigin: "left",
-                      animation: "progressFill 1.5s ease-out 1.2s forwards",
-                    }}
-                  />
-                </div>
-              </div>
-
-              {/* Floating Stats */}
-              <div className="mt-3 sm:mt-4 grid grid-cols-2 gap-2">
-                <div className="bg-slate-50 rounded-lg p-1.5 sm:p-2 border border-slate-200">
-                  <div className="text-sm sm:text-base font-bold text-slate-900">500+</div>
-                  <div className="text-[8px] sm:text-[9px] text-slate-600">Orders/Month</div>
-                </div>
-                <div className="bg-slate-50 rounded-lg p-1.5 sm:p-2 border border-slate-200">
-                  <div className="text-sm sm:text-base font-bold text-slate-900">98%</div>
-                  <div className="text-[8px] sm:text-[9px] text-slate-600">
-                    On-Time Delivery
-                  </div>
-                </div>
-              </div>
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                A manufacturing unit in Pune was losing 40% of inquiries because they couldn't respond fast enough. We automated their inquiry-to-quote process, and now they convert inquiries 2x faster with zero lost leads. Their dispatch tracking is automated, and clients get real-time updates—no more "where is my order?" calls.
+              </p>
             </div>
           </div>
         </div>

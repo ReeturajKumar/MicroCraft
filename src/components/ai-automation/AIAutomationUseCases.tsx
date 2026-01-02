@@ -124,7 +124,7 @@ const AIAutomationUseCases: React.FC = () => {
               >
                 From customer support to sales automation, our AI agents handle
                 complex workflows with precision and scale. Experience the power
-                of enterprise-ready automation that adapts to your business
+                of business-ready automation that adapts to your business
                 needs.
               </motion.p>
             </div>

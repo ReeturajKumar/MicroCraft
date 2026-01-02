@@ -36,9 +36,9 @@ const AIColleaguesSection = () => {
     },
     {
       icon: Workflow,
-      title: "Enterprise Workflow Integration",
+      title: "Everything Updates Automatically",
       description:
-        "AI agents integrate deeply with enterprise systems—CRM updates, ticket creation, notifications, and compliance checks.",
+        "No manual work needed. When a customer calls, your CRM updates. When an order comes in, inventory adjusts. Everything happens automatically—you just focus on running your business.",
       gradient: "from-teal-600 to-cyan-500",
     },
   ];
@@ -63,10 +63,10 @@ const AIColleaguesSection = () => {
                 </span>
               </span>
               <br />
-              for Modern Enterprises
+              for Modern Businesses
             </h2>
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-              Enterprise-ready AI automation that integrates seamlessly into
+              Business-ready AI automation that integrates seamlessly into
               day-to-day business operations. From customer interactions to
               backend workflows, execute, analyze, and optimize business
               processes at scale.
@@ -228,7 +228,7 @@ const AIColleaguesSection = () => {
             <div className="relative w-full max-w-[600px] mx-auto lg:mx-0">
               <img
                 src="/Architecture.png"
-                alt="Enterprise AI Architecture"
+                alt="Business AI Architecture"
                 className="w-full h-auto object-contain rounded-2xl"
                 loading="lazy"
                 onError={(e) => {
@@ -258,7 +258,7 @@ const AIColleaguesSection = () => {
             className="order-1 lg:order-2"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">
-              Enterprise{" "}
+              Business{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600">
                 AI Architecture <br />
               </span>{" "}
@@ -266,7 +266,7 @@ const AIColleaguesSection = () => {
             </h2>
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
               Forward-looking, open, and scalable Agentic AI architecture for
-              the enterprise. Built for CIOs and CTOs with full governance,
+              your business. Built for business leaders with full governance,
               compliance, security, and auditability.
             </p>
             <Link

@@ -64,7 +64,7 @@ const AdvantagesSection: React.FC = () => {
                     Centralized Intelligence System
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed mb-1.5">
-                    One unified platform connecting sales, marketing, support, and operations with real-time data synchronization.
+                    Everything in one place. See all your sales, marketing, support, and operations data in real-time—no switching between tools.
                   </p>
                   <ul className="space-y-0.5 text-xs text-slate-500">
                     <li className="flex items-center gap-1.5">
@@ -97,7 +97,7 @@ const AdvantagesSection: React.FC = () => {
                     </li>
                     <li className="flex items-center gap-1.5">
                       <span className="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0"></span>
-                      <span>Predictive analytics and forecasting</span>
+                      <span>Know what's coming—forecast sales and plan ahead with confidence</span>
                     </li>
                   </ul>
                 </div>
@@ -109,10 +109,10 @@ const AdvantagesSection: React.FC = () => {
               <div className="flex items-start">
                 <div className="flex-1 min-w-0">
                   <h3 className="text-sm font-bold text-slate-900 mb-1 group-hover:text-pink-600 transition-colors">
-                    Enterprise Security & Scalability
+                    Business Security & Scalability
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed mb-1.5">
-                    Enterprise-level security with role-based access control and unlimited scalability that grows with your business.
+                    Business-grade security with role-based access control and unlimited scalability that grows with your business.
                   </p>
                   <ul className="space-y-0.5 text-xs text-slate-500">
                     <li className="flex items-center gap-1.5">
@@ -121,7 +121,7 @@ const AdvantagesSection: React.FC = () => {
                     </li>
                     <li className="flex items-center gap-1.5">
                       <span className="w-1 h-1 rounded-full bg-pink-500 flex-shrink-0"></span>
-                      <span>Scales from startup to enterprise seamlessly</span>
+                      <span>Scales from startup to large business seamlessly</span>
                     </li>
                   </ul>
                 </div>

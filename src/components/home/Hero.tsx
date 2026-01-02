@@ -48,21 +48,21 @@ const Hero = () => {
   const slides = [
     {
       id: 0,
-      leftWord: "Enterprise CRM",
+      leftWord: "Smart Automation",
       leftColor: bikayiColors.primary,
-      bgWord: "CRM",
+      bgWord: "AUTOMATE",
       visual: "phone",
       caption:
-        "A central intelligence system for sales, customers, and growth. Manage customers, streamline sales operations, automate follow-ups, and gain deep business insights.",
+        "From leads and follow-ups to customer support and operations, we help MSMEs and growing businesses run smoother, faster, and smarter.",
     },
     {
       id: 1,
-      leftWord: "AI Automation",
+      leftWord: "CRM, and AI",
       leftColor: bikayiColors.primaryLight,
-      bgWord: "AUTOMATE",
+      bgWord: "SIMPLIFY",
       visual: "laptop",
       caption:
-        "Intelligent AI agents powering modern enterprises end-to-end. From customer interactions to backend workflows, execute, analyze, and optimize business processes at scale.",
+        "We solve everyday business problems using smart automation, CRM, and AI, without complexity. No enterprise jargon, just solutions that work.",
     },
   ];
 
@@ -92,68 +92,78 @@ const Hero = () => {
       />
 
       {/* ========================================================
-          MAIN CONTENT (Bikayi Design System)
+          MAIN CONTENT 
       ======================================================== */}
-      <div className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 w-full flex items-start lg:items-center relative z-10 pb-4 sm:pb-6 lg:pb-2">
+      <div className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 w-full flex items-start lg:items-center relative z-10 pb-4 sm:pb-6 ">
         <div className="grid grid-cols-1 lg:grid-cols-12 w-full gap-6 sm:gap-8 lg:gap-16 items-center">
           {/* === LEFT CONTENT (Text) - Bikayi Typography === */}
           <div className="col-span-1 lg:col-span-6 flex flex-col justify-start lg:justify-center order-1 lg:order-1">
-            {/* Main Headline - Bikayi Style: Work Sans, 54px, Bold */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[48px] font-bold leading-[1.1] sm:leading-[1.1] md:leading-[1.15] lg:leading-[64px] tracking-tight mb-3 sm:mb-4 lg:mb-6 hero-heading-bikayi">
-              <span className="block leading-tight">Transform Your</span>
-              <span className="block leading-tight">Business with</span>
-              <span className="relative inline-flex flex-col min-h-[1.25em] h-[1.25em] sm:h-[1.15em] md:h-[1.1em] lg:h-[1.1em] overflow-visible sm:overflow-hidden align-top transition-all duration-500 ease-in-out leading-tight">
-                {/* Invisible Ghost Word to set Width */}
-                <span className="opacity-0 invisible whitespace-nowrap pointer-events-none leading-tight">
-                  {slides[activeSlide].leftWord}
-                </span>
-
-                {/* Animated Slides */}
-                {slides.map((slide, idx) => (
-                  <span
-                    key={slide.id}
-                    className={`absolute left-0 top-0 whitespace-nowrap transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] leading-tight ${
-                      idx === activeSlide
-                        ? "translate-y-0 opacity-100"
-                        : "translate-y-[120%] opacity-0"
-                    }`}
-                    style={{
-                      background:
-                        "linear-gradient(to right, #9333ea, #ec4899, #9333ea)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }}
-                  >
-                    {slide.leftWord}
+            {/* Main Headline - Balanced & Impactful */}
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[44px] font-bold leading-[1.2] sm:leading-[1.25] md:leading-[1.3] lg:leading-[1.35] tracking-tight mb-3 sm:mb-4 lg:mb-6 hero-heading-bikayi">
+              <span className="block leading-tight">We Solve Everyday</span>
+              <span className="block leading-tight">Business Problems</span>
+              <span className="block leading-tight">
+                Using{" "}
+                <span className="relative inline-flex flex-col min-h-[1.25em] h-[1.25em] sm:h-[1.15em] md:h-[1.1em] lg:h-[1.1em] overflow-visible sm:overflow-hidden align-top transition-all duration-500 ease-in-out leading-tight">
+                  {/* Invisible Ghost Word to set Width */}
+                  <span className="opacity-0 invisible whitespace-nowrap pointer-events-none leading-tight">
+                    {slides[activeSlide].leftWord}
                   </span>
-                ))}
+
+                  {/* Animated Slides */}
+                  {slides.map((slide, idx) => (
+                    <span
+                      key={slide.id}
+                      className={`absolute left-0 top-0 whitespace-nowrap transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] leading-tight ${
+                        idx === activeSlide
+                          ? "translate-y-0 opacity-100"
+                          : "translate-y-[120%] opacity-0"
+                      }`}
+                      style={{
+                        background:
+                          "linear-gradient(to right, #9333ea, #ec4899, #9333ea)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    >
+                      {slide.leftWord}
+                    </span>
+                  ))}
+                </span>
+              </span>
+              <span className="block leading-tight text-slate-700 font-semibold text-base sm:text-lg md:text-xl lg:text-[26px] mt-2">
+                Without Complexity
               </span>
             </h1>
 
             {/* Description - Bikayi Style: Inter, 16px, Secondary Text */}
             <p className="text-sm sm:text-base md:text-lg max-w-xl leading-relaxed sm:leading-6 mb-4 sm:mb-6 lg:mb-4 hero-description-bikayi">
-              {slides[activeSlide].caption}
+              From leads and follow-ups to customer support and operations, we
+              help MSMEs and growing businesses run smoother, faster, and
+              smarter.
             </p>
 
-            {/* CTA Buttons - Bikayi Design System */}
+            {/* CTA Buttons - Consultative Design */}
             <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 items-stretch sm:items-center mb-6 sm:mb-8">
-              {/* Primary Button - Bikayi Style */}
+              {/* Primary Button - Consultative */}
               <Link
-                to="/products/crm"
-                className="group relative px-4 sm:px-5 py-2.5 sm:py-3 rounded font-semibold text-sm sm:text-base text-white transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 overflow-hidden border bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 transition-all duration-300 group-hover:scale-110"
+                to="/consultation"
+                className="group relative px-4 sm:px-5 py-2.5 sm:py-3 rounded font-semibold text-sm sm:text-base text-white transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 overflow-hidden border bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 transition-all duration-300 group-hover:scale-100"
               >
-                <span className="relative z-10">SCHEDULE A CALL</span>
+                <span className="relative z-10">
+                  Talk to a Business Consultant
+                </span>
                 <ArrowUpRight className="w-4 h-4 relative z-10 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
 
-              {/* Secondary Button - Bikayi Style */}
+              {/* Secondary Button - Consultative */}
               <Link
-                to="/products/crm"
+                to="/consultation"
                 className="px-4 sm:px-5 py-2.5 sm:py-3 bg-white rounded font-semibold text-sm sm:text-base transition-all flex items-center justify-center gap-2 border btn-bikayi-secondary"
               >
                 <Play className="w-4 h-4 fill-current" />
-                <span>GET STARTED</span>
+                <span>Get a Free Process Review</span>
               </Link>
             </div>
 
@@ -545,7 +555,7 @@ const Hero = () => {
                       Secure
                     </div>
                     <div className="text-[9px] sm:text-[10px] mobile-feature-text-secondary">
-                      Enterprise
+                      Business
                     </div>
                   </div>
                 </div>

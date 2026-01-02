@@ -10,6 +10,8 @@ import Analytics from "./pages/Analytics";
 import CaseStudies from "./pages/CaseStudies";
 import Integration from "./pages/Integration";
 import Sectors from "./pages/Sectors";
+import Consultation from "./pages/Consultation";
+import Resources from "./pages/Resources";
 import ScrollToTop from "./components/ScrollToTop";
 import LoadingIndicator from "./components/LoadingIndicator";
 
@@ -36,6 +38,8 @@ function App() {
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/sectors" element={<Sectors />} />
         <Route path="/integrations" element={<Integration />} />
+        <Route path="/consultation" element={<Consultation />} />
+        <Route path="/resources" element={<Resources />} />
       </Routes>
       <Footer />
     </BrowserRouter>

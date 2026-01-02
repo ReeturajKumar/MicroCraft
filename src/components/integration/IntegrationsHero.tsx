@@ -6,7 +6,7 @@ const RotatingText = () => {
   const words = [
     "Infinite Connections",
     "Seamless Integration",
-    "Unified Platform",
+    "Everything in One Place",
     "Connected Ecosystem",
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -100,9 +100,8 @@ const IntegrationsHero: React.FC = () => {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-slate-600 mb-6 sm:mb-7 md:mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed px-2 sm:px-0">
-            Connect WhatsApp, Shopify, Razorpay, and 50+ tools into a unified
-            system. Real-time synchronization ensures instant updates across all
-            platforms with zero data loss and enterprise-grade security.
+            Connect WhatsApp, Shopify, Razorpay, and 50+ tools—everything works together automatically. Real-time updates mean you always see the latest information across all
+            platforms with zero data loss and business-grade security.
           </p>
 
           {/* Key Features Grid */}
@@ -137,7 +136,7 @@ const IntegrationsHero: React.FC = () => {
                 Secure
               </div>
               <div className="text-[10px] sm:text-xs text-slate-500 mt-0.5">
-                Enterprise-grade
+                Business-grade
               </div>
             </div>
           </div>

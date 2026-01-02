@@ -140,31 +140,31 @@ const ProductTrio: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
             className="product-trio-subheading mt-3 sm:mt-4 md:mt-5 lg:mt-6"
           >
-            Enterprise-ready AI automation and CRM that integrate seamlessly
-            into your day-to-day business operations.
+            Smart automation and CRM solutions that help your business run smoother, 
+            faster, and smarter—without complexity.
           </motion.p>
         </div>
 
         {/* --- CARDS GRID --- */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12 max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto">
-          {/* CARD 1: Enterprise CRM */}
+          {/* CARD 1: Sales and Lead Management */}
           <SpotlightCard delay={0}>
             <CRMDemo />
             <CardContent
-              title="Enterprise CRM"
-              desc="A central intelligence system for sales, customers, and growth. Manage customers, streamline sales operations, automate follow-ups, and gain deep business insights."
-              tags={["Custom Pipelines", "AI-Integrated"]}
+              title="Sales and Lead Management"
+              desc="Never miss a lead. Automatic and consistent follow-ups. Clear sales pipeline visibility. Know exactly where every opportunity stands—without manual tracking."
+              tags={["Lead Capture", "Pipeline Visibility"]}
               icon={<MessageCircle className="w-4 h-4 text-purple-600" />}
             />
           </SpotlightCard>
 
-          {/* CARD 2: Enterprise AI Automation */}
+          {/* CARD 2: Customer Support Automation */}
           <SpotlightCard delay={0.15}>
             <AIAutomationDemo />
             <CardContent
-              title="Enterprise AI Automation"
-              desc="Intelligent AI agents powering modern enterprises end-to-end. From customer interactions to backend workflows, execute, analyze, and optimize business processes at scale."
-              tags={["AI Agents", "Workflow Integration"]}
+              title="Customer Support Automation"
+              desc="Customer support without chaos. Call handling, chat support, and query resolution available round-the-clock. Never miss a customer message or call again."
+              tags={["24/7 Support", "Auto-Response"]}
               icon={<Zap className="w-4 h-4 text-pink-600" />}
             />
           </SpotlightCard>
@@ -256,7 +256,7 @@ const CardContent: React.FC<CardContentProps> = ({
     <p className="product-trio-card-description mb-3 sm:mb-4">{desc}</p>
 
     <Link
-      to={title === "Enterprise CRM" ? "/products/crm" : "/products/ai-automation"}
+      to={title === "Sales and Lead Management" ? "/products/crm" : "/products/ai-automation"}
       className="flex items-center product-trio-card-link group-hover:text-purple-600 w-fit"
     >
       <span className="relative">

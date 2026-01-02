@@ -29,7 +29,7 @@ const ReferenceHero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-slate-600 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-6xl mb-6 sm:mb-8 md:mb-10 leading-relaxed font-normal px-2 sm:px-4 md:px-0"
         >
-          Enterprise-ready AI automation that seamlessly integrates into your
+          Business-ready AI automation that seamlessly integrates into your
           business operations. Build with precision or speed—host on-prem or
           in-the-cloud. Our intelligent agents execute, analyze, and optimize
           processes at scale.

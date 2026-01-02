@@ -245,7 +245,7 @@ export default function IntegrationsSection() {
           {/* --- RIGHT: Content Section --- */}
           <div className="space-y-6 text-center lg:text-left">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight flex flex-wrap items-center justify-center lg:justify-start gap-2">
-              <span>Unified Platform for</span>
+              <span>Everything in One Place for</span>
               <RotatingText />
             </h2>
 

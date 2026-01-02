@@ -318,7 +318,7 @@ const Simulator: React.FC = () => {
 
         <p className="simulator-subheading max-w-2xl mx-auto">
           Stop switching between 10 different tabs. Manage leads, campaigns, and
-          support in a single, unified interface designed for speed.
+          support in one place—no more switching between tabs, everything you need is right here.
         </p>
       </div>
 
