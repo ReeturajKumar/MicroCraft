@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -39,7 +40,10 @@ const TrustAndIntegrationsSection = () => {
             transition={{ duration: ANIMATION_DURATION, ease: "easeOut" }}
             className="flex-1 w-full lg:w-auto"
           >
-            <div className="relative w-full max-w-[600px] mx-auto lg:mx-0">
+            <div 
+              className="relative w-full mx-auto lg:mx-0"
+              style={{ maxWidth: `${MAX_IMAGE_WIDTH}px` }}
+            >
               {!imageError ? (
                 <img
                   ref={imageRef}

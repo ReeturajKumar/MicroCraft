@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import {
   BookOpen,
@@ -15,25 +14,29 @@ const Resources = () => {
   const businessGuides = [
     {
       title: "How to Never Miss a Lead Again",
-      description: "A practical guide to setting up automated lead capture and follow-up systems",
+      description:
+        "A practical guide to setting up automated lead capture and follow-up systems",
       category: "Sales & Lead Management",
       readTime: "5 min read",
     },
     {
       title: "Customer Support Without Chaos",
-      description: "Learn how to automate customer support and reduce response times",
+      description:
+        "Learn how to automate customer support and reduce response times",
       category: "Customer Support",
       readTime: "7 min read",
     },
     {
       title: "Owner-Level Business Visibility",
-      description: "Get clear insights into your business performance without drowning in data",
+      description:
+        "Get clear insights into your business performance without drowning in data",
       category: "Business Insights",
       readTime: "6 min read",
     },
     {
       title: "Operations Automation for Growing Businesses",
-      description: "Streamline your operations and reduce manual work with smart automation",
+      description:
+        "Streamline your operations and reduce manual work with smart automation",
       category: "Operations",
       readTime: "8 min read",
     },
@@ -42,13 +45,15 @@ const Resources = () => {
   const playbooks = [
     {
       title: "Lead Management Checklist",
-      description: "Step-by-step checklist to ensure no lead falls through the cracks",
+      description:
+        "Step-by-step checklist to ensure no lead falls through the cracks",
       icon: FileCheck,
       color: "from-purple-500 to-pink-500",
     },
     {
       title: "Customer Onboarding Playbook",
-      description: "Best practices for onboarding new customers smoothly and efficiently",
+      description:
+        "Best practices for onboarding new customers smoothly and efficiently",
       icon: FileText,
       color: "from-blue-500 to-indigo-500",
     },
@@ -60,7 +65,8 @@ const Resources = () => {
     },
     {
       title: "Support Automation Setup",
-      description: "Quick setup guide for automating customer support workflows",
+      description:
+        "Quick setup guide for automating customer support workflows",
       icon: BookOpen,
       color: "from-orange-500 to-red-500",
     },
@@ -69,17 +75,20 @@ const Resources = () => {
   const industryInsights = [
     {
       title: "Restaurant & Hospitality Trends 2024",
-      description: "Key trends and challenges facing restaurants and cafes this year",
+      description:
+        "Key trends and challenges facing restaurants and cafes this year",
       industry: "Food & Hospitality",
     },
     {
       title: "Manufacturing Operations Report",
-      description: "How manufacturing businesses are optimizing their operations",
+      description:
+        "How manufacturing businesses are optimizing their operations",
       industry: "Manufacturing",
     },
     {
       title: "Healthcare Automation Insights",
-      description: "Latest trends in healthcare facility management and patient care",
+      description:
+        "Latest trends in healthcare facility management and patient care",
       industry: "Healthcare",
     },
     {
@@ -92,27 +101,33 @@ const Resources = () => {
   const faqs = [
     {
       question: "How quickly can I set up automation for my business?",
-      answer: "Most businesses can have basic automation running within 48 hours. We handle the setup, so you don't need technical expertise.",
+      answer:
+        "Most businesses can have basic automation running within 48 hours. We handle the setup, so you don't need technical expertise.",
     },
     {
       question: "Will this work with my existing tools?",
-      answer: "Yes, we integrate with 50+ popular tools including WhatsApp, Shopify, Razorpay, and more. Your existing systems continue to work—we just connect them better.",
+      answer:
+        "Yes, we integrate with 50+ popular tools including WhatsApp, Shopify, Razorpay, and more. Your existing systems continue to work—we just connect them better.",
     },
     {
       question: "Do I need to train my team?",
-      answer: "Minimal training required. Our systems are designed to be simple. We provide onboarding support and documentation to get your team comfortable quickly.",
+      answer:
+        "Minimal training required. Our systems are designed to be simple. We provide onboarding support and documentation to get your team comfortable quickly.",
     },
     {
       question: "What if my business needs are unique?",
-      answer: "Every business is different. We customize our solutions to match how you actually operate, not force you into predefined workflows.",
+      answer:
+        "Every business is different. We customize our solutions to match how you actually operate, not force you into predefined workflows.",
     },
     {
       question: "How much does it cost?",
-      answer: "Pricing depends on your specific needs. We offer flexible plans that scale with your business. Schedule a consultation to get a custom quote.",
+      answer:
+        "Pricing depends on your specific needs. We offer flexible plans that scale with your business. Schedule a consultation to get a custom quote.",
     },
     {
       question: "What kind of support do you provide?",
-      answer: "We provide 24/7 support, regular check-ins, and dedicated account management. We're here to help your business succeed, not just sell you software.",
+      answer:
+        "We provide 24/7 support, regular check-ins, and dedicated account management. We're here to help your business succeed, not just sell you software.",
     },
   ];
 
@@ -140,7 +155,8 @@ const Resources = () => {
                 </span>
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium">
-                Practical guides, playbooks, and insights to help you run your business smoother, faster, and smarter.
+                Practical guides, playbooks, and insights to help you run your
+                business smoother, faster, and smarter.
               </p>
             </div>
           </div>
@@ -153,7 +169,9 @@ const Resources = () => {
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
                 <BookOpen className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Business Guides</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
+                Business Guides
+              </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {businessGuides.map((guide, index) => (
@@ -165,10 +183,16 @@ const Resources = () => {
                     <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">
                       {guide.category}
                     </span>
-                    <span className="text-xs text-slate-500 font-medium">{guide.readTime}</span>
+                    <span className="text-xs text-slate-500 font-medium">
+                      {guide.readTime}
+                    </span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">{guide.title}</h3>
-                  <p className="text-slate-600 mb-4 leading-relaxed">{guide.description}</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+                    {guide.title}
+                  </h3>
+                  <p className="text-slate-600 mb-4 leading-relaxed">
+                    {guide.description}
+                  </p>
                   <button className="text-purple-600 font-semibold hover:text-purple-700 flex items-center gap-2 group">
                     Read Guide
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -186,7 +210,9 @@ const Resources = () => {
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center">
                 <FileCheck className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Playbooks & Checklists</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
+                Playbooks & Checklists
+              </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {playbooks.map((playbook, index) => (
@@ -194,11 +220,17 @@ const Resources = () => {
                   key={index}
                   className="bg-white rounded-xl p-6 border-2 border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${playbook.color} flex items-center justify-center mb-4`}>
+                  <div
+                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${playbook.color} flex items-center justify-center mb-4`}
+                  >
                     <playbook.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">{playbook.title}</h3>
-                  <p className="text-sm text-slate-600 mb-4 leading-relaxed">{playbook.description}</p>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                    {playbook.title}
+                  </h3>
+                  <p className="text-sm text-slate-600 mb-4 leading-relaxed">
+                    {playbook.description}
+                  </p>
                   <button className="text-blue-600 font-semibold hover:text-blue-700 flex items-center gap-2 text-sm group">
                     Download
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -216,7 +248,9 @@ const Resources = () => {
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
                 <TrendingUp className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Industry Insights</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
+                Industry Insights
+              </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {industryInsights.map((insight, index) => (
@@ -229,8 +263,12 @@ const Resources = () => {
                       {insight.industry}
                     </span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">{insight.title}</h3>
-                  <p className="text-slate-600 mb-4 leading-relaxed">{insight.description}</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+                    {insight.title}
+                  </h3>
+                  <p className="text-slate-600 mb-4 leading-relaxed">
+                    {insight.description}
+                  </p>
                   <button className="text-green-600 font-semibold hover:text-green-700 flex items-center gap-2 group">
                     Read Report
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -248,7 +286,9 @@ const Resources = () => {
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center">
                 <FileText className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Case Stories</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
+                Case Stories
+              </h2>
             </div>
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 sm:p-10 md:p-12 border-2 border-purple-200">
               <div className="max-w-3xl mx-auto text-center">
@@ -256,7 +296,8 @@ const Resources = () => {
                   Real Stories from Real Businesses
                 </h3>
                 <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                  See how businesses like yours are solving problems and growing with our solutions.
+                  See how businesses like yours are solving problems and growing
+                  with our solutions.
                 </p>
                 <Link
                   to="/case-studies"
@@ -277,7 +318,9 @@ const Resources = () => {
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
                 <HelpCircle className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Frequently Asked Questions</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
+                Frequently Asked Questions
+              </h2>
             </div>
             <div className="space-y-4">
               {faqs.map((faq, index) => (
@@ -289,7 +332,9 @@ const Resources = () => {
                     <CheckCircle2 className="w-5 h-5 text-indigo-600 mt-1 flex-shrink-0" />
                     {faq.question}
                   </h3>
-                  <p className="text-slate-600 leading-relaxed ml-8">{faq.answer}</p>
+                  <p className="text-slate-600 leading-relaxed ml-8">
+                    {faq.answer}
+                  </p>
                 </div>
               ))}
             </div>
@@ -304,7 +349,8 @@ const Resources = () => {
                 Need More Help?
               </h2>
               <p className="text-lg sm:text-xl mb-8 opacity-90">
-                Talk to a business consultant and get personalized guidance for your business.
+                Talk to a business consultant and get personalized guidance for
+                your business.
               </p>
               <Link
                 to="/consultation"
@@ -322,4 +368,3 @@ const Resources = () => {
 };
 
 export default Resources;
-

@@ -1,8 +1,7 @@
 import React from "react";
-import { Truck, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 const Logistics: React.FC = () => {
-
   return (
     <section
       id="logistics"
@@ -28,7 +27,8 @@ const Logistics: React.FC = () => {
             </span>
           </h2>
           <p className="text-xs sm:text-sm md:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed px-2">
-            Logistics businesses struggle with tracking and delivery challenges. Here's what businesses like yours struggle with—and how we help.
+            Logistics businesses struggle with tracking and delivery challenges.
+            Here's what businesses like yours struggle with—and how we help.
           </p>
         </div>
 
@@ -36,53 +36,71 @@ const Logistics: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 max-w-7xl mx-auto">
           {/* Common Problems Section */}
           <div className="bg-red-50 border-2 border-red-200 rounded-lg p-4 sm:p-5 md:p-6">
-          <h3 className="text-sm sm:text-base font-bold text-red-900 mb-2 sm:mb-3 flex items-center gap-2">
-            <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-red-500 flex items-center justify-center text-white text-xs font-bold">!</span>
-            Common Problems:
-          </h3>
-          <ul className="space-y-1.5 sm:space-y-2">
-            <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
-              <span className="text-red-600 font-bold mt-0.5">•</span>
-              <span>Can't track shipments in real-time—customers keep calling</span>
-            </li>
-            <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
-              <span className="text-red-600 font-bold mt-0.5">•</span>
-              <span>Route planning is inefficient, wasting fuel and time</span>
-            </li>
-            <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
-              <span className="text-red-600 font-bold mt-0.5">•</span>
-              <span>Fleet management is chaotic—don't know where vehicles are</span>
-            </li>
-            <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
-              <span className="text-red-600 font-bold mt-0.5">•</span>
-              <span>Delayed deliveries hurt customer satisfaction</span>
-            </li>
-            <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
-              <span className="text-red-600 font-bold mt-0.5">•</span>
-              <span>No system to optimize delivery routes automatically</span>
-            </li>
-          </ul>
-        </div>
+            <h3 className="text-sm sm:text-base font-bold text-red-900 mb-2 sm:mb-3 flex items-center gap-2">
+              <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-red-500 flex items-center justify-center text-white text-xs font-bold">
+                !
+              </span>
+              Common Problems:
+            </h3>
+            <ul className="space-y-1.5 sm:space-y-2">
+              <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                <span className="text-red-600 font-bold mt-0.5">•</span>
+                <span>
+                  Can't track shipments in real-time—customers keep calling
+                </span>
+              </li>
+              <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                <span className="text-red-600 font-bold mt-0.5">•</span>
+                <span>
+                  Route planning is inefficient, wasting fuel and time
+                </span>
+              </li>
+              <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                <span className="text-red-600 font-bold mt-0.5">•</span>
+                <span>
+                  Fleet management is chaotic—don't know where vehicles are
+                </span>
+              </li>
+              <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                <span className="text-red-600 font-bold mt-0.5">•</span>
+                <span>Delayed deliveries hurt customer satisfaction</span>
+              </li>
+              <li className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                <span className="text-red-600 font-bold mt-0.5">•</span>
+                <span>No system to optimize delivery routes automatically</span>
+              </li>
+            </ul>
+          </div>
 
           {/* How We Fix It Section */}
           <div className="bg-green-50 border-2 border-green-200 rounded-lg p-4 sm:p-5 md:p-6">
-          <h3 className="text-sm sm:text-base font-bold text-green-900 mb-2 sm:mb-3 flex items-center gap-2">
-            <CheckCircle2 size={16} className="sm:w-5 sm:h-5 text-green-600" />
-            How We Fix It:
-          </h3>
-          <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-            We set up real-time tracking with GPS integration, so you and your customers always know where shipments are. AI-powered route optimization saves fuel and time. Comprehensive fleet management gives you complete control—no more guessing where vehicles are.
-          </p>
-        </div>
+            <h3 className="text-sm sm:text-base font-bold text-green-900 mb-2 sm:mb-3 flex items-center gap-2">
+              <CheckCircle2
+                size={16}
+                className="sm:w-5 sm:h-5 text-green-600"
+              />
+              How We Fix It:
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              We set up real-time tracking with GPS integration, so you and your
+              customers always know where shipments are. AI-powered route
+              optimization saves fuel and time. Comprehensive fleet management
+              gives you complete control—no more guessing where vehicles are.
+            </p>
+          </div>
 
           {/* Real Example Section */}
           <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 sm:p-5 md:p-6">
-          <h3 className="text-sm sm:text-base font-bold text-blue-900 mb-2 sm:mb-3">
-            Real Example:
-          </h3>
-          <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-            A logistics company in Chennai was getting 50+ calls daily asking "where is my shipment?" We set up real-time GPS tracking, and now customers can track their shipments themselves. Their route optimization reduced fuel costs by 20%, and delayed deliveries dropped by 35%—all because they can now plan routes efficiently.
-          </p>
+            <h3 className="text-sm sm:text-base font-bold text-blue-900 mb-2 sm:mb-3">
+              Real Example:
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              A logistics company in Chennai was getting 50+ calls daily asking
+              "where is my shipment?" We set up real-time GPS tracking, and now
+              customers can track their shipments themselves. Their route
+              optimization reduced fuel costs by 20%, and delayed deliveries
+              dropped by 35%—all because they can now plan routes efficiently.
+            </p>
           </div>
         </div>
       </div>
