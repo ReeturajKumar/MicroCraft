@@ -301,13 +301,34 @@ const Header: React.FC = () => {
           <>
             {/* Backdrop */}
             <div
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
+              className="fixed inset-0 bg-black/60 backdrop-blur-md z-40 lg:hidden"
               onClick={() => setMobileMenuOpen(false)}
             />
 
             {/* Mobile Menu */}
-            <div className="fixed top-20 left-0 right-0 bottom-0 w-full h-[calc(100vh-5rem)] lg:hidden z-50 bg-white overflow-y-auto">
-              <div className="w-full min-h-full py-6 px-4 sm:px-6">
+            <div className="fixed top-0 left-0 right-0 bottom-0 w-full h-screen lg:hidden z-50 bg-white overflow-y-auto pt-1">
+              <div className="w-full min-h-full py-1 px-4 sm:px-6">
+                {/* Logo in Mobile Menu */}
+                <Link 
+                  to="/"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    handleNavClick("");
+                  }}
+                  className="flex items-center justify-center gap-3 mb-4 pb-3 border-b border-slate-100 cursor-pointer"
+                >
+                  <img
+                    src="/logo.png"
+                    alt="Microkraft Logo"
+                    className="h-12 w-auto object-contain"
+                  />
+                  <div>
+                    <span className="text-xl font-bold font-black tracking-tight bg-gradient-to-r from-slate-800 via-slate-700 to-slate-600 bg-clip-text text-transparent">
+                      MicroKraft.AI
+                    </span>
+                  </div>
+                </Link>
+
                 <nav className="space-y-1">
                   {navLinks.map((link) => (
                     <div key={link.name}>

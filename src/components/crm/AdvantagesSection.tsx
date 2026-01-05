@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const AdvantagesSection: React.FC = () => {
   return (
-    <section className="relative w-full text-black py-6 md:py-16 lg:py-6 overflow-hidden font-sans">
+    <section className="relative bg-white w-full text-black py-6 md:py-16 lg:py-6 overflow-hidden font-sans">
       {/* Styles moved to index.css - see: scrolling-text-container-h2-alt, scrolling-text-inner */}
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
