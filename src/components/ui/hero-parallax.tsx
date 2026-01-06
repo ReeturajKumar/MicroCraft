@@ -83,7 +83,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[180vh] sm:h-[160vh] md:h-[200vh] lg:h-[220vh] py-10 overflow-hidden bg-white dark:bg-black antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[120vh] sm:h-[100vh] md:h-[150vh] lg:h-[220vh] py-6 overflow-hidden bg-white dark:bg-black antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
 
@@ -127,7 +127,7 @@ export const HeroParallax = ({
         }}
         className="block md:hidden"
       >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-4 sm:space-x-6 mb-8 sm:mb-12">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-2 sm:space-x-4 mb-6 sm:mb-8">
           {firstRow.slice(0, 3).map((product) => (
             <ProductCard
               product={product}
@@ -137,7 +137,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row mb-8 sm:mb-12 space-x-4 sm:space-x-6">
+        <motion.div className="flex flex-row mb-6 sm:mb-8 space-x-2 sm:space-x-4">
           {secondRow.slice(0, 3).map((product) => (
             <ProductCard
               product={product}
@@ -154,7 +154,7 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-6 sm:py-10 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 w-full left-0 top-0">
+    <div className="max-w-7xl relative mx-auto py-4 sm:py-8 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 w-full left-0 top-0 mb-6 sm:mb-10 md:mb-0">
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold dark:text-white leading-tight">
         The Ultimate <br /> development studio
       </h1>
@@ -191,7 +191,7 @@ export const ProductCard = ({
       key={product.title}
       className={`group/product relative flex-shrink-0 ${
         isMobile
-          ? "h-48 w-48 sm:h-56 sm:w-56"
+          ? "h-40 w-40 sm:h-52 sm:w-52"
           : "h-72 w-80 md:h-80 md:w-96 lg:h-96 lg:w-[28rem]"
       }`}
     >

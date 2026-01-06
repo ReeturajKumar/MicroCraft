@@ -65,7 +65,7 @@ export const products = [
 
 export default function FeaturedSection() {
   return (
-    <div className="w-full bg-white dark:bg-black">
+    <div className="w-full bg-white ">
       <HeroParallax products={products} />
     </div>
   );
