@@ -1,4 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+:root {
+  --gray0: #fff;
+  --gray1: #f6f6f6;
+  --gray2: #e9e9e9;
+  --gray3: #8f8f91;
+  --gray4: #626266;
+  --gray5: #2a2a2f;
+  --gray0-rgb: 255, 255, 255;
+  --gray1-rgb: 246, 246, 246;
+  --gray2-rgb: 233, 233, 233;
+  --gray3-rgb: 143, 143, 145;
+  --gray4-rgb: 98, 98, 102;
+  --gray5-rgb: 42, 42, 47;
+  --blue1: #4f44e0;
+  --blue2: #463dbb;
+  --blue3: #322e6f;
+  --green1: #219464;
+  --green2: #217d57;
+  --green3: #204e3e;
+  --red1: #e34f2f;
+  --red2: #bc452d;
+  --red3: #6d3228;
+  --orange1: #df7800;
+  --orange2: #b96607;
+  --orange3: #6c4316;
+  --blue1-rgb: 79, 68, 224;
+  --blue2-rgb: 70, 61, 187;
+  --blue3-rgb: 50, 46, 111;
+  --green1-rgb: 33, 148, 100;
+  --green2-rgb: 33, 125, 87;
+  --green3-rgb: 32, 78, 62;
+  --red1-rgb: 227, 79, 47;
+  --red2-rgb: 188, 69, 45;
+  --red3-rgb: 109, 50, 40;
+  --orange1-rgb: 223, 120, 0;
+  --orange2-rgb: 185, 102, 7;
+  --orange3-rgb: 108, 67, 22;
+  --text-highlight-color: #accef7;
+  --text-editor-highlight-rgb: 79, 68, 224;
+  --chrome-color: #4f44e0;
+  --chrome-active-color: #322e6f;
+  --chrome-hover-color: #463dbb;
+  --chrome-search-bar-color: #463dbb;
+  --chrome-text-color: #e9e9e9;
+  --chrome-active-text-color: #fff;
+  --primary-text-color: var(--gray5);
+  --secondary-text-color: var(--gray4);
+  --tertiary-text-color: var(--gray3);
+  --disabled-text-color: var(--gray3);
+  --positive-color: var(--green1);
+  --negative-color: var(--red1);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -19,42 +78,118 @@ body {
 
   /* 1. Slide Up Reveal (for Text) */
   @keyframes slideUp {
-    from { transform: translateY(100%); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* 3. Floating Animation (Slow & Slower) */
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float-slow {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-slower {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  /* 4. Infinite Scroll Marquee */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  .pause-on-hover:hover {
+    animation-play-state: paused;
+  }
+
+  .fade-mask-x {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   }
 
   /* 2. Fade In & Move Up (for Cards/Images) */
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* 3. Bar Chart Growth */
   @keyframes growHeight {
-    from { height: 0; }
+    from {
+      height: 0;
+    }
   }
 
   /* 4. Floating Effect (for 3D Icons) */
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
   /* 5. Infinite Scroll (for Marquee) */
   @keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
   }
 
   /* --- Animation Utility Classes --- */
   .animate-slide-up {
     animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    opacity: 0; /* Starts hidden */
+    opacity: 0;
+    /* Starts hidden */
   }
-  
+
   .animate-fade-in {
     animation: fadeIn 0.8s ease-out forwards;
-    opacity: 0; /* Starts hidden */
+    opacity: 0;
+    /* Starts hidden */
   }
 
   .animate-grow {
@@ -70,12 +205,29 @@ body {
   }
 
   /* --- Stagger Delays --- */
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
-  .delay-700 { animation-delay: 700ms; }
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .delay-700 {
+    animation-delay: 700ms;
+  }
 
   /* --- Custom Mask for Marquee Gradients --- */
   .mask-gradient {
@@ -90,10 +242,12 @@ body {
     transform: translateY(100%);
     opacity: 0;
   }
+
   40% {
     transform: translateY(0%);
     opacity: 1;
   }
+
   100% {
     opacity: 1;
   }
@@ -150,13 +304,11 @@ body {
 
 /* Corner Clip Path Utility */
 .clip-corner {
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - 20px),
-    calc(100% - 20px) 100%,
-    0 100%
-  );
+  clip-path: polygon(0 0,
+      100% 0,
+      100% calc(100% - 20px),
+      calc(100% - 20px) 100%,
+      0 100%);
 }
 
 /* ===================================
@@ -167,9 +319,11 @@ body {
   0% {
     transform: rotateY(-10deg) rotateX(5deg) translateY(0px);
   }
+
   50% {
     transform: rotateY(10deg) rotateX(-5deg) translateY(-20px);
   }
+
   100% {
     transform: rotateY(-10deg) rotateX(5deg) translateY(0px);
   }
@@ -180,12 +334,15 @@ body {
     top: 0%;
     opacity: 0;
   }
+
   10% {
     opacity: 1;
   }
+
   90% {
     opacity: 1;
   }
+
   100% {
     top: 100%;
     opacity: 0;
@@ -202,39 +359,66 @@ body {
 .perspective-2000px {
   perspective: 2000px;
 }
+
 .preserve-3d {
   transform-style: preserve-3d;
 }
+
 .rotate-y-neg15deg {
   transform: rotateY(-15deg);
 }
+
 .rotate-y-0 {
   transform: rotateY(0deg);
 }
 
 /* Hero Component - Float Animation (Hero variant) */
 @keyframes float-hero {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
 }
+
 .animate-float-hero {
   animation: float-hero 6s ease-in-out infinite;
 }
 
 /* Hero Component - Slide In Animation */
 @keyframes slideIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 .animate-slide-in {
   animation: slideIn 0.5s ease-out forwards;
 }
 
 /* Hero Component - Bounce Slow Animation */
 @keyframes bounceSlow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
 }
+
 .animate-bounce-slow {
   animation: bounceSlow 3s ease-in-out infinite;
 }
@@ -244,12 +428,19 @@ body {
 
 /* Testimonial Component - Scroll Animation (Testimonial variant) */
 @keyframes scroll-testimonial {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.33%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.33%);
+  }
 }
+
 .scroll-track {
   animation: scroll-testimonial 40s linear infinite;
 }
+
 .group:hover .scroll-track {
   animation-play-state: paused;
 }
@@ -259,6 +450,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-33.33%);
   }
@@ -272,9 +464,17 @@ body {
 
 /* Fade In Up Animation (used across multiple CRM components) */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 .animate-fade-up {
   opacity: 0;
   animation: fadeInUp 0.8s ease-out forwards;
@@ -282,20 +482,47 @@ body {
 
 /* Float Animation (CRM variant - 10px movement) */
 @keyframes float-crm {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
+
 .animate-float-crm {
   animation: float-crm 3s ease-in-out infinite;
 }
 
 /* Text Slide Animation (used across multiple components) */
 @keyframes textSlide {
-  0%, 20% { transform: translateY(0%); }
-  25%, 45% { transform: translateY(-25%); }
-  50%, 70% { transform: translateY(-50%); }
-  75%, 95% { transform: translateY(-75%); }
-  100% { transform: translateY(-75%); }
+
+  0%,
+  20% {
+    transform: translateY(0%);
+  }
+
+  25%,
+  45% {
+    transform: translateY(-25%);
+  }
+
+  50%,
+  70% {
+    transform: translateY(-50%);
+  }
+
+  75%,
+  95% {
+    transform: translateY(-75%);
+  }
+
+  100% {
+    transform: translateY(-75%);
+  }
 }
 
 /* Scrolling Text Container (used in CRM components) */
@@ -307,6 +534,7 @@ body {
   position: relative;
   padding-bottom: 0.1em;
 }
+
 .scrolling-text-container-h2 {
   height: 1.15em;
   overflow: hidden;
@@ -315,6 +543,7 @@ body {
   position: relative;
   padding-bottom: 2px;
 }
+
 .scrolling-text-container-h2-alt {
   height: 1.2em;
   overflow: hidden;
@@ -324,54 +553,92 @@ body {
   margin-left: 0.25em;
   padding-bottom: 2px;
 }
+
 .scrolling-text-inner {
   animation: textSlide 6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
+
 .scrolling-text-inner-8s {
   animation: textSlide 8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 
 /* Customer Relations Section - Drift Animation */
 @keyframes drift {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(-20px, 40px); }
-  100% { transform: translate(0, 0); }
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-20px, 40px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
 }
+
 .animate-drift {
   animation: drift 10s ease-in-out infinite;
 }
 
 /* Customer Relations Section - Float Card Animation */
 @keyframes float-card {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
 }
+
 .animate-float-card {
   animation: float-card 6s ease-in-out infinite;
 }
 
 /* Success Stories Section - Spin Slow Animation */
 @keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
+
 .animate-spin-slow {
   animation: spin-slow 12s linear infinite;
 }
 
 /* Comprehensive Services Section - Scroll Up Animation */
 @keyframes scrollUp {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-100%); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
 }
 
 /* ===== ECOMMERCE COMPONENTS ===== */
 
 /* Impact Section - Fade In Up (with scale) */
 @keyframes fadeInUp-scale {
-  from { opacity: 0; transform: translateY(40px) scale(0.95); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
+
 .animate-fade-up-scale {
   animation: fadeInUp-scale 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   opacity: 0;
@@ -379,14 +646,23 @@ body {
 
 /* Impact Section - Text Reveal Up */
 @keyframes textRevealUp {
-  0% { transform: translateY(100%); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
+
 .reveal-text-wrapper {
   overflow: hidden;
   display: block;
   line-height: 1.5;
 }
+
 .reveal-text-inner {
   display: block;
   animation: textRevealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -396,20 +672,34 @@ body {
 
 /* Impact Section - Float Icon Animation */
 @keyframes float-icon {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
+
 .animate-float-icon {
   animation: float-icon 5s ease-in-out infinite;
 }
 
 /* Impact Section - Shimmer Animation */
 @keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
 }
+
 .animate-shimmer {
-  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
   background-size: 200% 100%;
   animation: shimmer 3s infinite linear;
 }
@@ -428,22 +718,24 @@ body {
 
 /* Solutions Section - Grow Up Animation */
 @keyframes growUp {
-  from { 
+  from {
     height: 0;
     opacity: 0;
   }
-  to { 
+
+  to {
     opacity: 1;
   }
 }
 
 /* Solutions Section - Grow Bar Up Animation */
 @keyframes growBarUp {
-  from { 
+  from {
     transform: scaleY(0);
     opacity: 0;
   }
-  to { 
+
+  to {
     transform: scaleY(1);
     opacity: 1;
   }
@@ -451,11 +743,12 @@ body {
 
 /* Solutions Section - Grow Bar Height Animation */
 @keyframes growBarHeight {
-  from { 
+  from {
     height: 0;
     opacity: 0;
   }
-  to { 
+
+  to {
     opacity: 1;
   }
 }
@@ -466,6 +759,7 @@ body {
     transform: scaleY(0);
     opacity: 0;
   }
+
   to {
     transform: scaleY(1);
     opacity: 1;
@@ -474,48 +768,82 @@ body {
 
 /* Solutions Section - Grow Width Animation */
 @keyframes grow-width {
-  from { width: 0; }
-  to { width: 75%; }
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 75%;
+  }
 }
+
 .animate-grow-width {
   animation: grow-width 1.5s ease-out forwards;
 }
 
 /* Solutions Section - Reverse Spin Animation */
 @keyframes reverse-spin {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
 }
+
 .animate-reverse-spin {
   animation: reverse-spin 12s linear infinite;
 }
 
 /* Solutions Section - Pulse Slow Animation */
 @keyframes pulse-slow {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
 }
+
 .animate-pulse-slow {
   animation: pulse-slow 3s infinite ease-in-out;
 }
 
 /* Logo Marquee - Scroll Animation (50% variant) */
 @keyframes scroll-marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ===== ANALYTICS COMPONENTS ===== */
 
 /* Analytics Section - Reveal Up Animation */
 @keyframes revealUp {
-  from { transform: translateY(110%); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
+
 .reveal-wrapper {
   overflow: hidden;
   display: block;
 }
+
 .reveal-inner {
   display: block;
   animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -525,121 +853,240 @@ body {
 
 /* Analytics Section - Slide Up In/Out */
 @keyframes slideUpIn {
-  0% { transform: translateY(100%); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
+
 @keyframes slideUpOut {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-100%); opacity: 0; }
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
 }
+
 .animate-slide-up-in {
   animation: slideUpIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
 .animate-slide-up-out {
   animation: slideUpOut 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Analytics Section - Float Variations */
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
+
 @keyframes float-medium {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
 }
+
 @keyframes float-fast {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
+
 .animate-float-slow {
   animation: float-slow 6s ease-in-out infinite;
 }
+
 .animate-float-medium {
   animation: float-medium 5s ease-in-out infinite;
 }
+
 .animate-float-fast {
   animation: float-fast 7s ease-in-out infinite;
 }
 
 /* Sectors Page - Shimmer Effect */
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }
+
 .animate-shimmer {
   animation: shimmer 2s ease-in-out infinite;
 }
 
 /* Sectors Page - Progress Bar Animation */
 @keyframes progressFill {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
 }
 
 /* Analytics Section - Bounce Slow (analytics variant) */
 @keyframes bounce-slow-analytics {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
+
 .animate-bounce-slow-analytics {
   animation: bounce-slow-analytics 4s ease-in-out infinite;
 }
 
 /* Analytics Section - Loading Bar Animation */
 @keyframes loading-bar {
-  0% { width: 0%; }
-  50% { width: 70%; }
-  100% { width: 100%; }
+  0% {
+    width: 0%;
+  }
+
+  50% {
+    width: 70%;
+  }
+
+  100% {
+    width: 100%;
+  }
 }
+
 .animate-loading-bar {
   animation: loading-bar 2s ease-out infinite alternate;
 }
 
 /* Analytics Section - Donut Fill Animation */
 @keyframes donut-fill {
-  0% { stroke-dashoffset: 251.2; }
-  100% { stroke-dashoffset: 60; }
+  0% {
+    stroke-dashoffset: 251.2;
+  }
+
+  100% {
+    stroke-dashoffset: 60;
+  }
 }
+
 .animate-donut-fill {
   animation: donut-fill 2s ease-out forwards;
 }
 
 /* Features Section - Fade In Up (30px variant) */
 @keyframes fadeInUp-30px {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 .animate-fade-in-up {
   animation: fadeInUp-30px 0.8s ease-out forwards;
 }
 
 /* Features Section - Feature Vertical Scroll */
 @keyframes featureVerticalScroll {
-  0%, 20% { transform: translateY(0%); }
-  25%, 45% { transform: translateY(-25%); }
-  50%, 70% { transform: translateY(-50%); }
-  75%, 95% { transform: translateY(-75%); }
-  100% { transform: translateY(-75%); }
+
+  0%,
+  20% {
+    transform: translateY(0%);
+  }
+
+  25%,
+  45% {
+    transform: translateY(-25%);
+  }
+
+  50%,
+  70% {
+    transform: translateY(-50%);
+  }
+
+  75%,
+  95% {
+    transform: translateY(-75%);
+  }
+
+  100% {
+    transform: translateY(-75%);
+  }
 }
+
 .feature-scroll-inner {
   animation: featureVerticalScroll 6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 
 /* Features Section - Grow Bar Animation */
 @keyframes growBar {
-  from { width: 0; }
-  to { width: var(--target-width); }
+  from {
+    width: 0;
+  }
+
+  to {
+    width: var(--target-width);
+  }
 }
+
 .animate-grow-bar {
   animation: growBar 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Features Section - Draw Line Animation */
 @keyframes drawLine {
-  from { stroke-dasharray: 200; stroke-dashoffset: 200; }
-  to { stroke-dasharray: 200; stroke-dashoffset: 0; }
+  from {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+  }
+
+  to {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 0;
+  }
 }
+
 .animate-draw-line {
   stroke-dasharray: 200;
   stroke-dashoffset: 200;
@@ -648,30 +1095,66 @@ body {
 
 /* Features Section - Drop Particle Animation */
 @keyframes dropParticle {
-  0% { transform: translate(-50%, -10px) scale(0); opacity: 0; }
-  20% { opacity: 1; transform: translate(-50%, 0) scale(1); }
-  80% { opacity: 1; transform: translate(-50%, 30px) scale(1); }
-  100% { transform: translate(-50%, 40px) scale(0.5); opacity: 0; }
+  0% {
+    transform: translate(-50%, -10px) scale(0);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translate(-50%, 30px) scale(1);
+  }
+
+  100% {
+    transform: translate(-50%, 40px) scale(0.5);
+    opacity: 0;
+  }
 }
+
 .animate-drop-particle {
   animation: dropParticle 1.5s ease-in-out infinite;
 }
 
 /* Features Section - Pop In Animation */
 @keyframes popIn {
-  0% { transform: scale(0.8); opacity: 0; }
-  50% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
+
 .animate-pop-in {
   animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 /* Features Section - Slide In Right Animation */
 @keyframes slideInRight {
-  from { transform: translateX(50px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
+
 .animate-slide-in-right {
   animation: slideInRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -680,48 +1163,87 @@ body {
 
 /* Integrations Hero - Flow Line Animation */
 @keyframes flow-line {
-  0% { stroke-dashoffset: 100; opacity: 0; }
-  50% { opacity: 1; }
-  100% { stroke-dashoffset: 0; opacity: 0; }
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
 }
+
 .animate-flow {
   animation: flow-line 2s linear infinite;
 }
 
 /* Integrations Hero - Pulse Ring Animation */
 @keyframes pulse-ring {
-  0% { transform: scale(0.8); opacity: 0.5; }
-  100% { transform: scale(1.5); opacity: 0; }
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
 }
+
 .animate-pulse-ring {
   animation: pulse-ring 3s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 /* Migration Section - Flow Right Animation */
 @keyframes flow-right {
-  0% { stroke-dashoffset: 20; }
-  100% { stroke-dashoffset: 0; }
+  0% {
+    stroke-dashoffset: 20;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
+
 .animate-scan {
   animation: scan-vertical 2s linear infinite;
 }
+
 .animate-flow-pipe {
   animation: flow-right 1s linear infinite;
 }
 
 /* Integration Directory - Pulse Soft Animation */
 @keyframes pulse-soft {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.05); opacity: 0.8; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
 }
+
 .animate-pulse-soft {
   animation: pulse-soft 3s ease-in-out infinite;
 }
 
 /* Integration Directory - Flow Dash Animation */
 @keyframes flow-dash {
-  to { stroke-dashoffset: -20; }
+  to {
+    stroke-dashoffset: -20;
+  }
 }
+
 .animate-flow-dash {
   animation: flow-dash 1s linear infinite;
 }
@@ -730,28 +1252,55 @@ body {
 
 /* Case Study Hero - Slide Up Enter/Exit */
 @keyframes slide-up-enter {
-  0% { transform: translateY(100%); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
+
 @keyframes slide-up-exit {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-100%); opacity: 0; }
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
 }
 
 /* Case Study Hero - Grid Move Animation */
 @keyframes grid-move {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(40px); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(40px);
+  }
 }
+
 .animate-grid-move {
   animation: grid-move 3s linear infinite;
 }
 
 /* Case Study Hero - Draw Line Animation (1000px variant) */
 @keyframes draw-line-1000 {
-  0% { stroke-dashoffset: 1000; }
-  100% { stroke-dashoffset: 0; }
+  0% {
+    stroke-dashoffset: 1000;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
+
 .animate-draw-line-1000 {
   animation: draw-line-1000 2.5s ease-out forwards;
 }
@@ -760,9 +1309,11 @@ body {
 .animation-delay-200 {
   animation-delay: 200ms;
 }
+
 .animation-delay-400 {
   animation-delay: 400ms;
 }
+
 .animation-delay-500 {
   animation-delay: 500ms;
 }
@@ -2269,6 +2820,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -2279,20 +2831,16 @@ body {
   width: 100%;
   overflow: hidden;
   padding: 1rem 0;
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 8%,
-    black 92%,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 8%,
-    black 92%,
-    transparent 100%
-  );
+  mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%);
+  -webkit-mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%);
 }
 
 .logo-scroll-track {
@@ -2323,6 +2871,7 @@ body {
   .logo-scroll-container {
     padding: 1.5rem 0;
   }
+
   .logo-scroll-track {
     gap: 6rem;
     animation-duration: 40s;
@@ -2333,4 +2882,21 @@ body {
   .logo-scroll-track {
     gap: 8rem;
   }
+}
+
+/* Featured Section Animations */
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.5s ease-out forwards;
 }

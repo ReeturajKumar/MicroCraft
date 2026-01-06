@@ -1,24 +1,27 @@
 import Hero from "../components/home/Hero";
-import ProblemsSection from "../components/home/ProblemsSection";
-import ProductTrio from "../components/home/ProductTrio";
-import TrustAndIntegrationsSection from "../components/home/TrustAndIntegrationsSection";
-import AIColleaguesSection from "../components/home/AIColleaguesSection";
-import Simulator from "../components/home/Simulator";
-import Testimonial from "../components/home/Testimonial";
-import LogoMarquee from "../components/ecommerce/LogoMarquee";
+import { FeaturesLoop } from "../components/home/FeaturesLoop";
+import { MetricTreeSection } from "../components/home/MetricTreeSection";
+import { WhyChooseSection } from "../components/home/WhyChooseSection";
+import FeaturedSection from "../components/home/FeaturedSection";
+import GallerySection from "../components/home/GallerySection";
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <ProblemsSection />
+      <FeaturesLoop />
+      <MetricTreeSection />
+      <WhyChooseSection />
+      <FeaturedSection />
+      <GallerySection />
+      {/* <ProblemsSection />
       <LogoMarquee />
       <AIColleaguesSection />
       <ProductTrio />
       <TrustAndIntegrationsSection />
-      <Simulator />
+      <Simulator /> */}
       {/* <Pricing /> */}
-      <Testimonial />
+      {/* <Testimonial /> */}
     </>
   );
 };
