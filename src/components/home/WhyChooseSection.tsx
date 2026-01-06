@@ -52,15 +52,15 @@ export function WhyChooseSection() {
   }, []);
 
   return (
-    <section className="w-full bg-white py-10 lg:py-10 flex justify-center">
-      <div className="w-full max-w-7xl px-4 ">
+    <section className="w-full bg-white py-10 lg:py-16 flex justify-center">
+      <div className="w-full max-w-7xl px-4 sm:px-6">
         {/* --- HEADER --- */}
-        <div className="flex flex-col lg:flex-row justify-between items-start mb-6 gap-4">
-          <h2 className="text-[32px] lg:text-[38px] leading-[1.1] font-medium text-[#1F2023] tracking-tight">
+        <div className="flex flex-col lg:flex-row justify-between items-start mb-10 lg:mb-12 gap-6 lg:gap-4">
+          <h2 className="text-[28px] sm:text-[32px] lg:text-[38px] leading-[1.1] font-medium text-[#1F2023] tracking-tight max-w-[500px]">
             Why teams choose MicroCraft
           </h2>
           <div className="max-w-[500px] flex flex-col items-start lg:pt-1">
-            <p className="text-[15px] leading-[1.6] text-gray-500 font-medium mb-6">
+            <p className="text-[14px] sm:text-[15px] leading-[1.6] text-gray-500 font-medium mb-6">
               We're built to give Product, Engineering, Marketing, and Data
               teams the confidence to stop guessing and start growing.
             </p>
@@ -72,46 +72,39 @@ export function WhyChooseSection() {
         </div>
 
         {/* --- MAIN CONTENT GRID --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           {/* LEFT: VISUAL (Image Card) */}
-          <div className="relative  overflow-hidden  border border-gray-100  ">
+          <div className="relative overflow-hidden border border-gray-100 rounded-xl">
             <AnimatePresence mode="wait">
               <motion.img
                 key={activeIndex}
                 src={FEATURES[activeIndex].image}
                 alt={FEATURES[activeIndex].title}
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="w-full h-[500px]"
+                className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-contain"
               />
             </AnimatePresence>
           </div>
 
           {/* RIGHT: FEATURES LIST */}
-          <div className="flex flex-col justify-center h-[460px]">
-            <div className="space-y-4">
+          <div className="flex flex-col justify-center min-h-[auto] lg:h-[460px]">
+            <div className="space-y-4 lg:space-y-6">
               {FEATURES.map((feature, idx) => {
                 const isActive = idx === activeIndex;
                 return (
                   <div
                     key={idx}
                     onClick={() => setActiveIndex(idx)}
-                    className="group relative pl-0 cursor-pointer"
+                    className="group relative pb-4 cursor-pointer"
                   >
-                    {isActive && (
-                      <motion.div
-                        layoutId="activeFeatureBar"
-                        className="absolute -bottom-1.5 left-0 w-full h-[2px] bg-[#7C3AED]"
-                      />
-                    )}
-
                     <div
-                      className={`flex items-start gap-4 ${
+                      className={`flex items-start gap-4 transition-opacity duration-300 ${
                         isActive
                           ? "opacity-100"
-                          : "opacity-60 hover:opacity-100 transition-opacity"
+                          : "opacity-60 hover:opacity-100"
                       }`}
                     >
                       <div className="mt-0.5 min-w-[20px]">
@@ -129,22 +122,29 @@ export function WhyChooseSection() {
                       </div>
                       <div>
                         <h3
-                          className={`text-[16px] font-bold mb-1 transition-colors ${
+                          className={`text-[15px] sm:text-[16px] font-bold mb-1 transition-colors ${
                             isActive ? "text-[#1F2023]" : "text-gray-600"
                           }`}
                         >
                           {feature.title}
                         </h3>
-                        <p className="text-[14px] leading-[1.6] text-gray-600 font-medium mt-1">
+                        <p className="text-[13px] sm:text-[14px] leading-[1.6] text-gray-600 font-medium mt-1">
                           {feature.description}
                         </p>
                       </div>
                     </div>
 
-                    {/* Subtle separator for non-active items */}
-                    {!isActive && (
-                      <div className="absolute -bottom-1.5 left-0 w-full h-[1px] bg-gray-100" />
-                    )}
+                    {/* Active Bar or Separator */}
+                    <div className="absolute bottom-0 left-0 w-full">
+                      {isActive ? (
+                        <motion.div
+                          layoutId="activeFeatureBar"
+                          className="w-full h-[2px] bg-[#7C3AED]"
+                        />
+                      ) : (
+                        <div className="w-full h-[1px] bg-gray-100" />
+                      )}
+                    </div>
                   </div>
                 );
               })}

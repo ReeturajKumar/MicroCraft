@@ -7,10 +7,12 @@ const Footer = () => {
   return (
     <footer className="relative w-full">
       {/* Main Container */}
-      <div className="max-w-full mx-auto rounded-t-[3rem] bg-gradient-to-b from-[#150f33] via-[#0d0822] to-[#180c5a] backdrop-blur-3xl border border-white/5 border-b-0  p-10 md:p-16 lg:p-20 text-white/60 relative z-10">
+      {/* Main Container */}
+      <div className="max-w-full mx-auto rounded-t-[2.5rem] sm:rounded-t-[3rem] bg-gradient-to-b from-[#150f33] via-[#0d0822] to-[#180c5a] backdrop-blur-3xl border border-white/5 border-b-0 p-8 sm:p-12 md:p-16 lg:p-20 text-white/60 relative z-10">
         {/* Subtle glass reflection overlay */}
-        <div className="absolute inset-0 rounded-t-[3rem] bg-gradient-to-tr from-white/5 via-transparent to-transparent pointer-events-none" />
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-16 gap-x-8 md:gap-x-12 mb-20">
+        <div className="absolute inset-0 rounded-t-[2.5rem] sm:rounded-t-[3rem] bg-gradient-to-tr from-white/5 via-transparent to-transparent pointer-events-none" />
+        
+        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-12 sm:gap-y-16 gap-x-8 md:gap-x-12 mb-16 sm:mb-20">
           {/* Column 1: Platform */}
           <div className="space-y-16">
             <div>
@@ -41,7 +43,7 @@ const Footer = () => {
           </div>
 
           {/* Column 2: Solutions & Teams */}
-          <div className="space-y-16">
+          <div className="space-y-12 sm:space-y-16">
             <div>
               <h3 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30 mb-8">
                 Use Cases
@@ -67,7 +69,7 @@ const Footer = () => {
           </div>
 
           {/* Column 3: Industries & Size */}
-          <div className="space-y-16">
+          <div className="space-y-12 sm:space-y-16">
             <div>
               <h3 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30 mb-8">
                 Industries
@@ -94,7 +96,7 @@ const Footer = () => {
           </div>
 
           {/* Column 4: Resources & Company */}
-          <div className="space-y-16">
+          <div className="space-y-12 sm:space-y-16">
             <div>
               <h3 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30 mb-8">
                 Resources
@@ -125,7 +127,7 @@ const Footer = () => {
           </div>
 
           {/* Column 5: Templates & Compare */}
-          <div className="space-y-16">
+          <div className="space-y-12 sm:space-y-16">
             <div>
               <h3 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30 mb-8">
                 Templates
@@ -158,10 +160,10 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row items-end justify-between pt-12 border-t border-white/5">
-          <div className="space-y-4">
-            <Link to="/" className="block">
-              <span className="text-3xl font-bold tracking-tighter text-white font-serif">
+        <div className="flex flex-col md:flex-row items-center md:items-end justify-between pt-10 sm:pt-12 border-t border-white/5 gap-8 md:gap-0">
+          <div className="space-y-4 text-center md:text-left">
+            <Link to="/" className="inline-block">
+              <span className="text-3xl sm:text-4xl font-bold tracking-tighter text-white font-serif">
                 Microcraft.ai
               </span>
             </Link>
@@ -170,7 +172,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="flex items-center gap-8 mt-10 md:mt-0 overflow-x-auto no-scrollbar pb-2 md:pb-0">
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-8 gap-y-4 max-w-full sm:max-w-none px-4 md:px-0">
             <FooterLegalLink text="Privacy Program" />
             <FooterLegalLink text="Legal" />
             <FooterLegalLink text="Security" />
