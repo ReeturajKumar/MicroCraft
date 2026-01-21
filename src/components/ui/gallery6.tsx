@@ -55,7 +55,7 @@ const Gallery6 = ({
         
         {/* Header Section */}
         <div className="relative z-10 w-full mb-4 sm:mb-8 lg:mb-10">
-            <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="container max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-3">
                     <div className="flex-1">
                         <motion.span 
@@ -90,7 +90,7 @@ const Gallery6 = ({
           <motion.div 
             ref={scrollRef}
             style={{ x }} 
-            className="flex gap-6 sm:gap-10 lg:gap-12 px-[max(1rem,calc(50vw-640px))] 2xl:px-[max(1rem,calc(50vw-700px))]"
+            className="flex gap-6 sm:gap-10 lg:gap-12 px-[max(1rem,calc(50vw-720px))] 2xl:px-[max(1rem,calc(50vw-720px))]"
           >
             {items.map((item, index) => (
               <Card key={item.id} item={item} index={index} />

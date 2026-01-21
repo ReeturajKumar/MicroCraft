@@ -13,9 +13,9 @@ const achievements = [
 // --- Data: FAQs ---
 const faqs = [
   {
-    question: "What Services Does MicroCraft Offer?",
+    question: "What Services Does Microkraft Offer?",
     answer:
-      "MicroCraft offers a comprehensive suite of digital solutions, including custom web development, UI/UX design, cloud infrastructure management, and strategic digital marketing tailored to scale your business.",
+      "Microkraft offers a comprehensive suite of digital solutions, including custom web development, UI/UX design, cloud infrastructure management, and strategic digital marketing tailored to scale your business.",
   },
   {
     question: "How Can I Contact Customer Support?",
@@ -25,16 +25,16 @@ const faqs = [
         <span className="font-semibold text-gray-900">9AM-5PM GMT+7</span>. You
         can reach us by{" "}
         <a
-          href="mailto:MicroCraft@helpsupport.com"
+          href="mailto:Microkraft@helpsupport.com"
           className="text-purple-600 font-medium underline"
         >
-          microCraft@helpsupport.com
+          Microkraft@helpsupport.com
         </a>
       </>
     ),
   },
   {
-    question: "What Sets MicroCraft Apart From Competitors?",
+    question: "What Sets Microkraft Apart From Competitors?",
     answer:
       "We prioritize a client-centric approach, combining cutting-edge technology with deep industry insights. Our dedicated support team and agile development process ensure faster delivery without compromising quality.",
   },
@@ -154,7 +154,7 @@ const AchievementsSection = () => {
             <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
               Step into a world of accolades and achievements that underscore
               our commitment to excellence at{" "}
-              <span className="text-red-500 font-semibold">MicroCraft</span>.
+              <span className="text-red-500 font-semibold">Microkraft</span>.
             </p>
           </div>
 

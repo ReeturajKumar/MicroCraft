@@ -2,8 +2,8 @@ import Hero from "../components/home/Hero";
 import { FeaturesLoop } from "../components/home/FeaturesLoop";
 import { MetricTreeSection } from "../components/home/MetricTreeSection";
 import { WhyChooseSection } from "../components/home/WhyChooseSection";
-import FeaturedSection from "../components/home/FeaturedSection";
-import GallerySection from "../components/home/GallerySection";
+import { EnterpriseSection } from "../components/home/EnterpriseSection";
+import { SupportSection } from "../components/home/SupportSection";
 
 const Home = () => {
   return (
@@ -12,8 +12,9 @@ const Home = () => {
       <FeaturesLoop />
       <MetricTreeSection />
       <WhyChooseSection />
-      <FeaturedSection />
-      <GallerySection />
+      <EnterpriseSection />
+      <SupportSection />
+      {/* <GallerySection /> */}
       {/* <ProblemsSection />
       <LogoMarquee />
       <AIColleaguesSection />

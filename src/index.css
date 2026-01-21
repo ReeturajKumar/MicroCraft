@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --font-sans: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
+  --font-serif: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 :root {
@@ -60,9 +64,7 @@ body {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -124,6 +126,20 @@ body {
 
   .animate-scroll {
     animation: scroll 30s linear infinite;
+  }
+
+  .animate-marquee {
+    animation: marquee 60s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
   }
 
   .pause-on-hover:hover {
@@ -1335,7 +1351,7 @@ body {
 
 /* Hero Container Font */
 .hero-container-font {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 /* Bikayi Background Gradients */
@@ -1350,14 +1366,14 @@ body {
 
 /* Hero Heading - Work Sans */
 .hero-heading-bikayi {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   color: var(--bikayi-text-primary);
   line-height: 64px;
 }
 
 /* Hero Description - Inter */
 .hero-description-bikayi {
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   color: var(--bikayi-text-secondary);
   font-size: 16px;
   line-height: 24px;
@@ -1368,7 +1384,7 @@ body {
   background-color: var(--bikayi-primary);
   border-radius: 4px;
   padding: 8px 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
@@ -1388,7 +1404,7 @@ body {
   color: var(--bikayi-primary);
   border-radius: 4px;
   padding: 8px 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 16px;
   font-weight: 600;
   border: 1px solid var(--bikayi-primary);
@@ -1429,7 +1445,7 @@ body {
 
 /* Background Text - Work Sans */
 .bg-text-bikayi {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 .bg-text-bikayi-active {
@@ -1539,7 +1555,7 @@ body {
 
 /* Stats Section Heading */
 .stats-heading-bikayi {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   color: var(--bikayi-text-primary);
 }
 
@@ -1553,7 +1569,7 @@ body {
 
 /* Stats Description */
 .stats-description-bikayi {
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   color: var(--bikayi-text-secondary);
 }
 
@@ -1571,7 +1587,7 @@ body {
 
 /* Brand Name Text */
 .stats-brand-name {
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   color: var(--bikayi-text-primary);
 }
 
@@ -1584,7 +1600,7 @@ body {
 
 /* Stats Value */
 .stats-value-bikayi {
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   color: var(--bikayi-text-primary);
 }
 
@@ -1595,7 +1611,7 @@ body {
 
 /* Stats Label */
 .stats-label-bikayi {
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   color: var(--bikayi-text-secondary);
 }
 
@@ -1807,7 +1823,7 @@ body {
 
 /* Stats Headline New */
 .stats-headline-new {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   color: var(--bikayi-text-primary);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -1815,7 +1831,7 @@ body {
 
 /* Stats Subheadline New */
 .stats-subheadline-new {
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   color: var(--bikayi-text-secondary);
   line-height: 1.6;
   font-weight: 400;
@@ -1835,7 +1851,7 @@ body {
   background-color: var(--bikayi-white);
   border: 1px solid rgba(75, 21, 131, 0.2);
   border-radius: 6px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 16px;
   font-weight: 500;
   color: var(--bikayi-text-primary);
@@ -1855,7 +1871,7 @@ body {
   background-color: var(--bikayi-text-primary);
   border: none;
   border-radius: 6px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 16px;
   font-weight: 600;
   color: var(--bikayi-white);
@@ -1886,7 +1902,7 @@ body {
 
 /* Stats Value New */
 .stats-value-new {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -1909,7 +1925,7 @@ body {
 
 /* Stats Label New */
 .stats-label-new {
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 18px;
   font-weight: 600;
   color: var(--bikayi-text-primary);
@@ -1919,7 +1935,7 @@ body {
 
 /* Stats Description New */
 .stats-description-new {
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 14px;
   line-height: 1.6;
   color: var(--bikayi-text-secondary);
@@ -1932,7 +1948,7 @@ body {
 
 /* ProductTrio Main Heading (H2) */
 .product-trio-heading {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;
@@ -1969,7 +1985,7 @@ body {
 
 /* ProductTrio Subheading (Body Text) */
 .product-trio-subheading {
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
@@ -2006,7 +2022,7 @@ body {
 
 /* ProductTrio Card Title (H3) */
 .product-trio-card-title {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 22px;
   line-height: 30px;
   font-weight: 600;
@@ -2043,7 +2059,7 @@ body {
 
 /* ProductTrio Card Description (Body Text) */
 .product-trio-card-description {
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
@@ -2183,7 +2199,7 @@ body {
 
 /* Simulator Heading (H2) */
 .simulator-heading {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 36px;
   line-height: 44px;
   font-weight: 700;
@@ -2194,7 +2210,7 @@ body {
 
 /* Simulator Subheading (Body Text) */
 .simulator-subheading {
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -2204,7 +2220,7 @@ body {
 
 /* Simulator Brand Name */
 .simulator-brand-name {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #212529;
@@ -2213,7 +2229,7 @@ body {
 
 /* Simulator Tab Title */
 .simulator-tab-title {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 18px;
   font-weight: 700;
   color: #212529;
@@ -2247,7 +2263,7 @@ body {
   border-radius: 8px;
   font-size: 12px;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease;
   cursor: pointer;
@@ -2267,7 +2283,7 @@ body {
   border-radius: 8px;
   font-size: 14px;
   font-weight: 500;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   transition: all 0.2s ease;
   cursor: pointer;
 }
@@ -2295,7 +2311,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding-left: 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 /* Simulator Badges */
@@ -2306,7 +2322,7 @@ body {
   padding: 4px 6px;
   border-radius: 4px;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 .simulator-badge-purple {
@@ -2316,7 +2332,7 @@ body {
   padding: 4px 6px;
   border-radius: 4px;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 /* Simulator Stat Card */
@@ -2343,7 +2359,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 .simulator-stat-value {
@@ -2351,7 +2367,7 @@ body {
   font-weight: 700;
   color: #111827;
   margin-top: 4px;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 .simulator-stat-sub {
@@ -2359,7 +2375,7 @@ body {
   color: #10B981;
   font-weight: 500;
   margin-top: 4px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 .simulator-stat-icon {
@@ -2385,14 +2401,14 @@ body {
 .simulator-metric-label {
   font-size: 11px;
   color: #6B7280;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 .simulator-metric-value {
   font-size: 20px;
   font-weight: 700;
   color: #111827;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 .simulator-metric-bar {
@@ -2431,7 +2447,7 @@ body {
   color: #6B7280;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 16px;
@@ -2484,7 +2500,7 @@ body {
   border-radius: 8px;
   font-size: 12px;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   box-shadow: 0 2px 4px rgba(75, 21, 131, 0.2);
   transition: all 0.2s ease;
   cursor: pointer;
@@ -2503,7 +2519,7 @@ body {
   font-size: 12px;
   font-weight: 600;
   color: #6B7280;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   transition: all 0.2s ease;
   cursor: pointer;
 }
@@ -2520,7 +2536,7 @@ body {
 
 /* Pricing Heading (H2) */
 .pricing-heading {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 36px;
   line-height: 44px;
   font-weight: 700;
@@ -2538,7 +2554,7 @@ body {
 
 /* Pricing Subheading (Body Text) */
 .pricing-subheading {
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -2560,7 +2576,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 .pricing-badge-featured {
@@ -2573,7 +2589,7 @@ body {
   padding: 6px 12px;
   border-radius: 9999px;
   box-shadow: 0 4px 12px rgba(75, 21, 131, 0.2);
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 /* Pricing Toggle */
@@ -2598,7 +2614,7 @@ body {
   font-weight: 700;
   transition: color 0.2s ease;
   width: 144px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 .pricing-toggle-button-active {
@@ -2629,7 +2645,7 @@ body {
   border-radius: 9999px;
   font-weight: 800;
   transition: all 0.2s ease;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 .pricing-discount-badge-active {
@@ -2698,7 +2714,7 @@ body {
   letter-spacing: 0.1em;
   color: #94A3B8;
   margin-top: 8px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 .pricing-card-title-featured {
@@ -2706,7 +2722,7 @@ body {
   font-weight: 700;
   color: #4B1583;
   margin-bottom: 6px;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 .pricing-card-price-container {
@@ -2721,14 +2737,14 @@ body {
   font-weight: 800;
   letter-spacing: -0.03em;
   color: #111827;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 .pricing-card-price-sub {
   font-size: 14px;
   color: #94A3B8;
   font-weight: 500;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 .pricing-card-button {
@@ -2738,7 +2754,7 @@ body {
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
   font-size: 14px;
 }
 
@@ -2774,7 +2790,7 @@ body {
   gap: 10px;
   font-size: 13px;
   color: #475569;
-  font-family: 'Inter', sans-serif;
+  font-family: "Garnett Medium", "Garnett Medium Placeholder", sans-serif;
 }
 
 .pricing-check-icon {

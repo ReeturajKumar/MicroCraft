@@ -351,7 +351,7 @@ const Simulator: React.FC = () => {
           <div className="w-64 bg-white border-r border-gray-100 flex flex-col p-5 z-20 shrink-0">
             <div className="mb-8 pl-2">
               <h1 className="simulator-brand-name flex items-center gap-2">
-                MICROCRAFT{" "}
+                Microkraft{" "}
                 <span className="w-2 h-2 rounded-full bg-purple-600" />
               </h1>
             </div>

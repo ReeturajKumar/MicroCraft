@@ -26,7 +26,7 @@ function App() {
         <Route path="/" element={<Home />} />
 
         {/* FIX: Redirect /products to /products/crm so the link works */}
-        <Route
+        {/* <Route
           path="/products"
           element={<Navigate to="/products/crm" replace />}
         />
@@ -39,7 +39,7 @@ function App() {
         <Route path="/sectors" element={<Sectors />} />
         <Route path="/integrations" element={<Integration />} />
         <Route path="/consultation" element={<Consultation />} />
-        <Route path="/resources" element={<Resources />} />
+        <Route path="/resources" element={<Resources />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>

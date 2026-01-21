@@ -35,7 +35,7 @@ export function SimpleStart() {
              easy to scale.
            </h2>
            <p className="text-[20px] leading-[1.6] text-[#3F3F46]">
-             Whether you have a modern data stack or just a CSV, Mixpanel works with what you have. Start fast with templates and scale as you grow.
+             Whether you have a modern data stack or just a CSV, mixpanel works with what you have. Start fast with templates and scale as you grow.
            </p>
         </div>
 

@@ -3,14 +3,14 @@ import { motion } from "motion/react";
 
 const testimonials = [
   {
-    text: "MicroCraft revolutionized our operations, streamlining finance and inventory. The cloud-based platform keeps us productive, even remotely.",
+    text: "Microkraft revolutionized our operations, streamlining finance and inventory. The cloud-based platform keeps us productive, even remotely.",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
     name: "Sarah Mitchell",
     role: "Operations Manager",
   },
   {
-    text: "Implementing MicroCraft was smooth and quick. The customizable, user-friendly interface made team training effortless.",
+    text: "Implementing Microkraft was smooth and quick. The customizable, user-friendly interface made team training effortless.",
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
     name: "James Anderson",
@@ -24,7 +24,7 @@ const testimonials = [
     role: "Customer Support Lead",
   },
   {
-    text: "MicroCraft's seamless integration enhanced our business operations and efficiency. Highly recommend for its intuitive interface.",
+    text: "Microkraft's seamless integration enhanced our business operations and efficiency. Highly recommend for its intuitive interface.",
     image:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
     name: "Michael Roberts",
@@ -59,7 +59,7 @@ const testimonials = [
     role: "Sales Manager",
   },
   {
-    text: "Using MicroCraft, our online presence and conversions significantly improved, boosting business performance.",
+    text: "Using Microkraft, our online presence and conversions significantly improved, boosting business performance.",
     image:
       "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&h=100&fit=crop",
     name: "Alex Thompson",
@@ -73,14 +73,14 @@ const testimonials = [
     role: "Data Analyst",
   },
   {
-    text: "MicroCraft's automation features saved us countless hours. We can now focus on growing our business instead of manual tasks.",
+    text: "Microkraft's automation features saved us countless hours. We can now focus on growing our business instead of manual tasks.",
     image:
       "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop",
     name: "Ryan Cooper",
     role: "Operations Director",
   },
   {
-    text: "The customer insights we gained through MicroCraft transformed our marketing strategy completely. Highly recommended!",
+    text: "The customer insights we gained through Microkraft transformed our marketing strategy completely. Highly recommended!",
     image:
       "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop",
     name: "Sophie Williams",
@@ -94,7 +94,7 @@ const testimonials = [
     role: "Finance Director",
   },
   {
-    text: "MicroCraft's real-time reporting gives us the agility to respond to market changes instantly.",
+    text: "Microkraft's real-time reporting gives us the agility to respond to market changes instantly.",
     image:
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop",
     name: "Olivia Brown",

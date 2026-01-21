@@ -2,7 +2,7 @@ import { HeroParallax } from "@/components/ui/hero-parallax";
 
 export const products = [
   {
-    title: "MicroCraft Analytics",
+    title: "Microkraft Analytics",
     link: "#",
     thumbnail:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=800&fit=crop&q=80",

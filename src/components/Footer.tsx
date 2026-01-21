@@ -5,178 +5,186 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full">
-      {/* Main Container */}
-      {/* Main Container */}
-      <div className="max-w-full mx-auto rounded-t-[2.5rem] sm:rounded-t-[3rem] bg-gradient-to-b from-[#150f33] via-[#0d0822] to-[#180c5a] backdrop-blur-3xl border border-white/5 border-b-0 p-8 sm:p-12 md:p-16 lg:p-20 text-white/60 relative z-10">
-        {/* Subtle glass reflection overlay */}
-        <div className="absolute inset-0 rounded-t-[2.5rem] sm:rounded-t-[3rem] bg-gradient-to-tr from-white/5 via-transparent to-transparent pointer-events-none" />
-        
-        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-12 sm:gap-y-16 gap-x-8 md:gap-x-12 mb-16 sm:mb-20">
-          {/* Column 1: Platform */}
-          <div className="space-y-16">
+    <footer className="relative w-full overflow-hidden -mt-[4px] z-30" style={{ 
+      background: 'linear-gradient(to bottom, white 0%, white 100px, #FFE5E5 350px, #E8C9FF 70%, #B187FF 100%)' 
+    }}>
+      {/* Dynamic Background Glows - Sides using matching palette */}
+      <div className="absolute top-[240px] -left-[35%] w-[80%] h-[1200px] bg-[#E8C9FF]/55 blur-[180px] rounded-full pointer-events-none z-0" />
+      <div className="absolute top-[350px] -right-1/4 w-1/2 h-[1000px] bg-[#FFE5E5]/45 blur-[130px] rounded-full pointer-events-none z-0" />
+      <div className="absolute bottom-0 left-1/4 w-1/2 h-[500px] bg-[#B187FF]/20 blur-[100px] rounded-full pointer-events-none z-0" />
+
+      {/* Pre-Footer CTA Section - Transparent so the footer background shows */}
+      <div className="w-full pt-48 pb-24 text-center relative z-10">
+        <div className="max-w-[1440px] mx-auto px-4">
+          <h2 className="text-[44px] lg:text-[64px] font-bold text-[#1F2937] leading-[1.05] mb-10 tracking-tight">
+            Microkraft is for teams that move.
+            <br />
+            Make your move.
+          </h2>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <button className="flex items-center gap-2 bg-[#0a0118] text-white px-8 py-4 rounded-full text-[15px] font-bold hover:bg-black transition-all shadow-xl hover:-translate-y-0.5 group">
+              Get Started Free
+              <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
+            <button className="flex items-center gap-2 bg-[#f3f0ff] text-[#0a0118] px-8 py-4 rounded-full text-[15px] font-bold hover:bg-[#e9e4ff] transition-all shadow-lg hover:-translate-y-0.5 group border border-purple-100">
+              Book a Demo
+              <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer Box */}
+      <div className="w-full px-4 lg:px-4 pt-20 pb-4 relative z-10">
+        <div className="w-full max-w-[1560px] mx-auto rounded-[48px] bg-gradient-to-b from-[#48348a] via-[#0D0121] to-[#0D0121] p-12 lg:p-20 border border-white/5 relative overflow-hidden">
+          {/* Subtle top reflection glow */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-x-16 gap-y-16 mb-24">
+            {/* Column 1: Product */}
             <div>
-              <h3 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30 mb-8">
-                Platform
+              <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-white brightness-150 opacity-100 mb-8">
+                Product
               </h3>
               <ul className="space-y-4">
-                <FooterItem text="Product Analytics" />
-                <FooterItem text="Web Analytics" />
-                <FooterItem text="Mobile Analytics" />
-                <FooterItem text="Experiments" />
-                <FooterItem text="Metric Trees" />
-                <FooterItem text="Warehouse Connectors" />
-                <FooterItem text="Session Replay" />
+                <FooterItem text="Overview" />
+                <FooterItem text="Customized CRM" />
+                <FooterItem text="AI Automation" />
+                <FooterItem text="POS & Inventory" />
+                <FooterItem text="Finance & Compliance" />
+                <FooterItem text="Dashboards" />
                 <FooterItem text="Integrations" />
                 <FooterItem text="Security & Privacy" />
+                <FooterItem text="Mobile App" />
               </ul>
-              <div className="mt-8">
-                <Link
-                  to="#"
-                  className="inline-flex items-center px-5 py-2 rounded-full bg-white/5 hover:bg-white/10 text-white text-[13px] font-bold transition-all border border-white/5 group"
-                >
-                  Pricing{" "}
-                  <ChevronRight className="ml-1.5 w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                </Link>
-              </div>
             </div>
-          </div>
 
-          {/* Column 2: Solutions & Teams */}
-          <div className="space-y-12 sm:space-y-16">
+            {/* Column 2: Business Growth */}
             <div>
-              <h3 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30 mb-8">
-                Use Cases
+              <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-white brightness-150 opacity-100 mb-8">
+                Business Growth
+              </h3>
+              <ul className="space-y-4 font-medium">
+                <FooterItem text="Lead Management & CRM" />
+                <FooterItem text="WhatsApp Automation" />
+                <FooterItem text="Revenue Websites" />
+                <FooterItem text="Digital Marketing AI" />
+                <FooterItem text="Customer Retention" />
+              </ul>
+            </div>
+
+            {/* Column 3: Operations Automation */}
+            <div>
+              <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-white brightness-150 opacity-100 mb-8">
+                Operations Automation
               </h3>
               <ul className="space-y-4">
-                <FooterItem text="Acquire New Users" />
-                <FooterItem text="Engage Your Users" />
-                <FooterItem text="Grow Your Usership" />
-                <FooterItem text="Empower Your Team" />
+                <FooterItem text="Task & Workflow AI" />
+                <FooterItem text="POS & Inventory" />
+                <FooterItem text="Billing & Payments" />
+                <FooterItem text="Accounting & Compliance" />
+                <FooterItem text="Vendor Procurement" />
               </ul>
             </div>
+
+            {/* Column 4: Business Intelligence */}
             <div>
-              <h3 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30 mb-8">
-                Teams
+              <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-white brightness-150 opacity-100 mb-8">
+                Business Intelligence
               </h3>
               <ul className="space-y-4">
-                <FooterItem text="Product Teams" />
-                <FooterItem text="Data Analyst Teams" />
-                <FooterItem text="Marketing Teams" />
-                <FooterItem text="Engineering Teams" />
+                <FooterItem text="Sales Dashboards" />
+                <FooterItem text="Performance Analytics" />
+                <FooterItem text="AI Forecasting" />
+                <FooterItem text="Business Reports" />
+                <FooterItem text="Multi-Branch Analytics" />
               </ul>
             </div>
-          </div>
 
-          {/* Column 3: Industries & Size */}
-          <div className="space-y-12 sm:space-y-16">
+            {/* Column 5: Industries */}
             <div>
-              <h3 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30 mb-8">
+              <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-white brightness-150 opacity-100 mb-8">
                 Industries
               </h3>
               <ul className="space-y-4">
-                <FooterItem text="Finance" />
-                <FooterItem text="Media & Entertainment" />
-                <FooterItem text="B2B SaaS" />
-                <FooterItem text="Ecommerce" />
-                <FooterItem text="Healthcare" />
-                <FooterItem text="AI" />
+                <FooterItem text="Manufacturing" />
+                <FooterItem text="Technology & IT Services" />
+                <FooterItem text="Retail & local commerce" />
+                <FooterItem text="Restaurants & Hospitality" />
+                <FooterItem text="Healthcare & Clinics" />
+                <FooterItem text="Logistics & Transport" />
+                <FooterItem text="Education & Training" />
+                <FooterItem text="Service Businesses" />
+                <FooterItem text="Agriculture & Allied" />
+                <FooterItem text="E-commerce & D2C" />
+                <FooterItem text="Startups" />
               </ul>
             </div>
-            <div>
-              <h3 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30 mb-8">
-                Business Size
-              </h3>
-              <ul className="space-y-4">
-                <FooterItem text="Enterprise" />
-                <FooterItem text="Small & Midsize" />
-                <FooterItem text="Startup Program" />
-              </ul>
-            </div>
-          </div>
 
-          {/* Column 4: Resources & Company */}
-          <div className="space-y-12 sm:space-y-16">
+            {/* Column 6: Resources */}
             <div>
-              <h3 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30 mb-8">
+              <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-white brightness-150 opacity-100 mb-8">
                 Resources
               </h3>
               <ul className="space-y-4">
                 <FooterItem text="Docs & Guides" />
-                <FooterItem text="Contact Support" />
-                <FooterItem text="What's New" />
-                <FooterItem text="Troubleshooting FAQs" />
-                <FooterItem text="Blog" />
-                <FooterItem text="Events & Webinars" />
-                <FooterItem text="Community" />
-                <FooterItem text="Customer Stories" />
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30 mb-8">
-                Company
-              </h3>
-              <ul className="space-y-4">
-                <FooterItem text="About Us" />
+                <FooterItem text="Getting Started" />
+                <FooterItem text="Product Updates" />
+                <FooterItem text="FAQs" />
+                <FooterItem text="Support Center" />
+                <FooterItem text="Business Playbooks" />
+                <FooterItem text="Industry Insights" />
                 <FooterItem text="Become a Partner" />
-                <FooterItem text="Expert Directory" />
+              </ul>
+            </div>
+
+            {/* Column 7: About */}
+            <div>
+              <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-white brightness-150 opacity-100 mb-8">
+                About Microkraft
+              </h3>
+              <ul className="space-y-4">
+                <FooterItem text="About Microkraft AI" />
+                <FooterItem text="Our Approach" />
+                <FooterItem text="Partners" />
                 <FooterItem text="Careers" />
-                <FooterItem text="Contact Sales" />
+                <FooterItem text="Contact Us" />
               </ul>
             </div>
+
           </div>
 
-          {/* Column 5: Templates & Compare */}
-          <div className="space-y-12 sm:space-y-16">
-            <div>
-              <h3 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30 mb-8">
-                Templates
-              </h3>
-              <ul className="space-y-4">
-                <FooterItem text="Company KPIs" />
-                <FooterItem text="Feature Launch" />
-                <FooterItem text="Lifecycle Cohort Analysis" />
-                <FooterItem text="Ecommerce" />
-                <FooterItem text="Marketing KPIs" />
-                <FooterItem text="Web Analytics" />
-                <FooterItem text="AI Company KPIs" />
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30 mb-8">
-                Compare Us
-              </h3>
-              <ul className="space-y-4">
-                <FooterItem text="Amplitude" />
-                <FooterItem text="Heap" />
-                <FooterItem text="Pendo" />
-                <FooterItem text="Google Analytics" />
-                <FooterItem text="PostHog" />
-                <FooterItem text="Fullstory" />
-                <FooterItem text="Adobe Analytics" />
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row items-center md:items-end justify-between pt-10 sm:pt-12 border-t border-white/5 gap-8 md:gap-0">
-          <div className="space-y-4 text-center md:text-left">
-            <Link to="/" className="inline-block">
-              <span className="text-3xl sm:text-4xl font-bold tracking-tighter text-white font-serif">
-                Microcraft.ai
+          {/* Bottom Row */}
+          <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between pt-12 border-t border-white/5 space-y-8 lg:space-y-0 relative">
+            {/* LEFT: BRAND & COPYRIGHT */}
+            <div className="lg:flex-1 flex flex-col items-center lg:items-start gap-y-2">
+              <span className="text-[28px] font-bold tracking-tight text-white leading-none">
+                Microkraft.ai
               </span>
-            </Link>
-            <p className="text-[11px] font-bold text-white/20 uppercase tracking-widest">
-              © 2026 Microcraft.ai. All rights reserved.
-            </p>
-          </div>
+              <span className="text-[11px] text-white/40 whitespace-nowrap uppercase tracking-wider">
+                ©{new Date().getFullYear()} All rights reserved
+              </span>
+            </div>
 
-          <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-8 gap-y-4 max-w-full sm:max-w-none px-4 md:px-0">
-            <FooterLegalLink text="Privacy Program" />
-            <FooterLegalLink text="Legal" />
-            <FooterLegalLink text="Security" />
-            <FooterLegalLink text="Your Privacy Rights" />
+            {/* CENTER: SOCIAL LINKS */}
+            <div className="lg:flex-1 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+              {["LinkedIn", "Instagram", "YouTube", "WhatsApp", "Email Support"].map((item) => (
+                <Link
+                  key={item}
+                  to="#"
+                  className="text-[13px] font-bold text-white/50 hover:text-white transition-all whitespace-nowrap"
+                >
+                  {item}
+                </Link>
+              ))}
+            </div>
+
+            {/* RIGHT: LEGAL LINKS */}
+            <div className="lg:flex-1 flex flex-wrap justify-center lg:justify-end gap-x-6 gap-y-2 text-[11px] font-bold text-white/20 transition-opacity">
+              <Link to="#" className="hover:underline hover:text-white">Privacy</Link>
+              <Link to="#" className="hover:underline hover:text-white">Legal</Link>
+              <Link to="#" className="hover:underline hover:text-white">Security</Link>
+            </div>
           </div>
         </div>
       </div>
@@ -185,24 +193,14 @@ const Footer = () => {
 };
 
 const FooterItem = ({ text }: { text: string }) => (
-  <li className="group">
+  <li>
     <Link
       to="#"
-      className="flex items-center justify-between text-[14px] font-bold text-white/50 hover:text-white transition-all"
+      className="inline-flex items-center text-[13px] font-bold text-white/80 hover:text-white group transition-all whitespace-nowrap"
     >
-      <span>{text}</span>
-      <ChevronRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+      {text}
     </Link>
   </li>
-);
-
-const FooterLegalLink = ({ text }: { text: string }) => (
-  <Link
-    to="#"
-    className="text-[11px] font-black text-white/20 hover:text-white uppercase tracking-widest transition-colors whitespace-nowrap"
-  >
-    {text}
-  </Link>
 );
 
 export default Footer;

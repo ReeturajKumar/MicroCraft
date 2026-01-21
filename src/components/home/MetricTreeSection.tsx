@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { MousePointer2, Flag, Hexagon, ChevronRight } from "lucide-react";
+import { MousePointer2, Flag, Hexagon } from "lucide-react";
 import { motion } from "framer-motion";
 
 /**
@@ -13,9 +13,9 @@ import { motion } from "framer-motion";
 
 const FooterBox = ({ label, value, isPositive }: any) => (
   <div className="flex-1 bg-[#F9F9FA] border border-[#F4F4F5] rounded-md py-1 px-2 flex flex-col items-center">
-    <span className="text-[10px] font-bold text-gray-400 mb-0.5">{label}</span>
+    <span className="text-[10px] font-bold font-sans text-gray-400 mb-0.5">{label}</span>
     <span
-      className={`text-[12px] font-bold ${
+      className={`text-[12px] font-bold font-sans ${
         isPositive ? "text-[#22C55E]" : "text-[#EF4444]"
       }`}
     >
@@ -37,13 +37,13 @@ const MetricCard = ({ title, value, sublabel, boxes, className }: any) => (
     </div>
 
     {/* Value */}
-    <div className="text-[28px] font-bold text-[#1F2023] leading-none tracking-tight mb-0.5">
+    <div className="text-[28px] font-bold font-sans text-[#1F2023] leading-none tracking-tight mb-0.5">
       {value}
     </div>
 
     {/* Sublabel */}
     {sublabel && (
-      <div className="text-[10px] font-medium text-gray-400 mb-2">
+      <div className="text-[10px] font-medium font-sans text-gray-400 mb-2">
         {sublabel}
       </div>
     )}
@@ -65,15 +65,15 @@ const StrategyCard = ({ className }: any) => (
     <div>
       <div className="flex items-center gap-1.5 mb-2">
         <Flag className="w-3.5 h-3.5 text-gray-400" />
-        <span className="text-[11px] font-bold text-[#3F3F46] uppercase tracking-wide">
+        <span className="text-[11px] font-bold font-sans text-[#3F3F46] uppercase tracking-wide">
           Strategy Pivot
         </span>
       </div>
-      <p className="text-[12px] leading-[1.4] text-[#1F2023] font-medium">
+      <p className="text-[12px] leading-[1.4] text-[#1F2023] font-medium font-sans">
         Build and launch a new marketing strategy by May.
       </p>
     </div>
-    <div className="mt-2 text-[11px] text-[#2563EB] font-bold flex gap-1">
+    <div className="mt-2 text-[11px] text-[#2563EB] font-bold font-sans flex gap-1">
       <span>Roadmap</span> <span className="text-gray-300">|</span>{" "}
       <span>Forecast</span>
     </div>
@@ -103,7 +103,7 @@ const Cursor = ({ name, color, className, labelColor, delay = 0 }: any) => (
     <div
       className={`${
         labelColor || color.replace("text-", "bg-")
-      } text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-lg ml-1 whitespace-nowrap`}
+      } text-white text-[11px] font-bold font-sans px-2.5 py-1 rounded-full shadow-lg ml-1 whitespace-nowrap`}
     >
       {name}
     </div>
@@ -113,12 +113,12 @@ const Cursor = ({ name, color, className, labelColor, delay = 0 }: any) => (
 /* --- FEATURE CARD COMPONENT --- */
 const FeatureCard = ({ title, description, className }: any) => (
   <div
-    className={`bg-white rounded-2xl p-5 shadow-[0_2px_24px_rgba(0,0,0,0.04)] border border-gray-100/50 w-[260px] ${className}`}
+    className={`bg-white rounded-xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-gray-100 w-[260px] ${className}`}
   >
-    <h3 className="text-[15px] font-bold text-[#1F2023] mb-2 leading-tight">
+    <h3 className="text-[16px] font-bold font-sans text-[#1A1A1A] mb-3 leading-tight">
       {title}
     </h3>
-    <p className="text-[13px] leading-[1.6] text-gray-500 font-medium">
+    <p className="text-[14px] leading-[1.65] text-[#6B7280] font-normal font-sans">
       {description}
     </p>
   </div>
@@ -128,41 +128,34 @@ const FeatureCard = ({ title, description, className }: any) => (
 
 export function MetricTreeSection() {
   return (
-    <section className="relative w-full bg-[#FAFAFA] py-16 md:py-24 lg:py-32 overflow-hidden">
+    <section className="relative w-full bg-[#FAFAFA] py-16 md:py-24 lg:py-32 overflow-hidden font-sans">
       {/* Background with responsive intensity */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[#FFFBFB]"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] lg:w-[1300px] h-[600px] sm:h-[800px] lg:h-[1000px] bg-[radial-gradient(circle,rgba(255,220,225,0.4)_0%,rgba(230,220,255,0.3)_40%,rgba(255,255,255,0)_70%)] opacity-80 lg:opacity-100 transition-opacity duration-500"></div>
         <div
-          className="absolute inset-0 opacity-[0.15] md:opacity-[0.3]"
+          className="absolute inset-0 opacity-[0.3] md:opacity-[0.5]"
           style={{
-            backgroundImage: "radial-gradient(#94A3B8 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
+            backgroundImage: "radial-gradient(#94A3B8 1.5px, transparent 1.5px)",
+            backgroundSize: "32px 32px",
           }}
         ></div>
       </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
-        {/* SECTION HEADER: Split layout optimized for all screens */}
-        <div className="mb-12 lg:mb-24 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-16">
-          {/* Left: Heading */}
-          <div className="lg:max-w-[600px] text-center lg:text-left">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl leading-[1.15] font-semibold text-[#1F2023] tracking-tight">
-              The engine for <br className="hidden sm:block" /> continuous
-              innovation
+        {/* SECTION HEADER: mixpanel-inspired clean layout */}
+        <div className="mb-16 lg:mb-24">
+          {/* Main Heading - Large, Bold, Clean */}
+          <div className="text-center mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold font-sans text-[#1A1A1A] tracking-tight leading-[1.1] mb-4">
+              Building the Future of Indian Startups & MSMEs
             </h2>
-          </div>
-
-          {/* Right: Subheading + CTA */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-[440px] mx-auto lg:mx-0 gap-6">
-            <p className="text-[13px] md:text-sm lg:text-[15px] leading-[1.6] text-[#3F3F46]/70 font-normal">
-              MicroCraft is the AI-powered data clarity platform that helps you
-              see the truth, act faster, and create the best customer
-              experiences.
+            <p className="text-base md:text-lg text-[#6B7280] font-normal font-sans leading-relaxed max-w-2xl mx-auto mb-6">
+              We design and implement customized CRM, automation, AI tools, websites, and smart systems that 
+fit your business — not generic software that forces you to change
             </p>
-            <button className="inline-flex items-center gap-2 px-5 py-3.5 bg-[#1F2023] text-white rounded-full font-bold text-[12px] md:text-[13px] hover:bg-[#333] transition-all hover:-translate-y-0.5 shadow-sm active:scale-95 group">
-              Learn About Metric Trees
-              <ChevronRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+            <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#1A1A1A] text-white rounded-full font-semibold text-sm hover:bg-[#333] transition-all hover:scale-105 shadow-md">
+              Discover How →
             </button>
           </div>
         </div>
@@ -170,13 +163,13 @@ export function MetricTreeSection() {
         {/* MOBILE LAYOUT: Integrated Features */}
         <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12 sm:mb-16">
           <FeatureCard
-            title="All your trusted data, in one place"
-            description="Make better decisions with data from your data warehouse, SDK, CDP, and more in one platform."
+            title="CRM Made for Your Business"
+            description="Sales, follow-ups, billing, and team workflows built exactly the way you operate."
             className="w-full"
           />
           <FeatureCard
-            title="Make more confident decisions"
-            description="Align on evidence-backed decisions with Metric Trees and AI-driven suggestions."
+            title="Smart Automation & AI"
+            description="Reduce manual work, improve accuracy, and save valuable time every day."
             className="w-full"
           />
         </div>
@@ -186,23 +179,23 @@ export function MetricTreeSection() {
           {/* --- DESKTOP SIDE FEATURE CARDS --- */}
           <div className="hidden lg:flex absolute left-0 h-full flex-col justify-between py-12 z-20">
             <FeatureCard
-              title="All your trusted data, in one place"
-              description="Make better decisions with data from your data warehouse, SDK, CDP, and more in one self-serve platform."
+              title="CRM Made for Your Business"
+              description="Sales, follow-ups, billing, and team workflows built exactly the way you operate."
             />
             <FeatureCard
-              title="Get immediate answers"
-              description="Identify exactly what's driving results (and why) with powerful Product Analytics and Web Analytics."
+              title="Smart Automation & AI"
+              description="Reduce manual work, improve accuracy, and save valuable time every day."
             />
           </div>
 
           <div className="hidden lg:flex absolute right-0 h-full flex-col justify-between py-12 z-20">
             <FeatureCard
-              title="Make more confident decisions"
-              description="Align on evidence-backed decisions with Metric Trees, AI-driven suggestions, and Data Governance."
+              title="Strong Online Presence"
+              description="Websites, reviews, and digital visibility that build trust and bring customers."
             />
             <FeatureCard
-              title="Apply your updates and optimize"
-              description="Compare what drives the best results and refine your approach with Experiments and Feature Flags."
+              title="Scalable Business Systems"
+              description="Processes and dashboards that support long-term growth and control."
             />
           </div>
 
@@ -279,7 +272,7 @@ export function MetricTreeSection() {
               <div className="absolute top-0 left-1/2 -translate-x-1/2">
                 <MetricCard
                   title="Annual Recurring Revenue"
-                  value="$1.2M"
+                  value="₹1.2M"
                   boxes={[
                     { label: "MoM", value: "3.9%", isPositive: true },
                     { label: "YoY", value: "12.3%", isPositive: true },
@@ -319,7 +312,7 @@ export function MetricTreeSection() {
                   ]}
                 />
                 <Cursor
-                  name="Hugo Silva"
+                  name="Rohit Kumar"
                   color="text-[#3B82F6]"
                   labelColor="bg-[#3B82F6]"
                   className="absolute top-1/2 -translate-y-1/2 -right-12"
@@ -336,7 +329,7 @@ export function MetricTreeSection() {
                   boxes={[{ label: "MoM", value: "10.1%", isPositive: true }]}
                 />
                 <Cursor
-                  name="Mei Lin"
+                  name="Saksham Kumar"
                   color="text-yellow-400"
                   labelColor="bg-yellow-400"
                   className="absolute top-1/2 -translate-y-1/2 -right-12"
@@ -347,7 +340,7 @@ export function MetricTreeSection() {
               <div className="absolute top-[360px] left-1/2 -translate-x-1/2">
                 <MetricCard
                   title="Avg Profit / Referral"
-                  value="$15.9k"
+                  value="₹15.9k"
                   sublabel="Avg Profit"
                   boxes={[
                     { label: "MoM", value: "4.2%", isPositive: false },
@@ -366,13 +359,13 @@ export function MetricTreeSection() {
         {/* MOBILE LAYOUT: Lower Features */}
         <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 sm:mt-12">
           <FeatureCard
-            title="Get immediate answers"
-            description="Identify exactly what's driving results with powerful Product Analytics and Session Replay."
+            title="Strong Online Presence"
+            description="Websites, reviews, and digital visibility that build trust and bring customers."
             className="w-full"
           />
           <FeatureCard
-            title="Apply your updates"
-            description="Compare what drives the best results and refine with Experiments and Feature Flags."
+            title="Scalable Business Systems"
+            description="Processes and dashboards that support long-term growth and control."
             className="w-full"
           />
         </div>
