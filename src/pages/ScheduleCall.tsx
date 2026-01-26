@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { Phone, Mail, MessageCircle, ArrowRight, Check, Loader2 } from "lucide-react";
+import { Phone, Mail, Calendar, ArrowRight, Check, Loader2, Clock } from "lucide-react";
 import { submitContactForm, type ContactFormData } from "../lib/api";
 
-const Consultation = () => {
+const ScheduleCall = () => {
   const [formData, setFormData] = useState({
     name: "",
-    business: "",
-    phone: "",
     email: "",
+    phone: "",
+    company: "",
+    preferredDate: "",
+    preferredTime: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,9 +28,10 @@ const Consultation = () => {
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
-        company: formData.business,
-        message: formData.message,
-        reason: "Consultation Request",
+        company: formData.company,
+        message: formData.message || 
+          `Schedule a call request. Preferred date: ${formData.preferredDate || 'Any'}, Preferred time: ${formData.preferredTime || 'Any'}`,
+        reason: "Schedule a Call",
       };
 
       const response = await submitContactForm(contactData);
@@ -36,14 +39,16 @@ const Consultation = () => {
       if (response.success) {
         setSubmitStatus({
           type: "success",
-          message: "Thank you! We'll get back to you within 24 hours.",
+          message: "Thank you! We'll send you a calendar invite and confirm the call time within 24 hours.",
         });
         // Reset form
         setFormData({
           name: "",
-          business: "",
-          phone: "",
           email: "",
+          phone: "",
+          company: "",
+          preferredDate: "",
+          preferredTime: "",
           message: "",
         });
       }
@@ -61,7 +66,6 @@ const Consultation = () => {
     <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50/20 overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Grid Pattern */}
         <div
           className="absolute inset-0 opacity-[0.02]"
           style={{
@@ -69,7 +73,6 @@ const Consultation = () => {
             backgroundSize: "40px 40px",
           }}
         />
-        {/* Gradient Orbs */}
         <div className="absolute top-0 right-0 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] bg-purple-200/15 rounded-full blur-2xl sm:blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] bg-pink-200/15 rounded-full blur-2xl sm:blur-3xl"></div>
       </div>
@@ -81,32 +84,30 @@ const Consultation = () => {
           <div className="p-8 lg:p-16 bg-gradient-to-br from-slate-50/80 to-purple-50/30 border-r border-slate-200/60 flex flex-col justify-center">
             <div className="max-w-md">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-5">
-                Talk to a Business{" "}
+                Schedule a{" "}
                 <span className="bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 text-transparent bg-clip-text">
-                  Consultant
+                  Call
                 </span>
               </h1>
 
               <p className="text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed mb-10">
-                We'll first understand your business. No pressure, no sales
-                pitch. Just a conversation about how we can help you run
-                smoother.
+                Book a personalized call with our team. We'll discuss your business needs and show you how Microkraft can help you achieve your goals.
               </p>
 
               {/* Benefits List */}
               <div className="space-y-4 mb-10">
                 {[
                   {
-                    title: "We'll listen to your business challenges first",
-                    desc: "No aggressive sales tactics",
+                    title: "Personalized demo tailored to your business",
+                    desc: "See features relevant to your industry",
                   },
                   {
-                    title: "Free process review with actionable insights",
-                    desc: "Custom recommendations for your industry",
+                    title: "No pressure, just helpful conversation",
+                    desc: "Learn at your own pace",
                   },
                   {
-                    title: "Quick response",
-                    desc: "We'll respond within 24 hours",
+                    title: "Flexible scheduling",
+                    desc: "Choose a time that works for you",
                   },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
@@ -127,11 +128,11 @@ const Consultation = () => {
               <div className="pt-8 border-t border-slate-200/60">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <a
-                    href="mailto:hello@microkraft.in"
+                    href="mailto:hello@microkraft.ai"
                     className="flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-purple-600 transition-colors group"
                   >
                     <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                    <span>hello@microkraft.in</span>
+                    <span>hello@microkraft.ai</span>
                   </a>
                   <a
                     href="tel:+919876543210"
@@ -150,11 +151,10 @@ const Consultation = () => {
             <div className="w-full">
               <div className="mb-8">
                 <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
-                  Get in Touch
+                  Book Your Call
                 </h2>
                 <p className="text-sm sm:text-base text-slate-600">
-                  Provide your details to schedule a call. We'll respond within
-                  24 hours.
+                  Fill out the form below and we'll send you a calendar invite for a time that works for you.
                 </p>
               </div>
 
@@ -162,12 +162,12 @@ const Consultation = () => {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div className="space-y-1.5">
                     <label className="text-[11px] font-bold text-slate-400 uppercase tracking-widest ml-1">
-                      Full Name
+                      Full Name *
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="Alex Rivera"
+                      placeholder="John Doe"
                       className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-100 transition-all text-sm outline-none"
                       value={formData.name}
                       onChange={(e) =>
@@ -181,12 +181,11 @@ const Consultation = () => {
                     </label>
                     <input
                       type="text"
-                      required
                       placeholder="Acme Corp"
                       className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-100 transition-all text-sm outline-none"
-                      value={formData.business}
+                      value={formData.company}
                       onChange={(e) =>
-                        setFormData({ ...formData, business: e.target.value })
+                        setFormData({ ...formData, company: e.target.value })
                       }
                     />
                   </div>
@@ -195,12 +194,12 @@ const Consultation = () => {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div className="space-y-1.5">
                     <label className="text-[11px] font-bold text-slate-400 uppercase tracking-widest ml-1">
-                      Email
+                      Email *
                     </label>
                     <input
                       type="email"
                       required
-                      placeholder="name@work.com"
+                      placeholder="john@company.com"
                       className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-100 transition-all text-sm outline-none"
                       value={formData.email}
                       onChange={(e) =>
@@ -210,7 +209,7 @@ const Consultation = () => {
                   </div>
                   <div className="space-y-1.5">
                     <label className="text-[11px] font-bold text-slate-400 uppercase tracking-widest ml-1">
-                      Phone
+                      Phone *
                     </label>
                     <input
                       type="tel"
@@ -225,13 +224,48 @@ const Consultation = () => {
                   </div>
                 </div>
 
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div className="space-y-1.5">
+                    <label className="text-[11px] font-bold text-slate-400 uppercase tracking-widest ml-1 flex items-center gap-1">
+                      <Calendar className="w-3 h-3" />
+                      Preferred Date
+                    </label>
+                    <input
+                      type="date"
+                      className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-100 transition-all text-sm outline-none"
+                      value={formData.preferredDate}
+                      onChange={(e) =>
+                        setFormData({ ...formData, preferredDate: e.target.value })
+                      }
+                      min={new Date().toISOString().split('T')[0]}
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label className="text-[11px] font-bold text-slate-400 uppercase tracking-widest ml-1 flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      Preferred Time
+                    </label>
+                    <select
+                      className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-100 transition-all text-sm outline-none"
+                      value={formData.preferredTime}
+                      onChange={(e) =>
+                        setFormData({ ...formData, preferredTime: e.target.value })
+                      }
+                    >
+                      <option value="">Any time</option>
+                      <option value="09:00-12:00">Morning (9 AM - 12 PM)</option>
+                      <option value="12:00-15:00">Afternoon (12 PM - 3 PM)</option>
+                      <option value="15:00-18:00">Evening (3 PM - 6 PM)</option>
+                    </select>
+                  </div>
+                </div>
+
                 <div className="space-y-1.5">
                   <label className="text-[11px] font-bold text-slate-400 uppercase tracking-widest ml-1">
-                    Message
+                    Additional Notes
                   </label>
                   <textarea
-                    required
-                    placeholder="Tell us about your technical challenges..."
+                    placeholder="Tell us what you'd like to discuss during the call..."
                     rows={4}
                     className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-100 transition-all text-sm outline-none resize-none"
                     value={formData.message}
@@ -261,11 +295,11 @@ const Consultation = () => {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      Submitting...
+                      Scheduling...
                     </>
                   ) : (
                     <>
-                      Request Consultation
+                      Schedule Call
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </>
                   )}
@@ -274,16 +308,14 @@ const Consultation = () => {
                 {/* Quick Connect Footer */}
                 <div className="flex items-center justify-center gap-4 pt-6 border-t border-slate-100">
                   <a
-                    href="https://wa.me/919876543210"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 text-sm font-semibold text-slate-600 hover:text-green-600 hover:border-green-200 hover:bg-green-50 transition-all"
+                    href="tel:+919876543210"
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 text-sm font-semibold text-slate-600 hover:text-purple-600 hover:border-purple-200 hover:bg-purple-50 transition-all"
                   >
-                    <MessageCircle size={16} />
-                    <span>WhatsApp</span>
+                    <Phone size={16} />
+                    <span>Call Now</span>
                   </a>
                   <a
-                    href="mailto:hello@microkraft.in"
+                    href="mailto:hello@microkraft.ai"
                     className="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 text-sm font-semibold text-slate-600 hover:text-purple-600 hover:border-purple-200 hover:bg-purple-50 transition-all"
                   >
                     <Mail size={16} />
@@ -299,4 +331,5 @@ const Consultation = () => {
   );
 };
 
-export default Consultation;
+export default ScheduleCall;
+

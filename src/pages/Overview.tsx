@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronRight, CheckCircle2, Zap, BarChart3, Shield, Smartphone, Users, Building2 } from "lucide-react";
+import { ChevronRight, CheckCircle2, Zap, BarChart3, Shield, Smartphone, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Overview = () => {

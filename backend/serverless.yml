@@ -1,0 +1,131 @@
+service: microkraft-forms-backend
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ${opt:region, 'ap-south-1'}
+  stage: ${opt:stage, 'dev'}
+  memorySize: 256
+  timeout: 30
+  environment:
+    STAGE: ${self:provider.stage}
+    FORMS_TABLE_NAME: ${self:provider.stage}-forms-submissions
+    LOG_LEVEL: ${self:custom.logLevel.${self:provider.stage}, 'INFO'}
+    EMAIL_USER: ${self:custom.email.user}
+    EMAIL_PASS: ${self:custom.email.pass}
+    EMAIL_PROVIDER: ${self:custom.email.provider}
+    EMAIL_TO: ${self:custom.email.to}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:PutItem
+            - dynamodb:GetItem
+            - dynamodb:Query
+            - dynamodb:Scan
+          Resource:
+            - arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.FORMS_TABLE_NAME}
+            - arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.FORMS_TABLE_NAME}/index/*
+  httpApi:
+    cors:
+      allowedOrigins:
+        - '*'
+      allowedHeaders:
+        - Content-Type
+        - X-Amz-Date
+        - Authorization
+        - X-Api-Key
+      allowedMethods:
+        - GET
+        - POST
+        - OPTIONS
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+custom:
+  logLevel:
+    dev: DEBUG
+    staging: INFO
+    prod: WARN
+  serverless-offline:
+    httpPort: 3000
+  email:
+    user: johnkobal007@gmail.com
+    pass: kpjo bhvl vipj wiph
+    provider: gmail
+    to: sales@cloudblitz.in
+
+functions:
+  formsHandler:
+    handler: src/handlers/index.formsHandler
+    description: Main handler for all form submission operations
+    events:
+      # Create form submission
+      - httpApi:
+          method: POST
+          path: /forms/{formType}
+      # Get single submission
+      - httpApi:
+          method: GET
+          path: /forms/{formType}/{id}
+      # List submissions by form type
+      - httpApi:
+          method: GET
+          path: /forms/{formType}
+
+resources:
+  Resources:
+    FormsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:provider.environment.FORMS_TABLE_NAME}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: formType
+            AttributeType: S
+          - AttributeName: createdAt
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        GlobalSecondaryIndexes:
+          - IndexName: formType-createdAt-index
+            KeySchema:
+              - AttributeName: formType
+                KeyType: HASH
+              - AttributeName: createdAt
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        Tags:
+          - Key: Environment
+            Value: ${self:provider.stage}
+          - Key: Service
+            Value: forms-backend
+
+  Outputs:
+    FormsTableName:
+      Description: DynamoDB table name for form submissions
+      Value: ${self:provider.environment.FORMS_TABLE_NAME}
+      Export:
+        Name: ${self:provider.stage}-FormsTableName
+    ApiGatewayUrl:
+      Description: API Gateway endpoint URL
+      Value:
+        Fn::Join:
+          - ''
+          - - 'https://'
+            - Ref: HttpApi
+            - '.execute-api.'
+            - ${self:provider.region}
+            - '.amazonaws.com'
+

@@ -35,6 +35,8 @@ import CaseStudies from "./pages/CaseStudies";
 import Sectors from "./pages/Sectors";
 import Consultation from "./pages/Consultation";
 import Resources from "./pages/Resources";
+import ContactSales from "./pages/ContactSales";
+import ScheduleCall from "./pages/ScheduleCall";
 
 function App() {
   return (
@@ -75,6 +77,8 @@ function App() {
         <Route path="/sectors" element={<Sectors />} />
         <Route path="/consultation" element={<Consultation />} />
         <Route path="/resources" element={<Resources />} />
+        <Route path="/contact" element={<ContactSales />} />
+        <Route path="/signup" element={<ScheduleCall />} />
       </Routes>
       <Footer />
     </BrowserRouter>

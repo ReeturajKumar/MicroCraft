@@ -6,7 +6,7 @@ const LoadingIndicator = () => {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(false);
   const prevLocationRef = useRef(location.pathname);
-  const loadingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const loadingTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Listen for clicks on navigation links to show loading immediately
   useEffect(() => {
