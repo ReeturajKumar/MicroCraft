@@ -41,7 +41,7 @@ const TESTIMONIALS = [
     name: "Sarah Chen",
     role: "Senior Product Manager",
     company: "DocuSign",
-    logo: "/docusign_logo.webp",
+    logo: "/docusign_logo.png",
     quote: "Microkraft.ai helps us enable our customers for success. What started as a need for simple marketing metrics turned into custom product metrics for more than 100 different stakeholders.",
     stats: [
       { value: "+15%", label: "in accounts" },
@@ -54,7 +54,7 @@ const TESTIMONIALS = [
     name: "James Wilson",
     role: "Head of Operations",
     company: "IBM",
-    logo: "/ibm_logo.webp",
+    logo: "/ibm_logo.png",
     quote: "The automation capabilities of Microcraft have completely transformed our branch operations. We've seen a massive reduction in manual data entry and a significant boost in productivity.",
     stats: [
       { value: "40%", label: "Faster Workflows" },
@@ -67,7 +67,7 @@ const TESTIMONIALS = [
     name: "Michael Rodriguez",
     role: "Director of IT",
     company: "Adobe",
-    logo: "/adobe_logo.webp",
+    logo: "/adobe_logo.png",
     quote: "Security and scalability were our top priorities. Microcraft delivered a robust system that handles our complex data structures with ease, while providing localized support.",
     stats: [
       { value: "Zero", label: "Security Breaches" },
@@ -145,7 +145,7 @@ export function EnterpriseSection() {
               <div className="relative w-full h-[2px]" style={{ transform: 'rotateX(30deg)' }}>
                 <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-center px-4">
                   <img 
-                    src="/horizon_line.webp" 
+                    src="/horizon_line.png" 
                     alt="Horizon Line" 
                     className="w-full max-w-[1600px] h-auto object-contain opacity-85 mix-blend-screen select-none pointer-events-none"
                     style={{ 

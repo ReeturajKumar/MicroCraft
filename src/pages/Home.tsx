@@ -14,15 +14,6 @@ const Home = () => {
       <WhyChooseSection />
       <EnterpriseSection />
       <SupportSection />
-      {/* <GallerySection /> */}
-      {/* <ProblemsSection />
-      <LogoMarquee />
-      <AIColleaguesSection />
-      <ProductTrio />
-      <TrustAndIntegrationsSection />
-      <Simulator /> */}
-      {/* <Pricing /> */}
-      {/* <Testimonial /> */}
     </>
   );
 };

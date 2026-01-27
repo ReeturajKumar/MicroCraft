@@ -1,9 +1,9 @@
 import { ChevronRight, CheckCircle2 } from "lucide-react";
 import { FlipWords } from "../ui/flip-words";
-import dashboardMain from "../../assets/dashboard_main.webp";
-import dashboardSidebar from "../../assets/dashboard_part_2.webp";
-import dashboardShare from "../../assets/dashboard_part_3.webp";
-import dashboardSearch from "../../assets/dashboard_part_4.webp";
+import dashboardMain from "../../assets/dashboard_main.png";
+import dashboardSidebar from "../../assets/dashboard_part_2.png";
+import dashboardShare from "../../assets/dashboard_part_3.png";
+import dashboardSearch from "../../assets/dashboard_part_4.png";
 
 const LOGOS = [
   { src: "https://cdn.shopify.com/shopifycloud/brochure/assets/brand-assets/logo-bestpractices-old-small-9d48f4906860fcf2c2f4257abede5f6f8d6fbc8f6fe7473e06998c136d77d963.png", alt: "Shopify", height: "h-4 md:h-5" },
