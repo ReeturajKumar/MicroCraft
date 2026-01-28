@@ -41,7 +41,7 @@ const platformMenuData: {
     title: "Platform",
     icon: <LayoutGrid className="w-5 h-5 text-[#7856FF]" />,
     items: [
-      { title: "Overview", href: "/" },
+      { title: "Overview", href: "/platform" },
       { title: "Customized CRM", href: "/" },
       { title: "AI Automation Engine", href: "/" },
       { title: "POS & Inventory", href: "/" },
@@ -56,6 +56,7 @@ const platformMenuData: {
     title: "Teams",
     icon: <Users className="w-5 h-5 text-[#7856FF]" />,
     items: [
+      { title: "Product Teams", href: "/solutions" },
       { title: "Sales Teams", href: "/" },
       { title: "Operations Teams", href: "/" },
       { title: "Customer Support Teams", href: "/" },
@@ -292,7 +293,10 @@ const Header: React.FC = () => {
                   onMouseEnter={() => setActiveDropdown("Platform")}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <div className="flex items-center gap-1.5 text-[14px] font-semibold text-[#1F1F1F] hover:text-[#7856FF] transition-colors py-2 cursor-pointer whitespace-nowrap">
+                  <Link 
+                    to="/platform"
+                    className="flex items-center gap-1.5 text-[14px] font-semibold text-[#1F1F1F] hover:text-[#7856FF] transition-colors py-2 cursor-pointer whitespace-nowrap"
+                  >
                     Platform
                     <ChevronDown
                       strokeWidth={2.5}
@@ -302,7 +306,7 @@ const Header: React.FC = () => {
                           : "text-[#9CA3AF]"
                       }`}
                     />
-                  </div>
+                  </Link>
 
                   <div
                     className={`absolute top-full -left-10 pt-4 transition-all duration-200 origin-top-left z-50 ${
@@ -461,7 +465,10 @@ const Header: React.FC = () => {
                   onMouseEnter={() => setActiveDropdown("Solutions")}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <div className="flex items-center gap-1.5 text-[14px] font-semibold text-[#1F1F1F] hover:text-[#7856FF] transition-colors py-2 cursor-pointer whitespace-nowrap">
+                  <Link 
+                    to="/solutions"
+                    className="flex items-center gap-1.5 text-[14px] font-semibold text-[#1F1F1F] hover:text-[#7856FF] transition-colors py-2 cursor-pointer whitespace-nowrap"
+                  >
                     Solutions
                     <ChevronDown
                       strokeWidth={2.5}
@@ -471,7 +478,7 @@ const Header: React.FC = () => {
                           : "text-[#9CA3AF]"
                       }`}
                     />
-                  </div>
+                  </Link>
 
                   <div
                     className={`absolute top-full -left-20 right-20 pt-4 transition-all duration-200 origin-top-left z-50 ${
@@ -590,7 +597,10 @@ const Header: React.FC = () => {
                   onMouseEnter={() => setActiveDropdown("Industries")}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <div className="flex items-center gap-1.5 text-[14px] font-semibold text-[#1F1F1F] hover:text-[#7856FF] transition-colors py-2 cursor-pointer whitespace-nowrap">
+                  <Link 
+                    to="/industries"
+                    className="flex items-center gap-1.5 text-[14px] font-semibold text-[#1F1F1F] hover:text-[#7856FF] transition-colors py-2 cursor-pointer whitespace-nowrap"
+                  >
                     Industries
                     <ChevronDown
                       strokeWidth={2.5}
@@ -600,7 +610,7 @@ const Header: React.FC = () => {
                           : "text-[#9CA3AF]"
                       }`}
                     />
-                  </div>
+                  </Link>
 
                   <div
                     className={`absolute top-full -left-20 pt-4 transition-all duration-200 origin-top-left z-50 ${
