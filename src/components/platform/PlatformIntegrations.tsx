@@ -21,46 +21,46 @@ const LOGOS = [
 
 const PlatformIntegrations = () => {
     return (
-        <section className="w-full bg-[#fdfdfd] px-6 pb-24 font-sans focus-within:z-40">
-            <div className="max-w-7xl mx-auto">
-                <div className="relative w-full bg-[#001f15] rounded-[48px] overflow-hidden min-h-[460px] flex flex-col md:flex-row items-center border border-white/5">
+        <section className="w-full bg-[#fdfdfd] px-6 lg:px-12 xl:px-16 pb-24 font-sans focus-within:z-40">
+            <div className="max-w-8xl mx-auto">
+                <div className="relative w-full bg-[#001f15] rounded-[48px] overflow-hidden min-h-[500px] flex flex-col md:flex-row items-center border border-white/5">
                     
                     {/* Background Radial Glow */}
-                    <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#00ff8c]/10 blur-[120px] rounded-full pointer-events-none" />
+                    <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#00ff8c]/10 blur-[120px] rounded-full pointer-events-none" />
                     
                     {/* Left content: Content Side */}
-                    <div className="relative z-20 flex-1 p-10 md:p-16 lg:p-20 flex flex-col items-start justify-center">
-                        <div className="mb-6 px-2.5 py-1 border border-emerald-500/40 rounded bg-emerald-500/5">
-                             <span className="text-emerald-400 text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em]">
+                    <div className="relative z-20 flex-1 p-12 md:p-16 lg:p-20 xl:p-24 flex flex-col items-start justify-center">
+                        <div className="mb-7 px-3 py-1.5 border border-emerald-500/40 rounded bg-emerald-500/5">
+                             <span className="text-emerald-400 text-[11px] md:text-[12px] font-black uppercase tracking-[0.2em]">
                                 Integrations
                             </span>
                         </div>
                         
-                        <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-bold text-white leading-[1.1] tracking-tight mb-6">
+                        <h2 className="text-[36px] md:text-[44px] lg:text-[52px] xl:text-[56px] font-bold text-white leading-[1.1] tracking-tight mb-7">
                             Get started today, <br/>
                             quick and easy
                         </h2>
                         
-                        <p className="text-[15px] md:text-[16px] text-slate-400 font-medium leading-relaxed max-w-sm mb-10 opacity-90">
+                        <p className="text-[16px] md:text-[17px] lg:text-[18px] text-slate-400 font-medium leading-relaxed max-w-xl mb-10 opacity-90">
                             MicroCraft integrates with 100+ marketing tools, so you can rest assured we work with your tech stack.
                         </p>
                         
-                        <button className="px-6 py-2.5 bg-[#142d24] hover:bg-[#1a382c] border border-white/10 text-white rounded-full text-[13px] font-black transition-all flex items-center gap-1.5 shadow-2xl group">
-                            View Integrations <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                        <button className="px-7 py-3.5 bg-[#142d24] hover:bg-[#1a382c] border border-white/10 text-white rounded-full text-[14px] font-black transition-all flex items-center gap-2 shadow-2xl group hover:-translate-y-0.5">
+                            View Integrations <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </button>
                     </div>
 
                     {/* Right content: Visual Magic */}
-                    <div className="relative z-10 flex-1 w-full h-full min-h-[400px] flex items-center justify-center pointer-events-none overflow-hidden">
+                    <div className="relative z-10 flex-1 w-full h-full min-h-[500px] flex items-center justify-center pointer-events-none overflow-hidden">
                         
                         {/* Background Logo Grid - High Fidelity Integration */}
-                        <div className="absolute inset-0 grid grid-cols-5 gap-y-12 gap-x-8 p-12 opacity-[0.05] brightness-0 invert rotate-12 scale-125">
+                        <div className="absolute inset-0 grid grid-cols-5 gap-y-14 gap-x-10 p-16 opacity-[0.05] brightness-0 invert rotate-12 scale-125">
                             {[...LOGOS, ...LOGOS, ...LOGOS].slice(0, 30).map((logo, i) => (
                                 <div key={i} className="flex items-center justify-center">
                                     <img 
                                         src={logo.src} 
                                         alt={logo.alt} 
-                                        className="w-12 h-auto grayscale" 
+                                        className="w-14 h-auto grayscale" 
                                     />
                                 </div>
                             ))}
@@ -68,7 +68,7 @@ const PlatformIntegrations = () => {
                         
                         {/* Animated Concentric Rings */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                            {[240, 180, 140].map((size, i) => (
+                            {[280, 210, 160].map((size, i) => (
                                 <motion.div
                                     key={i}
                                     initial={{ opacity: 0, scale: 0.8 }}
@@ -91,14 +91,14 @@ const PlatformIntegrations = () => {
                         {/* The Central Logo Card */}
                         <div className="relative z-30 group">
                             {/* Inner Refractive Glow */}
-                            <div className="absolute -inset-16 bg-emerald-500/30 blur-[60px] rounded-full group-hover:bg-emerald-400/40 transition-colors duration-700" />
+                            <div className="absolute -inset-20 bg-emerald-500/30 blur-[70px] rounded-full group-hover:bg-emerald-400/40 transition-colors duration-700" />
                             
                             {/* High-Fidelity MicroCraft Logo Card */}
-                            <div className="relative w-28 h-28 bg-gradient-to-br from-[#004a32] via-[#001f15] to-[#000d09] rounded-[32px] flex items-center justify-center border border-white/10 shadow-[0_0_60px_rgba(0,255,140,0.15)] overflow-hidden">
+                            <div className="relative w-32 h-32 bg-gradient-to-br from-[#004a32] via-[#001f15] to-[#000d09] rounded-[36px] flex items-center justify-center border border-white/10 shadow-[0_0_60px_rgba(0,255,140,0.15)] overflow-hidden">
                                 <img 
                                     src="/logo.png" 
                                     alt="MicroCraft Logo" 
-                                    className="w-16 h-16 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]"
+                                    className="w-20 h-20 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]"
                                 />
                                 {/* Refraction Overlay */}
                                 <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />

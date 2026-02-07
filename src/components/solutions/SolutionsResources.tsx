@@ -1,7 +1,6 @@
 import { ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import guideImg from "../../assets/guide.png";
-import laptopImg from "../../assets/laptop_demo.png";
 
 const SolutionsResources = () => {
     return (

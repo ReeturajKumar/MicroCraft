@@ -1,4 +1,4 @@
-"use client";
+;
 
 import { useState } from "react";
 import { ArrowRight, Shield, Lock, Zap, Users, ChevronLeft, ChevronRight } from "lucide-react";

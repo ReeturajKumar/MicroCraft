@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-"use client";
+;
 
 import { MousePointer2, Flag, Hexagon } from "lucide-react";
 import { motion } from "framer-motion";
