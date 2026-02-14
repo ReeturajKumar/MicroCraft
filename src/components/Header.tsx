@@ -42,7 +42,7 @@ const platformMenuData: {
     icon: <LayoutGrid className="w-5 h-5 text-[#7856FF]" />,
     items: [
       { title: "Overview", href: "/platform" },
-      { title: "Customized CRM", href: "/" },
+      { title: "Customized CRM", href: "/platform/customized-crm" },
       { title: "AI Automation Engine", href: "/" },
       { title: "POS & Inventory", href: "/" },
       { title: "Accounting & Compliance", href: "/" },
@@ -82,7 +82,7 @@ const solutionsMenuData = {
     title: "Business Growth",
     icon: <Rocket className="w-5 h-5 text-[#7856FF]" />,
     items: [
-      { title: "Lead Management & CRM", href: "/" },
+      { title: "Lead Management & CRM", href: "/platform/customized-crm" },
       { title: "WhatsApp Automation", href: "" },
       { title: "Revenue Websites", href: "/" },
       { title: "Digital Marketing Automation", href: "/" },

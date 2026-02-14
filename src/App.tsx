@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Platform from "./pages/Platform";
 import Solutions from "./pages/Solutions";
 import Industries from "./pages/Industries";
+import CustomizedCRM from "./pages/platform/CustomizedCRM";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/platform" element={<Platform />} />
+        <Route path="/platform/customized-crm" element={<CustomizedCRM />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/industries" element={<Industries />} />
       </Routes>
