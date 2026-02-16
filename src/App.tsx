@@ -7,6 +7,7 @@ import CustomizedCRM from "./pages/platform/CustomizedCRM";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import AIAutomation from "./pages/platform/AIAutomation";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/platform" element={<Platform />} />
         <Route path="/platform/customized-crm" element={<CustomizedCRM />} />
+        <Route path="/platform/ai-automation" element={<AIAutomation />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/industries" element={<Industries />} />
       </Routes>
