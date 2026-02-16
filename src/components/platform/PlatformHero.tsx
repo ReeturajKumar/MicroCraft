@@ -227,6 +227,9 @@ const PlatformHero = () => {
                                                         <div className="w-1.5 h-1.5 rounded-sm bg-[#FF7E5F]"></div>
                                                         <p className="text-[7px] text-slate-500"><span className="font-bold text-slate-700">1.5</span> leads processed per day</p>
                                                     </div>
+                                                    <div>
+                                                        <p className="text-[7px] text-slate-500"><span className="font-bold text-slate-700"></span></p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

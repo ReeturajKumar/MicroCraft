@@ -47,7 +47,7 @@ const platformMenuData: {
       { title: "POS & Inventory", href: "/platform/pos-inventory" },
       { title: "Accounting & Compliance", href: "/platform/accounting-compliance" },
       { title: "Business Dashboards", href: "/platform/business-dashboards" },
-      { title: "Integrations", href: "/" },
+      { title: "Integrations", href: "/platform/integrations" },
       { title: "Security & Data Protection", href: "/" },
       { title: "Mobile App", href: "/" },
     ],

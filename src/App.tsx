@@ -11,6 +11,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import AIAutomation from "./pages/platform/AIAutomation";
+import Integrations from "./pages/platform/Integrations";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/platform/pos-inventory" element={<POSInventory />} />
         <Route path="/platform/accounting-compliance" element={<AccountingCompliance />} />
         <Route path="/platform/business-dashboards" element={<BusinessDashboards />} />
+        <Route path="/platform/integrations" element={<Integrations />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/industries" element={<Industries />} />
       </Routes>
