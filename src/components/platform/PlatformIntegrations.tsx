@@ -12,7 +12,7 @@ const LOGOS = [
     { src: "https://upload.wikimedia.org/wikipedia/commons/8/89/Razorpay_logo.svg", alt: "Razorpay" },
     { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/1280px-Stripe_Logo%2C_revised_2016.svg.png", alt: "Stripe" },
     { src: "https://www.zoho.com/sites/zweb/images/zoho_general_pages/zoho-logo-512.png", alt: "Zoho" },
-    { src: "https://1000logos.net/wp-content/uploads/2022/12/HubSpot-Logo-2006.png", alt: "HubSpot" },
+    { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HubSpot_Logo.svg/1280px-HubSpot_Logo.svg.png", alt: "HubSpot" },
     { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/500px-Facebook_Logo_%282019%29.png", alt: "Facebook" },
     { src: "https://www.interakt.shop/wp-content/uploads/2024/10/Salesforce.png", alt: "Salesforce" },
     { src: "https://www.interakt.shop/wp-content/uploads/2024/10/Clevertap.png", alt: "Clevertap" },

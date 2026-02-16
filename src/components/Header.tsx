@@ -43,8 +43,8 @@ const platformMenuData: {
     items: [
       { title: "Overview", href: "/platform" },
       { title: "Customized CRM", href: "/platform/customized-crm" },
-      { title: "AI Automation Engine", href: "/platform/ai-automation" },
-      { title: "POS & Inventory", href: "/" },
+      { title: "AI Automation", href: "/platform/ai-automation" },
+      { title: "POS & Inventory", href: "/platform/pos-inventory" },
       { title: "Accounting & Compliance", href: "/" },
       { title: "Business Dashboards", href: "/" },
       { title: "Integrations", href: "/" },

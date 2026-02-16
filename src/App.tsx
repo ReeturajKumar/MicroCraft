@@ -4,6 +4,7 @@ import Platform from "./pages/Platform";
 import Solutions from "./pages/Solutions";
 import Industries from "./pages/Industries";
 import CustomizedCRM from "./pages/platform/CustomizedCRM";
+import POSInventory from "./pages/platform/POSInventory";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -19,6 +20,7 @@ function App() {
         <Route path="/platform" element={<Platform />} />
         <Route path="/platform/customized-crm" element={<CustomizedCRM />} />
         <Route path="/platform/ai-automation" element={<AIAutomation />} />
+        <Route path="/platform/pos-inventory" element={<POSInventory />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/industries" element={<Industries />} />
       </Routes>
