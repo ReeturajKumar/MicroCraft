@@ -45,7 +45,7 @@ const platformMenuData: {
       { title: "Customized CRM", href: "/platform/customized-crm" },
       { title: "AI Automation", href: "/platform/ai-automation" },
       { title: "POS & Inventory", href: "/platform/pos-inventory" },
-      { title: "Accounting & Compliance", href: "/" },
+      { title: "Accounting & Compliance", href: "/platform/accounting-compliance" },
       { title: "Business Dashboards", href: "/" },
       { title: "Integrations", href: "/" },
       { title: "Security & Data Protection", href: "/" },
@@ -96,7 +96,7 @@ const solutionsMenuData = {
       { title: "Task & Workflow Automation", href: "/" },
       { title: "POS & Inventory Management", href: "/" },
       { title: "Billing & Payment Automation", href: "/" },
-      { title: "Accounting & Compliance", href: "/" },
+      { title: "Accounting & Compliance", href: "/platform/accounting-compliance" },
       {
         title: "Vendor & Procurement Automation",
         href: "/",
