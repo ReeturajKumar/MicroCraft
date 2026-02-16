@@ -34,7 +34,7 @@ const IndustryIntegrations = () => {
                             className="text-3xl md:text-5xl font-bold text-[#1A1A1A] leading-[1.1] mb-6 tracking-tight"
                         >
                             Unified Connection with <br />
-                            <span className="text-[#7856FF]">MicroCraft AI Connect</span>
+                            <span className="text-[#7856FF]">MicroKraft AI Connect</span>
                         </motion.h2>
                         <motion.p 
                             initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ const IndustryIntegrations = () => {
                             transition={{ delay: 0.1 }}
                             className="text-base md:text-lg text-gray-500 mb-8 leading-relaxed font-medium"
                         >
-                            Sync your entire enterprise stack. MicroCraft AI Connect bridges your legacy systems with our AI-native OS, ensuring real-time data flow across all your favorite tools.
+                            Sync your entire enterprise stack. MicroKraft AI Connect bridges your legacy systems with our AI-native OS, ensuring real-time data flow across all your favorite tools.
                         </motion.p>
                         <motion.button 
                             initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ const IndustryIntegrations = () => {
 
                             {/* Static Center Logo/Core */}
                             <div className="relative z-20 w-14 h-14 md:w-20 md:h-20 bg-white rounded-2xl shadow-xl flex items-center justify-center border border-[#7856FF]/20 p-3">
-                                <img src="/logo.png" alt="MicroCraft Logo" className="w-full h-full object-contain" />
+                                <img src="/logo.png" alt="MicroKraft Logo" className="w-full h-full object-contain" />
                                 <div className="absolute inset-0 rounded-2xl bg-[#7856FF]/5 animate-pulse"></div>
                             </div>
                         </div>

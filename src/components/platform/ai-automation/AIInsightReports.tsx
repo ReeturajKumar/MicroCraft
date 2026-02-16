@@ -26,7 +26,7 @@ const AIInsightReports = () => {
             </h2>
             
             <p className="text-base md:text-lg text-[#4D6462] font-medium leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8">
-              MicroCraft serves as the core orchestration layer, mapping prompt experimentalism to downstream system telemetry. 
+              MicroKraft serves as the core orchestration layer, mapping prompt experimentalism to downstream system telemetry. 
               Link model weights, temperature shifts, and RAG retrieval depth directly to mission-critical business success with 
               mathematical certainty.
             </p>

@@ -26,7 +26,7 @@ const AIAutomationQuickstart = () => {
             </h2>
             
             <p className="text-base md:text-lg text-[#3D5A58] font-medium leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8">
-              MicroCraft's template-driven instrumentation allows you to bypass complex engineering cycles. 
+              MicroKraft's template-driven instrumentation allows you to bypass complex engineering cycles. 
               Leverage out-of-the-box telemetry for Autocapture and deploy production-grade 
               AI observability dashboards using our pre-certified templates.
             </p>

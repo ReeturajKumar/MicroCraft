@@ -25,7 +25,7 @@ const AIRetentionShowcase = () => {
             </h2>
             
             <p className="text-base md:text-lg text-[#4D6462] font-medium leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8">
-              MicroCraft provides the instrumentation layer to connect LLM execution logs with mission-critical lifecycle telemetry. 
+              MicroKraft provides the instrumentation layer to connect LLM execution logs with mission-critical lifecycle telemetry. 
               Automate downstream feedback loops to identify high-affinity agent patterns and 
               mitigate failure modes before they impact your core retention.
             </p>

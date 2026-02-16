@@ -14,15 +14,15 @@ const AIAutomationResources = () => {
   const resources = [
     {
       badge: "Case Study",
-      title: "How TechFlow scaled their AI Agent fleet from 10 to 1,000+ with MicroCraft Orchestration",
-      description: "Learn how TechFlow implemented MicroCraft's instrumentation layer to achieve 99.9% fulfillment reliability across their autonomous customer service agents.",
+      title: "How TechFlow scaled their AI Agent fleet from 10 to 1,000+ with MicroKraft Orchestration",
+      description: "Learn how TechFlow implemented MicroKraft's instrumentation layer to achieve 99.9% fulfillment reliability across their autonomous customer service agents.",
       linkText: "Read Case Study",
       image: "https://framerusercontent.com/images/ZJxAqcQJovYOivWFETu6STHXF0.png?width=858&height=320"
     },
     {
       badge: "Blog Post",
       title: "Optimizing Token Latency: A Guide to Edge Inference Deployment",
-      description: "Deep dive into sub-100ms LLM response times using MicroCraft's global edge infrastructure.",
+      description: "Deep dive into sub-100ms LLM response times using MicroKraft's global edge infrastructure.",
       linkText: "Read Guide",
       image: "https://framerusercontent.com/images/Bhv5d4g1d1C9X7UswnQY8RutdLM.svg?width=736&height=414"
     },
@@ -79,10 +79,10 @@ const AIAutomationResources = () => {
                 </span>
               </div>
               <h2 className="text-xl sm:text-2xl lg:text-[28px] font-bold text-[#1A3F3C] leading-[1.25] mb-5">
-                Scaling 1,000+ Autonomous Agents with MicroCraft Orchestration
+                Scaling 1,000+ Autonomous Agents with MicroKraft Orchestration
               </h2>
               <p className="text-sm sm:text-[15px] text-[#4D6462] font-medium leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
-                Learn how TechFlow used MicroCraft's instrumentation layer to solve stateful memory bottlenecks and achieve 99.9% fulfillment reliability in production environments.
+                Learn how TechFlow used MicroKraft's instrumentation layer to solve stateful memory bottlenecks and achieve 99.9% fulfillment reliability in production environments.
               </p>
               <div className="flex justify-center lg:justify-start">
                 <button className="w-full sm:w-auto flex items-center justify-center gap-2 group/btn bg-[#1A3F3C] text-white lg:bg-transparent lg:text-[#1A3F3C] px-8 py-4 lg:p-0 rounded-xl font-bold text-sm hover:opacity-70 transition-all">

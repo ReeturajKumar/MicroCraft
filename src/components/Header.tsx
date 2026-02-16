@@ -46,7 +46,7 @@ const platformMenuData: {
       { title: "AI Automation", href: "/platform/ai-automation" },
       { title: "POS & Inventory", href: "/platform/pos-inventory" },
       { title: "Accounting & Compliance", href: "/platform/accounting-compliance" },
-      { title: "Business Dashboards", href: "/" },
+      { title: "Business Dashboards", href: "/platform/business-dashboards" },
       { title: "Integrations", href: "/" },
       { title: "Security & Data Protection", href: "/" },
       { title: "Mobile App", href: "/" },
@@ -197,7 +197,7 @@ const resourcesMenuData = {
       },
       {
         title: "Customer Stories",
-        description: "See how others use Microcraft",
+        description: "See how others use MicroKraft",
         href: "/",
       },
     ],
@@ -280,7 +280,7 @@ const Header: React.FC = () => {
             {/* LOGO */}
             <Link to="/" className="flex items-center z-[110] relative">
               <span className="text-[24px] md:text-[28px] font-bold tracking-tight text-[#1F1F1F] font-serif hover:opacity-80 transition-opacity">
-                Microcraft.ai
+                MicroKraft.ai
               </span>
             </Link>
 

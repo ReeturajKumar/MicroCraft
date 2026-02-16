@@ -77,7 +77,7 @@ const CRMLogos = () => {
                 <img 
                   src={logo.wordmark || logo.src} 
                   alt={logo.name} 
-                  className={`${logo.height} w-auto object-contain filter grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300`}
+                  className={`${logo.height} w-auto object-contain `}
                 />
               </motion.div>
             ))}

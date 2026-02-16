@@ -28,7 +28,7 @@ const PlatformTestimonial = () => {
                     transition={{ duration: 0.8, delay: 0.1 }}
                     className="text-[28px] md:text-[36px] font-bold text-slate-800 leading-[1.3] mb-8 tracking-tight"
                 >
-                    &ldquo;MicroCraft is the &lsquo;intuition pump&rsquo; for our product team. It enables our product managers and designers to uncover and focus on larger opportunities for product discovery and improvement.&rdquo;
+                    &ldquo;MicroKraft is the &lsquo;intuition pump&rsquo; for our product team. It enables our product managers and designers to uncover and focus on larger opportunities for product discovery and improvement.&rdquo;
                 </motion.h2>
 
                 {/* Author */}

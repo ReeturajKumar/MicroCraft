@@ -4,7 +4,7 @@ import { TrendingUp, BarChart3, PieChart, Activity, Wallet } from "lucide-react"
 /**
  * POSInventoryFeatures Component
  * Recreated based on the user-provided "Powerful Features" design image.
- * Adapted to MicroCraft's green/slate theme.
+ * Adapted to MicroKraft's green/slate theme.
  */
 
 const FeatureCard = ({ icon: Icon, title, description, visualization, className = "" }: any) => (

@@ -108,7 +108,7 @@ const IndustryBenefits = () => {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl font-semibold text-[#1A1A1A] mb-6 leading-tight"
             >
-              The MicroCraft Advantage: <br />
+              The MicroKraft Advantage: <br />
               Enterprise Efficiency Reimagined
             </motion.h2>
 

@@ -111,7 +111,7 @@ const AccountingHero = () => {
          <TestimonialCard 
             name="Mikal lone"
             role="Chairman"
-            text="MicroCraft transformed our audit process. What used to take weeks now happens in real-time with perfect accuracy."
+            text="MicroKraft transformed our audit process. What used to take weeks now happens in real-time with perfect accuracy."
             delay={1.4}
             className="pointer-events-auto scale-[0.85] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)]"
          />

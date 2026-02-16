@@ -71,7 +71,7 @@ export function WhyChooseSection() {
         </div>
 
         {/* --- THE MAIN CAPSULE CARD --- */}
-        <div className="relative bg-gradient-to-br from-[#FAFAFA] to-white rounded-[48px] md:rounded-[64px] overflow-hidden border border-gray-200/60 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.08),0_0_1px_rgba(0,0,0,0.1)] flex flex-col lg:flex-row items-stretch">
+        <div className="relative bg-gradient-to-br from-[#FAFAFA] to-white rounded-[48px] md:rounded-[64px] overflow-hidden border border-gray-200/60 flex flex-col lg:flex-row items-stretch">
             
             {/* LEFT: VISUAL (Takes full height) */}
             <div className="relative w-full lg:w-[50%] min-h-[380px] lg:min-h-[440px] overflow-hidden bg-gradient-to-br from-[#8B5CF6] via-[#D946EF] to-[#FB923C]/50 lg:rounded-l-[inherit]">

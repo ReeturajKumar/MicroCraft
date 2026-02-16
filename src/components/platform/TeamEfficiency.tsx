@@ -296,7 +296,7 @@ const TeamEfficiency = () => {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="text-slate-500 text-lg font-medium max-w-2xl"
                     >
-                        MicroCraft helps every team contribute to product growth—from analysis to action.
+                        MicroKraft helps every team contribute to product growth—from analysis to action.
                     </motion.p>
                 </div>
 

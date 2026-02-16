@@ -42,7 +42,7 @@ const PlatformIntegrations = () => {
                         </h2>
                         
                         <p className="text-[16px] md:text-[17px] lg:text-[18px] text-slate-400 font-medium leading-relaxed max-w-xl mb-10 opacity-90">
-                            MicroCraft integrates with 100+ marketing tools, so you can rest assured we work with your tech stack.
+                            MicroKraft integrates with 100+ marketing tools, so you can rest assured we work with your tech stack.
                         </p>
                         
                         <button className="px-7 py-3.5 bg-[#142d24] hover:bg-[#1a382c] border border-white/10 text-white rounded-full text-[14px] font-black transition-all flex items-center gap-2 shadow-2xl group hover:-translate-y-0.5">
@@ -93,11 +93,11 @@ const PlatformIntegrations = () => {
                             {/* Inner Refractive Glow */}
                             <div className="absolute -inset-20 bg-emerald-500/30 blur-[70px] rounded-full group-hover:bg-emerald-400/40 transition-colors duration-700" />
                             
-                            {/* High-Fidelity MicroCraft Logo Card */}
+                            {/* High-Fidelity MicroKraft Logo Card */}
                             <div className="relative w-32 h-32 bg-gradient-to-br from-[#004a32] via-[#001f15] to-[#000d09] rounded-[36px] flex items-center justify-center border border-white/10 shadow-[0_0_60px_rgba(0,255,140,0.15)] overflow-hidden">
                                 <img 
                                     src="/logo.png" 
-                                    alt="MicroCraft Logo" 
+                                    alt="MicroKraft Logo" 
                                     className="w-20 h-20 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]"
                                 />
                                 {/* Refraction Overlay */}

@@ -55,7 +55,7 @@ const TESTIMONIALS = [
     role: "Head of Operations",
     company: "IBM",
     logo: "/ibm_logo.png",
-    quote: "The automation capabilities of Microcraft have completely transformed our branch operations. We've seen a massive reduction in manual data entry and a significant boost in productivity.",
+    quote: "The automation capabilities of MicroKraft have completely transformed our branch operations. We've seen a massive reduction in manual data entry and a significant boost in productivity.",
     stats: [
       { value: "40%", label: "Faster Workflows" },
       { value: "25k", label: "Hours Saved" },
@@ -68,7 +68,7 @@ const TESTIMONIALS = [
     role: "Director of IT",
     company: "Adobe",
     logo: "/adobe_logo.png",
-    quote: "Security and scalability were our top priorities. Microcraft delivered a robust system that handles our complex data structures with ease, while providing localized support.",
+    quote: "Security and scalability were our top priorities. MicroKraft delivered a robust system that handles our complex data structures with ease, while providing localized support.",
     stats: [
       { value: "Zero", label: "Security Breaches" },
       { value: "2x", label: "Faster Scaling" },

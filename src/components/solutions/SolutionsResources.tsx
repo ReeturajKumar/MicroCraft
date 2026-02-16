@@ -98,7 +98,7 @@ const SolutionsResources = () => {
                                 Explore Demo Dataset
                             </h3>
                             <p className="text-[14px] text-slate-500 font-medium leading-relaxed mb-8">
-                                Explore a full demo of MicroCraft. If you make a dashboard and like it, you can move it into your own project and add your own data.
+                                Explore a full demo of MicroKraft. If you make a dashboard and like it, you can move it into your own project and add your own data.
                             </p>
                             <div className="mt-auto flex items-center gap-2 text-[14px] font-bold text-slate-900 group-hover:gap-3 transition-all">
                                 Explore Demo Data <ChevronRight className="w-4 h-4" />

@@ -31,7 +31,7 @@ const SolutionTestimonial = () => {
                     transition={{ delay: 0.1 }}
                     className="text-[28px] md:text-[34px] lg:text-[40px] font-bold text-slate-900 leading-[1.2] tracking-tight mb-10 max-w-4xl"
                 >
-                    "MicroCraft is a gold mine. It is a must-have for organizations developing data-informed cultures. It allows our team to work from one data source, speak the same language, and see clearly what makes sense to build—and especially what doesn't."
+                    "MicroKraft is a gold mine. It is a must-have for organizations developing data-informed cultures. It allows our team to work from one data source, speak the same language, and see clearly what makes sense to build—and especially what doesn't."
                 </motion.h2>
 
                 {/* Author Info */}

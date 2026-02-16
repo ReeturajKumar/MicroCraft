@@ -41,7 +41,7 @@ const POSInventoryHero = () => {
           className="text-sm sm:text-base md:text-lg text-slate-500 max-w-2xl mx-auto mb-10 sm:mb-12 font-medium leading-relaxed"
         >
           Control your entire business from one simple, powerful dashboard. 
-          MicroCraft connects your stock to your customers with automated speed.
+          MicroKraft connects your stock to your customers with automated speed.
         </motion.p>
 
         {/* Action Buttons */}

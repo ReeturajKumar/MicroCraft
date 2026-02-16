@@ -33,7 +33,7 @@ const CRMVentureAdvantage = () => {
               viewport={{ once: true }}
               className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-3 tracking-tight"
             >
-              The MicroCraft Advantage
+              The MicroKraft Advantage
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 15 }}
@@ -42,7 +42,7 @@ const CRMVentureAdvantage = () => {
               transition={{ delay: 0.1 }}
               className="text-sm sm:text-base text-slate-500 font-medium max-w-lg mx-auto md:mx-0"
             >
-              Discover why leading businesses choose MicroCraft for their growth.
+              Discover why leading businesses choose MicroKraft for their growth.
             </motion.p>
           </div>
           

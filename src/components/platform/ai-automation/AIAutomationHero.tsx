@@ -29,7 +29,7 @@ const AIAutomationHero = () => {
 
             {/* Description - Responsive Widths */}
             <p className="text-base md:text-lg text-[#3D5A58] font-medium leading-[1.6] max-w-xl xl:max-w-2xl mx-auto lg:mx-0 mb-10">
-              MicroCraft provides the unified infrastructure for the autonomous enterprise. 
+              MicroKraft provides the unified infrastructure for the autonomous enterprise. 
               Orchestrate complex AI workflows, automate production-grade feedback loops, 
               and scale high-performance agents with a platform built for industrial-scale reliability.
             </p>
