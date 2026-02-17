@@ -56,7 +56,7 @@ const platformMenuData: {
     title: "Teams",
     icon: <Users className="w-5 h-5 text-[#7856FF]" />,
     items: [
-      { title: "Product Teams", href: "/solutions" },
+      { title: "Product Teams", href: "/platform/product-teams" },
       { title: "Sales Teams", href: "/" },
       { title: "Operations Teams", href: "/" },
       { title: "Customer Support Teams", href: "/" },

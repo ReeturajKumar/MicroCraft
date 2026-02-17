@@ -30,7 +30,7 @@ const IntegrationsHero = () => {
               className="text-[36px] sm:text-[44px] lg:text-[52px] font-black text-[#1A1A1A] leading-[1.1] mb-6 tracking-tight"
             >
               The Heart of Your <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7856FF] to-[#A855F7]">Digital Ecosystem</span>
+              <span className="text-[#7856FF]">Digital Ecosystem</span>
             </motion.h1>
             
             <motion.p 

@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import AIAutomation from "./pages/platform/AIAutomation";
 import Integrations from "./pages/platform/Integrations";
+import ProductTeams from "./pages/platform/ProductTeams";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/platform/accounting-compliance" element={<AccountingCompliance />} />
         <Route path="/platform/business-dashboards" element={<BusinessDashboards />} />
         <Route path="/platform/integrations" element={<Integrations />} />
+        <Route path="/platform/product-teams" element={<ProductTeams />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/industries" element={<Industries />} />
       </Routes>

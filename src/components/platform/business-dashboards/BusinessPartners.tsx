@@ -20,9 +20,9 @@ const partners = [
 
 const BusinessPartners = () => {
   return (
-    <section className="py-12 bg-white border-y border-slate-50">
+    <section className="py-6 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-10">
+        <div className="text-center mb-5">
           <p className="text-[13px] font-medium text-slate-400 tracking-tight">
             Loved by 20+ large companies in the world
           </p>
