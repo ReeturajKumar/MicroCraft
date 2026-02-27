@@ -1,11 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronRight, BarChart3, Database } from "lucide-react";
-import carImage from "../../assets/Car.png";
+import carImage from "../../assets/Car.webp";
 
-/**
- * PLATFORM HERO COMPONENT
- * Showcasing Microkraft AI's complete business platform
- */
 
 const PlatformHero = () => {
     return (

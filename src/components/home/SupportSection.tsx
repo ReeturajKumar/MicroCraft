@@ -1,3 +1,6 @@
+import communityImg from '../../assets/support/community.webp'
+import handshakeImg from '../../assets/support/handshake.webp'
+import toggleImg from '../../assets/support/toggle.webp'
 import { ArrowRight } from 'lucide-react';
 
 const SUPPORT_CARDS = [
@@ -5,21 +8,21 @@ const SUPPORT_CARDS = [
     title: "Work Directly With Expert",
     description: "Get guidance from consultants who understand your business and help you make the right technology decisions",
     linkText: "Talk to an Expert",
-    icon: "/assets/images/support/handshake.png",
+    icon: handshakeImg,
     bgColor: "bg-[#F3E8FF]" // Light purple
   },
   {
     title: " Simple Training for Your Team",
     description: "Easy onboarding, clear training sessions, and step-by-step guidance so your staff feels confident using the system",
     linkText: "View Training",
-    icon: "/assets/images/support/toggle.png",
+    icon: toggleImg,
     bgColor: "bg-[#E0F2FE]" // Light blue
   },
   {
     title: "Fast Help When You Need It",
     description: "Quick support through calls, WhatsApp, and remote assistance — so problems get solved without delays",
     linkText: "Get Support",
-    icon: "/assets/images/support/community.png",
+    icon: communityImg,
     bgColor: "bg-[#FFEDD5]" // Light orange/peach
   }
 ];

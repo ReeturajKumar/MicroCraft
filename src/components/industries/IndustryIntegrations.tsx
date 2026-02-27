@@ -1,23 +1,33 @@
 import { motion } from "framer-motion";
+import img1 from "../../assets/Slack-logo.webp";
+import img2 from "../../assets/Husbspot.webp";
+import img3 from "../../assets/Salesforce.webp";
+import img4 from "../../assets/microsoft_azure.webp";
+import img5 from "../../assets/google-cloud.webp";
+import img6 from "../../assets/Amazon_Web_Services_Logo.svg.webp";
+import img7 from "../../assets/zapier.webp";
+import img8 from "../../assets/Jira.webp";
+import img9 from "../../assets/shopify.webp";
+import img10 from "../../assets/Notion.webp";
+import img11 from "../../assets/GoogleSheet.webp";
+import img12 from "../../assets/TallyPrime.webp";
 
 const IndustryIntegrations = () => {
-    // Precise trigonometric arrangement for a perfect orbital map
     const integrations = [
-        // Outer Ring (Radius ~40%) - 0, 45, 90, 135, 180, 225, 270, 315 degrees
-        { id: 1, x: "50.0%", y: "10.0%", logo: "https://www.vectorlogo.zone/logos/slack/slack-icon.svg" },
-        { id: 2, x: "78.3%", y: "21.7%", logo: "https://www.vectorlogo.zone/logos/hubspot/hubspot-icon.svg" },
-        { id: 3, x: "90.0%", y: "50.0%", logo: "https://www.vectorlogo.zone/logos/salesforce/salesforce-icon.svg" },
-        { id: 4, x: "78.3%", y: "78.3%", logo: "https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" },
-        { id: 5, x: "50.0%", y: "90.0%", logo: "https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" },
-        { id: 6, x: "21.7%", y: "78.3%", logo: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" },
-        { id: 7, x: "10.0%", y: "50.0%", logo: "https://www.vectorlogo.zone/logos/zapier/zapier-icon.svg" },
-        { id: 8, x: "21.7%", y: "21.7%", logo: "https://www.vectorlogo.zone/logos/atlassian_jira/atlassian_jira-icon.svg" },
+        { id: 1, x: "50.0%", y: "10.0%", logo: img1 },
+        { id: 2, x: "78.3%", y: "21.7%", logo: img2 },
+        { id: 3, x: "90.0%", y: "50.0%", logo: img3 },
+        { id: 4, x: "78.3%", y: "78.3%", logo: img4 },
+        { id: 5, x: "50.0%", y: "90.0%", logo: img5 },
+        { id: 6, x: "21.7%", y: "78.3%", logo: img6 },
+        { id: 7, x: "10.0%", y: "50.0%", logo: img7 },
+        { id: 8, x: "21.7%", y: "21.7%", logo: img8 },
         
         // Inner Ring (Radius ~22%, Staggered at 45, 135, 225, 315 degrees)
-        { id: 9, x: "65.6%", y: "34.4%", logo: "https://www.vectorlogo.zone/logos/shopify/shopify-icon.svg" },
-        { id: 10, x: "65.6%", y: "65.6%", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/960px-Notion-logo.svg.png" },
-        { id: 11, x: "34.4%", y: "65.6%", logo: "https://cdn-icons-png.flaticon.com/512/2965/2965327.png" },
-        { id: 12, x: "34.4%", y: "34.4%", logo: "https://www.vectorlogo.zone/logos/trello/trello-icon.svg" },
+        { id: 9, x: "65.6%", y: "34.4%", logo: img9 },
+        { id: 10, x: "65.6%", y: "65.6%", logo: img10 },
+        { id: 11, x: "34.4%", y: "65.6%", logo: img11 },
+        { id: 12, x: "34.4%", y: "34.4%", logo: img12 },
     ];
 
     return (

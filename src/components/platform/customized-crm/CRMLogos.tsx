@@ -1,38 +1,44 @@
 import { motion } from "framer-motion";
+import img1 from "../../../assets/coinbase.webp";
+import img2 from "../../../assets/Dropbox-logo.webp";
+import img3 from "../../../assets/google.webp";
+import img4 from "../../../assets/Slack-logo.webp";
+import img5 from "../../../assets/squre.webp";
+import img6 from "../../../assets/Zoom-Logo.webp";
 
 const LOGOS = [
   {
     name: "coinbase",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Coinbase.svg/1280px-Coinbase.svg.png",
-    height: "h-5 md:h-6"
+    src: img1,
+    height: "h-5 md:h-6",
   },
   {
     name: "dropbox",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Dropbox_Logo_01.svg/960px-Dropbox_Logo_01.svg.png",
-    height: "h-6 md:h-7"
+    src: img2,
+    height: "h-6 md:h-7",
   },
   {
     name: "google",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1024px-Google_2015_logo.svg.png",
-    height: "h-6 md:h-8"
+    src: img3,
+    height: "h-6 md:h-8",
   },
   {
     name: "slack",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Slack_icon_2019.svg/1024px-Slack_icon_2019.svg.png",
+    src: img4,
     height: "h-6 md:h-7",
     hasWordmark: true,
-    wordmark: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Slack_Technologies_Logo.svg/1024px-Slack_Technologies_Logo.svg.png"
+    wordmark: img4,
   },
   {
     name: "square",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Square%2C_Inc._logo.svg/3840px-Square%2C_Inc._logo.svg.png",
-    height: "h-6 md:h-7"
+    src: img5,
+    height: "h-5 md:h-6",
   },
   {
     name: "zoom",
-    src: "https://upload.wikimedia.org/wikipedia/commons/2/24/Zoom-Logo.png",
-    height: "h-5 md:h-6"
-  }
+    src: img6,
+    height: "h-5 md:h-6",
+  },
 ];
 
 const CRMLogos = () => {
@@ -41,7 +47,7 @@ const CRMLogos = () => {
       <div className="max-w-8xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
         {/* Left Side - Text */}
         <div className="flex-1 text-center lg:text-left">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -50,14 +56,15 @@ const CRMLogos = () => {
             Trusted by Many <br />
             Established Companies
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-slate-500 font-medium text-sm md:text-base max-w-md mx-auto lg:mx-0"
           >
-            20+ Businesses and Companies uses Converge <br className="hidden md:block" />
+            20+ Businesses and Companies uses Converge{" "}
+            <br className="hidden md:block" />
             for theirs CRM Platform
           </motion.p>
         </div>
@@ -74,9 +81,9 @@ const CRMLogos = () => {
                 transition={{ delay: idx * 0.1 }}
                 className="flex items-center justify-center h-12"
               >
-                <img 
-                  src={logo.wordmark || logo.src} 
-                  alt={logo.name} 
+                <img
+                  src={logo.wordmark || logo.src}
+                  alt={logo.name}
                   className={`${logo.height} w-auto object-contain `}
                 />
               </motion.div>

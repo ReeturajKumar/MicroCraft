@@ -1,44 +1,45 @@
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-
-/**
- * AIAutomationResources Component
- * Features a main case study and a 3-column grid of blog posts/templates.
- * Designed with image placeholders as requested.
- */
+import img1 from "../../../assets/bg1.webp";
+import img2 from "../../../assets/bg2.webp";
+import img3 from "../../../assets/bg4.webp";
+import img4 from "../../../assets/bg3.webp";
 
 const AIAutomationResources = () => {
   // --- ADD YOUR IMAGE URLS HERE ---
-  const mainCaseStudyImage = "https://framerusercontent.com/images/0EbItH9b5Q7OOS7Kd6dkZxrHkU.png?width=1920&height=1345"; 
+  const mainCaseStudyImage = img1;
 
   const resources = [
     {
       badge: "Case Study",
-      title: "How TechFlow scaled their AI Agent fleet from 10 to 1,000+ with MicroKraft Orchestration",
-      description: "Learn how TechFlow implemented MicroKraft's instrumentation layer to achieve 99.9% fulfillment reliability across their autonomous customer service agents.",
+      title:
+        "How TechFlow scaled their AI Agent fleet from 10 to 1,000+ with MicroKraft Orchestration",
+      description:
+        "Learn how TechFlow implemented MicroKraft's instrumentation layer to achieve 99.9% fulfillment reliability across their autonomous customer service agents.",
       linkText: "Read Case Study",
-      image: "https://framerusercontent.com/images/ZJxAqcQJovYOivWFETu6STHXF0.png?width=858&height=320"
+      image: img2,
     },
     {
       badge: "Blog Post",
       title: "Optimizing Token Latency: A Guide to Edge Inference Deployment",
-      description: "Deep dive into sub-100ms LLM response times using MicroKraft's global edge infrastructure.",
+      description:
+        "Deep dive into sub-100ms LLM response times using MicroKraft's global edge infrastructure.",
       linkText: "Read Guide",
-      image: "https://framerusercontent.com/images/Bhv5d4g1d1C9X7UswnQY8RutdLM.svg?width=736&height=414"
+      image: img3,
     },
     {
       badge: "Blog Post",
       title: "Architecting Stateful Memory for Large-Scale Agent Workflows",
-      description: "Best practices for managing long-term agent context and session persistence at scale.",
+      description:
+        "Best practices for managing long-term agent context and session persistence at scale.",
       linkText: "Read Deep Dive",
-      image: "https://framerusercontent.com/images/NqzawBxF9jLoZHXjsE7FkUCLLOA.png?width=1184&height=481"
-    }
+      image: img4,
+    },
   ];
 
   return (
     <section className="relative w-full py-10 md:py-20 bg-white font-sans overflow-hidden border-t border-slate-50">
       <div className="max-w-8xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16">
-        
         {/* Section Header - Perfectly Responsive */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
           <motion.div
@@ -52,10 +53,11 @@ const AIAutomationResources = () => {
               Industrial reliability for every model you ship
             </h2>
             <p className="text-sm sm:text-[15px] text-[#4D6462] font-medium leading-relaxed max-w-xl mx-auto md:mx-0">
-              Technical blueprints and guides for scaling autonomous systems with industrial reliability.
+              Technical blueprints and guides for scaling autonomous systems
+              with industrial reliability.
             </p>
           </motion.div>
-          
+
           <motion.button
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -67,7 +69,7 @@ const AIAutomationResources = () => {
             <ChevronRight className="w-4 h-4" />
           </motion.button>
         </div>
-        
+
         {/* Featured Case Study Section - Responsive Layout Engine */}
         <div className="bg-[#F9FAFB] rounded-[24px] sm:rounded-[32px] overflow-hidden mb-10 md:mb-12 border border-slate-50 group">
           <div className="flex flex-col lg:flex-row items-stretch">
@@ -82,11 +84,13 @@ const AIAutomationResources = () => {
                 Scaling 1,000+ Autonomous Agents with MicroKraft Orchestration
               </h2>
               <p className="text-sm sm:text-[15px] text-[#4D6462] font-medium leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
-                Learn how TechFlow used MicroKraft's instrumentation layer to solve stateful memory bottlenecks and achieve 99.9% fulfillment reliability in production environments.
+                Learn how TechFlow used MicroKraft's instrumentation layer to
+                solve stateful memory bottlenecks and achieve 99.9% fulfillment
+                reliability in production environments.
               </p>
               <div className="flex justify-center lg:justify-start">
                 <button className="w-full sm:w-auto flex items-center justify-center gap-2 group/btn bg-[#1A3F3C] text-white lg:bg-transparent lg:text-[#1A3F3C] px-8 py-4 lg:p-0 rounded-xl font-bold text-sm hover:opacity-70 transition-all">
-                  Read Study 
+                  Read Study
                   <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
               </div>
@@ -94,11 +98,14 @@ const AIAutomationResources = () => {
 
             {/* Right Image Container - Responsive Height */}
             <div className="flex-1 w-full min-h-[240px] sm:min-h-[320px] lg:h-auto border-t lg:border-t-0 lg:border-l border-white bg-slate-100 overflow-hidden">
-              <img 
-                src={mainCaseStudyImage} 
-                alt="AI Agent Orchestration Analysis" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
-                onError={(e) => (e.currentTarget.src = "https://placehold.co/1200x800/e2e8f0/94a3b8?text=Infrastructure+Analysis")}
+              <img
+                src={mainCaseStudyImage}
+                alt="AI Agent Orchestration Analysis"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                onError={(e) =>
+                  (e.currentTarget.src =
+                    "https://placehold.co/1200x800/e2e8f0/94a3b8?text=Infrastructure+Analysis")
+                }
               />
             </div>
           </div>
@@ -117,14 +124,16 @@ const AIAutomationResources = () => {
             >
               {/* Image Container - Fixed Aspect Ratio */}
               <div className="w-full aspect-[16/10] bg-slate-100 overflow-hidden">
-                 <img 
-                   src={resource.image} 
-                   alt={resource.title} 
-                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" 
-                   onError={(e) => (e.currentTarget.src = `https://placehold.co/600x400/e2e8f0/94a3b8?text=${resource.badge}`)}
-                 />
+                <img
+                  src={resource.image}
+                  alt={resource.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                  onError={(e) =>
+                    (e.currentTarget.src = `https://placehold.co/600x400/e2e8f0/94a3b8?text=${resource.badge}`)
+                  }
+                />
               </div>
-              
+
               {/* Content - Adaptive Spacing */}
               <div className="p-6 sm:p-8 flex flex-col flex-1">
                 <div className="mb-4">

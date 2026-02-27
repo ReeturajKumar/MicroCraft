@@ -1,18 +1,28 @@
 import { motion } from "framer-motion";
 import { Check, ArrowRight, Zap, RefreshCw, Layers } from "lucide-react";
+import img1 from "../../../assets/GoogleSheet.webp"
+import img2 from "../../../assets/Rozarpay.webp"
+import img3 from "../../../assets/Notion.webp"
+import img4 from "../../../assets/Payu.webp"
+import img5 from "../../../assets/Husbspot.webp";
+import img6 from "../../../assets/Stripe.webp";
+import img7 from "../../../assets/Slack-logo.webp";
+import img8 from "../../../assets/Zoom-Logo.webp";
+import img9 from "../../../assets/Instagram_logo_2016.webp";
+import img10 from "../../../assets/linkdin.webp";
 
 const IntegrationsHero = () => {
   const satellites = [
-    { icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/500px-Google_Sheets_logo_%282014-2020%29.svg.png", delay: 0.1, top: "10%", left: "70%" },
-    { icon: "https://play-lh.googleusercontent.com/2BQu8Y7Ah9Gh9CZvmaMSYIcZvdO4KfdJ26EZ1WGyaOG_xxeDxNn-AZYxOtQJvyQQPFY", delay: 0.2, top: "25%", left: "90%" },
-    { icon: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg", delay: 0.3, top: "60%", left: "95%" },
-    { icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png", delay: 0.4, top: "85%", left: "80%" },
-    { icon: "https://www.nopcommerce.com/images/thumbs/0023949_payu-money-india.png", delay: 0.5, top: "92%", left: "35%" },
-    { icon: "https://upload.wikimedia.org/wikipedia/commons/3/3f/HubSpot_Logo.svg", delay: 0.6, top: "75%", left: "10%" },
-    { icon: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg", delay: 0.7, top: "45%", left: "5%" },
-    { icon: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg", delay: 0.8, top: "15%", left: "20%" },
-    { icon: "https://cdn.worldvectorlogo.com/logos/zoom-app.svg", delay: 0.9, top: "5%", left: "45%" },
-    { icon: "https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg", delay: 1.0, top: "35%", left: "75%" },
+    { icon: img1, delay: 0.1, top: "10%", left: "70%" },
+    { icon: img2, delay: 0.2, top: "25%", left: "90%" },
+    { icon: img3, delay: 0.3, top: "60%", left: "95%" },
+    { icon: img9, delay: 0.4, top: "85%", left: "80%" },
+    { icon: img4, delay: 0.5, top: "92%", left: "35%" },
+    { icon: img5, delay: 0.6, top: "75%", left: "10%" },
+    { icon: img6, delay: 0.7, top: "45%", left: "5%" },
+    { icon: img7, delay: 0.8, top: "15%", left: "20%" },
+    { icon: img8, delay: 0.9, top: "5%", left: "45%" },
+    { icon: img10, delay: 1.0, top: "35%", left: "75%" },
   ];
 
   return (

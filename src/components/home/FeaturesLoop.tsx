@@ -1,5 +1,3 @@
-;
-
 import { ChevronRight } from "lucide-react";
 
 /**
@@ -60,9 +58,11 @@ export function FeaturesLoop() {
               <p className="text-[17px] leading-[1.6] text-[#3F3F46] font-normal font-sans max-w-[440px]">
                 Every business works differently.
                 <br />
-                Your customers, your team, and your daily work are not the same as anyone else.
+                Your customers, your team, and your daily work are not the same
+                as anyone else.
                 <br />
-                So we understand your business first, and then build a simple system that matches how you actually work.
+                So we understand your business first, and then build a simple
+                system that matches how you actually work.
               </p>
               <button className="mt-2 inline-flex items-center justify-center gap-1.5 text-[15px] font-bold text-white bg-[#1F2023] rounded-full px-6 py-3 hover:bg-[#333] transition-all hover:-translate-y-0.5 shadow-md">
                 Talk to Our Team <ChevronRight className="w-4 h-4 ml-0.5" />

@@ -1,70 +1,88 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import img1 from "../../../assets/Slack-logo.webp";
+import img2 from "../../../assets/webflow.webp";
+import img3 from "../../../assets/Trello.webp";
+import img4 from "../../../assets/Asana_logo.webp";
+import img5 from "../../../assets/Dribbble_logo_perple.webp";
+import img6 from "../../../assets/Dropbox-logo.webp";
+import img7 from "../../../assets/Intercom.webp";
+import img8 from "../../../assets/Zendesk_logo.webp";
+import img9 from "../../../assets/Stripe.webp";
 
 const integrations = [
   {
     name: "Slack",
-    description: "Sync communications and automate channel updates based on platform triggers.",
-    icon: "https://www.smarsh.com/media/Slack.png",
+    description:
+      "Sync communications and automate channel updates based on platform triggers.",
+    icon: img1,
     category: "Communication",
-    color: "#4A154B"
+    color: "#4A154B",
   },
   {
     name: "Webflow",
-    description: "Pull real-time data from your dashboard directly into your Webflow CMS collections.",
-    icon: "https://icon-icons.com/download-file?file=https%3A%2F%2Fimages.icon-icons.com%2F2699%2FPNG%2F512%2Fwebflow_logo_icon_169218.png&id=169218&pack_or_individual=pack",
+    description:
+      "Pull real-time data from your dashboard directly into your Webflow CMS collections.",
+    icon: img2,
     category: "Development",
-    color: "#4353FF"
+    color: "#4353FF",
   },
   {
     name: "Trello",
-    description: "Automatically create cards and move tasks through your pipeline from anywhere.",
-    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp1qb4_f1sKSsZOYyCaqbY3ST6D-Pdi66wMA&s",
+    description:
+      "Automatically create cards and move tasks through your pipeline from anywhere.",
+    icon: img3,
     category: "Management",
-    color: "#0079BF"
+    color: "#0079BF",
   },
   {
     name: "Asana",
-    description: "Manage complex projects by syncing departmental milestones with external tasks.",
-    icon: "https://cdn.worldvectorlogo.com/logos/asana-logo.svg",
+    description:
+      "Manage complex projects by syncing departmental milestones with external tasks.",
+    icon: img4,
     category: "Management",
-    color: "#F06595"
+    color: "#F06595",
   },
   {
     name: "Dribbble",
-    description: "Showcase your latest designs and track engagement metrics in one central place.",
-    icon: "https://wp.logos-download.com/wp-content/uploads/2016/09/Dribbble_logo_perple.svg?dl",
+    description:
+      "Showcase your latest designs and track engagement metrics in one central place.",
+    icon: img5,
     category: "Design",
-    color: "#EA4C89"
+    color: "#EA4C89",
   },
   {
     name: "Dropbox",
-    description: "Securely store and retrieve documents directly within your customer folders.",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Dropbox_Icon.svg/960px-Dropbox_Icon.svg.png",
+    description:
+      "Securely store and retrieve documents directly within your customer folders.",
+    icon: img6,
     category: "Storage",
-    color: "#0061FF"
+    color: "#0061FF",
   },
   {
     name: "Intercom",
-    description: "Connect your support chat history with CRM profiles for a unified customer view.",
-    icon: "https://icon-icons.com/download-file?file=https%3A%2F%2Fimages.icon-icons.com%2F2699%2FPNG%2F512%2Fintercom_logo_icon_169644.png&id=169644&pack_or_individual=pack",
+    description:
+      "Connect your support chat history with CRM profiles for a unified customer view.",
+    icon: img7,
     category: "Support",
-    color: "#00E26B"
+    color: "#00E26B",
   },
   {
     name: "Zendesk",
-    description: "High-performance ticketing sync for enterprise-level support operations.",
-    icon: "https://cdn.worldvectorlogo.com/logos/zendesk-3.svg",
+    description:
+      "High-performance ticketing sync for enterprise-level support operations.",
+    icon: img8,
     category: "Support",
-    color: "#03363D"
+    color: "#03363D",
   },
   {
     name: "Stripe",
-    description: "Manage subscriptions, payments, and financial auditing directly from your hub.",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/1280px-Stripe_Logo%2C_revised_2016.svg.png",
+    description:
+      "Manage subscriptions, payments, and financial auditing directly from your hub.",
+    icon: img9,
     category: "Finance",
-    color: "#635BFF"
-  }
+    color: "#635BFF",
+  },
 ];
 
 const IntegrationsGrid = () => {
@@ -77,11 +95,10 @@ const IntegrationsGrid = () => {
       </div>
 
       <div className="max-w-8xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20 relative z-10">
-        
         {/* Direct Header Layout */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 sm:gap-8 lg:gap-12 mb-10 md:mb-12">
           <div className="max-w-2xl text-left">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -89,14 +106,15 @@ const IntegrationsGrid = () => {
             >
               Native Integrations.
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
               className="text-slate-500 text-[15px] sm:text-[16px] md:text-[18px] font-medium leading-relaxed max-w-lg"
             >
-              Connect and synchronize your favorite tools to automate workflows across every department.
+              Connect and synchronize your favorite tools to automate workflows
+              across every department.
             </motion.p>
           </div>
 
@@ -125,17 +143,19 @@ const IntegrationsGrid = () => {
             >
               <div className="flex justify-between items-start mb-5 md:mb-6">
                 {/* Icon Container */}
-                <div 
-                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-center justify-center p-2.5 sm:p-3 border border-slate-50"
-                >
-                  <img src={app.icon} alt={app.name} className="w-full h-full object-contain" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-center justify-center p-2.5 sm:p-3 border border-slate-50">
+                  <img
+                    src={app.icon}
+                    alt={app.name}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
-                
+
                 <div className="flex flex-col items-end">
                   <div className="text-[9px] sm:text-[10px] font-black text-slate-300 uppercase tracking-widest mb-1">
                     {app.category}
                   </div>
-                  <div 
+                  <div
                     className="w-8 h-1 rounded-full"
                     style={{ backgroundColor: app.color }}
                   />
@@ -145,7 +165,9 @@ const IntegrationsGrid = () => {
               {/* Content */}
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
-                  <h3 className="text-[18px] sm:text-[20px] font-black text-[#1A1A1A] tracking-tight">{app.name}</h3>
+                  <h3 className="text-[18px] sm:text-[20px] font-black text-[#1A1A1A] tracking-tight">
+                    {app.name}
+                  </h3>
                 </div>
                 <p className="text-slate-500 text-[14px] sm:text-[15px] leading-relaxed font-medium">
                   {app.description}
