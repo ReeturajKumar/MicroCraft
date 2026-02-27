@@ -1,5 +1,3 @@
-;
-
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check } from "lucide-react";
@@ -71,17 +69,17 @@ export function WhyChooseSection() {
         </div>
 
         {/* --- THE MAIN CAPSULE CARD --- */}
-        <div className="relative bg-gradient-to-br from-[#FAFAFA] to-white rounded-[48px] md:rounded-[64px] overflow-hidden border border-gray-200/60 flex flex-col lg:flex-row items-stretch">
+        <div className="relative bg-linear-to-br from-[#FAFAFA] to-white rounded-[48px] md:rounded-[64px] overflow-hidden border border-gray-200/60 flex flex-col lg:flex-row items-stretch">
             
             {/* LEFT: VISUAL (Takes full height) */}
-            <div className="relative w-full lg:w-[50%] min-h-[380px] lg:min-h-[440px] overflow-hidden bg-gradient-to-br from-[#8B5CF6] via-[#D946EF] to-[#FB923C]/50 lg:rounded-l-[inherit]">
+            <div className="relative w-full lg:w-[50%] min-h-95 lg:min-h-110 overflow-hidden bg-linear-to-br from-[#8B5CF6] via-[#D946EF] to-[#FB923C]/50 lg:rounded-l-[inherit]">
               {/* Decorative Side Glow */}
-              <div className="absolute top-0 left-0 w-12 h-full bg-gradient-to-b from-white/10 to-transparent z-0" />
+              <div className="absolute top-0 left-0 w-12 h-full bg-linear-to-b from-white/10 to-transparent z-0" />
               
               {/* The "Shifted" White Window Card */}
-              <div className="absolute top-8 left-8 right-[-2px] bottom-[-2px] bg-white rounded-tl-[32px] shadow-[-12px_12px_48px_rgba(0,0,0,0.12)] border-t border-l border-white/30 overflow-hidden flex flex-col">
+              <div className="absolute top-8 left-8 -right-0.5 -bottom-0.5 bg-white rounded-tl-4xl shadow-[-12px_12px_48px_rgba(0,0,0,0.12)] border-t border-l border-white/30 overflow-hidden flex flex-col">
                 {/* Decorative UI Header inside the card */}
-                <div className="h-14 border-b border-gray-100 flex items-center px-6 gap-5 flex-shrink-0">
+                <div className="h-14 border-b border-gray-100 flex items-center px-6 gap-5 shrink-0">
                   <span className="text-gray-400 font-light text-2xl">+</span>
                   <div className="flex gap-2.5 ml-4">
                     <div className="h-5 w-20 bg-gray-50 rounded-full border border-gray-100" />
@@ -129,7 +127,7 @@ export function WhyChooseSection() {
                         }`}
                       >
                         {/* Checkmark */}
-                        <div className="mt-1.5 flex-shrink-0">
+                        <div className="mt-1.5 shrink-0">
                           <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 ${
                             isActive 
                               ? "bg-[#7C3AED] shadow-[0_0_16px_rgba(124,58,237,0.5)]" 
@@ -164,7 +162,7 @@ export function WhyChooseSection() {
                           {isActive && (
                             <motion.div
                               layoutId="activeFeatureBar"
-                              className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#7C3AED] to-[#D946EF] rounded-full"
+                              className="absolute bottom-0 left-0 right-0 h-0.75 bg-linear-to-r from-[#7C3AED] to-[#D946EF] rounded-full"
                               transition={{ type: "spring", bounce: 0, duration: 0.6 }}
                             />
                           )}

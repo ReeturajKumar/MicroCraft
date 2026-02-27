@@ -70,8 +70,8 @@ const BusinessPartners = () => {
           </motion.div>
 
           {/* Gradient Fades for a premium look */}
-          <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-white to-transparent z-10" />
-          <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-white to-transparent z-10" />
+          <div className="absolute top-0 left-0 w-24 h-full bg-linear-to-r from-white to-transparent z-10" />
+          <div className="absolute top-0 right-0 w-24 h-full bg-linear-to-l from-white to-transparent z-10" />
         </div>
       </div>
     </section>

@@ -9,7 +9,7 @@ const SolutionsHero = () => {
   return (
     <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden pt-24 pb-12">
       {/* Enhanced Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-[#faf9ff] to-[#f3f0ff] pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-br from-white via-[#faf9ff] to-[#f3f0ff] pointer-events-none" />
 
       <div className="max-w-8xl mx-auto px-6 md:px-12 lg:px-16 w-full relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
         {/* Left: Content Side */}
@@ -21,7 +21,7 @@ const SolutionsHero = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] tracking-tight mb-5"
           >
             Smart Solutions for <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7856FF] to-[#B3A0FF]">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7856FF] to-[#B3A0FF]">
               Growing Businesses
             </span>
           </motion.h1>
@@ -45,7 +45,7 @@ const SolutionsHero = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-3.5 mb-7"
           >
             <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white/80 backdrop-blur-sm border border-slate-100 hover:border-purple-200 hover:shadow-sm transition-all">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+              <div className="w-8 h-8 rounded-lg bg-linear-to-br from-purple-500 to-purple-600 flex items-center justify-center shrink-0 shadow-sm">
                 <CheckCircle2 className="w-4 h-4 text-white" />
               </div>
               <div>
@@ -58,7 +58,7 @@ const SolutionsHero = () => {
               </div>
             </div>
             <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white/80 backdrop-blur-sm border border-slate-100 hover:border-purple-200 hover:shadow-sm transition-all">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+              <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-blue-600 flex items-center justify-center shrink-0 shadow-sm">
                 <Zap className="w-4 h-4 text-white" />
               </div>
               <div>
@@ -134,7 +134,7 @@ const SolutionsHero = () => {
             className="relative w-full max-w-xl"
           >
             {/* Glow Effects */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-blue-400/20 rounded-full blur-3xl" />
+            <div className="absolute inset-0 bg-linear-to-br from-purple-400/20 to-blue-400/20 rounded-full blur-3xl" />
 
             {/* Main Image Container */}
             <div className="relative z-10 w-full">
@@ -150,10 +150,10 @@ const SolutionsHero = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
-                  className="absolute top-5 -left-4 bg-white rounded-xl shadow-xl border border-slate-100 p-2 min-w-[160px]"
+                  className="absolute top-5 -left-4 bg-white rounded-xl shadow-xl border border-slate-100 p-2 min-w-40"
                 >
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center">
+                    <div className="w-7 h-7 rounded-xl bg-linear-to-br from-emerald-400 to-emerald-600 flex items-center justify-center">
                       <TrendingUp className="w-3 h-3 text-white" />
                     </div>
                     <div>
@@ -171,10 +171,10 @@ const SolutionsHero = () => {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 1 }}
-                  className="absolute bottom-5 -right-2 bg-white rounded-xl shadow-xl border border-slate-100 p-2 min-w-[160px]"
+                  className="absolute bottom-5 -right-2 bg-white rounded-xl shadow-xl border border-slate-100 p-2 min-w-40"
                 >
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                    <div className="w-7 h-7 rounded-xl bg-linear-to-br from-purple-400 to-purple-600 flex items-center justify-center">
                       <CheckCircle2 className="w-3 h-3 text-white" />
                     </div>
                     <div>

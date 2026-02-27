@@ -74,7 +74,7 @@ const Hero = () => {
         </h1>
 
         {/* Subheadline */}
-        <p className="text-base md:text-[18px] leading-[1.6] text-[#1F2023]/70 mb-8 font-normal font-sans tracking-wide max-w-[650px] px-4 md:px-0">
+        <p className="text-base md:text-[18px] leading-[1.6] text-[#1F2023]/70 mb-8 font-normal font-sans tracking-wide max-w-162.5 px-4 md:px-0">
           Microkraft AI delivers customized CRM, AI automation, and smart
           business systems that simplify operations and help businesses grow
           faster.
@@ -93,8 +93,8 @@ const Hero = () => {
         {/* Logo Strip (Infinite Marquee) */}
         <div className="w-full max-w-6xl mb-4 md:mb-6 px-2 md:px-6 relative">
           {/* Edge Fades */}
-          <div className="absolute inset-y-0 left-0 w-20 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-20 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-20 md:w-32 bg-linear-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-20 md:w-32 bg-linear-to-l from-white to-transparent z-10 pointer-events-none" />
 
           <div className="overflow-hidden flex whitespace-nowrap mt-4">
             <div className="flex animate-marquee w-max items-center gap-12 md:gap-24  transition-all duration-100 py-4">
@@ -103,7 +103,7 @@ const Hero = () => {
                   key={idx}
                   src={logo.src}
                   alt={logo.alt}
-                  className={`${logo.height} w-auto object-contain flex-shrink-0`}
+                  className={`${logo.height} w-auto object-contain shrink-0`}
                 />
               ))}
             </div>
@@ -112,10 +112,10 @@ const Hero = () => {
       </div>
 
       {/* 2. Gradient Transition & Composite Dashboard */}
-      <div className="mx-2 md:mx-4 lg:mx-auto max-w-[1500px] relative bg-[#15003F] rounded-b-[20px] md:rounded-b-[40px] overflow-hidden">
+      <div className="mx-2 md:mx-4 lg:mx-auto max-w-375 relative bg-[#15003F] rounded-b-[20px] md:rounded-b-[40px] overflow-hidden">
         {/* Gradient Background - ABSOLUTE Layer behind content */}
         <div
-          className="absolute top-0 left-0 right-0 h-[400px] md:h-[800px] w-full z-0 pointer-events-none"
+          className="absolute top-0 left-0 right-0 h-100 md:h-200 w-full z-0 pointer-events-none"
           style={{
             background:
               "linear-gradient(180deg, #FFFFFF 5%, #FFF5F5 30%, #EAD4FF 42%, #9F7AEA 61%, #15003F 80%)",
@@ -126,7 +126,7 @@ const Hero = () => {
         <div className="relative z-10 max-w-6xl mx-auto px-8 md:px-12 perspective-2000px pb-24 md:pb-40 pt-12 md:pt-20">
           <div className="relative">
             {/* Main Dashboard */}
-            <div className="relative z-10 rounded-[20px] md:rounded-[24px] p-0.5 md:p-[4px] bg-white/20 shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_20px_40px_-12px_rgba(0,0,0,0.1)] transition-all duration-700 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.4)]">
+            <div className="relative z-10 rounded-[20px] md:rounded-3xl p-0.5 md:p-1 bg-white/20 shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_20px_40px_-12px_rgba(0,0,0,0.1)] transition-all duration-700 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.4)]">
               <img
                 src={dashboardMain}
                 alt="Microkraft Main Dashboard"

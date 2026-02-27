@@ -28,9 +28,9 @@ const PlatformIntegrations = () => {
   return (
     <section className="w-full bg-[#fdfdfd] px-4 md:px-8 lg:px-12 xl:px-16 pt-12 pb-16 md:pb-24 font-sans focus-within:z-40">
       <div className="max-w-8xl mx-auto">
-        <div className="relative w-full bg-[#001f15] rounded-[24px] md:rounded-[48px] overflow-hidden min-h-fit md:min-h-[500px] flex flex-col md:flex-row items-center border border-white/5">
+        <div className="relative w-full bg-[#001f15] rounded-3xl md:rounded-[48px] overflow-hidden min-h-fit md:min-h-125 flex flex-col md:flex-row items-center border border-white/5">
           {/* Background Radial Glow */}
-          <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#00ff8c]/10 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-150 h-150 bg-[#00ff8c]/10 blur-[120px] rounded-full pointer-events-none" />
 
           {/* Left content: Content Side */}
           <div className="relative z-20 flex-1 p-8 md:p-12 lg:p-16 xl:p-24 flex flex-col items-center md:items-start text-center md:text-left justify-center">
@@ -57,7 +57,7 @@ const PlatformIntegrations = () => {
           </div>
 
           {/* Right content: Visual Magic */}
-          <div className="relative z-10 flex-1 w-full h-full min-h-[350px] md:min-h-[500px] flex items-center justify-center pointer-events-none overflow-hidden pb-12 md:pb-0">
+          <div className="relative z-10 flex-1 w-full h-full min-h-87.5 md:min-h-125 flex items-center justify-center pointer-events-none overflow-hidden pb-12 md:pb-0">
             {/* Background Logo Grid - High Fidelity Integration */}
             <div className="absolute inset-0 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-y-10 md:gap-y-14 gap-x-6 md:gap-x-10 p-8 md:p-16 opacity-[0.05] brightness-0 invert rotate-12 scale-125">
               {[...LOGOS, ...LOGOS, ...LOGOS].slice(0, 30).map((logo, i) => (
@@ -104,14 +104,14 @@ const PlatformIntegrations = () => {
               <div className="absolute -inset-20 bg-emerald-500/30 blur-[70px] rounded-full group-hover:bg-emerald-400/40 transition-colors duration-700" />
 
               {/* High-Fidelity MicroKraft Logo Card */}
-              <div className="relative w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-[#004a32] via-[#001f15] to-[#000d09] rounded-[24px] md:rounded-[36px] flex items-center justify-center border border-white/10 shadow-[0_0_60px_rgba(0,255,140,0.15)] overflow-hidden">
+              <div className="relative w-24 h-24 md:w-32 md:h-32 bg-linear-to-br from-[#004a32] via-[#001f15] to-[#000d09] rounded-3xl md:rounded-[36px] flex items-center justify-center border border-white/10 shadow-[0_0_60px_rgba(0,255,140,0.15)] overflow-hidden">
                 <img
                   src="/logo.png"
                   alt="MicroKraft Logo"
                   className="w-14 h-14 md:w-20 md:h-20 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]"
                 />
                 {/* Refraction Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-tr from-white/5 to-transparent pointer-events-none" />
               </div>
             </div>
           </div>

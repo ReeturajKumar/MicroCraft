@@ -71,7 +71,7 @@ const AIAutomationResources = () => {
         </div>
 
         {/* Featured Case Study Section - Responsive Layout Engine */}
-        <div className="bg-[#F9FAFB] rounded-[24px] sm:rounded-[32px] overflow-hidden mb-10 md:mb-12 border border-slate-50 group">
+        <div className="bg-[#F9FAFB] rounded-3xl sm:rounded-4xl overflow-hidden mb-10 md:mb-12 border border-slate-50 group">
           <div className="flex flex-col lg:flex-row items-stretch">
             {/* Left Content */}
             <div className="flex-1 p-6 sm:p-10 lg:p-16 text-center lg:text-left flex flex-col justify-center">
@@ -80,7 +80,7 @@ const AIAutomationResources = () => {
                   Infrastructure Study
                 </span>
               </div>
-              <h2 className="text-xl sm:text-2xl lg:text-[28px] font-bold text-[#1A3F3C] leading-[1.25] mb-5">
+              <h2 className="text-xl sm:text-2xl lg:text-[28px] font-bold text-[#1A3F3C] leading-tight mb-5">
                 Scaling 1,000+ Autonomous Agents with MicroKraft Orchestration
               </h2>
               <p className="text-sm sm:text-[15px] text-[#4D6462] font-medium leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
@@ -97,7 +97,7 @@ const AIAutomationResources = () => {
             </div>
 
             {/* Right Image Container - Responsive Height */}
-            <div className="flex-1 w-full min-h-[240px] sm:min-h-[320px] lg:h-auto border-t lg:border-t-0 lg:border-l border-white bg-slate-100 overflow-hidden">
+            <div className="flex-1 w-full min-h-60 sm:min-h-80 lg:h-auto border-t lg:border-t-0 lg:border-l border-white bg-slate-100 overflow-hidden">
               <img
                 src={mainCaseStudyImage}
                 alt="AI Agent Orchestration Analysis"
@@ -120,10 +120,10 @@ const AIAutomationResources = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-[#F9FAFB] rounded-[24px] md:rounded-[32px] overflow-hidden border border-slate-50 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500 flex flex-col"
+              className="group bg-[#F9FAFB] rounded-3xl md:rounded-4xl overflow-hidden border border-slate-50 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500 flex flex-col"
             >
               {/* Image Container - Fixed Aspect Ratio */}
-              <div className="w-full aspect-[16/10] bg-slate-100 overflow-hidden">
+              <div className="w-full aspect-16/10 bg-slate-100 overflow-hidden">
                 <img
                   src={resource.image}
                   alt={resource.title}

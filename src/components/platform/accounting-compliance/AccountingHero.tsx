@@ -8,8 +8,8 @@ const AccountingHero = () => {
     <section className="relative pt-30 pb-32 overflow-hidden min-h-screen font-sans flex flex-col items-center justify-center">
       {/* Background Radial Pattern */}
       <div className="absolute inset-0 opacity-40 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[1000px] h-[1000px] bg-gradient-to-bl from-pink-200/40 to-transparent rounded-full blur-[140px]" />
-        <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-gradient-to-tr from-pink-100/30 to-transparent rounded-full blur-[120px]" />
+        <div className="absolute top-0 right-0 w-250 h-250 bg-linear-to-bl from-pink-200/40 to-transparent rounded-full blur-[140px]" />
+        <div className="absolute bottom-0 left-0 w-200 h-200 bg-linear-to-tr from-pink-100/30 to-transparent rounded-full blur-[120px]" />
       </div>
 
       <div className="max-w-8xl w-full mx-auto px-6 md:px-12 lg:px-20 relative z-10">
@@ -69,7 +69,7 @@ const AccountingHero = () => {
                 <img
                   src={img1}
                   alt="Professional Executive"
-                  className="w-full h-[500px] object-cover object-top mix-blend-multiply shadow-[0_50px_100px_-30px_rgba(0,0,0,0.12)]"
+                  className="w-full h-125 object-cover object-top mix-blend-multiply shadow-[0_50px_100px_-30px_rgba(0,0,0,0.12)]"
                 />
 
                 {/* Social Sidebar */}
@@ -118,7 +118,7 @@ const AccountingHero = () => {
       </div>
 
       {/* Standalone Mikal Testimonial - Positioned in the central marked area */}
-      <div className="absolute top-[24%] left-[38%] hidden xl:block z-[60] pointer-events-none">
+      <div className="absolute top-[24%] left-[38%] hidden xl:block z-60 pointer-events-none">
         <TestimonialCard
           name="Mikal lone"
           role="Chairman"
@@ -164,13 +164,21 @@ const AccountingHero = () => {
   );
 };
 
+interface TestimonialCardProps {
+  name: string;
+  role: string;
+  text: string;
+  className?: string;
+  delay?: number;
+}
+
 const TestimonialCard = ({
   name,
   role,
   text,
   className = "",
   delay = 0,
-}: any) => (
+}: TestimonialCardProps) => (
   <motion.div
     initial={{ opacity: 0, y: 40 }}
     animate={{ opacity: 1, y: 0 }}

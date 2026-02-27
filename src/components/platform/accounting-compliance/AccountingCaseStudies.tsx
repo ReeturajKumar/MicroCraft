@@ -78,16 +78,16 @@ const CaseCard = ({
     className="flex flex-col group overflow-hidden"
   >
     {/* Header / Title Overlay Area */}
-    <div className="relative h-[240px] overflow-hidden rounded-[20px]">
+    <div className="relative h-60 overflow-hidden rounded-[20px]">
       {/* Background Image */}
       <img
         src={image}
         alt={title}
-        className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+        className="w-full h-full object-cover grayscale-20 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
       />
 
       {/* Title Bar - Pinned to bottom for better visibility */}
-      <div className="absolute bottom-0 left-0 w-full z-20 bg-gradient-to-t from-black/90 via-black/40 to-transparent py-5 px-5">
+      <div className="absolute bottom-0 left-0 w-full z-20 bg-linear-to-t from-black/90 via-black/40 to-transparent py-5 px-5">
         <h3 className="text-white text-[13px] md:text-[14px] font-black leading-tight tracking-tight uppercase">
           {title}
         </h3>

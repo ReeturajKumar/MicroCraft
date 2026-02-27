@@ -32,7 +32,7 @@ const IndustryIntegrations = () => {
 
     return (
         <section className="w-full py-16 bg-white overflow-hidden">
-            <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+            <div className="max-w-360 mx-auto px-6 md:px-12">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-32">
                     
                     {/* Left Content */}
@@ -72,7 +72,7 @@ const IndustryIntegrations = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="flex-1 relative aspect-square w-full max-w-[500px]"
+                        className="flex-1 relative aspect-square w-full max-w-125"
                     >
                         <div className="absolute inset-0 bg-[#7856FF]/5 rounded-[2.5rem] flex items-center justify-center overflow-hidden">
                             {/* Inner/Outer Circles (Static) */}

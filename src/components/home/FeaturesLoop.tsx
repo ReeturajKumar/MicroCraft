@@ -47,7 +47,7 @@ const features = [
 export function FeaturesLoop() {
   return (
     <section className="relative w-full bg-white py-24 font-sans">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
+      <div className="max-w-350 mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-20">
           {/* LEFT COLUMN: Sticky Header */}
           <div className="lg:w-[35%] relative">
@@ -55,7 +55,7 @@ export function FeaturesLoop() {
               <h2 className="text-[36px] lg:text-[40px] leading-[1.15] font-bold font-sans text-[#1F2023] tracking-tight">
                 A System Built for Your Business.
               </h2>
-              <p className="text-[17px] leading-[1.6] text-[#3F3F46] font-normal font-sans max-w-[440px]">
+              <p className="text-[17px] leading-[1.6] text-[#3F3F46] font-normal font-sans max-w-110">
                 Every business works differently.
                 <br />
                 Your customers, your team, and your daily work are not the same
@@ -75,7 +75,7 @@ export function FeaturesLoop() {
             {features.map((feature) => (
               <div
                 key={feature.id}
-                className="group relative bg-[#FFFFFF] rounded-[32px] p-2 shadow-[0_2px_40px_-12px_rgba(0,0,0,0.08)] border border-gray-100"
+                className="group relative bg-[#FFFFFF] rounded-4xl p-2 shadow-[0_2px_40px_-12px_rgba(0,0,0,0.08)] border border-gray-100"
               >
                 <div className="flex flex-col lg:flex-row h-full">
                   {/* Text Content */}
@@ -86,7 +86,7 @@ export function FeaturesLoop() {
                     <h3 className="text-[32px] font-bold font-sans text-[#1F1F1F] mb-4 tracking-tight leading-tight">
                       {feature.title}
                     </h3>
-                    <p className="text-[16px] leading-[1.6] text-gray-500 mb-8 font-sans max-w-[320px]">
+                    <p className="text-[16px] leading-[1.6] text-gray-500 mb-8 font-sans max-w-80">
                       {feature.description}
                     </p>
                     <button className="inline-flex items-center gap-1 w-fit text-[14px] font-bold text-[#1F1F1F] bg-[#F4F4F5] rounded-full px-5 py-2.5 hover:bg-[#E4E4E7] transition-colors">
@@ -95,9 +95,9 @@ export function FeaturesLoop() {
                   </div>
 
                   {/* Visual / Chart Area */}
-                  <div className="flex-1 min-h-[400px] relative overflow-hidden rounded-r-[32px] rounded-bl-[32px] lg:rounded-bl-none">
+                  <div className="flex-1 min-h-100 relative overflow-hidden rounded-r-4xl rounded-bl-4xl lg:rounded-bl-none">
                     {/* Gradient Background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#EAD4FF] via-[#FFE4DE] to-[#FFFFFF]" />
+                    <div className="absolute inset-0 bg-linear-to-br from-[#EAD4FF] via-[#FFE4DE] to-[#FFFFFF]" />
 
                     {/* Window/Image Container - Offset to show gradient Top/Right only */}
                     <div className="absolute top-4 right-4 lg:top-5 lg:right-5 bottom-0 left-0 bg-white flex flex-col  shadow-2xl overflow-hidden ring-1 ring-black/5">

@@ -124,7 +124,7 @@ const IntegrationsGrid = () => {
             transition={{ delay: 0.2 }}
             className="w-full sm:w-auto shrink-0"
           >
-            <button className="w-full sm:w-auto px-8 sm:px-10 py-4 bg-[#1A1A1A] text-white rounded-[16px] sm:rounded-[18px] font-black text-[15px] sm:text-[16px] hover:bg-[#7856FF] transition-all shadow-xl shadow-slate-100/50">
+            <button className="w-full sm:w-auto px-8 sm:px-10 py-4 bg-[#1A1A1A] text-white rounded-2xl sm:rounded-[18px] font-black text-[15px] sm:text-[16px] hover:bg-[#7856FF] transition-all shadow-xl shadow-slate-100/50">
               Browse Marketplace (100+)
             </button>
           </motion.div>
@@ -139,7 +139,7 @@ const IntegrationsGrid = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="bg-white p-6 sm:p-7 rounded-[20px] sm:rounded-[24px] border border-slate-100 transition-all duration-300 text-left flex flex-col hover:border-slate-200 hover:shadow-lg"
+              className="bg-white p-6 sm:p-7 rounded-[20px] sm:rounded-3xl border border-slate-100 transition-all duration-300 text-left flex flex-col hover:border-slate-200 hover:shadow-lg"
             >
               <div className="flex justify-between items-start mb-5 md:mb-6">
                 {/* Icon Container */}
