@@ -55,29 +55,31 @@ const Hero = () => {
       <div className="relative z-10 pt-20 md:pt-28 pb-15 md:pb-8 flex flex-col items-center text-center max-w-7xl mx-auto px-4 md:px-12">
         {/* Headline */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-sans leading-tight mb-4 sm:mb-6 text-slate-900 drop-shadow-sm max-w-7xl mx-auto px-4">
-          <span className="block">We Solve Everyday Business Problems</span>
+          <span className="block">Best CRM Software in India With </span>
           <span className="block mt-2">
             Using {""}
             <FlipWords
               words={[
-                "Smart Automation",
-                "CRM Solutions",
-                "AI Technology",
+                "Smart CRM Solutions",
                 "Intelligent Systems",
+                "AI Automation",
+                "Intelligent Systems",
+                "AI Technology",
               ]}
               duration={3000}
             />
           </span>
           <span className="block text-slate-700 font-semibold text-xl sm:text-2xl md:text-3xl mt-2">
-            Without Complexity
+            For Indian Businesses
           </span>
         </h1>
 
         {/* Subheadline */}
         <p className="text-base md:text-[18px] leading-[1.6] text-[#1F2023]/70 mb-8 font-normal font-sans tracking-wide max-w-162.5 px-4 md:px-0">
-          Microkraft AI delivers customized CRM, AI automation, and smart
-          business systems that simplify operations and help businesses grow
-          faster.
+          Microkraft AI delivers the best CRM software in India with AI
+          automation. Our customized CRM solutions help Indian SMEs, startups,
+          and enterprises manage sales, operations, and customer relationships
+          easily. Trusted by 15,000+ businesses across India.
         </p>
 
         {/* CTAs */}

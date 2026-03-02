@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, startTransition } from "react";
 import {
   Menu,
   X,
@@ -45,7 +45,10 @@ const platformMenuData: {
       { title: "Customized CRM", href: "/platform/customized-crm" },
       { title: "AI Automation", href: "/platform/ai-automation" },
       { title: "POS & Inventory", href: "/platform/pos-inventory" },
-      { title: "Accounting & Compliance", href: "/platform/accounting-compliance" },
+      {
+        title: "Accounting & Compliance",
+        href: "/platform/accounting-compliance",
+      },
       { title: "Business Dashboards", href: "/platform/business-dashboards" },
       { title: "Integrations", href: "/platform/integrations" },
       { title: "Security & Data Protection", href: "/" },
@@ -96,7 +99,10 @@ const solutionsMenuData = {
       { title: "Task & Workflow Automation", href: "/" },
       { title: "POS & Inventory Management", href: "/" },
       { title: "Billing & Payment Automation", href: "/" },
-      { title: "Accounting & Compliance", href: "/platform/accounting-compliance" },
+      {
+        title: "Accounting & Compliance",
+        href: "/platform/accounting-compliance",
+      },
       {
         title: "Vendor & Procurement Automation",
         href: "/",
@@ -254,9 +260,11 @@ const Header: React.FC = () => {
   }, [mobileMenuOpen]);
 
   useEffect(() => {
-    setMobileMenuOpen(false);
-    setActiveDropdown(null);
-    setExpandedSection(null);
+    startTransition(() => {
+      setMobileMenuOpen(false);
+      setActiveDropdown(null);
+      setExpandedSection(null);
+    });
   }, [location.pathname]);
 
   const toggleExpanded = (section: string) => {
@@ -265,12 +273,12 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 font-sans ${
+      className={`fixed top-0 left-0 right-0 z-100 transition-all duration-500 font-sans ${
         mobileMenuOpen
-          ? "bg-white h-[100dvh] overflow-hidden"
+          ? "bg-white h-dvh overflow-hidden"
           : scrolled
-          ? "bg-white py-3 shadow-[0_1px_3px_0_rgba(0,0,0,0.05)]"
-          : "bg-white/80 backdrop-blur-md py-4 shadow-none border-b-0"
+            ? "bg-white py-3 shadow-[0_1px_3px_0_rgba(0,0,0,0.05)]"
+            : "bg-white/80 backdrop-blur-md py-4 shadow-none border-b-0"
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8">
@@ -278,9 +286,14 @@ const Header: React.FC = () => {
           {/* LEFT: Logo + Nav */}
           <div className="flex items-center gap-10">
             {/* LOGO */}
-            <Link to="/" className="flex items-center z-[110] relative">
-              <span className="text-[24px] md:text-[28px] font-bold tracking-tight text-[#1F1F1F] font-serif hover:opacity-80 transition-opacity">
-                MicroKraft.ai
+            <Link to="/" className="flex items-center gap-2.5 z-110 relative group">
+              <img
+                src="/logo.png"
+                alt="Microkraft"
+                className="h-8 w-8 md:h-9 md:w-9 object-contain shrink-0 group-hover:opacity-90 transition-opacity"
+              />
+              <span className="text-[24px] md:text-[28px] font-bold tracking-tight text-[#1F1F1F] font-serif group-hover:opacity-80 transition-opacity">
+                Microkraft.ai
               </span>
             </Link>
 
@@ -293,7 +306,7 @@ const Header: React.FC = () => {
                   onMouseEnter={() => setActiveDropdown("Platform")}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <Link 
+                  <Link
                     to="/platform"
                     className="flex items-center gap-1.5 text-[14px] font-semibold text-[#1F1F1F] hover:text-[#7856FF] transition-colors py-2 cursor-pointer whitespace-nowrap"
                   >
@@ -392,14 +405,15 @@ const Header: React.FC = () => {
                       </div>
 
                       {/* COL 4: PROMO CARD */}
-                      <div className="w-[300px] flex-shrink-0 self-stretch">
-                        <div className="bg-gradient-to-br from-[#FFF5F5] to-[#FFF0F5] h-full relative overflow-hidden group/card border-l border-purple-50 cursor-pointer p-8">
+                      <div className="w-[300px] shrink-0 self-stretch">
+                        <div className="bg-linear-to-br from-[#FFF5F5] to-[#FFF0F5] h-full relative overflow-hidden group/card border-l border-purple-50 cursor-pointer p-8">
                           <div className="relative z-10 flex flex-col h-full">
                             <div className="inline-flex items-center px-2 py-1 bg-[#F3E8FF] rounded-md text-[#7856FF] text-[10px] uppercase font-bold tracking-wider w-fit mb-3 whitespace-nowrap">
                               Metric Trees
                             </div>
                             <h3 className="text-[14px] font-bold text-[#1F1F1F] leading-snug mb-2 whitespace-nowrap">
-                              Turn strategy into action with a map <br /> for growth
+                              Turn strategy into action with a map <br /> for
+                              growth
                             </h3>
                             <div className="flex items-center text-[13px] font-bold text-[#1F1F1F] gap-1 group-hover/card:transition-all cursor-pointer whitespace-nowrap">
                               Explore Metric Trees{" "}
@@ -425,8 +439,8 @@ const Header: React.FC = () => {
                                   </div>
                                 </div>
                               </div>
-                              <div className="absolute top-full left-1/2 right-1/2 -translate-x-1/2 w-[1px] h-4 border-l border-dashed border-slate-300 z-10"></div>
-                              <div className="absolute top-[calc(100%+16px)] left-1/2 -translate-x-1/2 w-[200px] h-[1px] border-t border-dashed border-slate-300 z-10"></div>
+                              <div className="absolute top-full left-1/2 right-1/2 -translate-x-1/2 w-px h-4 border-l border-dashed border-slate-300 z-10"></div>
+                              <div className="absolute top-[calc(100%+16px)] left-1/2 -translate-x-1/2 w-[200px] h-px border-t border-dashed border-slate-300 z-10"></div>
                               <div className="flex justify-between mt-6 relative z-10">
                                 <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-2 w-[85px]">
                                   <div className="text-[8px] text-slate-500 font-bold mb-1">
@@ -465,7 +479,7 @@ const Header: React.FC = () => {
                   onMouseEnter={() => setActiveDropdown("Solutions")}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <Link 
+                  <Link
                     to="/solutions"
                     className="flex items-center gap-1.5 text-[14px] font-semibold text-[#1F1F1F] hover:text-[#7856FF] transition-colors py-2 cursor-pointer whitespace-nowrap"
                   >
@@ -507,7 +521,7 @@ const Header: React.FC = () => {
                                 </span>
                                 <ChevronRight className="w-3 h-3 text-[#9CA3AF] group-hover/item:text-[#7856FF] transition-colors" />
                               </Link>
-                            )
+                            ),
                           )}
                         </div>
                       </div>
@@ -531,7 +545,7 @@ const Header: React.FC = () => {
                                 </span>
                                 <ChevronRight className="w-3 h-3 text-[#9CA3AF] group-hover/item:text-[#7856FF] transition-colors" />
                               </Link>
-                            )
+                            ),
                           )}
                         </div>
                       </div>
@@ -555,7 +569,7 @@ const Header: React.FC = () => {
                                 </span>
                                 <ChevronRight className="w-3 h-3 text-[#9CA3AF] group-hover/item:text-[#7856FF] transition-colors" />
                               </Link>
-                            )
+                            ),
                           )}
                         </div>
                       </div>
@@ -597,7 +611,7 @@ const Header: React.FC = () => {
                   onMouseEnter={() => setActiveDropdown("Industries")}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <Link 
+                  <Link
                     to="/industries"
                     className="flex items-center gap-1.5 text-[14px] font-semibold text-[#1F1F1F] hover:text-[#7856FF] transition-colors py-2 cursor-pointer whitespace-nowrap"
                   >
@@ -666,7 +680,7 @@ const Header: React.FC = () => {
 
                       {/* Promo Section */}
                       <div className="w-[300px]">
-                        <div className="bg-gradient-to-br from-blue-50 to-[#F5F3FF] rounded-xl p-6 h-full relative overflow-hidden group/card border border-blue-100/50 cursor-pointer">
+                        <div className="bg-linear-to-br from-blue-50 to-[#F5F3FF] rounded-xl p-6 h-full relative overflow-hidden group/card border border-blue-100/50 cursor-pointer">
                           <div className="relative z-10 flex flex-col h-full">
                             <span className="text-[10px] uppercase tracking-wider font-bold text-[#7856FF] mb-2 whitespace-nowrap">
                               Trust + Relatability
@@ -721,23 +735,25 @@ const Header: React.FC = () => {
                           {resourcesMenuData.learn.title}
                         </div>
                         <div className="grid gap-y-3">
-                          {resourcesMenuData.learn.items.map((item: MenuItem) => (
-                            <Link
-                              key={item.title}
-                              to={item.href}
-                              className="group/item block cursor-pointer whitespace-nowrap"
-                            >
-                              <div className="flex items-center gap-2">
-                                <span className="font-bold text-[13px] text-[#1F1F1F] group-hover/item:text-[#7856FF] transition-colors whitespace-nowrap">
-                                  {item.title}
-                                </span>
-                                <ChevronRight className="w-3 h-3 text-[#9CA3AF] opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-200" />
-                              </div>
-                              <p className="text-[12px] text-[#6B7280] font-medium leading-tight mt-0.5 whitespace-nowrap">
-                                {item.description}
-                              </p>
-                            </Link>
-                          ))}
+                          {resourcesMenuData.learn.items.map(
+                            (item: MenuItem) => (
+                              <Link
+                                key={item.title}
+                                to={item.href}
+                                className="group/item block cursor-pointer whitespace-nowrap"
+                              >
+                                <div className="flex items-center gap-2">
+                                  <span className="font-bold text-[13px] text-[#1F1F1F] group-hover/item:text-[#7856FF] transition-colors whitespace-nowrap">
+                                    {item.title}
+                                  </span>
+                                  <ChevronRight className="w-3 h-3 text-[#9CA3AF] opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-200" />
+                                </div>
+                                <p className="text-[12px] text-[#6B7280] font-medium leading-tight mt-0.5 whitespace-nowrap">
+                                  {item.description}
+                                </p>
+                              </Link>
+                            ),
+                          )}
                         </div>
                       </div>
 
@@ -747,23 +763,25 @@ const Header: React.FC = () => {
                           {resourcesMenuData.community.title}
                         </div>
                         <div className="grid gap-y-3">
-                          {resourcesMenuData.community.items.map((item: MenuItem) => (
-                            <Link
-                              key={item.title}
-                              to={item.href}
-                              className="group/item block cursor-pointer whitespace-nowrap"
-                            >
-                              <div className="flex items-center gap-2">
-                                <span className="font-bold text-[13px] text-[#1F1F1F] group-hover/item:text-[#7856FF] whitespace-nowrap">
-                                  {item.title}
-                                </span>
-                                <ChevronRight className="w-3 h-3 text-[#9CA3AF] opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-200" />
-                              </div>
-                              <p className="text-[12px] text-[#6B7280] font-medium leading-tight mt-0.5 whitespace-nowrap">
-                                {item.description}
-                              </p>
-                            </Link>
-                          ))}
+                          {resourcesMenuData.community.items.map(
+                            (item: MenuItem) => (
+                              <Link
+                                key={item.title}
+                                to={item.href}
+                                className="group/item block cursor-pointer whitespace-nowrap"
+                              >
+                                <div className="flex items-center gap-2">
+                                  <span className="font-bold text-[13px] text-[#1F1F1F] group-hover/item:text-[#7856FF] whitespace-nowrap">
+                                    {item.title}
+                                  </span>
+                                  <ChevronRight className="w-3 h-3 text-[#9CA3AF] opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-200" />
+                                </div>
+                                <p className="text-[12px] text-[#6B7280] font-medium leading-tight mt-0.5 whitespace-nowrap">
+                                  {item.description}
+                                </p>
+                              </Link>
+                            ),
+                          )}
                         </div>
                       </div>
 
@@ -775,22 +793,23 @@ const Header: React.FC = () => {
                         <div className="grid gap-y-3">
                           {resourcesMenuData.partnerships.items.map(
                             (item: MenuItem) => (
-                            <Link
-                              key={item.title}
-                              to={item.href}
-                              className="group/item block cursor-pointer whitespace-nowrap"
-                            >
-                              <div className="flex items-center gap-2">
-                                <span className="font-bold text-[13px] text-[#1F1F1F] group-hover/item:text-[#7856FF] whitespace-nowrap">
-                                  {item.title}
-                                </span>
-                                <ChevronRight className="w-3 h-3 text-[#9CA3AF] opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-200" />
-                              </div>
-                              <p className="text-[12px] text-[#6B7280] font-medium leading-tight mt-0.5 whitespace-nowrap">
-                                {item.description}
-                              </p>
-                            </Link>
-                          ))}
+                              <Link
+                                key={item.title}
+                                to={item.href}
+                                className="group/item block cursor-pointer whitespace-nowrap"
+                              >
+                                <div className="flex items-center gap-2">
+                                  <span className="font-bold text-[13px] text-[#1F1F1F] group-hover/item:text-[#7856FF] whitespace-nowrap">
+                                    {item.title}
+                                  </span>
+                                  <ChevronRight className="w-3 h-3 text-[#9CA3AF] opacity-0 -translate-x-1 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-200" />
+                                </div>
+                                <p className="text-[12px] text-[#6B7280] font-medium leading-tight mt-0.5 whitespace-nowrap">
+                                  {item.description}
+                                </p>
+                              </Link>
+                            ),
+                          )}
                         </div>
                       </div>
 
@@ -800,8 +819,8 @@ const Header: React.FC = () => {
                             Builders
                           </span>
                           <h3 className="text-white font-bold text-[14px] leading-snug mb-2 whitespace-nowrap">
-                            Sprig's Kevin Mandich on a decade <br/> of building with
-                            ML and AI
+                            Sprig's Kevin Mandich on a decade <br /> of building
+                            with ML and AI
                           </h3>
                           <div className="flex items-center text-white text-[11px] font-bold gap-1 group-hover:gap-2 transition-all whitespace-nowrap">
                             Read Article <ArrowRight className="w-3 h-3" />
@@ -813,7 +832,8 @@ const Header: React.FC = () => {
                             How to Build
                           </span>
                           <h3 className="text-white font-bold text-[14px] leading-snug mb-2 whitespace-nowrap">
-                            Product analytics and the data <br/> warehouse: A long <br/> road to a perfect pairing.
+                            Product analytics and the data <br /> warehouse: A
+                            long <br /> road to a perfect pairing.
                           </h3>
                           <div className="flex items-center text-white text-[11px] font-bold gap-1 group-hover:gap-2 transition-all whitespace-nowrap">
                             Read Article <ArrowRight className="w-3 h-3" />
@@ -858,7 +878,7 @@ const Header: React.FC = () => {
             {/* Mobile Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#1F1F1F] hover:bg-gray-100 rounded-lg transition-colors z-[110] relative"
+              className="lg:hidden p-2 text-[#1F1F1F] hover:bg-gray-100 rounded-lg transition-colors z-110 relative"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
@@ -873,7 +893,7 @@ const Header: React.FC = () => {
 
       {/* MOBILE MENU DRAWER */}
       <div
-        className={`fixed inset-0 h-[100dvh] z-[105] bg-white lg:hidden transition-transform duration-500 ease-in-out transform ${
+        className={`fixed inset-0 h-dvh z-105 bg-white lg:hidden transition-transform duration-500 ease-in-out transform ${
           mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >
@@ -1009,7 +1029,7 @@ const Header: React.FC = () => {
                           >
                             {item.title}
                           </Link>
-                        )
+                        ),
                       )}
                     </div>
                   </div>
@@ -1027,7 +1047,7 @@ const Header: React.FC = () => {
                           >
                             {item.title}
                           </Link>
-                        )
+                        ),
                       )}
                     </div>
                   </div>
@@ -1118,20 +1138,22 @@ const Header: React.FC = () => {
                       {resourcesMenuData.community.title}
                     </div>
                     <div className="grid gap-4">
-                      {resourcesMenuData.community.items.map((item: MenuItem) => (
-                        <Link
-                          key={item.title}
-                          to={item.href}
-                          className="group block"
-                        >
-                          <div className="font-bold text-[15px] text-[#1F1F1F] whitespace-nowrap">
-                            {item.title}
-                          </div>
-                          <div className="text-xs text-gray-500 mt-0.5 whitespace-nowrap">
-                            {item.description}
-                          </div>
-                        </Link>
-                      ))}
+                      {resourcesMenuData.community.items.map(
+                        (item: MenuItem) => (
+                          <Link
+                            key={item.title}
+                            to={item.href}
+                            className="group block"
+                          >
+                            <div className="font-bold text-[15px] text-[#1F1F1F] whitespace-nowrap">
+                              {item.title}
+                            </div>
+                            <div className="text-xs text-gray-500 mt-0.5 whitespace-nowrap">
+                              {item.description}
+                            </div>
+                          </Link>
+                        ),
+                      )}
                     </div>
                   </div>
                   <div>
@@ -1141,19 +1163,20 @@ const Header: React.FC = () => {
                     <div className="grid gap-4">
                       {resourcesMenuData.partnerships.items.map(
                         (item: MenuItem) => (
-                        <Link
-                          key={item.title}
-                          to={item.href}
-                          className="group block"
-                        >
-                          <div className="font-bold text-[15px] text-[#1F1F1F] whitespace-nowrap">
-                            {item.title}
-                          </div>
-                          <div className="text-xs text-gray-500 mt-0.5 whitespace-nowrap">
-                            {item.description}
-                          </div>
-                        </Link>
-                      ))}
+                          <Link
+                            key={item.title}
+                            to={item.href}
+                            className="group block"
+                          >
+                            <div className="font-bold text-[15px] text-[#1F1F1F] whitespace-nowrap">
+                              {item.title}
+                            </div>
+                            <div className="text-xs text-gray-500 mt-0.5 whitespace-nowrap">
+                              {item.description}
+                            </div>
+                          </Link>
+                        ),
+                      )}
                     </div>
                   </div>
                 </div>

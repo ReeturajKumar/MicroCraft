@@ -1,5 +1,3 @@
-;
-
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -158,9 +156,16 @@ const Footer = () => {
           <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between pt-12 border-t border-white/5 space-y-8 lg:space-y-0 relative">
             {/* LEFT: BRAND & COPYRIGHT */}
             <div className="lg:flex-1 flex flex-col items-center lg:items-start gap-y-2">
-              <span className="text-[28px] font-bold tracking-tight text-white leading-none">
-                Microkraft.ai
-              </span>
+              <div className="flex items-center gap-2.5">
+                <img
+                  src="/logo.png"
+                  alt="Microkraft"
+                  className="h-9 w-9 object-contain flex-shrink-0"
+                />
+                <span className="text-[28px] font-bold tracking-tight text-white leading-none">
+                  Microkraft.ai
+                </span>
+              </div>
               <span className="text-[11px] text-white/40 whitespace-nowrap uppercase tracking-wider">
                 ©{new Date().getFullYear()} All rights reserved
               </span>
