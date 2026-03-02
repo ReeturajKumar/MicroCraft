@@ -286,11 +286,14 @@ const Header: React.FC = () => {
           {/* LEFT: Logo + Nav */}
           <div className="flex items-center gap-10">
             {/* LOGO */}
-            <Link to="/" className="flex items-center gap-2.5 z-110 relative group">
+            <Link
+              to="/"
+              className="flex items-center gap-2.5 z-110 relative group"
+            >
               <img
                 src="/logo.png"
                 alt="Microkraft"
-                className="h-8 w-8 md:h-9 md:w-9 object-contain shrink-0 group-hover:opacity-90 transition-opacity"
+                className="h-15 w-15 md:h-15 md:w-15 object-contain shrink-0 group-hover:opacity-90 transition-opacity"
               />
               <span className="text-[24px] md:text-[28px] font-bold tracking-tight text-[#1F1F1F] font-serif group-hover:opacity-80 transition-opacity">
                 Microkraft.ai
